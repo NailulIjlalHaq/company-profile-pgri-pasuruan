@@ -3,7 +3,7 @@
         <div class="footer__wrapper">
             <div class="footer__wrapper--left">
                 <div class="footer-logo-container">
-                    <div class="footer__wrapper--left__logo">
+                    <div onclick="window.location.href('{{ route('home') }}')" class="footer__wrapper--left__logo">
                         <img src="../assets/img/logo.png" alt="" />
                         <p>
                             PGRI <br />

@@ -66,11 +66,18 @@
 
 
 
-    $('.header__dropdown').on('click', function() {
-        $;
-    });
-    // modal
+    $('.header__list-box--item').hover(function() {
+        $('.list-dropdown').hover(function() {
+            $(this).addClass('show')
+        }, function() {
+            $(this).removeClass('show')
+        })
+        $(this).siblings('.list-dropdown').addClass('show')
+    }, function() {
+        $(this).siblings('.list-dropdown').removeClass('show')
+    })
 
+    // modal
     function modalToggle(modal, name, ec) {
         $(`.btn-show-${name}${ec}`).on('click', function() {
             $(`.${modal}`).toggleClass('show');

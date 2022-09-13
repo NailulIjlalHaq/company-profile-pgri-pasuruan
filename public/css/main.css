@@ -197,19 +197,74 @@ body {
     @media only screen and (max-width: 48em) {
       .header__list {
         display: none; } }
-    .header__list--item {
-      color: #cecdcd;
-      font-size: 1.4rem;
-      font-weight: 400; }
-      .header__list--item.btn-join {
-        padding: 1rem 2rem;
-        border-radius: 0.5rem;
-        color: #ffc107;
-        border: solid 1px #ffc107;
-        transition: all 0.3s; }
-        .header__list--item.btn-join:hover {
-          background: #ffc107;
-          color: #fff; }
+    .header__list-box {
+      position: relative; }
+      .header__list-box--item {
+        color: #cecdcd;
+        font-size: 1.4rem;
+        font-weight: 400; }
+        .header__list-box--item.btn-join {
+          padding: 1rem 2rem;
+          border-radius: 0.5rem;
+          color: #ffc107;
+          border: solid 1px #ffc107;
+          transition: all 0.3s; }
+          .header__list-box--item.btn-join:hover {
+            background: #ffc107;
+            color: #fff; }
+      .header__list-box .list-dropdown {
+        opacity: 0;
+        visibility: hidden;
+        background-color: #fff;
+        height: fit-content;
+        width: 100%;
+        position: fixed;
+        top: 8rem;
+        left: 0;
+        color: #fff;
+        transition: all 0.3s linear;
+        box-shadow: 0 4px 6px -2px rgba(0, 0, 0, 0.2); }
+        .header__list-box .list-dropdown::before {
+          content: "";
+          position: absolute;
+          width: 0;
+          height: 0;
+          z-index: 10;
+          top: -1.78rem;
+          right: 33.8rem;
+          border-left: 1.6rem solid transparent;
+          border-right: 1.6rem solid transparent;
+          border-bottom: 1.8rem solid #fff; }
+        .header__list-box .list-dropdown-about::before {
+          right: 25rem; }
+        .header__list-box .list-dropdown-title {
+          padding: 3rem 10rem 2rem 10rem;
+          font-size: 2.4rem;
+          font-weight: 600; }
+        .header__list-box .list-dropdown-wrapper {
+          padding: 0 10rem 3rem 10rem;
+          display: flex;
+          justify-content: start;
+          gap: 10rem;
+          height: 100%;
+          width: 100%; }
+          .header__list-box .list-dropdown-wrapper-list {
+            display: flex;
+            flex-direction: column;
+            font-size: 1.4rem;
+            gap: 1rem; }
+            .header__list-box .list-dropdown-wrapper-list-item {
+              display: flex;
+              align-items: center;
+              gap: 1.6rem; }
+              .header__list-box .list-dropdown-wrapper-list-item:first-child {
+                font-size: 1.8rem;
+                color: #ffc107;
+                font-weight: 600;
+                margin-bottom: 1rem; }
+              .header__list-box .list-dropdown-wrapper-list-item ion-icon {
+                font-size: 1.6rem;
+                font-weight: 400; }
 
 .card {
   display: flex;
