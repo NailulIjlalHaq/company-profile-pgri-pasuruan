@@ -4,8 +4,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>PGRI | Dashboard</title>
+    <title>PGRI | @yield('page')</title>
 
+    <link rel="icon" href="{{ asset('dist/img/logos.jpeg') }}">
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -28,6 +29,10 @@
     <link rel="stylesheet" href="{{ asset('plugins/daterangepicker/daterangepicker.css') }}">
     <!-- summernote -->
     <link rel="stylesheet" href="{{ asset('plugins/summernote/summernote-bs4.min.css') }}">
+    <!-- DataTables -->
+    <link rel="stylesheet" href="{{ asset('plugins/datatables-bs4/css/dataTables.bootstrap4.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('plugins/datatables-responsive/css/responsive.bootstrap4.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('plugins/datatables-buttons/css/buttons.bootstrap4.min.css') }}">
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -35,7 +40,7 @@
 
         <!-- Preloader -->
         <div class="preloader flex-column justify-content-center align-items-center">
-            <img class="animation__shake" src="{{asset('dist/img/logos.jpeg')}}" alt="AdminLTELogo" height="60"
+            <img class="animation__shake" src="{{ asset('dist/img/logos.jpeg') }}" alt="AdminLTELogo" height="60"
                 width="60">
         </div>
 
@@ -91,9 +96,9 @@
         <!-- Main Sidebar Container -->
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
-            <a href="index3.html" class="brand-link">
-                <img src="{{asset('dist/img/logos.jpeg')}}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
-                    style="opacity: .8">
+            <a href="/" class="brand-link">
+                <img src="{{ asset('dist/img/logos.jpeg') }}" alt="AdminLTE Logo"
+                    class="brand-image img-circle elevation-3" style="opacity: .8">
                 <span class="brand-text font-weight-light">PGRI Pasuruan</span>
             </a>
 
@@ -126,6 +131,14 @@
                             </a>
                         </li>
                         <li class="nav-item">
+                            <a href="kategori" class="nav-link">
+                                <i class="nav-icon fas fa-tag"></i>
+                                <p>
+                                    Kategori
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
                             <a href="pengumuman" class="nav-link">
                                 <i class="nav-icon fas fa-bell"></i>
                                 <p>
@@ -134,7 +147,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="berita" class="nav-link">
                                 <i class="nav-icon fas fa-newspaper"></i>
                                 <p>
                                     Berita
@@ -142,7 +155,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="artikel" class="nav-link">
                                 <i class="nav-icon fas fa-newspaper"></i>
                                 <p>
                                     Artikel
@@ -150,7 +163,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="galleries" class="nav-link">
                                 <i class="nav-icon fas fa-image"></i>
                                 <p>
                                     Galeri
@@ -158,7 +171,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="pengaturan" class="nav-link">
                                 <i class="nav-icon fas fa-folder"></i>
                                 <p>
                                     Pengaturan
@@ -233,6 +246,19 @@
     <script src="{{ asset('dist/js/demo.js') }}"></script>
     <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
     <script src="{{ asset('dist/js/pages/dashboard.js') }}"></script>
+    <!-- DataTables  & Plugins -->
+    <script src="{{ asset('plugins/datatables/jquery.dataTables.min.js') }}"></script>
+    <script src="{{ asset('plugins/datatables-bs4/js/dataTables.bootstrap4.min.js') }}"></script>
+    <script src="{{ asset('plugins/datatables-responsive/js/dataTables.responsive.min.js') }}"></script>
+    <script src="{{ asset('plugins/datatables-responsive/js/responsive.bootstrap4.min.js') }}"></script>
+    <script src="{{ asset('plugins/datatables-buttons/js/dataTables.buttons.min.js') }}"></script>
+    <script src="{{ asset('plugins/datatables-buttons/js/buttons.bootstrap4.min.js') }}"></script>
+    <script src="{{ asset('plugins/jszip/jszip.min.js') }}"></script>
+    <script src="{{ asset('plugins/pdfmake/pdfmake.min.js') }}"></script>
+    <script src="{{ asset('plugins/pdfmake/vfs_fonts.js') }}"></script>
+    <script src="{{ asset('plugins/datatables-buttons/js/buttons.html5.min.js') }}"></script>
+    <script src="{{ asset('plugins/datatables-buttons/js/buttons.print.min.js') }}"></script>
+    <script src="{{ asset('plugins/datatables-buttons/js/buttons.colVis.min.js') }}"></script>
 </body>
 
 </html>

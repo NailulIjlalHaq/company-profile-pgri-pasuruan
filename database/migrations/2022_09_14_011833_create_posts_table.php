@@ -19,7 +19,7 @@ class CreatePostsTable extends Migration
             $table->string('content');
             $table->string('cover_img');
             $table->string('tag');
-            $table->string('id_categories');
+            $table->integer('id_categories');
             $table->enum('type',['pengumuman','berita','artikel']);
             $table->boolean('is_focus');
             $table->timestamps();

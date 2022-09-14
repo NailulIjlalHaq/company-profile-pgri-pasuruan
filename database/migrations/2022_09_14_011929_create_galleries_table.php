@@ -18,7 +18,7 @@ class CreateGalleriesTable extends Migration
             $table->string('title');
             $table->string('cover_img');
             $table->string('description');
-            $table->string('id_categories');
+            $table->integer('id_categories');
             $table->timestamps();
         });
     }

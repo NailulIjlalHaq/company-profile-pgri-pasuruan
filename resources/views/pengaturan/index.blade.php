@@ -1,5 +1,5 @@
 @extends('../master.master')
-@section('page','Pengumuman')
+@section('page','Pengaturan')
 @section('content')
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->
@@ -7,7 +7,7 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1>Data Pengumuman</h1>
+                        <h1>Data Pengaturan</h1>
                     </div>
                 </div>
             </div><!-- /.container-fluid -->
@@ -20,7 +20,7 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-header">
-                                <h3 class="card-title">Data Pengumuman</h3>
+                                <h3 class="card-title">Data Pengaturan</h3>
                             </div>
                             <!-- /.card-header -->
                             <div class="card-body">
