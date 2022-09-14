@@ -1,85 +1,68 @@
 @extends('index')
 @section('content')
     <div class="home">
-        <div class="hero">
-            <div class="hero-container">
-                <div class="hero__top">
-                    <div class="hero__top--title">
-                        <div class="hero__top--title__1">
-                            smk negeri 1 purwosari. <br />
-                            The Real Informatics School.
+
+        <div class="home__news">
+            <div class="home__news--wrapper">
+                <div class="home__news--wrapper__right">
+                    <div class="news-img-box">
+                        <div class="news-img" style="background: url('{{ asset('./assets/img/berita1.jpg') }}')"></div>
+                        <div class="news-img-text">
+                            <div class="news-img-text-tag">
+                                trending
+                            </div>
+                            <div class="news-img-text-top">Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                                Veniam, ducimus!</div>
+                            <div class="news-img-text-bottom">
+                                <p>Armin Yars</p>
+                                <p>
+                                    &bull;
+                                </p>
+                                <p>January 19, 2022</p>
+                            </div>
                         </div>
-                        <div class="hero__top--title__2">Pelopor SMK bidang Teknologi dan Informatika di Indonesia</div>
                     </div>
-                    <div class="hero__top--btn">Join now</div>
+                </div>
+                <div class="home__news--wrapper__left">
+                    <div class="home__news--wrapper__left--top">
+                        <div class="news-img-box">
+                            <div class="news-img" style="background: url('{{ asset('./assets/img/berita2.jpg') }}')">
+                            </div>
+                            <div class="news-img-text">
+                                <div class="news-img-text-tag">
+                                    trending
+                                </div>
+                                <div class="news-img-text-top">Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                                    Veniam, ducimus!</div>
+                                <div class="news-img-text-bottom">
+                                    <p>Armin Yars</p>
+                                    <p>
+                                        &bull;
+                                    </p>
+                                    <p>January 19, 2022</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="home__news--wrapper__left--bottom">
+                        <div class="home__news--wrapper__left--bottom-1">
+                            <div class="news-img-box">
+                                <div class="news-img" style="background: url('{{ asset('./assets/img/juara.jpg') }}')">
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="home__news--wrapper__left--bottom-2">
+                            <div class="news-img-box">
+                                <div class="news-img" style="background: url('{{ asset('./assets/img/juara2.jpg') }}')">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <div class="home__mitra">
-            <div class="home__mitra--wrapper">
-                <div class="home__mitra--wrapper__box">
-                    <img src="../assets/img/brand/adidas.svg" alt="" />
-                </div>
-                <div class="home__mitra--wrapper__box">
-                    <img src="../assets/img/brand/apple.svg" alt="" />
-                </div>
-                <div class="home__mitra--wrapper__box">
-                    <img src="../assets/img/brand/google.svg" alt="" />
-                </div>
-                <div class="home__mitra--wrapper__box">
-                    <img src="../assets/img/brand/inter.svg" alt="" />
-                </div>
-                <div class="home__mitra--wrapper__box">
-                    <img src="../assets/img/brand/nike.svg" alt="" />
-                </div>
-                <div class="home__mitra--wrapper__box">
-                    <img src="../assets/img/brand/samsung.svg" alt="" />
-                </div>
-            </div>
-        </div>
-
-        <div class="home__features">
-            <div class="title">
-                <div class="title__wrapper">
-                    <div class="title__wrapper--text-1">Practice Advice</div>
-                    <div class="title__wrapper--text-2">Approdable Packages</div>
-                    <div class="title__wrapper--text-3">
-                        Problems trying to resolve the conflict between <br />
-                        the two major realms of Classical physics: Newtonian mechanics
-                    </div>
-                </div>
-            </div>
-            <div class="home__features--wrapper">
-                <div class="features-box">
-                    <div class="features-box__img"><img src="../assets/img/monitor.png" alt="" /></div>
-                    <div class="features-box__title">Fasilitas Lengkap</div>
-                    <div class="features-box__desc">
-                        The gradual accumulation of <br />
-                        information about atomic and <br />
-                        small-scale behaviour...
-                    </div>
-                </div>
-                <div class="features-box">
-                    <div class="features-box__img"><img src="../assets/img/house.png" alt="" /></div>
-                    <div class="features-box__title">Lingkungan Nyaman</div>
-                    <div class="features-box__desc">
-                        The gradual accumulation of <br />
-                        information about atomic and <br />
-                        small-scale behaviour...
-                    </div>
-                </div>
-                <div class="features-box">
-                    <div class="features-box__img"><img src="../assets/img/company.png" alt="" /></div>
-                    <div class="features-box__title">Kerjasama Luas</div>
-                    <div class="features-box__desc">
-                        The gradual accumulation of <br />
-                        information about atomic and <br />
-                        small-scale behaviour...
-                    </div>
-                </div>
-            </div>
-        </div>
 
         <div class="home__sambutan">
             <div class="home__sambutan--left">
@@ -109,83 +92,6 @@
             </div>
         </div>
 
-        <div class="home__profile">
-            <div class="home__profile--left">
-                <div class="card">
-                    <div class="card__title">Profil SMKN 1 Purwosari</div>
-                    <div class="card__desc">
-                        <p class="card__desc--text">
-                            Di samping adalah profil sekolah kami secara keseluruhan dari mulai bagian depan hingga seluruh
-                            fasilitas yang terdapat disekolah kami kami akan Lorem ipsum dolor sit amet consectetur,
-                            adipisicing elit. Corporis, quia in
-                            cupiditate velit sed fuga magni accusantium voluptatum laboriosam dolorum.
-                        </p>
-                        <div class="card__desc--show">...Selengkapnya</div>
-                    </div>
-                    <div class="card__btn">Learn More <ion-icon name="chevron-forward-outline"></ion-icon>
-                    </div>
-                </div>
-            </div>
-
-            <div class="home__profile--right">
-                <div class="home__profile--right__box">
-                    <div class="home__profile--right__box--icon">
-                        <img src="../assets/img/homeIcon.svg" alt="Logo Home" />
-                    </div>
-                    <div class="home__profile--right__box--right">
-                        <div class="home__profile--right__box--right__text">
-                            <p class="">Fasilitas</p>
-                            <p class="">Lorem ipsum dolor sit amet adipcing aqua lorem ipsum.</p>
-                        </div>
-                        <div class="home__profile--right__box--right__btn btn-show-fasilitas">Show <ion-icon
-                                name="arrow-up-circle-outline"></ion-icon>
-                        </div>
-                    </div>
-                </div>
-                <div class="home__profile--right__box">
-                    <div class="home__profile--right__box--icon">
-                        <img src="../assets/img/locationIcon.svg" alt="Logo Home" />
-                    </div>
-                    <div class="home__profile--right__box--right">
-                        <div class="home__profile--right__box--right__text">
-                            <p class="">location</p>
-                            <p class="">Lorem ipsum dolor sit amet adipcing aqua lorem ipsum.</p>
-                        </div>
-                        <div class="home__profile--right__box--right__btn btn-show-location">Show <ion-icon
-                                name="arrow-up-circle-outline"></ion-icon>
-                        </div>
-                    </div>
-                </div>
-                <div class="home__profile--right__box">
-                    <div class="home__profile--right__box--icon">
-                        <img src="../assets/img/prestasiIcon.svg" alt="Logo Home" />
-                    </div>
-                    <div class="home__profile--right__box--right">
-                        <div class="home__profile--right__box--right__text">
-                            <p class="">Prestasi</p>
-                            <p class="">Lorem ipsum dolor sit amet adipcing aqua lorem ipsum.</p>
-                        </div>
-                        <div class="home__profile--right__box--right__btn btn-show-prestasi">Show <ion-icon
-                                name="arrow-up-circle-outline"></ion-icon>
-                        </div>
-                    </div>
-                </div>
-                <div class="home__profile--right__box">
-                    <div class="home__profile--right__box--icon">
-                        <img src="../assets/img/historyIcon.svg" alt="Logo Home" />
-                    </div>
-                    <div class="home__profile--right__box--right">
-                        <div class="home__profile--right__box--right__text">
-                            <p class="">Sejarah</p>
-                            <p class="">Lorem ipsum dolor sit amet adipcing aqua lorem ipsum.</p>
-                        </div>
-                        <div class="home__profile--right__box--right__btn">Show <ion-icon name="arrow-up-circle-outline">
-                            </ion-icon>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
 
         <div class="home__berita">
             <div class="home__berita--title">

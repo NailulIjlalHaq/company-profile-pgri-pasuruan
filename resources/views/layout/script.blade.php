@@ -33,6 +33,7 @@
     // navbar link active
     $(document).ready(function() {
         activeLink('about');
+        activeLink('artikel');
         activeLink('home');
 
         modalToggle('header-phone', 'navbar', '-phone');
@@ -40,6 +41,11 @@
         toggleElement('fasilitas');
         toggleElement('location');
         toggleElement('prestasi');
+
+
+        if (!$('.about-link , .artikel-link ').hasClass('active-link')) {
+            $('.home-link').addClass('active-link')
+        }
     });
 
     function activeLink(name) {
@@ -48,21 +54,19 @@
         }
     }
 
-    // navbar scroll
-    $(window).scroll(function() {
-        //     if (window.location.href.indexOf('home') > -1) {
-        //         navScroll('897');
-        //     } else if (window.location.href.indexOf('about') > -1) {
-        //         navScroll('50');
-        //     }
 
-        if ($(window).scrollTop() >= 50) {
-            $('.header').addClass('header-dark');
-        } else {
-            $('.header').removeClass('header-dark');
-        }
+    if ((window.location.href.indexOf('about') > -1)) {
+        $('.header').removeClass('header-dark');
+        $(window).scroll(function() {
 
-    });
+            if ($(window).scrollTop() >= 50) {
+                $('.header').addClass('header-dark');
+            } else {
+                $('.header').removeClass('header-dark');
+            }
+        })
+    }
+
 
 
 
@@ -137,12 +141,16 @@
         }
     });
 
-    // $(window).on('click', function (e) {
-    //   if (!$('.fasilitas-box__info--swipe').get(0).contains(e.target) && !$('.btn-swipe').get(0).contains(e.target)) {
-    //     $('.fasilitas-box__info--swipe').removeClass('trans-0');
-    //     $('.btn-swipe').removeClass('btn-top-swipe');
-    //   }
-    // });
+    $('.artikel-container-box__top--img ').hover(function() {
+        $(this).siblings(' .artikel-container-box__top--info').hover(function() {
+            $(this).addClass('show')
+        }, function() {
+            $(this).removeClass('show')
+        })
+        $(this).siblings('.artikel-container-box__top--info').addClass('show')
+    }, function() {
+        $(this).siblings('.artikel-container-box__top--info').removeClass('show')
+    })
 
     // swiperr / about.html
     if (window.location.href.indexOf('about') > -1) {

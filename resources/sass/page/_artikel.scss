@@ -1,0 +1,170 @@
+.artikel {
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        &--bg {
+            margin-top: 8.52rem;
+            height: 13rem;
+            width: 100%;
+            background-color: #f3f3f4;
+        }
+        &--header {
+            width: 100%;
+            position: relative;
+            padding: 5rem 10rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 5rem;
+            &__search {
+                position: absolute;
+                top: -3rem;
+                z-index: 2;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                .artikel-search {
+                    width: 50%;
+                    background-color: #fff;
+                    box-shadow: 0px 0.8rem 2rem rgba(0, 0, 0, 0.1);
+                    border-radius: 1rem;
+                    padding: 2rem 3rem;
+                    display: flex;
+                    gap: 1rem;
+                    align-items: center;
+                    ion-icon {
+                        font-size: 2rem;
+                        color: #9e9ea7;
+                        font-weight: 600;
+                    }
+                    input {
+                        font-size: 1.6rem;
+                        border: none;
+                        outline: none;
+                        color: $color-secondary;
+                        width: 100%;
+
+                        &::placeholder {
+                            color: #9e9ea7;
+                        }
+                    }
+                }
+            }
+            &__title {
+                display: flex;
+                flex-direction: column;
+                gap: 2rem;
+                align-items: center;
+                p {
+                    cursor: pointer;
+                    &:nth-child(1) {
+                        text-transform: capitalize;
+                        font-size: 3.2rem;
+                        font-weight: 600;
+                    }
+                    &:nth-child(2) {
+                        font-size: 1.6rem;
+                        color: #9e9ea7;
+                    }
+                }
+            }
+        }
+        &--content {
+            max-width: 144rem;
+            width: 100%;
+            padding: 0 10rem 5rem 10rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.6rem;
+            .artikel-container {
+                &-box {
+                    width: fit-content;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 1rem;
+                    background: #f6f7f9;
+                    padding: 1rem;
+                    border-radius: 1rem;
+                    &__top {
+                        height: 30rem;
+                        width: 30rem;
+                        position: relative;
+                        &--img {
+                            cursor: pointer;
+                            border-radius: 1rem;
+                            height: 100%;
+                            width: 100%;
+                            background-position: 50% !important;
+                            background-repeat: no-repeat !important;
+                            background-size: cover !important;
+                        }
+                        &--info {
+                            cursor: pointer;
+                            opacity: 0;
+                            visibility: hidden;
+                            transition: all 0.3s;
+                            top: 0;
+                            position: absolute;
+                            width: 100%;
+                            height: 100%;
+                            padding: 1rem;
+                            display: flex;
+                            align-items: flex-end;
+                            justify-content: space-between;
+                            background: linear-gradient(
+                                to bottom,
+                                transparent,
+                                transparent,
+                                rgba(0, 0, 0, 0.7)
+                            );
+                            &-box {
+                                display: flex;
+                                justify-content: space-between;
+                                align-items: center;
+                                width: 100%;
+                                p {
+                                    font-size: 1.6rem;
+                                    font-weight: 600;
+                                    color: #fff;
+                                }
+                                button {
+                                    display: flex;
+                                    align-items: center;
+                                    background-color: transparent;
+                                    outline: none;
+                                    border: none;
+                                    ion-icon {
+                                        color: #fff;
+                                        font-size: 2rem;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    &__bot {
+                        display: flex;
+                        gap: 1rem;
+                        align-items: center;
+                        justify-content: end;
+                        p {
+                            color: #9e9ea7;
+                            display: flex;
+                            align-items: center;
+                            gap: 0.3rem;
+                            &:nth-child(1) {
+                            }
+                            &:nth-child(2) {
+                            }
+                            ion-icon {
+                                color: #9e9ea7;
+                                font-size: 1.6rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

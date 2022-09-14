@@ -1,623 +1,414 @@
 .home {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  .hero {
-    position: relative;
-    padding: 0 10rem;
-    align-self: stretch;
-    height: 89.7rem;
-    display: flex;
-    justify-content: center;
-    background: linear-gradient(rgba(#000, 0.6), rgba(#000, 0.6)), url('../assets/img/home-bg.jpg');
-    background-position: 50%;
-    background-repeat: no-repeat;
-    background-size: cover;
-
-    @include respond(bp-768) {
-      padding: 0 5rem;
-    }
-    @include respond(bp-500) {
-      padding: 0 2rem;
-    }
-    &-container {
-      max-width: 144rem;
-      width: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      gap: 5rem;
-    }
-
-    &__top {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 4rem;
-      &--title {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 4rem;
-        &__1 {
-          text-align: center;
-          text-transform: capitalize;
-          color: #fff;
-          font-size: 5.8rem;
-          font-weight: bold;
-          font-family: 'Montserrat', sans-serif;
-
-          @include respond(bp-768) {
-            font-size: 4.6rem;
-          }
-          @include respond(bp-500) {
-            font-size: 3.8rem;
-            font-weight: 500;
-          }
-        }
-        &__2 {
-          font-weight: 400;
-          font-family: 'Montserrat', sans-serif;
-          text-align: center;
-          font-size: 1.6rem;
-          color: #fff;
-        }
-      }
-      &--btn {
-        padding: 1rem 3.5rem;
-        border-radius: 3rem;
-        font-size: 1.6rem;
-        font-weight: 400;
-        display: flex;
-        font-family: 'Poppins', sans-serif;
-        transition: all 0.3s;
-        cursor: pointer;
-        border: solid 1px $color-primary;
-        background-color: transparent;
-        color: $color-primary;
-
-        &:hover {
-          color: #fff;
-          background-color: $color-primary;
-        }
-      }
-    }
-  }
-
-  &__features {
-    padding: 5rem 10rem;
+    width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 10rem;
-    @include respond(bp-768) {
-      padding: 5rem;
-    }
-    @include respond(bp-500) {
-      padding: 5rem 2rem;
-    }
-    &--wrapper {
-      display: flex;
-      align-items: flex-start;
-      gap: 3rem;
-      flex-wrap: wrap;
-      justify-content: center;
-      .features-box {
-        border-radius: 1rem;
-        padding: 3.5rem 4rem;
-        background: #f9fbfd;
-        box-shadow: 0px 13px 19px rgba(0, 0, 0, 0.07);
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 2rem;
-        &__img {
-          background-color: $color-secondary;
-          border-radius: 1rem;
-          padding: 2rem;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          img {
-            height: 3.2rem;
-            width: 3.2rem;
-          }
-        }
-        &__title {
-          color: $color-secondary;
-          font-size: 2.4rem;
-          font-weight: 800;
-          padding-bottom: 2rem;
-          position: relative;
-
-          &::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            height: 3px;
-            width: 7rem;
-            background: $color-primary;
-            border-radius: 0.5rem;
-          }
-        }
-        &__desc {
-          font-size: 1.4rem;
-        }
-
-        &:last-child {
-          background-color: $color-secondary;
-
-          .features-box__img {
-            background: #f9fbfd;
-          }
-          & > * {
-            color: #fff;
-          }
-        }
-      }
-    }
-  }
-
-  &__mitra {
-    padding: 5rem 10rem;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-
-    @include respond(bp-768) {
-      padding: 5rem;
-    }
-    @include respond(bp-500) {
-      padding: 5rem 2rem;
-    }
-    &--wrapper {
-      display: flex;
-      align-items: center;
-      gap: 3rem;
-      justify-content: space-evenly;
-      flex-wrap: wrap;
-      max-width: 144rem;
-      width: 100%;
-      &__box {
-        img {
-        }
-      }
-    }
-  }
-
-  &__sambutan {
-    max-width: 144rem;
-    width: 100%;
-    padding: 10rem;
-    display: flex;
-    justify-content: space-between;
     align-items: center;
-    gap: 5rem;
 
-    @include respond(bp-768) {
-      padding: 5rem;
-    }
-    @include respond(bp-500) {
-      padding: 5rem 2rem;
-    }
+    &__sambutan {
+        background: #f6f7f9;
 
-    @include respond(tab-port) {
-      flex-direction: column-reverse;
-    }
-    &--left {
-      width: 50%;
-      @include respond(tab-port) {
+        max-width: 144rem;
         width: 100%;
-      }
-      img {
-        width: 100%;
-      }
-    }
-    &--right {
-      width: 50%;
-      min-width: 50%;
-
-      @include respond(tab-port) {
-        width: 100%;
-        min-width: 100%;
-      }
-    }
-  }
-
-  &__profile {
-    max-width: 144rem;
-    padding: 5rem 10rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #f9fbfd;
-
-    @include respond(bp-1100) {
-      flex-direction: column;
-    }
-    @include respond(bp-768) {
-      padding: 5rem;
-    }
-    @include respond(bp-500) {
-      padding: 5rem 2rem;
-    }
-    &--left {
-      width: 50%;
-      align-self: stretch;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-right: solid 1px $color-border;
-      padding-right: 5rem;
-
-      @include respond(bp-1100) {
-        width: 100%;
-        padding: 0 0 5rem 0;
-        border-right: none;
-        border-bottom: solid 1px $color-border;
-      }
-    }
-    &--right {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 4rem;
-      padding-left: 5rem;
-
-      @include respond(bp-1100) {
-        padding: 5rem 0 0 0;
-      }
-      @include respond(bp-768) {
-        grid-template-columns: repeat(1, 1fr);
-      }
-      &__box {
-        padding: 4rem 1.6rem;
+        padding: 10rem;
         display: flex;
         justify-content: space-between;
-        align-items: flex-start;
-        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
-        border-radius: 5px;
-        gap: 1.6rem;
-
-        &--icon {
-          min-height: 6.4rem;
-          height: 6.4rem;
-          min-width: 6.4rem;
-          width: 6.4rem;
-          background-color: #fff;
-          box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.04);
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          border-radius: 100%;
-          img {
-          }
-        }
-        &--right {
-          display: flex;
-          flex-direction: column;
-          align-items: flex-start;
-          gap: 1.6rem;
-
-          &__text {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-            p {
-              &:first-child {
-                font-size: 2rem;
-                font-weight: 700;
-                color: $color-dark;
-              }
-              &:last-child {
-                font-size: 1.2rem;
-                font-weight: 400;
-                color: $color-m-dark;
-              }
-            }
-          }
-
-          &__btn {
-            cursor: pointer;
-            padding: 1rem 3.2rem;
-            border: solid 1px $color-primary;
-            border-radius: 3rem;
-            color: $color-primary;
-            font-size: 1.4rem;
-            font-weight: 500;
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            transition: all 0.3s;
-            ion-icon {
-              color: $color-primary;
-              font-size: 2rem;
-              transition: all 0.3s;
-            }
-
-            &:hover {
-              background-color: $color-primary;
-              color: #fff;
-              ion-icon {
-                color: #fff;
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-
-  &__berita {
-    max-width: 144rem;
-    padding: 5rem 10rem;
-    display: flex;
-    flex-direction: column;
-    gap: 5.5rem;
-    width: 100%;
-    @include respond(bp-768) {
-      padding: 5rem;
-    }
-    @include respond(bp-500) {
-      padding: 5rem 2rem;
-    }
-    &--title {
-      display: flex;
-      gap: 2rem;
-      align-items: center;
-      @include respond(bp-1100) {
-        justify-content: space-between;
-      }
-      @include respond(bp-768) {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-      &-text {
-        font-size: 2.4rem;
-        font-weight: 700;
-      }
-      &__search {
-        width: 40rem;
-        padding: 1.6rem 2.4rem;
-        border-radius: 1rem;
-        background-color: #f6f7f9;
-        display: flex;
         align-items: center;
-        gap: 1.6rem;
+        gap: 5rem;
 
         @include respond(bp-768) {
-          width: 100%;
-          gap: 0;
+            padding: 5rem;
         }
-        ion-icon {
-          color: $color-m-dark;
-          font-size: 1.6rem;
-          font-weight: 700;
+        @include respond(bp-500) {
+            padding: 5rem 2rem;
         }
-        input {
-          width: -webkit-fill-available;
-          background-color: transparent;
-          border: none;
-          outline: none;
-          &::placeholder {
-            color: $color-m-dark;
-          }
+
+        @include respond(tab-port) {
+            flex-direction: column-reverse;
         }
-      }
+        &--left {
+            width: 50%;
+            @include respond(tab-port) {
+                width: 100%;
+            }
+            img {
+                width: 100%;
+            }
+        }
+        &--right {
+            width: 50%;
+            min-width: 50%;
+
+            @include respond(tab-port) {
+                width: 100%;
+                min-width: 100%;
+            }
+        }
     }
-    &--wrapper {
-      display: flex;
-      align-items: center;
-      border-radius: 1rem;
 
-      @include respond(bp-1100) {
-        flex-direction: column;
-        gap: 5rem;
-      }
-
-      &__left {
-        width: 50%;
-        min-width: 50%;
-        padding-right: 5rem;
-        height: 50rem;
-        overflow: auto;
-
-        @include respond(bp-1100) {
-          width: 100%;
-          min-width: 100%;
-          padding-right: 3rem;
-        }
-
-        &::-webkit-scrollbar {
-          width: 1rem;
-
-          &-track {
-            background-color: rgba($color: $color-primary, $alpha: 0.1);
-            border-radius: 1rem;
-          }
-          &-thumb {
-            background-color: $color-primary;
-            border-radius: 1rem;
-          }
-        }
-        &--scroll {
-          display: flex;
-          flex-direction: column;
-          gap: 1.6rem;
-          @include respond(bp-768) {
-            gap: 0;
-          }
-          .berita-box {
+    &__news {
+        max-width: 144rem;
+        margin-top: 8.52rem;
+        padding: 5rem 10rem;
+        height: 100%;
+        width: 100%;
+        &--wrapper {
             display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: all 0.2s;
-            border-radius: 5px;
-            padding: 2rem;
-
-            @include respond(bp-768) {
-              flex-direction: column;
-              gap: 2rem;
-              align-items: flex-start;
+            width: 100%;
+            height: 40rem;
+            gap: 0.3rem;
+            .news-img {
+                height: 100%;
+                background-position: 50% !important;
+                background-size: cover !important;
+                background-repeat: no-repeat !important;
             }
-            &:hover {
-              background-color: #f6f7f9;
-
-              .berita-box__right--bottom p:nth-child(2) {
-                transform: scale(1.3);
-              }
+            .news-img-box {
+                width: 100%;
+                height: 100%;
+                position: relative;
             }
-
-            &:nth-child(1) {
-              .berita-box__left {
-                background-image: url(../assets/img/juara.jpg);
-              }
-            }
-            &:nth-child(2) {
-              .berita-box__left {
-                background-image: url(../assets/img/juara2.jpg);
-              }
-            }
-            &:nth-child(3) {
-              .berita-box__left {
-                background-image: url(../assets/img/juara3.jpg);
-              }
-            }
-            &:nth-child(4) {
-              .berita-box__left {
-                background-image: url(../assets/img/juara2.jpg);
-              }
-            }
-            &:nth-child(5) {
-              .berita-box__left {
-                background-image: url(../assets/img/juara.jpg);
-              }
-            }
-            &:nth-child(6) {
-              .berita-box__left {
-                background-image: url(../assets/img/juara3.jpg);
-              }
-            }
-            &:nth-child(7) {
-              .berita-box__left {
-                background-image: url(../assets/img/juara.jpg);
-              }
-            }
-            &__left {
-              height: 15rem;
-              width: 20rem;
-              min-width: 20rem;
-              background-position: 50%;
-              background-size: cover;
-              border-radius: 0.5rem;
+            .news-img-text {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                display: flex;
+                flex-direction: column;
+                justify-content: end;
+                gap: 1rem;
+                padding: 2rem;
+                background: linear-gradient(
+                    to bottom,
+                    transparent,
+                    transparent,
+                    rgba(0, 0, 0, 0.8)
+                );
+                &-tag {
+                    text-transform: uppercase;
+                    align-self: flex-start;
+                    padding: 0.5rem 1rem;
+                    font-size: 1rem;
+                    color: #fff;
+                    background-color: $color-secondary;
+                }
+                &-top {
+                    color: #fff;
+                    font-size: 2rem;
+                    font-weight: bold;
+                }
+                &-bottom {
+                    font-size: 1.4rem;
+                    display: flex;
+                    gap: 0.5rem;
+                    p {
+                        color: #fff;
+                        &:nth-child(1) {
+                            font-weight: 600;
+                        }
+                        &:nth-child(3) {
+                        }
+                    }
+                }
             }
             &__right {
-              padding: 0 2.4rem;
-              @include respond(bp-768) {
-                padding: 0;
-              }
-              &--title {
-                font-size: 1.6rem;
-                color: $color-dark;
+                height: 100%;
+                width: 100%;
+            }
+            &__left {
+                display: flex;
+                flex-direction: column;
+                gap: 0.3rem;
+                width: 100%;
+                height: 100%;
+                &--top {
+                    width: 100%;
+                    height: 60%;
+                }
+                &--bottom {
+                    height: 40%;
+                    width: 100%;
+                    display: flex;
+                    gap: 0.3rem;
+                    &-1 {
+                        width: 50%;
+                    }
+                    &-2 {
+                        width: 50%;
+                    }
+                }
+            }
+        }
+    }
+
+    &__berita {
+        max-width: 144rem;
+        padding: 5rem 10rem;
+        display: flex;
+        flex-direction: column;
+        gap: 5.5rem;
+        width: 100%;
+        @include respond(bp-768) {
+            padding: 5rem;
+        }
+        @include respond(bp-500) {
+            padding: 5rem 2rem;
+        }
+        &--title {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+            @include respond(bp-1100) {
+                justify-content: space-between;
+            }
+            @include respond(bp-768) {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            &-text {
+                font-size: 2.4rem;
                 font-weight: 700;
-                margin-bottom: 8px;
-              }
-              &--desc {
-                font-size: 1.2rem;
-                font-weight: 400;
-                color: $color-m-dark;
-                margin-bottom: 1.6rem;
-              }
-              &--bottom {
+            }
+            &__search {
+                width: 40rem;
+                padding: 1.6rem 2.4rem;
+                border-radius: 1rem;
+                background-color: #f6f7f9;
                 display: flex;
                 align-items: center;
-                justify-content: space-between;
-                p:nth-child(1) {
-                  font-size: 1.2rem;
-                  font-weight: 400;
-                  color: $color-m-dark;
+                gap: 1.6rem;
+
+                @include respond(bp-768) {
+                    width: 100%;
+                    gap: 0;
                 }
-                p:nth-child(2) {
-                  font-size: 2rem;
-                  color: $color-dark;
-                  transition: all 0.2s;
+                ion-icon {
+                    color: $color-m-dark;
+                    font-size: 1.6rem;
+                    font-weight: 700;
                 }
-              }
+                input {
+                    width: -webkit-fill-available;
+                    background-color: transparent;
+                    border: none;
+                    outline: none;
+                    &::placeholder {
+                        color: $color-m-dark;
+                    }
+                }
             }
-          }
         }
-      }
-      &__right {
-        align-self: flex-start;
-        padding-left: 5rem;
-        width: 100%;
-
-        @include respond(bp-1100) {
-          padding: 0;
-        }
-
-        .berita__simple {
-          display: flex;
-          flex-direction: column;
-          gap: 2rem;
-          width: 100%;
-
-          &--box {
-            cursor: pointer;
+        &--wrapper {
             display: flex;
             align-items: center;
-            padding: 1rem;
-            border-radius: 5px;
-            background-color: #f6f7f9;
-            width: 100%;
+            border-radius: 1rem;
 
-            &:hover {
-              .berita__simple--box__arr {
-                font-size: 2.4rem;
-              }
+            @include respond(bp-1100) {
+                flex-direction: column;
+                gap: 5rem;
             }
+
             &__left {
-              display: flex;
-              align-items: center;
-              img {
-                height: 3rem;
-                width: 3rem;
-              }
-            }
+                width: 50%;
+                min-width: 50%;
+                padding-right: 5rem;
+                height: 50rem;
+                overflow: auto;
 
-            &__right {
-              margin-left: 2rem;
-              display: flex;
-              justify-content: center;
-              flex-direction: column;
-              flex: 1;
-              gap: 8px;
-              &--top {
-                p {
-                  font-size: 1.2rem;
-                  font-weight: 400;
-                  color: $color-m-dark;
+                @include respond(bp-1100) {
+                    width: 100%;
+                    min-width: 100%;
+                    padding-right: 3rem;
                 }
-              }
-              &--bottom {
-                font-size: 1.6rem;
-                color: $color-dark;
-                font-weight: 700;
-              }
+
+                &::-webkit-scrollbar {
+                    width: 1rem;
+
+                    &-track {
+                        background-color: rgba(
+                            $color: $color-primary,
+                            $alpha: 0.1
+                        );
+                        border-radius: 1rem;
+                    }
+                    &-thumb {
+                        background-color: $color-primary;
+                        border-radius: 1rem;
+                    }
+                }
+                &--scroll {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 1.6rem;
+                    @include respond(bp-768) {
+                        gap: 0;
+                    }
+                    .berita-box {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        cursor: pointer;
+                        transition: all 0.2s;
+                        border-radius: 5px;
+                        padding: 2rem;
+
+                        @include respond(bp-768) {
+                            flex-direction: column;
+                            gap: 2rem;
+                            align-items: flex-start;
+                        }
+                        &:hover {
+                            background-color: #f6f7f9;
+
+                            .berita-box__right--bottom p:nth-child(2) {
+                                transform: scale(1.3);
+                            }
+                        }
+
+                        &:nth-child(1) {
+                            .berita-box__left {
+                                background-image: url(../assets/img/juara.jpg);
+                            }
+                        }
+                        &:nth-child(2) {
+                            .berita-box__left {
+                                background-image: url(../assets/img/juara2.jpg);
+                            }
+                        }
+                        &:nth-child(3) {
+                            .berita-box__left {
+                                background-image: url(../assets/img/juara3.jpg);
+                            }
+                        }
+                        &:nth-child(4) {
+                            .berita-box__left {
+                                background-image: url(../assets/img/juara2.jpg);
+                            }
+                        }
+                        &:nth-child(5) {
+                            .berita-box__left {
+                                background-image: url(../assets/img/juara.jpg);
+                            }
+                        }
+                        &:nth-child(6) {
+                            .berita-box__left {
+                                background-image: url(../assets/img/juara3.jpg);
+                            }
+                        }
+                        &:nth-child(7) {
+                            .berita-box__left {
+                                background-image: url(../assets/img/juara.jpg);
+                            }
+                        }
+                        &__left {
+                            height: 15rem;
+                            width: 20rem;
+                            min-width: 20rem;
+                            background-position: 50%;
+                            background-size: cover;
+                            border-radius: 0.5rem;
+                        }
+                        &__right {
+                            padding: 0 2.4rem;
+                            @include respond(bp-768) {
+                                padding: 0;
+                            }
+                            &--title {
+                                font-size: 1.6rem;
+                                color: $color-dark;
+                                font-weight: 700;
+                                margin-bottom: 8px;
+                            }
+                            &--desc {
+                                font-size: 1.2rem;
+                                font-weight: 400;
+                                color: $color-m-dark;
+                                margin-bottom: 1.6rem;
+                            }
+                            &--bottom {
+                                display: flex;
+                                align-items: center;
+                                justify-content: space-between;
+                                p:nth-child(1) {
+                                    font-size: 1.2rem;
+                                    font-weight: 400;
+                                    color: $color-m-dark;
+                                }
+                                p:nth-child(2) {
+                                    font-size: 2rem;
+                                    color: $color-dark;
+                                    transition: all 0.2s;
+                                }
+                            }
+                        }
+                    }
+                }
             }
-            &__arr {
-              font-size: 2rem;
-              text-align: end;
-              transition: all 0.2s;
+            &__right {
+                align-self: flex-start;
+                padding-left: 5rem;
+                width: 100%;
+
+                @include respond(bp-1100) {
+                    padding: 0;
+                }
+
+                .berita__simple {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 2rem;
+                    width: 100%;
+
+                    &--box {
+                        cursor: pointer;
+                        display: flex;
+                        align-items: center;
+                        padding: 1rem;
+                        border-radius: 5px;
+                        background-color: #f6f7f9;
+                        width: 100%;
+
+                        &:hover {
+                            .berita__simple--box__arr {
+                                font-size: 2.4rem;
+                            }
+                        }
+                        &__left {
+                            display: flex;
+                            align-items: center;
+                            img {
+                                height: 3rem;
+                                width: 3rem;
+                            }
+                        }
+
+                        &__right {
+                            margin-left: 2rem;
+                            display: flex;
+                            justify-content: center;
+                            flex-direction: column;
+                            flex: 1;
+                            gap: 8px;
+                            &--top {
+                                p {
+                                    font-size: 1.2rem;
+                                    font-weight: 400;
+                                    color: $color-m-dark;
+                                }
+                            }
+                            &--bottom {
+                                font-size: 1.6rem;
+                                color: $color-dark;
+                                font-weight: 700;
+                            }
+                        }
+                        &__arr {
+                            font-size: 2rem;
+                            text-align: end;
+                            transition: all 0.2s;
+                        }
+                    }
+                }
             }
-          }
         }
-      }
     }
-  }
 }
