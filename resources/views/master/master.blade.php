@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>PGRI | @yield('page')</title>
 
-    <link rel="icon" href="{{ asset('dist/img/logos.jpeg') }}">
+    <link rel="icon" href="{{ asset('dist/img/icon.png') }}">
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -33,16 +33,17 @@
     <link rel="stylesheet" href="{{ asset('plugins/datatables-bs4/css/dataTables.bootstrap4.min.css') }}">
     <link rel="stylesheet" href="{{ asset('plugins/datatables-responsive/css/responsive.bootstrap4.min.css') }}">
     <link rel="stylesheet" href="{{ asset('plugins/datatables-buttons/css/buttons.bootstrap4.min.css') }}">
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
     <div class="wrapper">
 
         <!-- Preloader -->
-        <div class="preloader flex-column justify-content-center align-items-center">
-            <img class="animation__shake" src="{{ asset('dist/img/logos.jpeg') }}" alt="AdminLTELogo" height="60"
+        {{-- <div class="preloader flex-column justify-content-center align-items-center">
+            <img class="animation__shake" src="{{ asset('dist/img/icon.png') }}" alt="AdminLTELogo" height="60"
                 width="60">
-        </div>
+        </div> --}}
 
         <!-- Navbar -->
         <nav class="main-header navbar navbar-expand navbar-white navbar-light">
@@ -54,9 +55,6 @@
                 </li>
                 <li class="nav-item d-none d-sm-inline-block">
                     <a href="/" class="nav-link">Home</a>
-                </li>
-                <li class="nav-item d-none d-sm-inline-block">
-                    <a href="#" class="nav-link">Contact</a>
                 </li>
             </ul>
 
@@ -123,7 +121,7 @@
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
                         data-accordion="false">
                         <li class="nav-item">
-                            <a href="/" class="nav-link active">
+                            <a href="{{ route('home') }}" class="nav-link active">
                                 <i class="nav-icon fas fa-tachometer-alt"></i>
                                 <p>
                                     Dashboard
@@ -131,7 +129,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="kategori" class="nav-link">
+                            <a href="{{ route('kategori.index') }}" class="nav-link">
                                 <i class="nav-icon fas fa-tag"></i>
                                 <p>
                                     Kategori
@@ -139,7 +137,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="pengumuman" class="nav-link">
+                            <a href="{{ route('pengumuman.index') }}" class="nav-link">
                                 <i class="nav-icon fas fa-bell"></i>
                                 <p>
                                     Pengumuman
@@ -147,7 +145,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="berita" class="nav-link">
+                            <a href="{{ route('berita.index') }}" class="nav-link">
                                 <i class="nav-icon fas fa-newspaper"></i>
                                 <p>
                                     Berita
@@ -155,7 +153,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="artikel" class="nav-link">
+                            <a href="{{ route('artikel.index') }}" class="nav-link">
                                 <i class="nav-icon fas fa-newspaper"></i>
                                 <p>
                                     Artikel
@@ -163,7 +161,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="galleries" class="nav-link">
+                            <a href="{{ route('galleries.index') }}" class="nav-link">
                                 <i class="nav-icon fas fa-image"></i>
                                 <p>
                                     Galeri
@@ -171,7 +169,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="pengaturan" class="nav-link">
+                            <a href="{{ route('pengaturan.index') }}" class="nav-link">
                                 <i class="nav-icon fas fa-folder"></i>
                                 <p>
                                     Pengaturan
@@ -259,6 +257,8 @@
     <script src="{{ asset('plugins/datatables-buttons/js/buttons.html5.min.js') }}"></script>
     <script src="{{ asset('plugins/datatables-buttons/js/buttons.print.min.js') }}"></script>
     <script src="{{ asset('plugins/datatables-buttons/js/buttons.colVis.min.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
+    @yield('javascript')
 </body>
 
 </html>

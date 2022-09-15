@@ -1,4 +1,4 @@
-@extends('../master.master')
+@extends('master.master')
 @section('page','Berita')
 @section('content')
     <div class="content-wrapper">
@@ -19,17 +19,16 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="card">
-                            <div class="card-header">
-                                <h3 class="card-title">Data Berita</h3>
+                            <div class="card-header d-flex">
+                                <h3 class="card-title mr-auto">Data Berita</h3>
+                                <a href="{{route('berita.create')}}" type="button" class="btn btn-primary">Tambah Berita</a>
                             </div>
                             <!-- /.card-header -->
                             <div class="card-body">
-                                <table id="example2" class="table table-bordered table-hover">
+                                <table id="example2 " class="table table-bordered data-table">
                                     <thead>
                                         <tr>
-                                            <th>No</th>
                                             <th>Judul</th>
-                                            <th>Isi</th>
                                             <th>Foto Cover</th>
                                             <th>Aksi</th>
                                         </tr>
@@ -49,4 +48,22 @@
         </section>
         <!-- /.content -->
     </div>
+@endsection
+@section('javascript')
+<script type="text/javascript">
+    $(function () {
+    
+    var table = $('.data-table').DataTable({
+        processing: true,
+        serverSide: true,
+        ajax: "{{ route('berita.index') }}",
+        columns: [
+            {data: 'title', name: 'title'},
+            {data: 'cover_img', name: 'cover_img'},
+            {data: 'action', name: 'action', orderable: false, searchable: false},
+        ]
+    });
+    
+  });
+</script>
 @endsection

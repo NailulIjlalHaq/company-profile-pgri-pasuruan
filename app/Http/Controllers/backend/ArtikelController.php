@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\backend;
+use App\Http\Controllers\Controller;
 
-use App\Models\configs;
+use App\Models\posts;
 use Illuminate\Http\Request;
 
-class PengaturanController extends Controller
+class ArtikelController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +15,8 @@ class PengaturanController extends Controller
      */
     public function index()
     {
-        $configs = configs::latest()->get();
-        return view('pengaturan.index',compact('configs'));
+        $post = posts::latest()->get();
+        return view('artikel.index',compact('post'));
     }
 
     /**
@@ -25,7 +26,7 @@ class PengaturanController extends Controller
      */
     public function create()
     {
-        //
+        return view('artikel.create');
     }
 
     /**

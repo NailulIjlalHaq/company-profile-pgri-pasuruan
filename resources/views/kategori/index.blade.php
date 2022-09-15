@@ -1,5 +1,5 @@
-@extends('../master.master')
-@section('page','Kategori')
+@extends('master.master')
+@section('page', 'Kategori')
 @section('content')
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->
@@ -19,15 +19,16 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="card">
-                            <div class="card-header">
-                                <h3 class="card-title">Data Kategori</h3>
+                            <div class="card-header d-flex">
+                                <h3 class="card-title mr-auto">Data Kategori</h3>
+                                <a href="{{ route('kategori.create') }}" type="button" class="btn btn-primary">Tambah
+                                    Kategori</a>
                             </div>
                             <!-- /.card-header -->
                             <div class="card-body">
-                                <table id="example2" class="table table-bordered table-hover">
+                                <table id="example2" class="table table-bordered data-table">
                                     <thead>
                                         <tr>
-                                            <th>No</th>
                                             <th>Nama Kategori</th>
                                             <th>Tipe</th>
                                             <th>Aksi</th>
@@ -48,4 +49,22 @@
         </section>
         <!-- /.content -->
     </div>
+@endsection
+@section('javascript')
+<script type="text/javascript">
+    $(function () {
+    
+    var table = $('.data-table').DataTable({
+        processing: true,
+        serverSide: true,
+        ajax: "{{ route('kategori.index') }}",
+        columns: [
+            {data: 'name', name: 'name'},
+            {data: 'type', name: 'type'},
+            {data: 'action', name: 'action', orderable: false, searchable: false},
+        ]
+    });
+    
+  });
+</script>
 @endsection

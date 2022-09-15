@@ -1,4 +1,4 @@
-@extends('../master.master')
+@extends('master.master')
 @section('page','Pengumuman')
 @section('content')
     <div class="content-wrapper">
@@ -19,15 +19,15 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="card">
-                            <div class="card-header">
-                                <h3 class="card-title">Data Pengumuman</h3>
+                            <div class="card-header d-flex">
+                                <h3 class="card-title mr-auto">Data Pengumuman</h3>
+                                <a href="{{route('pengumuman.create')}}" type="button" class="btn btn-primary">Tambah Pengumuman</a>
                             </div>
                             <!-- /.card-header -->
                             <div class="card-body">
-                                <table id="example2" class="table table-bordered table-hover">
+                                <table id="example2" class="table">
                                     <thead>
                                         <tr>
-                                            <th>No</th>
                                             <th>Judul</th>
                                             <th>Isi</th>
                                             <th>Foto Cover</th>

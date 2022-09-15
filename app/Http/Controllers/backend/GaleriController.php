@@ -1,11 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\backend;
 
-use App\Models\posts;
+use App\Http\Controllers\Controller;
+use App\Http\Requests\GaleriRequest;
+use App\Models\galleries;
 use Illuminate\Http\Request;
 
-class BeritaController extends Controller
+class GaleriController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +16,8 @@ class BeritaController extends Controller
      */
     public function index()
     {
-        $post = posts::latest()->get();
-        return view('berita.index',compact('post'));
+        $galleries = galleries::latest()->get();
+        return view('galeri.index', compact('galleries'));
     }
 
     /**
@@ -25,7 +27,7 @@ class BeritaController extends Controller
      */
     public function create()
     {
-        //
+        return view('galeri.create');
     }
 
     /**
@@ -36,7 +38,32 @@ class BeritaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //membuat validasi, jika tidak diisi maka akan menampilkan pesan error
+        $this->validate($request, [
+            'name' => 'required',
+            'file'          => 'required',
+            'description'    => 'required'
+        ]);
+
+        //mengambil data file yang diupload
+        $file           = $request->file('file');
+        //mengambil nama file
+        $nama_file      = $file->getClientOriginalName();
+
+        //memindahkan file ke folder tujuan
+        $file->move('file_upload', $file->getClientOriginalName());
+
+
+        $upload = new galleries();
+        $upload->file       = $nama_file;
+        $upload->description = $request->input('description');
+        $upload->name = $request->input('name');
+
+        //menyimpan data ke database
+        $upload->save();
+
+        //kembali ke halaman sebelumnya
+        return view('galeri.index');
     }
 
     /**

@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\backend;
+use App\Http\Controllers\Controller;
 
-use App\Models\galleries;
+use App\Models\posts;
 use Illuminate\Http\Request;
 
-class GaleriController extends Controller
+class PengumumanController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +15,8 @@ class GaleriController extends Controller
      */
     public function index()
     {
-        $galleries = galleries::latest()->get();
-        return view('galeri.index',compact('galleries'));
+        $post = posts::latest()->get();
+        return view('pengumuman.index',compact('post'));
     }
 
     /**
@@ -25,7 +26,7 @@ class GaleriController extends Controller
      */
     public function create()
     {
-        //
+        return view('pengumuman.create');
     }
 
     /**

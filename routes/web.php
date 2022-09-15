@@ -1,12 +1,12 @@
 <?php
 
-use App\Http\Controllers\ArtikelController;
-use App\Http\Controllers\BeritaController;
-use App\Http\Controllers\GaleriController;
-use App\Http\Controllers\KategoriController;
-use App\Http\Controllers\PageController;
-use App\Http\Controllers\PengaturanController;
-use App\Http\Controllers\PengumumanController;
+use App\Http\Controllers\backend\ArtikelController;
+use App\Http\Controllers\backend\BeritaController;
+use App\Http\Controllers\backend\GaleriController;
+use App\Http\Controllers\backend\KategoriController;
+use App\Http\Controllers\backend\PageController;
+use App\Http\Controllers\backend\PengaturanController;
+use App\Http\Controllers\backend\PengumumanController;
 use Illuminate\Support\Facades\Route;
 
 /*

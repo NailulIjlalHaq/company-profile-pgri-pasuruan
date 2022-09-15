@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
-
-use App\Models\posts;
+namespace App\Http\Controllers\backend;
+use App\Http\Controllers\Controller;
+use App\Http\Requests\ConfigRequest;
+use App\Models\configs;
 use Illuminate\Http\Request;
 
-class ArtikelController extends Controller
+class PengaturanController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +15,8 @@ class ArtikelController extends Controller
      */
     public function index()
     {
-        $post = posts::latest()->get();
-        return view('artikel.index',compact('post'));
+        $configs = configs::latest()->get();
+        return view('pengaturan.index',compact('configs'));
     }
 
     /**
@@ -25,7 +26,7 @@ class ArtikelController extends Controller
      */
     public function create()
     {
-        //
+        return view('pengaturan.create');
     }
 
     /**
@@ -34,9 +35,11 @@ class ArtikelController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ConfigRequest $request)
     {
-        //
+        $input = $request->all();
+        $config = configs::create($input);
+        return back()->with('success', 'Data Pengaturan Berhasil Ditambahkan.');
     }
 
     /**
