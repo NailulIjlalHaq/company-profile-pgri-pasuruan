@@ -121,22 +121,33 @@
                             );
                             &-box {
                                 display: flex;
-                                justify-content: space-between;
-                                align-items: center;
+                                flex-direction: column;
+                                gap: 2rem;
+                                align-items: flex-start;
                                 width: 100%;
                                 p {
-                                    font-size: 1.6rem;
-                                    font-weight: 600;
                                     color: #fff;
+                                    &:nth-child(1) {
+                                        font-size: 1.6rem;
+                                        font-weight: 600;
+                                    }
+                                    &:nth-child(2) {
+                                        font-size: 1.2rem;
+                                        font-weight: 400;
+                                    }
                                 }
                                 button {
+                                    cursor: pointer;
                                     display: flex;
                                     align-items: center;
+                                    gap: 0.5rem;
                                     background-color: transparent;
                                     outline: none;
                                     border: none;
+                                    color: $color-primary;
                                     ion-icon {
-                                        color: #fff;
+                                        color: $color-primary;
+
                                         font-size: 2rem;
                                     }
                                 }
@@ -162,6 +173,81 @@
                                 font-size: 1.6rem;
                             }
                         }
+                    }
+                }
+            }
+        }
+    }
+}
+
+#artikel-popup {
+}
+.artikel-popup {
+    overflow: auto;
+    position: fixed;
+    top: 0;
+    z-index: 10;
+    height: 100%;
+    width: 100%;
+    background-color: rgba($color: #000000, $alpha: 0.5);
+    opacity: 0;
+    visibility: hidden;
+    min-height: 59rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s linear;
+    &__wrapper {
+        transform: translate(0, 100%);
+        transition: all 0.3s ease-out;
+        transition-delay: 0.2s;
+        background-color: white;
+        width: 70%;
+        border-radius: 0.5rem;
+        &--header {
+            &--title {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 2rem;
+                p {
+                    &:nth-child(1) {
+                        font-size: 2rem;
+                        font-weight: 600;
+                        text-transform: capitalize;
+                    }
+                    &:nth-child(2) {
+                        ion-icon {
+                            cursor: pointer;
+                            font-size: 2rem;
+                        }
+                    }
+                }
+            }
+        }
+        &--content {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            &__img {
+                height: 40rem;
+                width: 100%;
+                background-position: 50% !important;
+                background-repeat: no-repeat !important;
+                background-size: cover !important;
+            }
+            &__info {
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+                padding: 2rem;
+                p {
+                    &:nth-child(1) {
+                        font-size: 1.6rem;
+                        font-weight: 600;
+                    }
+                    &:nth-child(2) {
+                        font-size: 1.4rem;
                     }
                 }
             }

@@ -1,7 +1,18 @@
 @extends('index')
 @section('content')
+    <div class="alert-news">
+        <div class="alert-news-wrapper">
+            <div class="alert-news-wrapper-info">
+                <ion-icon name="notifications"></ion-icon> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Id,
+                deleniti
+                consectetur nisi quidem doloribus perferendis!
+            </div>
+            <div class="alert-news-wrapper-close ">
+                <ion-icon class="btn-close-alert-news" name="close"></ion-icon>
+            </div>
+        </div>
+    </div>
     <div class="home">
-
         <div class="home__news">
             <div class="home__news--wrapper">
                 <div class="home__news--wrapper__right">
@@ -95,7 +106,7 @@
 
         <div class="home__berita">
             <div class="home__berita--title">
-                <div class="home__berita--title-text">Berita dan Agenda</div>
+                <div class="home__berita--title-text">Berita dan Artikel</div>
                 <div class="home__berita--title__search">
                     <ion-icon name="search-outline"></ion-icon>
                     <input type="search" placeholder="Search" />
@@ -206,284 +217,101 @@
                 </div>
                 <div class="home__berita--wrapper__right">
                     <div class="berita__simple">
-                        <div class="berita__simple--box">
-                            <div class="berita__simple--box__left">
-                                <img src="../assets/img/logo.png" alt="" />
-                            </div>
-                            <div class="berita__simple--box__right">
-                                <div class="berita__simple--box__right--top">
-                                    <p>01 - 06 - 2021</p>
+
+
+                        <div class="artikel-container">
+                            <div class="artikel-container-box">
+                                <div class="artikel-container-box__top">
+                                    <div class="artikel-container-box__top--img"
+                                        style="background: url('{{ asset('./assets/img/juara.jpg') }}') "></div>
+                                    <div class="artikel-container-box__top--info">
+                                        <div class="artikel-container-box__top--info-box">
+                                            <div>
+                                                <p>
+                                                    Lorem Ipsum Dolor
+                                                </p>
+                                                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. </p>
+                                            </div>
+                                            <button> More Detail
+                                                <ion-icon name="chevron-up-circle"></ion-icon>
+                                            </button>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="berita__simple--box__right--bottom">Deklarasi Sekolah Ramah Anak</div>
+                                <div class="artikel-container-box__bot">
+                                    <p>
+                                        <ion-icon name="eye"></ion-icon> 250
+                                    </p>
+                                    <p>
+                                        <ion-icon name="share-social"></ion-icon> 300
+                                    </p>
+
+                                </div>
                             </div>
-                            <p class="berita__simple--box__arr">
-                                <ion-icon name="arrow-forward-circle-outline"></ion-icon>
-                            </p>
                         </div>
-                        <div class="berita__simple--box">
-                            <div class="berita__simple--box__left">
-                                <img src="../assets/img/logo.png" alt="" />
-                            </div>
-                            <div class="berita__simple--box__right">
-                                <div class="berita__simple--box__right--top">
-                                    <p>01 - 06 - 2021</p>
+                        <div class="artikel-container">
+                            <div class="artikel-container-box">
+                                <div class="artikel-container-box__top">
+                                    <div class="artikel-container-box__top--img"
+                                        style="background: url('{{ asset('./assets/img/juara.jpg') }}') "></div>
+                                    <div class="artikel-container-box__top--info">
+                                        <div class="artikel-container-box__top--info-box">
+                                            <div>
+                                                <p>
+                                                    Lorem Ipsum Dolor
+                                                </p>
+                                                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. </p>
+                                            </div>
+                                            <button> More Detail
+                                                <ion-icon name="chevron-up-circle"></ion-icon>
+                                            </button>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="berita__simple--box__right--bottom">Deklarasi Sekolah Ramah Anak</div>
+                                <div class="artikel-container-box__bot">
+                                    <p>
+                                        <ion-icon name="eye"></ion-icon> 250
+                                    </p>
+                                    <p>
+                                        <ion-icon name="share-social"></ion-icon> 300
+                                    </p>
+
+                                </div>
                             </div>
-                            <p class="berita__simple--box__arr">
-                                <ion-icon name="arrow-forward-circle-outline"></ion-icon>
-                            </p>
                         </div>
-                        <div class="berita__simple--box">
-                            <div class="berita__simple--box__left">
-                                <img src="../assets/img/logo.png" alt="" />
-                            </div>
-                            <div class="berita__simple--box__right">
-                                <div class="berita__simple--box__right--top">
-                                    <p>01 - 06 - 2021</p>
+                        <div class="artikel-container">
+                            <div class="artikel-container-box">
+                                <div class="artikel-container-box__top">
+                                    <div class="artikel-container-box__top--img"
+                                        style="background: url('{{ asset('./assets/img/juara.jpg') }}') "></div>
+                                    <div class="artikel-container-box__top--info">
+                                        <div class="artikel-container-box__top--info-box">
+                                            <div>
+                                                <p>
+                                                    Lorem Ipsum Dolor
+                                                </p>
+                                                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. </p>
+                                            </div>
+                                            <button> More Detail
+                                                <ion-icon name="chevron-up-circle"></ion-icon>
+                                            </button>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="berita__simple--box__right--bottom">Deklarasi Sekolah Ramah Anak</div>
+                                <div class="artikel-container-box__bot">
+                                    <p>
+                                        <ion-icon name="eye"></ion-icon> 250
+                                    </p>
+                                    <p>
+                                        <ion-icon name="share-social"></ion-icon> 300
+                                    </p>
+
+                                </div>
                             </div>
-                            <p class="berita__simple--box__arr">
-                                <ion-icon name="arrow-forward-circle-outline"></ion-icon>
-                            </p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
-    <section id="fasilitas">
-        <div class="fasilitas">
-            <div class="fasilitas__wrapper">
-                <div class="fasilitas__wrapper--content">
-                    <div class="fasilitas__wrapper--content__title">
-                        <p class="">Fasilitas</p>
-                        <p class="btn-close-fasilitas">
-                            <ion-icon name="close-circle-outline"></ion-icon>
-                        </p>
-                    </div>
-
-                    <div class="swipe-body">
-                        <div class="fasilitas__wrapper--content__container">
-                            <div class="fasilitas__wrapper--content__container--box">
-                                <div class="fasilitas-box">
-                                    <div class="fasilitas-box__info">
-                                        <div class="fasilitas-box__info--img"></div>
-                                        <div class="fasilitas-box__info--title">Teknologi dan Rekayasa</div>
-                                        <div class="fasilitas-box__info--swipe">
-                                            <div class="fasilitas-box__info--swipe__wrapper">
-                                                <div class="fasilitas-box__info--swipe__wrapper__btn btn-swipe">
-                                                    <ion-icon name="chevron-up-outline"></ion-icon>
-                                                    <p>Show Detail</p>
-                                                </div>
-                                                <div class="fasilitas-box__info--swipe__wrapper__container">
-                                                    <p class="fasilitas-box__info--swipe__wrapper__container--info">
-                                                        <ion-icon name="construct-outline"></ion-icon>Detail Fasilitas
-                                                    </p>
-                                                    <p class="fasilitas-box__info--swipe__wrapper__container--title">
-                                                        Teknologi dan Rekayasa</p>
-                                                    <p class="fasilitas-box__info--swipe__wrapper__container--desc">
-                                                        Melbourne based Illustrator & Designer Ken Taylor works primarily
-                                                        within the music industry and is predominantly well known for his
-                                                        striking rock posters. Ken started in Perth Western Australia doing
-                                                        posters and album
-                                                        artwork for local bands.
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="fasilitas__wrapper--content__container--box">
-                                <div class="fasilitas-box">
-                                    <div class="fasilitas-box__info">
-                                        <div class="fasilitas-box__info--img"></div>
-                                        <div class="fasilitas-box__info--title">Teknologi dan Rekayasa</div>
-                                        <div class="fasilitas-box__info--swipe">
-                                            <div class="fasilitas-box__info--swipe__wrapper">
-                                                <div class="fasilitas-box__info--swipe__wrapper__btn btn-swipe">
-                                                    <ion-icon name="chevron-up-outline"></ion-icon>
-                                                    <p>Show Detail</p>
-                                                </div>
-                                                <div class="fasilitas-box__info--swipe__wrapper__container">
-                                                    <p class="fasilitas-box__info--swipe__wrapper__container--info">
-                                                        <ion-icon name="construct-outline"></ion-icon>Detail Fasilitas
-                                                    </p>
-                                                    <p class="fasilitas-box__info--swipe__wrapper__container--title">
-                                                        Teknologi dan Rekayasa</p>
-                                                    <p class="fasilitas-box__info--swipe__wrapper__container--desc">
-                                                        Melbourne based Illustrator & Designer Ken Taylor works primarily
-                                                        within the music industry and is predominantly well known for his
-                                                        striking rock posters. Ken started in Perth Western Australia doing
-                                                        posters and album
-                                                        artwork for local bands.
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="fasilitas__wrapper--content__container--box">
-                                <div class="fasilitas-box">
-                                    <div class="fasilitas-box__info">
-                                        <div class="fasilitas-box__info--img"></div>
-                                        <div class="fasilitas-box__info--title">Teknologi dan Rekayasa</div>
-                                        <div class="fasilitas-box__info--swipe">
-                                            <div class="fasilitas-box__info--swipe__wrapper">
-                                                <div class="fasilitas-box__info--swipe__wrapper__btn btn-swipe">
-                                                    <ion-icon name="chevron-up-outline"></ion-icon>
-                                                    <p>Show Detail</p>
-                                                </div>
-                                                <div class="fasilitas-box__info--swipe__wrapper__container">
-                                                    <p class="fasilitas-box__info--swipe__wrapper__container--info">
-                                                        <ion-icon name="construct-outline"></ion-icon>Detail Fasilitas
-                                                    </p>
-                                                    <p class="fasilitas-box__info--swipe__wrapper__container--title">
-                                                        Teknologi dan Rekayasa</p>
-                                                    <p class="fasilitas-box__info--swipe__wrapper__container--desc">
-                                                        Melbourne based Illustrator & Designer Ken Taylor works primarily
-                                                        within the music industry and is predominantly well known for his
-                                                        striking rock posters. Ken started in Perth Western Australia doing
-                                                        posters and album
-                                                        artwork for local bands.
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="fasilitas__wrapper--content__container--box">
-                                <div class="fasilitas-box">
-                                    <div class="fasilitas-box__info">
-                                        <div class="fasilitas-box__info--img"></div>
-                                        <div class="fasilitas-box__info--title">Teknologi dan Rekayasa</div>
-                                        <div class="fasilitas-box__info--swipe">
-                                            <div class="fasilitas-box__info--swipe__wrapper">
-                                                <div class="fasilitas-box__info--swipe__wrapper__btn btn-swipe">
-                                                    <ion-icon name="chevron-up-outline"></ion-icon>
-                                                    <p>Show Detail</p>
-                                                </div>
-                                                <div class="fasilitas-box__info--swipe__wrapper__container">
-                                                    <p class="fasilitas-box__info--swipe__wrapper__container--info">
-                                                        <ion-icon name="construct-outline"></ion-icon>Detail Fasilitas
-                                                    </p>
-                                                    <p class="fasilitas-box__info--swipe__wrapper__container--title">
-                                                        Teknologi dan Rekayasa</p>
-                                                    <p class="fasilitas-box__info--swipe__wrapper__container--desc">
-                                                        Melbourne based Illustrator & Designer Ken Taylor works primarily
-                                                        within the music industry and is predominantly well known for his
-                                                        striking rock posters. Ken started in Perth Western Australia doing
-                                                        posters and album
-                                                        artwork for local bands.
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="fasilitas__wrapper--content__container--box">
-                                <div class="fasilitas-box">
-                                    <div class="fasilitas-box__info">
-                                        <div class="fasilitas-box__info--img"></div>
-                                        <div class="fasilitas-box__info--title">Teknologi dan Rekayasa</div>
-                                        <div class="fasilitas-box__info--swipe">
-                                            <div class="fasilitas-box__info--swipe__wrapper">
-                                                <div class="fasilitas-box__info--swipe__wrapper__btn btn-swipe">
-                                                    <ion-icon name="chevron-up-outline"></ion-icon>
-                                                    <p>Show Detail</p>
-                                                </div>
-                                                <div class="fasilitas-box__info--swipe__wrapper__container">
-                                                    <p class="fasilitas-box__info--swipe__wrapper__container--info">
-                                                        <ion-icon name="construct-outline"></ion-icon>Detail Fasilitas
-                                                    </p>
-                                                    <p class="fasilitas-box__info--swipe__wrapper__container--title">
-                                                        Teknologi dan Rekayasa</p>
-                                                    <p class="fasilitas-box__info--swipe__wrapper__container--desc">
-                                                        Melbourne based Illustrator & Designer Ken Taylor works primarily
-                                                        within the music industry and is predominantly well known for his
-                                                        striking rock posters. Ken started in Perth Western Australia doing
-                                                        posters and album
-                                                        artwork for local bands.
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="fasilitas__wrapper--content__container--box">
-                                <div class="fasilitas-box">
-                                    <div class="fasilitas-box__info">
-                                        <div class="fasilitas-box__info--img"></div>
-                                        <div class="fasilitas-box__info--title">Teknologi dan Rekayasa</div>
-                                        <div class="fasilitas-box__info--swipe">
-                                            <div class="fasilitas-box__info--swipe__wrapper">
-                                                <div class="fasilitas-box__info--swipe__wrapper__btn btn-swipe">
-                                                    <ion-icon name="chevron-up-outline"></ion-icon>
-                                                    <p>Show Detail</p>
-                                                </div>
-                                                <div class="fasilitas-box__info--swipe__wrapper__container">
-                                                    <p class="fasilitas-box__info--swipe__wrapper__container--info">
-                                                        <ion-icon name="construct-outline"></ion-icon>Detail Fasilitas
-                                                    </p>
-                                                    <p class="fasilitas-box__info--swipe__wrapper__container--title">
-                                                        Teknologi dan Rekayasa</p>
-                                                    <p class="fasilitas-box__info--swipe__wrapper__container--desc">
-                                                        Melbourne based Illustrator & Designer Ken Taylor works primarily
-                                                        within the music industry and is predominantly well known for his
-                                                        striking rock posters. Ken started in Perth Western Australia doing
-                                                        posters and album
-                                                        artwork for local bands.
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="location">
-        <div class="location">
-            <div class="location__wrapper">
-                <div class="location__wrapper--content">
-                    <div class="location__wrapper--content__title">
-                        <p>Location SMKN 1 Purwosari</p>
-                        <p class="btn-close-location">
-                            <ion-icon name="close-circle-outline"></ion-icon>
-                        </p>
-                    </div>
-                    <div class="location__wrapper--content__map">
-                        <div id="map"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="prestasi">
-        <div class="prestasi">
-            <div class="prestasi__wrapper">
-                <div class="prestasi__wrapper--content">
-                    <div class="prestasi__wrapper--content__title">
-                        <p>Prestasi SMKN 1 Purwosari</p>
-                        <p class="btn-close-prestasi">
-                            <ion-icon name="close-circle-outline"></ion-icon>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 @endsection

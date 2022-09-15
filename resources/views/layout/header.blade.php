@@ -16,48 +16,23 @@
 
             </div>
             <div class="header__list-box">
-                <a href={{ route('about') }} class="header__list-box--item about-link">Tentang</a>
+                <a href={{ route('about') }} class="header__list-box--item about-link">Profile</a>
 
             </div>
             <div class="header__list-box">
                 <a href={{ route('artikel') }} class="header__list-box--item artikel-link">Artikel</a>
-                {{-- <div class="list-dropdown list-dropdown-about">
-                    <div class="list-dropdown-title">Profile</div>
-                    <div class="list-dropdown-wrapper">
-                        <div class="list-dropdown-wrapper-list">
-                            <p class="list-dropdown-wrapper-list-item">Title 1</p>
-                            <a href="#" class="list-dropdown-wrapper-list-item">item 1 <ion-icon
-                                    name="chevron-forward-outline"></ion-icon></a>
-                            <a href="#" class="list-dropdown-wrapper-list-item">item 2 <ion-icon
-                                    name="chevron-forward-outline"></ion-icon></a>
-                            <a href="#" class="list-dropdown-wrapper-list-item">item 3 <ion-icon
-                                    name="chevron-forward-outline"></ion-icon></a>
-                        </div>
-                        <div class="list-dropdown-wrapper-list">
-                            <p class="list-dropdown-wrapper-list-item">Title 2</p>
-                            <a href="#" class="list-dropdown-wrapper-list-item">item 1<ion-icon
-                                    name="chevron-forward-outline"></ion-icon></a>
-                            <a href="#" class="list-dropdown-wrapper-list-item">item 2<ion-icon
-                                    name="chevron-forward-outline"></ion-icon></a>
-                            <a href="#" class="list-dropdown-wrapper-list-item">item 3<ion-icon
-                                    name="chevron-forward-outline"></ion-icon></a>
-                            <a href="#" class="list-dropdown-wrapper-list-item">item 4 <ion-icon
-                                    name="chevron-forward-outline"></ion-icon></a>
-                        </div>
-                        <div class="list-dropdown-wrapper-list">
-                            <p class="list-dropdown-wrapper-list-item">Title 3</p>
-                            <a href="#" class="list-dropdown-wrapper-list-item">item 1 <ion-icon
-                                    name="chevron-forward-outline"></ion-icon></a>
-                            <a href="#" class="list-dropdown-wrapper-list-item">item 2 <ion-icon
-                                    name="chevron-forward-outline"></ion-icon></a>
-                            <a href="#" class="list-dropdown-wrapper-list-item">item 3 <ion-icon
-                                    name="chevron-forward-outline"></ion-icon></a>
-                        </div>
-                    </div>
-                </div> --}}
             </div>
             <div class="header__list-box">
-                <a href="#" class="header__list-box--item btn-join">Join Us &rarr;</a>
+                <a href={{ route('berita') }} class="header__list-box--item berita-link">Berita</a>
+            </div>
+            <div class="header__list-box">
+                <a href={{ route('gallery') }} class="header__list-box--item gallery-link">Gallery</a>
+            </div>
+            <div class="header__list-box">
+                <a href={{ route('contact') }} class="header__list-box--item contact-link">Contact</a>
+            </div>
+            <div class="header__list-box">
+                <a href="#" class="header__list-box--item btn-join">Login &rarr;</a>
             </div>
         </div>
     </div>

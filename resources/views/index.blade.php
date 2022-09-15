@@ -3,6 +3,10 @@
 @include('layout/link')
 
 <body>
+    <div class="loader">
+        <img src={{ asset('./assets/img/logo.png') }} alt="">
+    </div>
+
     @include('layout/header')
     <div class="global-container">
         @yield('content')

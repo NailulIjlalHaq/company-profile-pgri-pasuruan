@@ -35,17 +35,24 @@
         activeLink('about');
         activeLink('artikel');
         activeLink('home');
+        activeLink('contact');
+        activeLink('berita');
+        activeLink('gallery');
 
         modalToggle('header-phone', 'navbar', '-phone');
 
-        toggleElement('fasilitas');
-        toggleElement('location');
-        toggleElement('prestasi');
+        toggleElement('artikel-popup');
 
 
-        if (!$('.about-link , .artikel-link ').hasClass('active-link')) {
+        if (!$('.about-link , .artikel-link , .contact-link , .gallery-link , .berita-link').hasClass(
+                'active-link')) {
             $('.home-link').addClass('active-link')
         }
+
+        setTimeout(() => {
+            $('.loader').addClass('trans-100')
+            $('.loader').addClass('hide')
+        }, 1000);
     });
 
     function activeLink(name) {
@@ -122,8 +129,8 @@
         });
 
         $(`.btn-close-${name}`).on('click', function() {
-            $(`.${name}`).removeClass('show');
             $(`.${name}__wrapper`).removeClass('trans-0');
+            $(`.${name}`).removeClass('show');
         });
     }
 
@@ -150,6 +157,10 @@
         $(this).siblings('.artikel-container-box__top--info').addClass('show')
     }, function() {
         $(this).siblings('.artikel-container-box__top--info').removeClass('show')
+    })
+
+    $('.btn-close-alert-news').on('click', function() {
+        $('.alert-news').addClass('hide')
     })
 
     // swiperr / about.html

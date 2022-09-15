@@ -23,8 +23,13 @@
                                 style="background: url('{{ asset('./assets/img/berita1.jpg') }}') "></div>
                             <div class="artikel-container-box__top--info">
                                 <div class="artikel-container-box__top--info-box">
-                                    <p>Lorem Ipsum Dolor</p>
-                                    <button>
+                                    <div>
+                                        <p>
+                                            Lorem Ipsum Dolor
+                                        </p>
+                                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. </p>
+                                    </div>
+                                    <button> More Detail
                                         <ion-icon name="chevron-up-circle"></ion-icon>
                                     </button>
                                 </div>
@@ -43,13 +48,18 @@
                 </div>
                 <div class="artikel-container">
                     <div class="artikel-container-box">
-                        <div class="artikel-container-box__top">
-                            <div class="artikel-container-box__top--img"
+                        <div class="artikel-container-box__top ">
+                            <div class="artikel-container-box__top--img btn-show-artikel-popup"
                                 style="background: url('{{ asset('./assets/img/juara.jpg') }}') "></div>
-                            <div class="artikel-container-box__top--info">
+                            <div class="artikel-container-box__top--info btn-show-artikel-popup">
                                 <div class="artikel-container-box__top--info-box">
-                                    <p>Lorem Ipsum Dolor</p>
-                                    <button>
+                                    <div>
+                                        <p>
+                                            Lorem Ipsum Dolor
+                                        </p>
+                                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. </p>
+                                    </div>
+                                    <button> More Detail
                                         <ion-icon name="chevron-up-circle"></ion-icon>
                                     </button>
                                 </div>
@@ -73,8 +83,13 @@
                                 style="background: url('{{ asset('./assets/img/juara2.jpg') }}') "></div>
                             <div class="artikel-container-box__top--info">
                                 <div class="artikel-container-box__top--info-box">
-                                    <p>Lorem Ipsum Dolor</p>
-                                    <button>
+                                    <div>
+                                        <p>
+                                            Lorem Ipsum Dolor
+                                        </p>
+                                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. </p>
+                                    </div>
+                                    <button> More Detail
                                         <ion-icon name="chevron-up-circle"></ion-icon>
                                     </button>
                                 </div>
@@ -98,8 +113,13 @@
                                 style="background: url('{{ asset('./assets/img/juara3.jpg') }}') "></div>
                             <div class="artikel-container-box__top--info">
                                 <div class="artikel-container-box__top--info-box">
-                                    <p>Lorem Ipsum Dolor</p>
-                                    <button>
+                                    <div>
+                                        <p>
+                                            Lorem Ipsum Dolor
+                                        </p>
+                                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. </p>
+                                    </div>
+                                    <button> More Detail
                                         <ion-icon name="chevron-up-circle"></ion-icon>
                                     </button>
                                 </div>
@@ -123,8 +143,13 @@
                                 style="background: url('{{ asset('./assets/img/berita1.jpg') }}') "></div>
                             <div class="artikel-container-box__top--info">
                                 <div class="artikel-container-box__top--info-box">
-                                    <p>Lorem Ipsum Dolor</p>
-                                    <button>
+                                    <div>
+                                        <p>
+                                            Lorem Ipsum Dolor
+                                        </p>
+                                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. </p>
+                                    </div>
+                                    <button> More Detail
                                         <ion-icon name="chevron-up-circle"></ion-icon>
                                     </button>
                                 </div>
@@ -148,8 +173,14 @@
                                 style="background: url('{{ asset('./assets/img/berita2.jpg') }}') "></div>
                             <div class="artikel-container-box__top--info">
                                 <div class="artikel-container-box__top--info-box">
-                                    <p>Lorem Ipsum Dolor</p>
+                                    <div>
+                                        <p>
+                                            Lorem Ipsum Dolor
+                                        </p>
+                                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. </p>
+                                    </div>
                                     <button>
+                                        More Detail
                                         <ion-icon name="chevron-up-circle"></ion-icon>
                                     </button>
                                 </div>
@@ -169,4 +200,35 @@
             </div>
         </div>
     </div>
+
+    <section id="artikel-popup">
+        <div class="artikel-popup">
+            <div class="artikel-popup__wrapper">
+                <div class="artikel-popup__wrapper--header">
+                    <div class="artikel-popup__wrapper--header--title">
+                        <p>Detail Artikel</p>
+                        <p>
+                            <ion-icon class="btn-close-artikel-popup" name="close"></ion-icon>
+                        </p>
+                    </div>
+                </div>
+                <div class="artikel-popup__wrapper--content">
+                    <div class="artikel-popup__wrapper--content__img"
+                        style="background: url({{ asset('./assets/img/berita1.jpg') }})"></div>
+                    <div class="artikel-popup__wrapper--content__info">
+
+                        <p>Berita title</p>
+                        <p>
+                            Melbourne based Illustrator & Designer Ken Taylor works primarily within the music industry and
+                            is predominantly well known for his striking rock posters. Ken started in Perth Western
+                            Australia doing posters and album
+                            artwork for local bands.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </section>
 @endsection
