@@ -15,14 +15,15 @@ class CreatePostsTable extends Migration
     {
         Schema::create('posts', function (Blueprint $table) {
             $table->id('id_posts');
-            $table->string('title');
+            $table->string('title', '100');
             $table->text('content');
             $table->string('cover_img');
-            $table->string('tag');
-            $table->integer('id_categories');
-            $table->enum('type',['pengumuman','berita','artikel']);
+            $table->string('tag', '50');
+            $table->unsignedBigInteger('id_categories')->nullable();
+            $table->enum('type', ['pengumuman', 'berita', 'artikel']);
             $table->boolean('is_focus');
             $table->timestamps();
+            $table->foreign('id_categories')->references('id_categories')->on('categories')->onDelete('set null');
         });
     }
 

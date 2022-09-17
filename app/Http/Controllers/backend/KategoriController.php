@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\backend;
+
 use App\Http\Controllers\Controller;
 use App\Http\Requests\KategoriRequest;
 use App\Models\categories;
@@ -16,12 +17,17 @@ class KategoriController extends Controller
      */
     public function index()
     {
-        if(request()->ajax()) {
-            return DataTables()->of(categories::select('*'))
-            ->addColumn('action', `<a class="btn btn-warning" href="">edit</a>`)
-            ->rawColumns(['action'])
-            ->addIndexColumn()
-            ->make(true);
+        if (request()->ajax()) {
+            $data = categories::select('id_categories', 'name');
+            return DataTables()->of($data)
+                ->addColumn('action', function ($row) {
+                    return '
+                    <a href="' . route('kategori.destroy', $row->id_categories) . '" class="btn bg-teal btn-sm" onclick="return confirm(\'Apakah anda yakin ingin menghapus data ini ?\')">Hapus</a>
+                    <a href="' . route('kategori.edit', $row->id_categories) . '" class="btn btn-primary btn-sm">Edit</a>
+                    ';
+                })
+                ->rawColumns(['action'])
+                ->make(true);
         }
         return view('kategori.index');
     }
@@ -33,7 +39,7 @@ class KategoriController extends Controller
      */
     public function create()
     {
-        return view('kategori.create');
+        return view('kategori.form');
     }
 
     /**
@@ -42,23 +48,18 @@ class KategoriController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {  
- 
-        $companyId = $request->id;
- 
-        $company   =   categories::updateOrCreate(
-                    [
-                     'id' => $companyId
-                    ],
-                    [
-                    'name' => $request->name, 
-                    'email' => $request->email,
-                    'address' => $request->address
-                    ]);    
-                         
-        return Response()->json($company);
- 
+    public function store(KategoriRequest $request)
+    {
+        try {
+            $kategori = new categories;
+            $kategori->name = $request->kategori;
+            $kategori->type = 'berita';
+            $kategori->save();
+
+            return redirect()->route('kategori.index')->with('success', 'Data kategori berhasil disimpan.');
+        } catch (\Exception $e) {
+            print_r($e);
+        }
     }
 
     /**
@@ -78,12 +79,10 @@ class KategoriController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Request $request)
-    {   
-        $where = array('id' => $request->id);
-        $company  = categories::where($where)->first();
-      
-        return Response()->json($company);
+    public function edit($id)
+    {
+        $kategori = categories::find($id);
+        return view('kategori.form', compact('kategori'));
     }
 
     /**
@@ -95,8 +94,11 @@ class KategoriController extends Controller
      */
     public function update(KategoriRequest $request, $id)
     {
-        $post = categories::find($id)->update($request->all());
-        return back()->with('success', 'Data telah diubah!');
+        $kategori = categories::find($id);
+        $kategori->name = $request->kategori;
+        $kategori->save();
+
+        return redirect()->route('kategori.index')->with('success', 'Data kategori berhasil di ubah.');
     }
 
     /**
@@ -105,10 +107,10 @@ class KategoriController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Request $request)
+    public function destroy($id)
     {
-        $company = categories::where('id',$request->id)->delete();
-      
-        return Response()->json($company);
+        categories::destroy($id);
+
+        return redirect()->route('kategori.index')->with('success', 'Kategori berhasil di hapus dari sistem');
     }
 }

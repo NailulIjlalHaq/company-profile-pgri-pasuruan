@@ -20,10 +20,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/',[PageController::class, 'index'])->name('home');
-Route::resource('pengumuman',PengumumanController::class);
-Route::resource('berita',BeritaController::class);
-Route::resource('artikel',ArtikelController::class);
-Route::resource('galleries',GaleriController::class);
-Route::resource('pengaturan',PengaturanController::class);
-Route::resource('kategori',KategoriController::class);
+Route::get('/', [PageController::class, 'index'])->name('home');
+
+Route::resource('pengumuman', PengumumanController::class);
+
+Route::get('berita/fokus', [BeritaController::class, 'setFocus'])->name('berita.setFocus');
+Route::resource('berita', BeritaController::class)->except(['destroy']);
+Route::get('berita/{berita}/hapus', [BeritaController::class, 'destroy'])->name('berita.destroy');
+
+Route::resource('artikel', ArtikelController::class);
+
+Route::resource('galleries', GaleriController::class);
+
+Route::resource('pengaturan', PengaturanController::class);
+
+Route::resource('kategori', KategoriController::class)->except(['destroy']);
+Route::get('kategori/{kategori}/hapus', [KategoriController::class, 'destroy'])->name('kategori.destroy');

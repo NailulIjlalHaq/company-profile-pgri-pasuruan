@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class KategoriRequest extends FormRequest
+class UpdateBeritaRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,16 +24,21 @@ class KategoriRequest extends FormRequest
     public function rules()
     {
         return [
-            'kategori' => 'required|max:200|unique:categories,name'
+            'judul' => 'required',
+            'konten' => 'required',
+            'cover_img' => 'file|image|max:2000',
+            'tag' => 'required',
+            'kategori' => 'required',
         ];
     }
 
     public function messages()
     {
         return [
-            'required' => ':attribute harus di isi.',
-            'unique' => 'Nama :attribute ini sudah terdapat dalam sistem.',
-            'max' => ':attribute jumlah maksimal :size'
+            'required' => 'Data :attribute harus diisi.',
+            'file' => 'Data :attribute harus dimasukkan file gambar',
+            'image' => 'Data :attribute harus dimasukkan file gambar',
+            'max' => 'Ukuran :attribute melibihi ketentuan'
         ];
     }
 }
