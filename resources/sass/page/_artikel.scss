@@ -3,6 +3,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+
         &--bg {
             margin-top: 8.52rem;
             height: 13rem;
@@ -13,11 +14,18 @@
             width: 100%;
             position: relative;
             padding: 5rem 10rem;
+            padding-top: 8rem;
             display: flex;
             flex-direction: column;
             align-items: center;
             gap: 5rem;
+
+            @include respond(bp-500) {
+                padding: 5rem 2rem;
+                padding-top: 8rem;
+            }
             &__search {
+                max-width: 144rem;
                 position: absolute;
                 top: -3rem;
                 z-index: 2;
@@ -33,6 +41,11 @@
                     display: flex;
                     gap: 1rem;
                     align-items: center;
+
+                    @include respond(phone) {
+                        width: 80%;
+                        padding: 2rem;
+                    }
                     ion-icon {
                         font-size: 2rem;
                         color: #9e9ea7;
@@ -78,7 +91,19 @@
             flex-wrap: wrap;
             justify-content: center;
             gap: 1.6rem;
+
+            @include respond(bp-768) {
+                padding: 5rem;
+                padding-top: 0;
+            }
+            @include respond(bp-500) {
+                padding: 2rem;
+                padding-top: 0;
+            }
             .artikel-container {
+                @include respond(bp-400) {
+                    width: 100%;
+                }
                 &-box {
                     width: fit-content;
                     display: flex;
@@ -87,10 +112,16 @@
                     background: #f6f7f9;
                     padding: 1rem;
                     border-radius: 1rem;
+                    @include respond(bp-400) {
+                        width: 100%;
+                    }
                     &__top {
                         height: 30rem;
                         width: 30rem;
                         position: relative;
+                        @include respond(bp-400) {
+                            width: 100%;
+                        }
                         &--img {
                             cursor: pointer;
                             border-radius: 1rem;
@@ -192,11 +223,14 @@
     background-color: rgba($color: #000000, $alpha: 0.5);
     opacity: 0;
     visibility: hidden;
-    min-height: 59rem;
+    min-height: 65rem;
     display: flex;
     align-items: center;
     justify-content: center;
     transition: all 0.2s linear;
+    @include respond(bp-500) {
+        align-items: flex-end;
+    }
     &__wrapper {
         transform: translate(0, 100%);
         transition: all 0.3s ease-out;
@@ -204,6 +238,14 @@
         background-color: white;
         width: 70%;
         border-radius: 0.5rem;
+
+        @include respond(bp-768) {
+            width: 80%;
+        }
+        @include respond(bp-500) {
+            width: 100%;
+            border-radius: 0.5rem 0.5rem 0 0;
+        }
         &--header {
             &--title {
                 display: flex;
@@ -235,6 +277,10 @@
                 background-position: 50% !important;
                 background-repeat: no-repeat !important;
                 background-size: cover !important;
+
+                @include respond(bp-1100) {
+                    height: 35rem;
+                }
             }
             &__info {
                 display: flex;

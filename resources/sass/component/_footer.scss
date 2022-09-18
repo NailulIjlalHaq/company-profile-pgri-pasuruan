@@ -60,7 +60,7 @@
             &__box {
                 display: grid;
                 grid-template-columns: repeat(3, 1fr);
-                grid-template-rows: repeat(4, 1fr);
+
                 gap: 1.2rem 10rem;
 
                 @include respond(bp-1100) {

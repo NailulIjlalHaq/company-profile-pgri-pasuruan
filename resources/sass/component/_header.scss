@@ -29,7 +29,11 @@
         transition: all 0.2s linear;
         opacity: 0;
         visibility: hidden;
+        display: none;
 
+        @include respond(bp-970) {
+            display: flex;
+        }
         @include respond(bp-768) {
             padding: 1.6rem 5rem;
         }
@@ -75,6 +79,7 @@
                 align-items: center;
                 flex-wrap: wrap;
                 gap: 3.2rem;
+
                 &-item {
                     color: $color-grey;
                     font-size: 1.4rem;
@@ -122,7 +127,7 @@
     &__dropdown {
         display: none;
         position: relative;
-        @include respond(bp-768) {
+        @include respond(bp-970) {
             display: flex;
         }
         ion-icon {
@@ -135,7 +140,7 @@
         align-items: center;
         gap: 3.2rem;
 
-        @include respond(bp-768) {
+        @include respond(bp-970) {
             display: none;
         }
         &-box {
@@ -158,74 +163,6 @@
                     }
                 }
             }
-
-            .list-dropdown {
-                opacity: 0;
-                visibility: hidden;
-                background-color: #fff;
-                height: fit-content;
-                width: 100%;
-                position: fixed;
-                top: 8rem;
-                left: 0;
-                color: #fff;
-                transition: all 0.3s linear;
-                box-shadow: 0 4px 6px -2px rgba(0, 0, 0, 0.2);
-
-                &::before {
-                    content: "";
-                    position: absolute;
-                    width: 0;
-                    height: 0;
-                    z-index: 10;
-                    top: -1.78rem;
-                    right: 33.8rem;
-                    border-left: 1.6rem solid transparent;
-                    border-right: 1.6rem solid transparent;
-                    border-bottom: 1.8rem solid #fff;
-                }
-                &-about {
-                    &::before {
-                        right: 25rem;
-                    }
-                }
-
-                &-title {
-                    padding: 3rem 10rem 2rem 10rem;
-                    font-size: 2.4rem;
-                    font-weight: 600;
-                }
-                &-wrapper {
-                    padding: 0 10rem 3rem 10rem;
-                    display: flex;
-                    justify-content: start;
-                    gap: 10rem;
-                    height: 100%;
-                    width: 100%;
-                    &-list {
-                        display: flex;
-                        flex-direction: column;
-                        font-size: 1.4rem;
-                        gap: 1rem;
-                        &-item {
-                            display: flex;
-                            align-items: center;
-                            gap: 1.6rem;
-                            &:first-child {
-                                font-size: 1.8rem;
-                                color: $color-primary;
-                                font-weight: 600;
-                                margin-bottom: 1rem;
-                            }
-                            ion-icon {
-                                font-size: 1.6rem;
-                                font-weight: 400;
-                            }
-                        }
-                    }
-                }
-            }
         }
     }
 }
-

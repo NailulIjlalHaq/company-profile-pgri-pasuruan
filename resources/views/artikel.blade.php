@@ -49,7 +49,7 @@
                 <div class="artikel-container">
                     <div class="artikel-container-box">
                         <div class="artikel-container-box__top ">
-                            <div class="artikel-container-box__top--img btn-show-artikel-popup"
+                            <div class="artikel-container-box__top--img "
                                 style="background: url('{{ asset('./assets/img/juara.jpg') }}') "></div>
                             <div class="artikel-container-box__top--info btn-show-artikel-popup">
                                 <div class="artikel-container-box__top--info-box">

@@ -55,8 +55,12 @@
         </div>
 
         <div class="header-phone-list">
-            <a href="./home.html" class="header-phone-list-item home-link">Beranda</a>
-            <a href="./about.html" class="header-phone-list-item about-link">Tentang</a>
+            <a href={{ route('home') }} class="header-phone-list-item home-link">Home</a>
+            <a href={{ route('about') }} class="header-phone-list-item about-link">Profile</a>
+            <a href={{ route('artikel') }} class="header-phone-list-item artikel-link">Article</a>
+            <a href={{ route('berita') }} class="header-phone-list-item berita-link">News</a>
+            <a href={{ route('gallery') }} class="header-phone-list-item gallery-link">Gallery</a>
+            <a href={{ route('contact') }} class="header-phone-list-item contact-link">Contact</a>
             <a href="#" class="header-phone-list-item btn-join">Join Us &rarr;</a>
         </div>
     </div>

@@ -1,5 +1,119 @@
 .gallery {
-    margin-top: 8.2rem;
+    &__hero {
+        position: relative;
+        padding: 8.52rem 10rem 0 10rem;
+        align-self: stretch;
+        height: 52.8rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        background: linear-gradient(rgba(#000, 0.6), rgba(#000, 0.6)),
+            url("../assets/img/home-bg.jpg");
+        background-position: 50%;
+        background-repeat: no-repeat;
+        background-size: cover;
+
+        @include respond(bp-768) {
+            padding: 8.52rem 5rem 0 5rem;
+        }
+        @include respond(bp-500) {
+            padding: 8.52rem 2rem 0 2rem;
+        }
+        .swiper__container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+            margin: 10rem 0;
+            max-width: 144rem;
+        }
+        .swiper {
+            width: 100%;
+            height: 100%;
+            &__box {
+                height: 100%;
+                width: 100%;
+                display: flex;
+                align-items: flex-end;
+                justify-content: center;
+                flex-direction: column;
+                &--img {
+                    position: relative;
+                    height: 100%;
+                    width: 100%;
+                    &--content {
+                        position: absolute;
+                        top: 0;
+                        height: 100%;
+                        width: 100%;
+                        background-position: 50%;
+                        background-size: cover;
+                    }
+                }
+                &--text {
+                    color: #fff;
+                    font-size: 2.4rem;
+                    z-index: 1;
+                    align-self: stretch;
+                    text-transform: capitalize;
+                }
+            }
+            &-button-next,
+            &-button-prev {
+                height: 5rem;
+                width: 5rem;
+                border-radius: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border: solid 2px $color-primary;
+                transition: all 0.2s;
+                backdrop-filter: blur(0.1rem);
+
+                &:hover {
+                    background: $color-primary;
+                    border: solid 2px transparent;
+                    &::after {
+                        color: #fff;
+                    }
+                }
+                &::after {
+                    color: $color-primary;
+                    font-size: 2.4rem;
+                    font-weight: 800;
+                }
+            }
+        }
+
+        .swiper-slide {
+            text-align: center;
+            font-size: 18px;
+            background: transparent;
+
+            /* Center slide text vertically */
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            -webkit-align-items: center;
+            align-items: center;
+        }
+
+        .swiper-slide img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
     &-wrapper {
         &__header {
             padding: 5rem 10rem;
@@ -7,6 +121,9 @@
             flex-direction: column;
             gap: 2rem;
             align-items: center;
+            @include respond(bp-500) {
+                padding: 5rem 2rem;
+            }
             p {
                 cursor: pointer;
                 &:nth-child(1) {
@@ -22,18 +139,34 @@
         }
 
         &__content {
-            padding-bottom: 5rem;
+            padding: 5rem;
+            background: #f6f7f9;
+            @include respond(bp-768) {
+                padding: 5rem 2rem;
+            }
             .gallery-container {
                 display: flex;
-                gap: 0.5rem;
                 flex-wrap: wrap;
+                gap: 2rem;
                 justify-content: center;
                 &-box {
-                    width: 30rem;
-                    height: 30rem;
-                    background-position: 50% !important;
-                    background-repeat: no-repeat !important;
-                    background-size: cover !important;
+                    background-color: white;
+                    border-radius: 5px;
+                    padding: 2rem;
+                    @include respond(bp-400) {
+                        width: 100%;
+                    }
+                    &-img {
+                        width: 30rem;
+                        height: 30rem;
+                        background-position: 50% !important;
+                        background-repeat: no-repeat !important;
+                        background-size: cover !important;
+                        @include respond(bp-400) {
+                            width: 100%;
+                            height: 25rem;
+                        }
+                    }
                 }
             }
         }

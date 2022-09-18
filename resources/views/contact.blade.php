@@ -12,32 +12,37 @@
 
                 </div>
 
-                <div class="contact__form--input">
-                    <p>Full Name</p>
-                    <input class="@error('name') unvalidated-input @enderror" placeholder="Your Name" type="text"
-                        name="name" min="5">
-                    @error('name')
-                        <div class="unvalidated">
-                            {{ $message }}
-                            <div class="unvalidated-popup">
-                                <ion-icon name="information-circle-outline"></ion-icon>
+                {{-- name and email --}}
+                <div class="d-flex d-flex-400-column" style="gap: 1rem">
+                    <div class="contact__form--input">
+                        <p>Full Name</p>
+                        <input class="@error('name') unvalidated-input @enderror" placeholder="Your Name" type="text"
+                            name="name" min="5">
+                        @error('name')
+                            <div class="unvalidated">
+                                {{ $message }}
+                                <div class="unvalidated-popup">
+                                    <ion-icon name="information-circle-outline"></ion-icon>
+                                </div>
                             </div>
-                        </div>
-                    @enderror
-                </div>
-                <div class="contact__form--input">
-                    <p>Email</p>
-                    <input class="@error('email') unvalidated-input @enderror" placeholder="Your Email" type="email"
-                        name="email">
-                    @error('email')
-                        <div class="unvalidated">
-                            {{ $message }}
-                            <div class="unvalidated-popup">
-                                <ion-icon name="information-circle-outline"></ion-icon>
+                        @enderror
+                    </div>
+                    <div class="contact__form--input">
+                        <p>Email</p>
+                        <input class="@error('email') unvalidated-input @enderror" placeholder="Your Email" type="email"
+                            name="email">
+                        @error('email')
+                            <div class="unvalidated">
+                                {{ $message }}
+                                <div class="unvalidated-popup">
+                                    <ion-icon name="information-circle-outline"></ion-icon>
+                                </div>
                             </div>
-                        </div>
-                    @enderror
+                        @enderror
+                    </div>
                 </div>
+
+
                 <div class="contact__form--input">
                     <p>Phone Number</p>
                     <input class="@error('phone') unvalidated-input @enderror" placeholder="085xxxxxxx" type="number"

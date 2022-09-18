@@ -1,53 +1,58 @@
 @extends('index')
 @section('content')
     <div class="about">
-        <div class="about__hero">
-            <div class="swiper__container">
-                <div class="swiper mySwiper">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <div class="swiper__box">
-                                <div alt="" class="swiper__box--img">
-                                    <div class="swiper__box--img--content"
-                                        style="background-image: url(../assets/img/kantin.jpg)"></div>
-                                </div>
-                                <div class="swiper__box--text">Kantin</div>
+        <div class="about__sejarah">
+            <div class="about__sejarah-wrapper">
+                <div class="about__sejarah-wrapper-img">
+                </div>
+                <div class="about__sejarah-wrapper-info">
+                    <p><span>s</span>ejarah singkat pgri orem ipsum, dolor sit amet consectetur adipisicing elit. Hic
+                        mollitia quisquam
+                        sequi ut
+                        consectetur omnis nulla eveniet rerum itaque? Quos nihil quidem iure sed expedita?
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. In nesciunt possimus perspiciatis a neque
+                    </p>
+                    <p>
+                        cupiditate soluta error dolorem sit, provident iusto nisi quidem velit molestias.
+                        consectetur omnis nulla eveniet rerum itaque? Quos nihil quidem iure sed expedita?
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. In nesciunt possimus perspiciatis a neque
+                        cupiditate soluta error dolorem sit, provident iusto nisi quidem velit molestias.
+                    </p>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores similique, quibusdam modi
+                        voluptates inventore rerum officiis aliquam amet quia laudantium ipsa atque nemo, dolor nam?
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae veniam sed eos ea qui vero
+                        repellat dicta, mollitia nisi voluptatem? Doloribus commodi totam repellat fuga.
+                    </p>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores similique, quibusdam modi
+                        voluptates inventore rerum officiis aliquam amet quia laudantium ipsa atque nemo, dolor nam?
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae veniam sed eos ea qui vero
+                        repellat dicta, mollitia nisi voluptatem? Doloribus commodi totam repellat fuga.
+                    </p>
+                </div>
+                <div class="about__sejarah-wrapper-btn">
+                    <div class="share-btn">
+                        <div class="share-btn-wrapper">
+
+                            <div class="share-btn-wrapper-btn">
+                                <ion-icon name="logo-facebook"></ion-icon>Facebook
+                            </div>
+                            <div class="share-btn-wrapper-btn">
+                                <ion-icon name="logo-whatsapp"></ion-icon>whatsapp
+                            </div>
+                            <div class="share-btn-wrapper-btn">
+                                <ion-icon name="logo-twitter"></ion-icon>twitter
                             </div>
                         </div>
-                        <div class="swiper-slide">
-                            <div class="swiper__box">
-                                <div alt="" class="swiper__box--img">
-                                    <div class="swiper__box--img--content"
-                                        style="background-image: url(../assets/img/sawah.jpg)"></div>
-                                </div>
-                                <div class="swiper__box--text">Sawah</div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="swiper__box">
-                                <div alt="" class="swiper__box--img">
-                                    <div class="swiper__box--img--content"
-                                        style="background-image: url(../assets/img/gedung.jpg)"></div>
-                                </div>
-                                <div class="swiper__box--text">Gedung</div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="swiper__box">
-                                <div alt="" class="swiper__box--img">
-                                    <div class="swiper__box--img--content"
-                                        style="background-image: url(../assets/img/aula.jpg)"></div>
-                                </div>
-                                <div class="swiper__box--text">aula</div>
-                            </div>
+                        <div class="share-btn-share">
+                            <ion-icon name="share-social"></ion-icon>
                         </div>
                     </div>
-                    <div class="swiper-button-next"></div>
-                    <div class="swiper-button-prev"></div>
                 </div>
             </div>
-        </div>
 
+        </div>
         <div class="about__makna">
             <div class="about__makna--wrapper">
                 <div class="about__makna--wrapper-left">

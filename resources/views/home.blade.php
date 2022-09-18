@@ -4,8 +4,7 @@
         <div class="alert-news-wrapper">
             <div class="alert-news-wrapper-info">
                 <ion-icon name="notifications"></ion-icon> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Id,
-                deleniti
-                consectetur nisi quidem doloribus perferendis!
+                deleniti consectetur nisi quidem doloribus perferendis!
             </div>
             <div class="alert-news-wrapper-close ">
                 <ion-icon class="btn-close-alert-news" name="close"></ion-icon>
@@ -77,7 +76,7 @@
 
         <div class="home__sambutan">
             <div class="home__sambutan--left">
-                <img src="../assets/img/kepalasekolah.svg" alt="" />
+                <div class="home__sambutan--left-img" style="background: url({{ asset('./assets/img/pgri.jpg') }})"></div>
             </div>
             <div class="home__sambutan--right">
                 <div class="card">
