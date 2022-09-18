@@ -150,6 +150,11 @@
                                 transparent,
                                 rgba(0, 0, 0, 0.7)
                             );
+
+                            @include respond(phone) {
+                                opacity: 1;
+                                visibility: visible;
+                            }
                             &-box {
                                 display: flex;
                                 flex-direction: column;
@@ -237,6 +242,7 @@
         transition-delay: 0.2s;
         background-color: white;
         width: 70%;
+        max-width: 144rem;
         border-radius: 0.5rem;
 
         @include respond(bp-768) {

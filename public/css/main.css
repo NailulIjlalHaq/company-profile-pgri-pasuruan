@@ -106,10 +106,13 @@
   box-sizing: border-box;
   text-decoration-line: none;
   color: #0c101a;
-  font-family: 'Inter', sans-serif; }
+  font-family: "Inter", sans-serif; }
 
 html {
   font-size: 10px; }
+  @media only screen and (min-width: 112.5em) {
+    html {
+      font-size: 14spx; } }
 
 body {
   display: flex;
@@ -503,7 +506,7 @@ body {
       .footer__wrapper--left__box {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        gap: 1.2rem 10rem; }
+        gap: 1.2rem 5rem; }
         @media only screen and (max-width: 68.75em) {
           .footer__wrapper--left__box {
             justify-content: space-between;
@@ -1296,42 +1299,49 @@ body {
 
 .about {
   width: 100%; }
-  .about__sejarah-wrapper-img {
-    height: 52.8rem;
-    background-position: 50% !important;
-    background-repeat: no-repeat !important;
-    background-size: cover !important;
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../assets/img/pgri.jpg"); }
-  .about__sejarah-wrapper-info {
-    padding: 5rem 10rem;
+  .about__sejarah-wrapper {
     display: flex;
     flex-direction: column;
-    gap: 3rem; }
-    @media only screen and (max-width: 48em) {
-      .about__sejarah-wrapper-info {
-        padding: 5rem; } }
-    @media only screen and (max-width: 31.25em) {
-      .about__sejarah-wrapper-info {
-        padding: 2rem; } }
-    .about__sejarah-wrapper-info span {
-      font-size: 3.2rem;
-      font-weight: 900;
-      text-transform: uppercase; }
-    .about__sejarah-wrapper-info p {
-      font-size: 1.4rem;
-      line-height: 1.7; }
-  .about__sejarah-wrapper-btn {
-    padding: 0 10rem; }
-    @media only screen and (max-width: 48em) {
-      .about__sejarah-wrapper-btn {
-        padding: 0 5rem; } }
+    align-items: center; }
+    .about__sejarah-wrapper-img {
+      align-self: stretch;
+      height: 52.8rem;
+      background-position: 50% !important;
+      background-repeat: no-repeat !important;
+      background-size: cover !important;
+      background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../assets/img/pgri.jpg"); }
+    .about__sejarah-wrapper-info {
+      padding: 5rem 10rem;
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+      max-width: 144rem; }
+      @media only screen and (max-width: 48em) {
+        .about__sejarah-wrapper-info {
+          padding: 5rem; } }
+      @media only screen and (max-width: 31.25em) {
+        .about__sejarah-wrapper-info {
+          padding: 2rem; } }
+      .about__sejarah-wrapper-info span {
+        font-size: 3.2rem;
+        font-weight: 900;
+        text-transform: uppercase; }
+      .about__sejarah-wrapper-info p {
+        font-size: 1.4rem;
+        line-height: 1.7; }
+    .about__sejarah-wrapper-btn {
+      padding: 0 10rem;
+      width: 100%;
+      max-width: 144rem; }
+      @media only screen and (max-width: 48em) {
+        .about__sejarah-wrapper-btn {
+          padding: 0 5rem; } }
   .about__makna {
     width: 100%;
-    margin: 5rem 0;
-    padding: 5rem 10rem;
     display: flex;
     justify-content: center;
-    background: #f6f7f9; }
+    background: #f6f7f9;
+    margin: 5rem 0; }
     @media only screen and (max-width: 48em) {
       .about__makna {
         padding: 5rem; } }
@@ -1339,6 +1349,7 @@ body {
       .about__makna {
         padding: 5rem 2rem; } }
     .about__makna--wrapper {
+      padding: 5rem 10rem;
       max-width: 144rem;
       width: 100%;
       height: fit-content;
@@ -1699,6 +1710,10 @@ body {
           align-items: flex-end;
           justify-content: space-between;
           background: linear-gradient(to bottom, transparent, transparent, rgba(0, 0, 0, 0.7)); }
+          @media only screen and (max-width: 37.5em) {
+            .artikel__wrapper--content .artikel-container-box__top--info {
+              opacity: 1;
+              visibility: visible; } }
           .artikel__wrapper--content .artikel-container-box__top--info-box {
             display: flex;
             flex-direction: column;
@@ -1763,6 +1778,7 @@ body {
     transition-delay: 0.2s;
     background-color: white;
     width: 70%;
+    max-width: 144rem;
     border-radius: 0.5rem; }
     @media only screen and (max-width: 48em) {
       .artikel-popup__wrapper {

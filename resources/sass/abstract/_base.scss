@@ -1,21 +1,23 @@
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  text-decoration-line: none;
-  color: $color-dark;
-  font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration-line: none;
+    color: $color-dark;
+    font-family: "Inter", sans-serif;
 }
 html {
-  font-size: 10px;
+    font-size: 10px;
+    @include respond(big-desktop) {
+        font-size: 14spx;
+    }
 }
 body {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
-.global-container{
-  width: 100%;
+.global-container {
+    width: 100%;
 }
-
