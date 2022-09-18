@@ -1,4 +1,4 @@
-@extends('index')
+@extends('frontend.index')
 @section('content')
     <div class="contact">
         <div class="contact-wrapper">

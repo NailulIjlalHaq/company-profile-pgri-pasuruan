@@ -14,14 +14,14 @@
                 background-size: cover !important;
                 background: linear-gradient(rgba(#000, 0.6), rgba(#000, 0.6)),
                     url("../assets/img/pgri.jpg");
-            }
-            &-info {
-                padding: 5rem 10rem;
-                display: flex;
+                }
+                &-info {
+                    padding: 5rem 10rem;
+                    display: flex;
                 flex-direction: column;
                 gap: 3rem;
                 max-width: 144rem;
-
+                
                 @include respond(bp-768) {
                     padding: 5rem;
                 }
@@ -43,6 +43,7 @@
                 }
             }
             &-btn {
+                
                 padding: 0 10rem;
                 width: 100%;
                 max-width: 144rem;

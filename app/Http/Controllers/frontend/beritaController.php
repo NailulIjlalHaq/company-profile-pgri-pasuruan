@@ -10,6 +10,6 @@ class beritaController extends Controller
 {
     public function index()
     {
-        return view('berita');
+        return view('frontend.berita');
     }
 }

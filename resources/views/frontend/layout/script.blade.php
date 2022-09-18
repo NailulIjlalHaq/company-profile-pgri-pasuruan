@@ -6,26 +6,29 @@
 {{-- component script --}}
 <script>
     // leaflet maps
-    var map = L.map('map', {
-        zoomControl: false,
-    }).setView([-7.76764, 112.74839], 13);
-    var tiles = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        minZoom: 12,
-        maxZoom: 17,
-        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
-    }).addTo(map);
+    if (window.location.href.indexOf('contact') > -1) {
+        var map = L.map('map', {
 
-    var marker = L.marker([-7.76764, 112.74839]).addTo(map).bindPopup('<b>SMKN 1 Purwosari, Pasuruan</b>')
-        .openPopup();
+            zoomControl: false,
+        }).setView([-7.76764, 112.74839], 13);
+        var tiles = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            minZoom: 12,
+            maxZoom: 17,
+            attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+        }).addTo(map);
 
-    var circle = L.circle([-7.76764, 112.74839], {
-            color: 'red',
-            fillColor: '#f03',
-            fillOpacity: 0.5,
-            radius: 100,
-        })
-        .addTo(map)
-        .bindPopup('Linkungan SMKN 1 PURWOSARI');
+        var marker = L.marker([-7.76764, 112.74839]).addTo(map).bindPopup('<b>SMKN 1 Purwosari, Pasuruan</b>')
+            .openPopup();
+
+        var circle = L.circle([-7.76764, 112.74839], {
+                color: 'red',
+                fillColor: '#f03',
+                fillOpacity: 0.5,
+                radius: 100,
+            })
+            .addTo(map)
+            .bindPopup('Linkungan SMKN 1 PURWOSARI');
+    }
 </script>
 
 
@@ -41,7 +44,7 @@
 
         modalToggle('header-phone', 'navbar', '-phone');
 
-        toggleElement('artikel-popup');
+        toggleElement('artikel-popup', 'artikel-container');
 
 
         if (!$('.about-link , .artikel-link , .contact-link , .gallery-link , .berita-link').hasClass(
@@ -118,36 +121,38 @@
     });
 
     // popup profile sectionar
-    function toggleElement(name) {
+    function toggleElement(name, box) {
         $(`.btn-show-${name}`).on('click', function() {
-            $(`.${name}`).addClass('show');
-            $(`.${name}__wrapper`).addClass('trans-0');
+            $(this).parents(`.${box}`).siblings(`.${name}`).addClass('show');
+            $(this).parents(`.${box}`).siblings(`.${name}`).children(`.${name}__wrapper`).addClass(
+                'trans-0');
             $(document).on('keyup', function(evt) {
                 if ($(`.${name}`).hasClass('show')) {
                     if (evt.keyCode == 27) {
                         $(`.${name}`).removeClass('show');
-                        $(`.${name}__wrapper`).removeClass('trans-0');
+                        $(`.${name}`).children(`.${name}__wrapper`).removeClass('trans-0');
                     }
                 }
             });
-            if ($(`.${name}`).hasClass('show')) {
-                $(window).on('click', function(e) {
-                    if (!$(`.${name}__wrapper`).get(0).contains(e.target) && !$(`.btn-show-${name}`)
-                        .get(0)
-                        .contains(e.target)) {
-                        $(`.${name}`).removeClass('show');
-                        $(`.${name}__wrapper`).removeClass('trans-0');
-                    }
-                })
-            }
+
+            // $(window).on('click', function(e) {
+            //     if (!$(`.artikel-popup__wrapper`).get(0).contains(e.target) && !$(
+            //             `.btn-show-artikel-popup`).get(0)
+            //         .contains(e.target)) {
+            //         $(`.artikel-popup`).removeClass('show');
+            //         $(`.artikel-popup__wrapper`).removeClass('trans-0');
+            //     }
+            // })
+
         });
-
-
         $(`.btn-close-${name}`).on('click', function() {
             $(`.${name}__wrapper`).removeClass('trans-0');
             $(`.${name}`).removeClass('show');
         });
     }
+
+
+
 
 
     $('.artikel-container-box__top--img ').hover(function() {
@@ -166,9 +171,8 @@
     })
 
     $('.share-btn-share').on('click', function() {
-        $('.share-btn-wrapper').toggleClass('trans-0')
-
-        $('.share-btn-wrapper').toggleClass('show')
+        $(this).siblings('.share-btn-wrapper').toggleClass('trans-0')
+        $(this).siblings('.share-btn-wrapper').toggleClass('show')
     })
     // swiperr / about.html
     if (window.location.href.indexOf('gallery') > -1) {

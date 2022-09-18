@@ -1,4 +1,4 @@
-@extends('index')
+@extends('frontend.index')
 @section('content')
     <div class="about">
         <div class="about__sejarah">
@@ -11,8 +11,6 @@
                         sequi ut
                         consectetur omnis nulla eveniet rerum itaque? Quos nihil quidem iure sed expedita?
                         Lorem, ipsum dolor sit amet consectetur adipisicing elit. In nesciunt possimus perspiciatis a neque
-                    </p>
-                    <p>
                         cupiditate soluta error dolorem sit, provident iusto nisi quidem velit molestias.
                         consectetur omnis nulla eveniet rerum itaque? Quos nihil quidem iure sed expedita?
                         Lorem, ipsum dolor sit amet consectetur adipisicing elit. In nesciunt possimus perspiciatis a neque

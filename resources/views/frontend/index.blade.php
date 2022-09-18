@@ -68,20 +68,19 @@
         }
     }
 </style>
-@include('layout/link')
-
+@include('frontend.layout/link')
 <body>
     <div class="loader">
         <img src={{ asset('./assets/img/logo.png') }} alt="">
     </div>
 
-    @include('layout/header')
+    @include('frontend.layout/header')
     <div class="global-container">
         @yield('content')
     </div>
-    @include('layout/footer')
+    @include('frontend.layout/footer')
     <script src="{{ asset('./js/jquery.js') }}"></script>
-    @include('layout/script')
+    @include('frontend.layout/script')
     @yield('js')
 </body>
 

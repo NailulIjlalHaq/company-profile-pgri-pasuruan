@@ -222,6 +222,7 @@
     overflow: auto;
     position: fixed;
     top: 0;
+    left: 0;
     z-index: 10;
     height: 100%;
     width: 100%;
@@ -293,6 +294,7 @@
                 flex-direction: column;
                 gap: 1rem;
                 padding: 2rem;
+                padding-bottom: 0;
                 p {
                     &:nth-child(1) {
                         font-size: 1.6rem;
@@ -302,6 +304,10 @@
                         font-size: 1.4rem;
                     }
                 }
+            }
+            &__btn {
+                padding: 2rem;
+                padding-top: 0;
             }
         }
     }

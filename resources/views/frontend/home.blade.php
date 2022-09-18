@@ -1,4 +1,4 @@
-@extends('index')
+@extends('frontend.index')
 @section('content')
     <div class="alert-news">
         <div class="alert-news-wrapper">

@@ -1,4 +1,4 @@
-@extends('index')
+@extends('frontend.index')
 @section('content')
     <div class="gallery">
         <div class="gallery-wrapper">
