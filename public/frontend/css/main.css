@@ -1,3 +1,7 @@
+html, body{
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 .undesc {
   overflow: hidden !important;
   text-overflow: unset !important;
@@ -365,7 +369,7 @@ body {
     justify-content: space-between;
     align-items: center;
     gap: 1rem;
-    padding: 2rem;
+    padding: 0.8rem;
     width: 100%; }
     .alert-news-wrapper-bell ion-icon {
       font-size: 2rem;
