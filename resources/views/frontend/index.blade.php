@@ -69,9 +69,10 @@
     }
 </style>
 @include('frontend.layout/link')
+
 <body>
     <div class="loader">
-        <img src={{ asset('./assets/img/logo.png') }} alt="">
+        <img src={{ asset('./frontend/assets/img/logo.png') }} alt="">
     </div>
 
     @include('frontend.layout/header')
@@ -79,7 +80,7 @@
         @yield('content')
     </div>
     @include('frontend.layout/footer')
-    <script src="{{ asset('./js/jquery.js') }}"></script>
+    <script src="{{ asset('./frontend/js/jquery.js') }}"></script>
     @include('frontend.layout/script')
     @yield('js')
 </body>
