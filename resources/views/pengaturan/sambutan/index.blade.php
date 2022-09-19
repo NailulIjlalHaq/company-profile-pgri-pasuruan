@@ -1,5 +1,5 @@
 @extends('master.master')
-@section('page', 'Artikel')
+@section('page','Pengaturan')
 @section('content')
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->
@@ -7,7 +7,7 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1>Data Artikel</h1>
+                        <h1>Data Pengaturan</h1>
                     </div>
                 </div>
             </div><!-- /.container-fluid -->
@@ -20,9 +20,8 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-header d-flex">
-                                <h3 class="card-title mr-auto">Data Artikel</h3>
-                                <a type="button" href="{{ route('artikel.create') }}" class="btn btn-primary">Tambah
-                                    Data</a>
+                                <h3 class="card-title mr-auto">Data Pengaturan</h3>
+                                <a href="{{route('pengaturan.create')}}" type="button" class="btn btn-primary">Tambah Pengaturan</a>
                             </div>
                             <!-- /.card-header -->
                             <div class="card-body">
@@ -31,11 +30,16 @@
                                         <tr>
                                             <th>Judul</th>
                                             <th>Isi</th>
-                                            <th>Foto Cover</th>
                                             <th>Aksi</th>
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        @foreach ($configs as $item)
+                                            <tr>
+                                                <td>{{$item->title}}</td>
+                                                <td>{{$item->content}}</td>
+                                            </tr>
+                                        @endforeach
                                     </tbody>
                                 </table>
                             </div>

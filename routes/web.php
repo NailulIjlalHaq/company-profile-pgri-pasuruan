@@ -29,6 +29,7 @@ Route::resource('berita', BeritaController::class)->except(['destroy']);
 Route::get('berita/{berita}/hapus', [BeritaController::class, 'destroy'])->name('berita.destroy');
 
 Route::resource('artikel', ArtikelController::class);
+Route::get('artikel/{artikel}/hapus', [ArtikelController::class, 'destroy'])->name('artikel.destroy');
 
 Route::resource('galeri', GaleriController::class);
 Route::get('galeri/{galeri}/hapus', [GaleriController::class, 'destroy'])->name('galeri.destroy');
