@@ -12,4 +12,7 @@ class beritaController extends Controller
     {
         return view('frontend.berita');
     }
+    public function detail(){
+        return view('frontend.detailBerita');
+    }
 }

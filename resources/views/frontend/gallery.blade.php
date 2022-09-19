@@ -56,6 +56,59 @@
             <div class="gallery-wrapper__content">
                 <div class="gallery-container">
 
+                    {{-- looping element in @section('js') --}}
+                    {{-- looping element in @section('js') --}}
+                    {{-- looping element in @section('js') --}}
+
+                    {{-- popup --}}
+                    <div class="gallery-popup">
+                        <div class="gallery-popup__wrapper">
+                            <div class="gallery-popup__wrapper--header">
+                                <div class="gallery-popup__wrapper--header--title">
+                                    <p>Detail Artikel</p>
+                                    <p>
+                                        <ion-icon class="btn-close-gallery-popup" name="close"></ion-icon>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="gallery-popup__wrapper--content">
+                                <div class="gallery-popup__wrapper--content__img"
+                                    style="background: url({{ asset('./assets/img/juara.jpg') }})"></div>
+                                <div class="gallery-popup__wrapper--content__info">
+
+                                    <p>Foto Title</p>
+                                    <p>
+                                        Melbourne based Illustrator & Designer Ken Taylor works primarily within the music
+                                        industry and
+                                        is predominantly well known for his striking rock posters. Ken started in Perth
+                                        Western
+                                        Australia doing posters and album
+                                        artwork for local bands.
+                                    </p>
+                                </div>
+                                <div class="gallery-popup__wrapper--content__btn">
+                                    <div class="share-btn">
+                                        <div class="share-btn-wrapper">
+
+                                            <div class="share-btn-wrapper-btn">
+                                                <ion-icon name="logo-facebook"></ion-icon>Facebook
+                                            </div>
+                                            <div class="share-btn-wrapper-btn">
+                                                <ion-icon name="logo-whatsapp"></ion-icon>whatsapp
+                                            </div>
+                                            <div class="share-btn-wrapper-btn">
+                                                <ion-icon name="logo-twitter"></ion-icon>twitter
+                                            </div>
+                                        </div>
+                                        <div class="share-btn-share">
+                                            <ion-icon name="share-social"></ion-icon>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -70,6 +123,12 @@
                 </div>`
             )
         }
+
+
+
+        $('.gallery-container-box-img').addClass('btn-show-gallery-popup')
+
+
     </script>
 @endsection
 @endsection

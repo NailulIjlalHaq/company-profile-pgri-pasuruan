@@ -44,7 +44,7 @@
 
         modalToggle('header-phone', 'navbar', '-phone');
 
-        toggleElement('artikel-popup', 'artikel-container');
+        toggleElement('gallery-popup', 'gallery-container-box');
 
 
         if (!$('.about-link , .artikel-link , .contact-link , .gallery-link , .berita-link').hasClass(

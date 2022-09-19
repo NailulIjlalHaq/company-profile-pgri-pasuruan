@@ -2,9 +2,14 @@
 @section('content')
     <div class="alert-news">
         <div class="alert-news-wrapper">
+            <div class="alert-news-wrapper-bell">
+                <ion-icon name="notifications"></ion-icon>
+            </div>
             <div class="alert-news-wrapper-info">
-                <ion-icon name="notifications"></ion-icon> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Id,
-                deleniti consectetur nisi quidem doloribus perferendis!
+                <p class="alert-news-wrapper-info-text">
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Id,
+                    deleniti consectetur nisi quidem doloribus perferendis!
+                </p>
             </div>
             <div class="alert-news-wrapper-close ">
                 <ion-icon class="btn-close-alert-news" name="close"></ion-icon>
