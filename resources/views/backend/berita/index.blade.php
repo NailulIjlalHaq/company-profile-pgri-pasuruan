@@ -1,5 +1,5 @@
-@extends('master.master')
-@section('page','Galeri')
+@extends('backend.master.master')
+@section('page','Berita')
 @section('content')
 <div class="content-wrapper row justify-content-center">
     <div class="col-9 ">
@@ -8,10 +8,10 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-9">
-                        <h1>Galeri</h1>
+                        <h1>Berita</h1>
                     </div>
                     <div class="col-sm-3 text-right">
-                        <a href="{{route('galeri.create')}}" type="button" class="btn btn-primary">Tambah Galeri</a>
+                        <a href="{{route('berita.create')}}" type="button" class="btn btn-primary">Tambah Berita</a>
                     </div>
                 </div>
             </div><!-- /.container-fluid -->
@@ -44,7 +44,7 @@
                                 <table id="example2 " class="table table-striped data-table">
                                     <thead>
                                         <tr>
-                                            <th>Nama Galeri</th>
+                                            <th>Judul Berita</th>
                                             <th></th>
                                         </tr>
                                     </thead>
@@ -75,14 +75,14 @@
         var table = $('.data-table').DataTable({
             processing: true,
             serverSide: true,
-            ajax: "{{ route('galeri.index') }}",
+            ajax: "{{ route('berita.index') }}",
             columns: [{
-                    data: 'name',
-                    name: 'name'
+                    data: 'title',
+                    name: 'title'
                 },
                 {
-                    data: 'file',
-                    name: 'file',
+                    data: 'cover_img',
+                    name: 'cover_img',
                     className: 'text-center',
                     orderable: false,
                     searchable: false,

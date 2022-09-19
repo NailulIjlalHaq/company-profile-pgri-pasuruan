@@ -1,4 +1,4 @@
-@extends('master.master')
+@extends('backend.master.master')
 @section('page', $isEdit?'Edit Galeri':'Tambah Galeri')
 @section('content')
 <!-- Content Wrapper. Contains page content -->

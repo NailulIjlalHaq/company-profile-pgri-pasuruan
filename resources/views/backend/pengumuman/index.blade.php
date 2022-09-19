@@ -1,5 +1,5 @@
-@extends('master.master')
-@section('page','Berita')
+@extends('backend.master.master')
+@section('page','Pengumuman')
 @section('content')
 <div class="content-wrapper row justify-content-center">
     <div class="col-9 ">
@@ -8,10 +8,10 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-9">
-                        <h1>Berita</h1>
+                        <h1>Pengumuman</h1>
                     </div>
                     <div class="col-sm-3 text-right">
-                        <a href="{{route('berita.create')}}" type="button" class="btn btn-primary">Tambah Berita</a>
+                        <a href="{{route('pengumuman.create')}}" type="button" class="btn btn-primary">Tambah Pengumuman</a>
                     </div>
                 </div>
             </div><!-- /.container-fluid -->
@@ -44,7 +44,7 @@
                                 <table id="example2 " class="table table-striped data-table">
                                     <thead>
                                         <tr>
-                                            <th>Judul Berita</th>
+                                            <th>Judul Pengumuman</th>
                                             <th></th>
                                         </tr>
                                     </thead>
@@ -75,7 +75,7 @@
         var table = $('.data-table').DataTable({
             processing: true,
             serverSide: true,
-            ajax: "{{ route('berita.index') }}",
+            ajax: "{{ route('pengumuman.index') }}",
             columns: [{
                     data: 'title',
                     name: 'title'

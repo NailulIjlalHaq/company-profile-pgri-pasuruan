@@ -22,16 +22,17 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [PageController::class, 'index'])->name('home');
 
-Route::resource('pengumuman', PengumumanController::class);
+Route::resource('pengumuman', PengumumanController::class)->except(['destroy']);
+Route::get('pengumuman/{pengumuman}/hapus', [PengumumanController::class, 'destroy'])->name('pengumuman.destroy');
 
 Route::get('berita/fokus', [BeritaController::class, 'setFocus'])->name('berita.setFocus');
 Route::resource('berita', BeritaController::class)->except(['destroy']);
 Route::get('berita/{berita}/hapus', [BeritaController::class, 'destroy'])->name('berita.destroy');
 
-Route::resource('artikel', ArtikelController::class);
+Route::resource('artikel', ArtikelController::class)->except(['destroy']);
 Route::get('artikel/{artikel}/hapus', [ArtikelController::class, 'destroy'])->name('artikel.destroy');
 
-Route::resource('galeri', GaleriController::class);
+Route::resource('galeri', GaleriController::class)->except(['destroy']);
 Route::get('galeri/{galeri}/hapus', [GaleriController::class, 'destroy'])->name('galeri.destroy');
 
 Route::resource('pengaturan', PengaturanController::class);

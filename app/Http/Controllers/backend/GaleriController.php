@@ -37,7 +37,7 @@ class GaleriController extends Controller
                 ->make(true);
         }
 
-        return view('galeri.index');
+        return view('backend.galeri.index');
     }
 
     /**
@@ -50,7 +50,7 @@ class GaleriController extends Controller
 
         //memberikan status edit form false untuk digunakan untuk menampilkan form tambah
         $isEdit = false;
-        return view('galeri.form',compact('isEdit'));
+        return view('backend.galeri.form',compact('isEdit'));
     }
 
     /**
@@ -108,7 +108,7 @@ class GaleriController extends Controller
         // Mengeset status edit untuk menampilkan form edit galeri
         $isEdit = true;
 
-        return view('galeri.form', compact('post', 'isEdit'));
+        return view('backend.galeri.form', compact('post', 'isEdit'));
     }
 
     /**

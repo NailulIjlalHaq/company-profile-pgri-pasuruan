@@ -44,7 +44,7 @@ class BeritaController extends Controller
                 ->make(true);
         }
 
-        return view('berita.index');
+        return view('backend.berita.index');
     }
 
     /**
@@ -59,7 +59,7 @@ class BeritaController extends Controller
 
         //memberikan status edit form false untuk digunakan untuk menampilkan form tambah
         $isEdit = false;
-        return view('berita.form', compact('kategori', 'isEdit'));
+        return view('backend.berita.form', compact('kategori', 'isEdit'));
     }
 
     /**
@@ -124,7 +124,7 @@ class BeritaController extends Controller
         // Mengeset status edit untuk menampilkan form edit berita
         $isEdit = true;
 
-        return view('berita.form', compact('post', 'kategori', 'isEdit'));
+        return view('backend.berita.form', compact('post', 'kategori', 'isEdit'));
     }
 
     /**
@@ -170,7 +170,7 @@ class BeritaController extends Controller
     public function destroy($id)
     {
         // Fungsi untuk mengambil data post sesuai dengan id
-        $post = posts::find(id);
+        $post = posts::find($id);
         // Mengeset ke dalam folder image cover diupload
         $imagePath = public_path($post->cover_img);
 

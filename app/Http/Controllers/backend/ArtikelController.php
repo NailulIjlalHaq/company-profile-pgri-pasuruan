@@ -44,7 +44,7 @@ class ArtikelController extends Controller
                 ->make(true);
         }
 
-        return view('artikel.index');
+        return view('backend.artikel.index');
     }
 
     /**
@@ -59,7 +59,7 @@ class ArtikelController extends Controller
 
         //memberikan status edit form false untuk digunakan untuk menampilkan form tambah
         $isEdit = false;
-        return view('artikel.form', compact('kategori', 'isEdit'));
+        return view('backend.artikel.form', compact('kategori', 'isEdit'));
     }
 
     /**
@@ -124,7 +124,7 @@ class ArtikelController extends Controller
         // Mengeset status edit untuk menampilkan form edit artikel
         $isEdit = true;
 
-        return view('artikel.form', compact('post', 'kategori', 'isEdit'));
+        return view('backend.artikel.form', compact('post', 'kategori', 'isEdit'));
     }
 
     /**

@@ -1,8 +1,8 @@
-@extends('master.master')
-@section('page', $isEdit?'Edit Berita':'Tambah Berita')
+@extends('backend.master.master')
+@section('page', $isEdit?'Edit Artikel':'Tambah Artikel')
 @section('content')
 <!-- Content Wrapper. Contains page content -->
-<form action="{{$isEdit?route('berita.update',$post->id_posts):route('berita.store')}}" method="POST" enctype="multipart/form-data">
+<form action="{{$isEdit?route('artikel.update',$post->id_posts):route('artikel.store')}}" method="POST" enctype="multipart/form-data">
     @csrf
     @if($isEdit)
     @method('PUT')
@@ -18,7 +18,7 @@
                         </h1>
                     </div><!-- /.col -->
                     <div class="col-sm-6 mt-2 text-right">
-                        <a class="btn btn-danger mr-2" href="{{ route('berita.index') }}">
+                        <a class="btn btn-danger mr-2" href="{{ route('artikel.index') }}">
                             <i class="fa fa-undo mr-1"> </i> Batalkan
                         </a>
                         <button type="submit" class="btn btn-info">
@@ -39,10 +39,10 @@
                         <div class="alert alert-light alert-dismissible fade show mb-1" role="alert">
                             <h5 class="alert-heading"> Keterangan : </h5>
                             <p>
-                                - Isi <b>Banner</b> selengkap dan sebenar mungkin.<br />
+                                - Isi <b>Artikel</b> selengkap dan sebenar mungkin.<br />
                                 - Gunakan <i>button</i>
                                 <button class="btn btn-xs btn-info"><span class="fa fa-save"></span> Simpan </button>
-                                untuk menambahkan <b>Banner</b>.<br />
+                                untuk menambahkan <b>Artikel</b>.<br />
                                 Untuk <b>Keterangan</b> dan <b>Informasi</b> lebih lanjut silahkan hubungi <b>Bagian IT
                                     (Information &amp; Technology)</b>
                             </p>

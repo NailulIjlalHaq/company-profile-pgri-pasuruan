@@ -29,7 +29,7 @@ class KategoriController extends Controller
                 ->rawColumns(['action'])
                 ->make(true);
         }
-        return view('kategori.index');
+        return view('backend.kategori.index');
     }
 
     /**
@@ -39,7 +39,7 @@ class KategoriController extends Controller
      */
     public function create()
     {
-        return view('kategori.form');
+        return view('backend.kategori.form');
     }
 
     /**
@@ -82,7 +82,7 @@ class KategoriController extends Controller
     public function edit($id)
     {
         $kategori = categories::find($id);
-        return view('kategori.form', compact('kategori'));
+        return view('backend.kategori.form', compact('kategori'));
     }
 
     /**

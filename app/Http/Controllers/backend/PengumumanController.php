@@ -1,10 +1,15 @@
 <?php
 
 namespace App\Http\Controllers\backend;
-use App\Http\Controllers\Controller;
+
+use DataTables;
 
 use App\Models\posts;
+use App\Models\categories;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use App\Http\Requests\StorePengumumanRequest;
+use App\Http\Requests\UpdatePengumumanRequest;
 
 class PengumumanController extends Controller
 {
@@ -13,10 +18,33 @@ class PengumumanController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $post = posts::latest()->get();
-        return view('pengumuman.index',compact('post'));
+        if ($request->ajax()) {
+            $data = posts::with('categories');
+            return DataTables::of($data)
+                ->editColumn('title', function ($row) {
+                    // Memberikan dan mengecek status fokus pengumuman
+                    $is_focus = $row->is_focus ? 'Nonaktifkan' : 'Fokuskan';
+
+                    // Menampilkan judul pengumuman beserta tombol aksi
+                    return '
+                    <h2 class="lead mb-0"><b>' . $row->title . '</b></h2>
+                    <p class="text-muted">
+                        <small><b>Kategori - </b>' . $row->categories->name . '</small>
+                    </p>
+                    <div class="mt-3">
+                        <a href="' . route('pengumuman.destroy', $row->id_posts) . '" class="btn bg-teal btn-sm" onclick="return confirm(\'Apakah anda yakin ingin menghapus data ini ?\')">Hapus</a>
+                        <a href="' . route('pengumuman.edit', $row->id_posts) . '" class="btn btn-primary btn-sm">Edit</a>
+                        <a href="' . route('berita.setFocus', ['id' => $row->id_posts, 'is_active' => $row->is_focus ? false : true]) . '" class="btn btn-primary btn-sm" onclick="return confirm(\'Apakah anda ingin memfokuskan berita di beranda ?\')">' . $is_focus . '</a>
+                    </div>
+                    ';
+                })
+                ->rawColumns(['title'])
+                ->make(true);
+        }
+
+        return view('backend.pengumuman.index');
     }
 
     /**
@@ -26,7 +54,12 @@ class PengumumanController extends Controller
      */
     public function create()
     {
-        return view('pengumuman.create');
+        // Fungsi untuk mengambil data kategori dan ditampilkan dalam form pengumuman
+        $kategori = categories::select('id_categories', 'name')->where('type', 'berita')->get();
+
+        //memberikan status edit form false untuk digunakan untuk menampilkan form tambah
+        $isEdit = false;
+        return view('backend.pengumuman.form', compact('kategori', 'isEdit'));
     }
 
     /**
@@ -35,9 +68,32 @@ class PengumumanController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StorePengumumanRequest $request)
     {
-        //
+        try {
+            // Memanggil fungsi untuk meload semua konten yang ada di summernote dan mengupload gambar
+            // dan mengembalikan dalam bentuk html
+            $konten = $this->loadContent($request->konten);
+
+            // Memanggil fungsi untuk mengupload gambar cover
+            $imagePath = $this->uploadCover($request->cover_img);
+
+            // Fungsi untuk menyimpan semua data
+            $post = new posts;
+            $post->title = $request->judul;
+            $post->content = $konten;
+            $post->id_categories = $request->kategori;
+            $post->tag = $request->tag;
+            $post->type = 'berita';
+            $post->cover_img = $imagePath;
+            $post->is_focus = 0;
+            $post->save();
+
+            // Fungsi untuk menuju halaman index dan memberikan pesan sukses
+            return redirect()->route('pengumuman.index')->with('success', 'Pengumuman berhasil disimpan dan di publish.');
+        } catch (\Exception $e) {
+            print_r($e);
+        }
     }
 
     /**
@@ -59,7 +115,16 @@ class PengumumanController extends Controller
      */
     public function edit($id)
     {
-        //
+        // Fungsi untuk mengambil data pengumuman sesuai dengan id
+        $post = posts::find($id);
+
+        // Fungsi untuk mengambil data kategori untuk di tampilkan dalam form pengumuman
+        $kategori = categories::select('id_categories', 'name')->where('type', 'berita')->get();
+
+        // Mengeset status edit untuk menampilkan form edit pengumuman
+        $isEdit = true;
+
+        return view('backend.pengumuman.form', compact('post', 'kategori', 'isEdit'));
     }
 
     /**
@@ -69,9 +134,31 @@ class PengumumanController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(UpdatePengumumanRequest $request, $id)
     {
-        //
+        // Memanggil fungsi untuk meload semua konten yang ada di summernote dan mengupload gambar
+        // dan mengembalikan dalam bentuk html
+        $konten = $this->loadContent($request->konten);
+
+        // Fungsi untuk mengambil data pengumuman sesuai dengan id
+        $post = posts::find($id);
+
+        // Fungsi untuk mengeck apabila cover img tidak kosong
+        // dan mengganti cover img lama dengan yang baru
+        if (!empty($request->cover_img)) {
+            unlink($post->cover_img);
+            $imagePath = $this->uploadCover($request->cover_img);
+            $post->cover_img = $imagePath;
+        }
+
+        // fungsi untuk mengupdate data pengumuman sesuai dengan id
+        $post->title = $request->judul;
+        $post->content = $konten;
+        $post->id_categories = $request->kategori;
+        $post->tag = $request->tag;
+        $post->save();
+
+        return redirect()->route('pengumuman.index')->with('success', 'Pengumuman berhasil diubah dan di publish.');
     }
 
     /**
@@ -82,6 +169,69 @@ class PengumumanController extends Controller
      */
     public function destroy($id)
     {
-        //
+        // Fungsi untuk mengambil data post sesuai dengan id
+        $post = posts::find($id);
+        // Mengeset ke dalam folder image cover diupload
+        $imagePath = public_path($post->cover_img);
+
+        // Mengecek dan menghapus file cover image pada server
+        if ($imagePath) {
+            unlink($post->cover_img);
+        }
+
+        // Fungsi untuk menghapus data post pada database
+        posts::destroy($id);
+
+        return redirect()->route('pengumuman.index')->with('success', 'Pengumuman berhasil dihapus dari sistem.');
+    }
+
+    public function setFocus(Request $request)
+    {
+        // Fungsi untuk mengupload cover image pada server dan di simpan pada folder public
+        if ($request->has('id')) {
+            $countFokus = posts::where('is_focus', true)->count();
+            if ($countFokus > 5) {
+                return redirect->route('pengumuman.index')->with('error', 'Jumlah Pengumuman yang dapat di set fokus melebihi batas, silahkan nonaktifkan salah satu data.');
+            }
+
+
+            posts::where('id_posts', $request->id)->update(['is_focus' => $request->is_active]);
+
+            return redirect()->route('pengumuman.index')->with('success', 'Pengumuman berhasil di ubah');
+        }
+    }
+
+    public function loadContent($content)
+    {
+        // Fungsi untuk meload konten summernote dan mengupload gambar pada konten
+        $dom = new \DomDocument();
+        $dom->loadHtml($content, LIBXML_NOWARNING | LIBXML_NOERROR);
+        $images = $dom->getElementsByTagName('img');
+        foreach ($images as $k => $img) {
+            $data = $img->getAttribute('src');
+            if (strpos($data, 'data:image') !== false) {
+                list($type, $data) = explode(';', $data);
+                list(, $data)      = explode(',', $data);
+
+                $data = base64_decode($data);
+
+                $image_name = "/content_img/" . time() . $k . '.png';
+                $path = public_path() . $image_name;
+                file_put_contents($path, $data);
+
+                $img->removeAttribute('src');
+                $img->setAttribute('src', $image_name);
+            }
+        }
+        return $dom->saveHTML();
+    }
+
+    public function uploadCover($imageFile)
+    {
+        $extFile = $imageFile->getClientOriginalName();
+        $path = $imageFile->move('post_cover', 'cover_image_' . time() . '.' . $extFile);
+        $path = str_replace('\\', '/', $path);
+
+        return $path;
     }
 }

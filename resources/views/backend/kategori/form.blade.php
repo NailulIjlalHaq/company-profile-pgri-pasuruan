@@ -1,4 +1,4 @@
-@extends('master.master')
+@extends('backend.master.master')
 @section('page', isset($kategori)?'Edit Kategori':'Tambah Kategori')
 @section('content')
 <!-- Content Wrapper. Contains page content -->
