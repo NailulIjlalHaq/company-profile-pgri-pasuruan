@@ -30,7 +30,8 @@ Route::get('berita/{berita}/hapus', [BeritaController::class, 'destroy'])->name(
 
 Route::resource('artikel', ArtikelController::class);
 
-Route::resource('galleries', GaleriController::class);
+Route::resource('galeri', GaleriController::class);
+Route::get('galeri/{galeri}/hapus', [GaleriController::class, 'destroy'])->name('galeri.destroy');
 
 Route::resource('pengaturan', PengaturanController::class);
 

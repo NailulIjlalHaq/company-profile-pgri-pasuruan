@@ -1,13 +1,17 @@
 @extends('master.master')
-@section('page', 'Galeri')
+@section('page','Galeri')
 @section('content')
-    <div class="content-wrapper">
+<div class="content-wrapper row justify-content-center">
+    <div class="col-9 ">
         <!-- Content Header (Page header) -->
         <section class="content-header">
             <div class="container-fluid">
                 <div class="row mb-2">
-                    <div class="col-sm-6">
-                        <h1>Data Galeri</h1>
+                    <div class="col-sm-9">
+                        <h1>Galeri</h1>
+                    </div>
+                    <div class="col-sm-3 text-right">
+                        <a href="{{route('galeri.create')}}" type="button" class="btn btn-primary">Tambah Galeri</a>
                     </div>
                 </div>
             </div><!-- /.container-fluid -->
@@ -18,38 +22,33 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-12">
+                        @if(session('success'))
+                        <div class="alert alert-success alert-dismissible fade show" role="alert" id="alert">
+                            <strong>Informasi : {{session('success')}}</strong>
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        @endif
+                        @if(session('error'))
+                        <div class="alert alert-warning alert-dismissible fade show" role="alert" id="alert">
+                            <strong>Peringatan : {{session('error')}}</strong>
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        @endif
                         <div class="card">
-                            <div class="card-header d-flex">
-                                <h3 class="card-title mr-auto">Data Galeri</h3>
-                                <a href="{{ route('galleries.create') }}" type="button" class="btn btn-primary">Tambah
-                                    Foto</a>
-                            </div>
                             <!-- /.card-header -->
                             <div class="card-body">
-                                <table id="example2" class="table">
+                                <table id="example2 " class="table table-striped data-table">
                                     <thead>
                                         <tr>
-                                            <th>Judul</th>
-                                            <th>Deskripsi</th>
-                                            <th>Foto Cover</th>
-                                            <th>Aksi</th>
+                                            <th>Nama Galeri</th>
+                                            <th></th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach ($galleries as $item)
-                                            <tr>
-                                                <td>{{ $item->name }}</td>
-                                                <td>{{ $item->description }}</td>
-                                                <td>
-                                                    @if ($item->file != '-')
-                                                        <img src="{{ config('app.url') . 'file_upload' . $item->file }}"
-                                                            width="100">
-                                                    @else
-                                                        <p>Tidak Ada Foto</p>
-                                                    @endif
-                                                </td>
-                                            </tr>
-                                        @endforeach
                                     </tbody>
                                 </table>
                             </div>
@@ -64,4 +63,38 @@
         </section>
         <!-- /.content -->
     </div>
+</div>
+@endsection
+@section('javascript')
+<script type="text/javascript">
+    $(function() {
+        setTimeout(() => {
+            $('#alert').alert('close');
+        }, 6000);
+
+        var table = $('.data-table').DataTable({
+            processing: true,
+            serverSide: true,
+            ajax: "{{ route('galeri.index') }}",
+            columns: [{
+                    data: 'name',
+                    name: 'name'
+                },
+                {
+                    data: 'file',
+                    name: 'file',
+                    className: 'text-center',
+                    orderable: false,
+                    searchable: false,
+                    width: '25%',
+                    render: function(data, type, full, meta) {
+                        return "<img src=\"/" + data + "\" class=\"img-thumbnail rounded\" style=\"height: 90px;width:120px;object-fit:cover\">";
+                    }
+                },
+
+            ]
+        });
+
+    });
+</script>
 @endsection

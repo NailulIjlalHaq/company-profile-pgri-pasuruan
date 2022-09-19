@@ -13,4 +13,5 @@ class galleries extends Model
         'description',
         'file',
     ];
+    protected $primaryKey = 'id_galleries';
 }
