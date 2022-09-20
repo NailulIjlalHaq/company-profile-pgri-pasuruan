@@ -55,7 +55,7 @@
         setTimeout(() => {
             // $('.loader').addClass('trans-100')
             $('.loader').addClass('hide')
-        }, 1000);
+        }, 2000);
     });
 
 

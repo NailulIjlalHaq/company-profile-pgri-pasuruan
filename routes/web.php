@@ -17,24 +17,24 @@ use App\Http\Controllers\backend\PengumumanController;
 use Illuminate\Support\Facades\Route;
 
 //index route
-Route::get('/', [homeController::class, 'index'])->name('home');
+Route::get('/', [homeController::class, 'index'])->name('feHome');
 
 //about route
-Route::get('/about', [aboutController::class, 'index'])->name('about');
+Route::get('/about', [aboutController::class, 'index'])->name('feAbout');
 
 //artikel route
-Route::get('/artikel', [artikelController::class, 'index'])->name('artikel');
-Route::get('/detailArtikel', [artikelController::class, 'detail'])->name('detailArtikel');
+Route::get('/artikel', [artikelController::class, 'index'])->name('feArtikel');
+Route::get('/detailArtikel', [artikelController::class, 'detail'])->name('feDetailArtikel');
 
 //berita route
-Route::get('/berita', [beritaController::class, 'index'])->name('berita');
-Route::get('/detailBerita', [beritaController::class, 'detail'])->name('detailBerita');
+Route::get('/berita', [beritaController::class, 'index'])->name('feBerita');
+Route::get('/detailBerita', [beritaController::class, 'detail'])->name('feDetailBerita');
 
 //gallery route
-Route::get('/gallery', [galleryController::class, 'index'])->name('gallery');
+Route::get('/gallery', [galleryController::class, 'index'])->name('feGallery');
 
 //contact route
-Route::get('/contact', [contactController::class, 'index'])->name('contact');
+Route::get('/contact', [contactController::class, 'index'])->name('feContact');
 
 
 //
