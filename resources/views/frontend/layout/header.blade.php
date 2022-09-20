@@ -16,7 +16,7 @@
 
             </div>
             <div class="header__list-box ">
-                <a  class="header__list-box--item about-link">Profile</a>
+                <a class="header__list-box--item about-link">Profile</a>
                 <div class="header__list-box-dropdown">
                     <div class="header-dropdown">
                         <div class="header-dropdown-wrapper">
@@ -34,7 +34,7 @@
                 <a href={{ route('feArtikel') }} class="header__list-box--item artikel-link">Artikel</a>
             </div>
             <div class="header__list-box">
-                <a  class="header__list-box--item berita-link">Berita</a>
+                <a href={{ route('feBerita') }} class="header__list-box--item berita-link">Berita</a>
             </div>
             <div class="header__list-box">
                 <a href={{ route('feGallery') }} class="header__list-box--item gallery-link">Gallery</a>
@@ -65,12 +65,24 @@
 
         <div class="header-phone-list">
             <a href={{ route('feHome') }} class="header-phone-list-item home-link">Home</a>
-            <a href={{ route('feAbout') }} class="header-phone-list-item about-link">Profile</a>
+            <a class="header-phone-list-item about-link">Profile
+                <div class="header__list-box-dropdown">
+                    <div class="header-dropdown">
+                        <div class="header-dropdown-wrapper">
+                            <div class="header-dropdown-wrapper__list"
+                                onclick="location.href='{{ route('profile-sejarah') }}'">Sejarah</div>
+                            <div class="header-dropdown-wrapper__list"
+                                onclick="location.href='{{ route('profile-makna') }}'">Makna Logo</div>
+                            <div class="header-dropdown-wrapper__list"
+                                onclick="location.href='{{ route('profile-visi-misi') }}'"> Visi & misi</div>
+                        </div>
+                    </div>
+                </div>
+            </a>
             <a href={{ route('feArtikel') }} class="header-phone-list-item artikel-link">Article</a>
             <a href={{ route('feBerita') }} class="header-phone-list-item berita-link">News</a>
             <a href={{ route('feGallery') }} class="header-phone-list-item gallery-link">Gallery</a>
             <a href={{ route('feContact') }} class="header-phone-list-item contact-link">Contact</a>
-            <a href="#" class="header-phone-list-item btn-join">Join Us &rarr;</a>
         </div>
     </div>
 </header>

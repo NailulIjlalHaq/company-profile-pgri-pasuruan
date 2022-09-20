@@ -18,6 +18,7 @@ use Illuminate\Support\Facades\Route;
 
 //index route
 Route::get('/', [homeController::class, 'index'])->name('feHome');
+Route::get('/detail-sambutan', [homeController::class, 'detailSambutan'])->name('feDetailSambutan');
 
 //about route
 Route::get('/about', [aboutController::class, 'index'])->name('feAbout');
@@ -27,11 +28,11 @@ Route::get('/profile-visi-misi', [aboutController::class, 'visiMisi'])->name('pr
 
 //artikel route
 Route::get('/artikel', [artikelController::class, 'index'])->name('feArtikel');
-Route::get('/detailArtikel', [artikelController::class, 'detail'])->name('feDetailArtikel');
+Route::get('/detail-artikel', [artikelController::class, 'detail'])->name('feDetailArtikel');
 
 //berita route
 Route::get('/berita', [beritaController::class, 'index'])->name('feBerita');
-Route::get('/detailBerita', [beritaController::class, 'detail'])->name('feDetailBerita');
+Route::get('/detail-berita', [beritaController::class, 'detail'])->name('feDetailBerita');
 
 //gallery route
 Route::get('/gallery', [galleryController::class, 'index'])->name('feGallery');

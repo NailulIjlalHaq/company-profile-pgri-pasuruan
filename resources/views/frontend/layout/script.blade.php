@@ -35,12 +35,15 @@
 <script>
     // navbar link active
     $(document).ready(function() {
-        activeLink('about');
-        activeLink('artikel');
-        activeLink('home');
-        activeLink('contact');
-        activeLink('berita');
-        activeLink('gallery');
+        activeLink('about', 'about');
+        activeLink('artikel', 'artikel');
+        activeLink('home', 'home');
+        activeLink('contact', 'contact');
+        activeLink('berita', 'berita');
+        activeLink('gallery', 'gallery');
+        activeLink('profile-sejarah', 'about');
+        activeLink('profile-makna', 'about');
+        activeLink('profile-visi-misi', 'about');
 
         modalToggle('header-phone', 'navbar', '-phone');
 
@@ -55,13 +58,13 @@
         setTimeout(() => {
             // $('.loader').addClass('trans-100')
             $('.loader').addClass('hide')
-        }, 2000);
+        }, 2500);
     });
 
 
-    function activeLink(name) {
+    function activeLink(name, link) {
         if (window.location.href.indexOf(name) > -1) {
-            $(`.${name}-link`).addClass('active-link');
+            $(`.${link}-link`).addClass('active-link');
         }
     }
 
@@ -84,17 +87,20 @@
     darkScroll('gallery')
 
 
-
-    $('.header__list-box--item').hover(function() {
-        $('.header__list-box-dropdown').hover(function() {
-            $(this).addClass('show')
+    function dropdownProfile(drop, hov) {
+        $(`.${hov}`).hover(function() {
+            $(this).siblings(`.${drop}`).hover(function() {
+                $(this).addClass('show')
+            }, function() {
+                $(this).removeClass('show')
+            })
+            $(this).siblings(`.${drop}`).addClass('show')
         }, function() {
-            $(this).removeClass('show')
+            $(this).siblings(`.${drop}`).removeClass('show')
         })
-        $(this).siblings('.header__list-box-dropdown').addClass('show')
-    }, function() {
-        $(this).siblings('.header__list-box-dropdown').removeClass('show')
-    })
+    }
+    dropdownProfile('header__list-box-dropdown', 'header-phone-list-item')
+    dropdownProfile('header__list-box-dropdown', 'header__list-box--item')
 
     // modal
     function modalToggle(modal, name, ec) {
@@ -180,20 +186,8 @@
         var swiper = new Swiper('.mySwiper', {
             loop: true,
             loopFillGroupWithBlank: true,
-            breakpoints: {
-                500: {
-                    slidesPerView: 2,
-                    spaceBetween: 20,
-                },
-                700: {
-                    slidesPerView: 3,
-                    spaceBetween: 30,
-                },
-                1000: {
-                    slidesPerView: 4,
-                    spaceBetween: 40,
-                },
-            },
+            slidesPerView: 1,
+
             pagination: {
                 el: '.swiper-pagination',
                 clickable: true,

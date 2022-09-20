@@ -13,4 +13,7 @@ class homeController extends Controller
     {
         return view('frontend.home');
     }
+    public function detailSambutan(){
+        return view('frontend.detailSambutan');
+    }
 }

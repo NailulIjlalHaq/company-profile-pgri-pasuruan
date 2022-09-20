@@ -160,11 +160,17 @@
                     width: 100%;
                     display: flex;
                     gap: 0.3rem;
-                    &-1 {
-                        width: 50%;
-                    }
+                    &-1,
                     &-2 {
                         width: 50%;
+                        .news-img-text {
+                            &-top {
+                                font-size: 1.4rem;
+                            }
+                            &-bottom {
+                                font-size: 1rem;
+                            }
+                        }
                     }
                 }
             }
