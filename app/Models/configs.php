@@ -8,8 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class configs extends Model
 {
     use HasFactory;
-    protected $fillable = [
-        'title',
-        'content',
-    ];
+    // protected $fillable = [
+    //     'title',
+    //     'content',
+    // ];
+    protected $guarded = [];
+    protected $primaryKey = "id_configs";
 }
