@@ -58,7 +58,7 @@
         setTimeout(() => {
             // $('.loader').addClass('trans-100')
             $('.loader').addClass('hide')
-        }, 2500);
+        }, 3000);
     });
 
 
@@ -187,7 +187,6 @@
             loop: true,
             loopFillGroupWithBlank: true,
             slidesPerView: 1,
-
             pagination: {
                 el: '.swiper-pagination',
                 clickable: true,

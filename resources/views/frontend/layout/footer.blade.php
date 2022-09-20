@@ -4,7 +4,7 @@
             <div class="footer__wrapper--left">
                 <div class="footer-logo-container">
                     <div onclick="window.location.href('{{ route('home') }}')" class="footer__wrapper--left__logo">
-                        <img src="../assets/img/logo.png" alt="" />
+                        <img src={{ asset('./frontend/assets/img/logo.png') }} alt="" />
                         <p>
                             PGRI <br />
                             KAB PASURUAN

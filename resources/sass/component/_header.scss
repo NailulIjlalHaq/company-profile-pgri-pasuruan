@@ -175,20 +175,30 @@
                 transition: all 0.3s ease;
                 opacity: 0;
                 visibility: hidden;
+
                 .header-dropdown {
-                    background-color: #fff;
-                    padding: 1.4rem;
                     border-radius: 0.5rem;
                     &-wrapper {
                         display: flex;
                         flex-direction: column;
-                        gap: 1rem;
-
                         &__list {
+                            background-color: #fff;
+                            padding: 1rem 1.4rem;
                             cursor: pointer;
                             white-space: nowrap;
                             font-size: 1.4rem;
                             color: $color-secondary;
+
+                            &:hover {
+                                background-color: #f6f7f9;
+                            }
+
+                            &:first-child {
+                                border-radius: 5px 5px 0 0;
+                            }
+                            &:last-child {
+                                border-radius: 0 0 5px 5px;
+                            }
                         }
                     }
                 }
