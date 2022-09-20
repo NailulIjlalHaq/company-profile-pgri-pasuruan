@@ -187,9 +187,9 @@
                     </li>
                     <li class="nav-item">
                         <a href="#" class="nav-link">
-                            <i class="nav-icon fas fa-folder"></i>
+                            <i class="nav-icon fas fa-file"></i>
                             <p>
-                                Halaman
+                                Profil
                             </p>
                             <i class="right fas fa-angle-left"></i>
                         </a>
@@ -214,11 +214,19 @@
                             </li>
                         </ul>
                     </li>
-                    <li class="nav-item mb-3">
-                        <a href="#" class="nav-link">
-                            <i class="nav-icon fas fa-user"></i>
+                    <li class="nav-item ">
+                        <a href="{{ route('user.index') }}" class="nav-link {{(request()->segment(2) == 'user') ? 'active' : ''}}">
+                            <i class="nav-icon fas fa-users"></i>
                             <p>
                                 User
+                            </p>
+                        </a>
+                    </li>
+                    <li class="nav-item mb-3">
+                        <a href="{{ route('user.index') }}" class="nav-link {{(request()->segment(2) == 'pengaturan') ? 'active' : ''}}">
+                            <i class="nav-icon fas fa-cog"></i>
+                            <p>
+                                Pengaturan
                             </p>
                         </a>
                     </li>

@@ -1,20 +1,21 @@
 <?php
 // frontend Controller
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\backend\PageController;
+use App\Http\Controllers\backend\UserController;
 use App\Http\Controllers\frontend\homeController;
+use App\Http\Controllers\backend\GaleriController;
 use App\Http\Controllers\frontend\aboutController;
-use App\Http\Controllers\frontend\artikelController;
+// backend Controller
 use App\Http\Controllers\frontend\beritaController;
+use App\Http\Controllers\backend\KategoriController;
+use App\Http\Controllers\frontend\artikelController;
 use App\Http\Controllers\frontend\contactController;
 use App\Http\Controllers\frontend\galleryController;
-// backend Controller
-use App\Http\Controllers\backend\ArtikelController as BackendArtikelController;
-use App\Http\Controllers\backend\BeritaController as BackendBeritaController;
-use App\Http\Controllers\backend\GaleriController;
-use App\Http\Controllers\backend\KategoriController;
-use App\Http\Controllers\backend\PageController;
 use App\Http\Controllers\backend\PengaturanController;
 use App\Http\Controllers\backend\PengumumanController;
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\backend\BeritaController as BackendBeritaController;
+use App\Http\Controllers\backend\ArtikelController as BackendArtikelController;
 
 //index route
 Route::get('/', [homeController::class, 'index'])->name('feHome');
@@ -66,4 +67,8 @@ Route::prefix('backends')->group(function () {
     // Rute untuk fitur kategori
     Route::resource('kategori', KategoriController::class)->except(['destroy']);
     Route::get('kategori/{kategori}/hapus', [KategoriController::class, 'destroy'])->name('kategori.destroy');
+
+    // Rute untuk user
+    Route::resource('user', UserController::class)->except(['destroy']);
+    Route::get('user/{user}/hapus', [UserController::class, 'destroy'])->name('user.destroy');
 });
