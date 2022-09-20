@@ -12,7 +12,7 @@
                                 <div alt="" class="swiper__box--img">
                                     <div class="swiper__box--img--content" style="background-image: url(../frontend/assets/img/kantin.jpg)"></div>
                                 </div>
-                                <div class="swiper__box--text">Kantin</div>
+
                             </div>
                         </div>
                         <div class="swiper-slide">
@@ -20,7 +20,7 @@
                                 <div alt="" class="swiper__box--img">
                                     <div class="swiper__box--img--content" style="background-image: url(../frontend/assets/img/sawah.jpg)"></div>
                                 </div>
-                                <div class="swiper__box--text">Sawah</div>
+
                             </div>
                         </div>
                         <div class="swiper-slide">
@@ -28,7 +28,7 @@
                                 <div alt="" class="swiper__box--img">
                                     <div class="swiper__box--img--content" style="background-image: url(../frontend/assets/img/gedung.jpg)"></div>
                                 </div>
-                                <div class="swiper__box--text">Gedung</div>
+  
                             </div>
                         </div>
                         <div class="swiper-slide">
@@ -36,7 +36,7 @@
                                 <div alt="" class="swiper__box--img">
                                     <div class="swiper__box--img--content" style="background-image: url(../frontend/assets/img/aula.jpg)"></div>
                                 </div>
-                                <div class="swiper__box--text">aula</div>
+                             
                             </div>
                         </div>
                     </div>

@@ -4,7 +4,7 @@
             <div class="footer__wrapper--left">
                 <div class="footer-logo-container">
                     <div onclick="window.location.href('{{ route('home') }}')" class="footer__wrapper--left__logo">
-                        <img src="../assets/img/logo.png" alt="" />
+                        <img src={{ asset('./frontend/assets/img/logo.png') }} alt="" />
                         <p>
                             PGRI <br />
                             KAB PASURUAN
@@ -19,7 +19,7 @@
 
                 <div class="footer__wrapper--left__box">
                     <a href={{ route('feHome') }} class="footer__wrapper--left__box--item">Home</a>
-                    <a href={{ route('feAbout') }} class="footer__wrapper--left__box--item">Profile</a>
+                    <a class="footer__wrapper--left__box--item">Profile</a>
                     <a href={{ route('feArtikel') }} class="footer__wrapper--left__box--item">Artikel</a>
                     <a href={{ route('feBerita') }} class="footer__wrapper--left__box--item">Berita</a>
                     <a href={{ route('feGallery') }} class="footer__wrapper--left__box--item">Gallery</a>
