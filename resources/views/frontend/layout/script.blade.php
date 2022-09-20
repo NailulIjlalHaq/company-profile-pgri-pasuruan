@@ -79,20 +79,21 @@
         }
 
     }
+    darkScroll('profile-sejarah')
     darkScroll('about')
     darkScroll('gallery')
 
 
 
     $('.header__list-box--item').hover(function() {
-        $('.list-dropdown').hover(function() {
+        $('.header__list-box-dropdown').hover(function() {
             $(this).addClass('show')
         }, function() {
             $(this).removeClass('show')
         })
-        $(this).siblings('.list-dropdown').addClass('show')
+        $(this).siblings('.header__list-box-dropdown').addClass('show')
     }, function() {
-        $(this).siblings('.list-dropdown').removeClass('show')
+        $(this).siblings('.header__list-box-dropdown').removeClass('show')
     })
 
     // modal

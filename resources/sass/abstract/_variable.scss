@@ -129,3 +129,10 @@ $color-blue: #60c1f8;
         flex: 1;
     }
 }
+.m {
+    &t {
+        &-top {
+            margin-top: 8.25rem !important;
+        }
+    }
+}

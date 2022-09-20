@@ -19,7 +19,7 @@
 
                 <div class="footer__wrapper--left__box">
                     <a href={{ route('feHome') }} class="footer__wrapper--left__box--item">Home</a>
-                    <a href={{ route('feAbout') }} class="footer__wrapper--left__box--item">Profile</a>
+                    <a class="footer__wrapper--left__box--item">Profile</a>
                     <a href={{ route('feArtikel') }} class="footer__wrapper--left__box--item">Artikel</a>
                     <a href={{ route('feBerita') }} class="footer__wrapper--left__box--item">Berita</a>
                     <a href={{ route('feGallery') }} class="footer__wrapper--left__box--item">Gallery</a>

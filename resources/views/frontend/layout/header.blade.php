@@ -15,15 +15,26 @@
                 <a href={{ route('feHome') }} class="header__list-box--item home-link">Home</a>
 
             </div>
-            <div class="header__list-box">
-                <a href={{ route('feAbout') }} class="header__list-box--item about-link">Profile</a>
-
+            <div class="header__list-box ">
+                <a  class="header__list-box--item about-link">Profile</a>
+                <div class="header__list-box-dropdown">
+                    <div class="header-dropdown">
+                        <div class="header-dropdown-wrapper">
+                            <div class="header-dropdown-wrapper__list"
+                                onclick="location.href='{{ route('profile-sejarah') }}'">Sejarah</div>
+                            <div class="header-dropdown-wrapper__list"
+                                onclick="location.href='{{ route('profile-makna') }}'">Makna Logo</div>
+                            <div class="header-dropdown-wrapper__list"
+                                onclick="location.href='{{ route('profile-visi-misi') }}'"> Visi & misi</div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="header__list-box">
                 <a href={{ route('feArtikel') }} class="header__list-box--item artikel-link">Artikel</a>
             </div>
             <div class="header__list-box">
-                <a href={{ route('feBerita') }} class="header__list-box--item berita-link">Berita</a>
+                <a  class="header__list-box--item berita-link">Berita</a>
             </div>
             <div class="header__list-box">
                 <a href={{ route('feGallery') }} class="header__list-box--item gallery-link">Gallery</a>
@@ -31,9 +42,7 @@
             <div class="header__list-box">
                 <a href={{ route('feContact') }} class="header__list-box--item contact-link">Contact</a>
             </div>
-            <div class="header__list-box">
-                <a href="#" class="header__list-box--item btn-join">Login &rarr;</a>
-            </div>
+
         </div>
     </div>
 </header>

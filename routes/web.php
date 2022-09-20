@@ -21,6 +21,9 @@ Route::get('/', [homeController::class, 'index'])->name('feHome');
 
 //about route
 Route::get('/about', [aboutController::class, 'index'])->name('feAbout');
+Route::get('/profile-sejarah', [aboutController::class, 'sejarah'])->name('profile-sejarah');
+Route::get('/profile-makna', [aboutController::class, 'makna'])->name('profile-makna');
+Route::get('/profile-visi-misi', [aboutController::class, 'visiMisi'])->name('profile-visi-misi');
 
 //artikel route
 Route::get('/artikel', [artikelController::class, 'index'])->name('feArtikel');
