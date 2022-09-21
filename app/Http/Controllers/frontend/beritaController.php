@@ -13,7 +13,7 @@ class beritaController extends Controller
         $berita = posts::get();
         return view('frontend.berita', ['berita'=>$berita]);
     }
-    public function detail($id){
+    public function detail(){
         return view('frontend.detailBerita');
     }
 }

@@ -12,7 +12,7 @@
         </div>
         <div class="header__list">
             <div class="header__list-box">
-                <a href={{ route('feHome') }} class="header__list-box--item home-link">Home</a>
+                <a href={{ route('feHome') }} class="header__list-box--item home-link">Beranda</a>
 
             </div>
             <div class="header__list-box ">
@@ -37,10 +37,10 @@
                 <a href={{ route('feBerita') }} class="header__list-box--item berita-link">Berita</a>
             </div>
             <div class="header__list-box">
-                <a href={{ route('feGallery') }} class="header__list-box--item gallery-link">Gallery</a>
+                <a href={{ route('feGallery') }} class="header__list-box--item gallery-link">Galeri</a>
             </div>
             <div class="header__list-box">
-                <a href={{ route('feContact') }} class="header__list-box--item contact-link">Contact</a>
+                <a href={{ route('feContact') }} class="header__list-box--item contact-link">Kontak</a>
             </div>
 
         </div>
@@ -64,7 +64,7 @@
         </div>
 
         <div class="header-phone-list">
-            <a href={{ route('feHome') }} class="header-phone-list-item home-link">Home</a>
+            <a href={{ route('feHome') }} class="header-phone-list-item home-link">Beranda</a>
             <a class="header-phone-list-item about-link">Profile
                 <div class="header__list-box-dropdown">
                     <div class="header-dropdown">
@@ -79,10 +79,10 @@
                     </div>
                 </div>
             </a>
-            <a href={{ route('feArtikel') }} class="header-phone-list-item artikel-link">Article</a>
-            <a href={{ route('feBerita') }} class="header-phone-list-item berita-link">News</a>
-            <a href={{ route('feGallery') }} class="header-phone-list-item gallery-link">Gallery</a>
-            <a href={{ route('feContact') }} class="header-phone-list-item contact-link">Contact</a>
+            <a href={{ route('feArtikel') }} class="header-phone-list-item artikel-link">Artikel</a>
+            <a href={{ route('feBerita') }} class="header-phone-list-item berita-link">Berita</a>
+            <a href={{ route('feGallery') }} class="header-phone-list-item gallery-link">Galeri</a>
+            <a href={{ route('feContact') }} class="header-phone-list-item contact-link">Kontak</a>
         </div>
     </div>
 </header>

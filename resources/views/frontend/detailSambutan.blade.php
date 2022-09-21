@@ -5,7 +5,7 @@
             <p>
                 <ion-icon onclick="location.href='{{ route('feHome') }}'" name="arrow-back-outline"></ion-icon>
             </p>
-            <p>Detail Artikel</p>
+            <p>Sambutan Kepala PGRI Kab Pasuruan</p>
         </div>
     </div>
     <div class="about__sejarah">
