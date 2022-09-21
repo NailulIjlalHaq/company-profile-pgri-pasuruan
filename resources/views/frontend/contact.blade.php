@@ -6,7 +6,7 @@
                 {{ csrf_field() }}
                 <div class="contact__form--title">
                     <div class="contact__form--title--box">
-                        <p>Contact Us</p>
+                        <p>Hubungi Kami</p>
                         <p>Perfect Solution for digital experience</p>
                     </div>
 
@@ -15,8 +15,8 @@
                 {{-- name and email --}}
                 <div class="d-flex d-flex-400-column" style="gap: 1rem">
                     <div class="contact__form--input">
-                        <p>Full Name</p>
-                        <input class="@error('name') unvalidated-input @enderror" placeholder="Your Name" type="text"
+                        <p>Nama Lengkap</p>
+                        <input class="@error('name') unvalidated-input @enderror" placeholder="Nama" type="text"
                             name="name" min="5">
                         @error('name')
                             <div class="unvalidated">
@@ -29,7 +29,7 @@
                     </div>
                     <div class="contact__form--input">
                         <p>Email</p>
-                        <input class="@error('email') unvalidated-input @enderror" placeholder="Your Email" type="email"
+                        <input class="@error('email') unvalidated-input @enderror" placeholder="Email" type="email"
                             name="email">
                         @error('email')
                             <div class="unvalidated">
@@ -44,7 +44,7 @@
 
 
                 <div class="contact__form--input">
-                    <p>Phone Number</p>
+                    <p>Nomor HP</p>
                     <input class="@error('phone') unvalidated-input @enderror" placeholder="085xxxxxxx" type="number"
                         name="phone">
                     @error('email')
@@ -57,7 +57,7 @@
                     @enderror
                 </div>
                 <div class="contact__form--input">
-                    <p>message</p>
+                    <p>Pesan</p>
                     <textarea class="@error('message') unvalidated-input @enderror" name="message"></textarea>
                     @error('message')
                         <div class="unvalidated">

@@ -50,7 +50,7 @@
                 </div>
             </div>
             <div class="gallery-wrapper__header">
-                <p>Gallery</p>
+                <p>Galeri</p>
                 <p>10,000+ outstanding news photos</p>
             </div>
             <div class="gallery-wrapper__content">
@@ -68,7 +68,7 @@
                         <div class="gallery-popup__wrapper">
                             <div class="gallery-popup__wrapper--header">
                                 <div class="gallery-popup__wrapper--header--title">
-                                    <p>Detail Artikel</p>
+                                    <p>Detail Foto</p>
                                     <p>
                                         <ion-icon class="btn-close-gallery-popup" name="close"></ion-icon>
                                     </p>
@@ -79,7 +79,7 @@
                                     style="background: url({{ asset('./frontend/assets/img/juara.jpg') }})"></div>
                                 <div class="gallery-popup__wrapper--content__info">
 
-                                    <p>Foto Title</p>
+                                    <p>Judul Foto</p>
                                     <p>
                                         Melbourne based Illustrator & Designer Ken Taylor works primarily within the music
                                         industry and

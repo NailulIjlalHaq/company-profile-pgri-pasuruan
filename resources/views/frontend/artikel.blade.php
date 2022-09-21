@@ -7,11 +7,11 @@
                 <div class="artikel__wrapper--header__search">
                     <div class="artikel-search">
                         <ion-icon name="search-outline"></ion-icon>
-                        <input type="search" name="" id="" placeholder="Search...">
+                        <input type="search" name="" id="" placeholder="Cari...">
                     </div>
                 </div>
                 <div class="artikel__wrapper--header__title">
-                    <p>artikel</p>
+                    <p>Artikel</p>
                     <p>10,000+ outstanding news articels</p>
                 </div>
             </div>
