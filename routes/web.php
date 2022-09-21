@@ -16,6 +16,7 @@ use App\Http\Controllers\backend\PengaturanController;
 use App\Http\Controllers\backend\PengumumanController;
 use App\Http\Controllers\backend\BeritaController as BackendBeritaController;
 use App\Http\Controllers\backend\ArtikelController as BackendArtikelController;
+use App\Http\Controllers\backend\VisiMisiController;
 
 //index route
 Route::get('/', [homeController::class, 'index'])->name('feHome');

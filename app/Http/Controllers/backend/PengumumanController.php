@@ -189,8 +189,13 @@ class PengumumanController extends Controller
         // Fungsi untuk mengupload cover image pada server dan di simpan pada folder public
         if ($request->has('id')) {
             $countFokus = posts::where('is_focus', true)->count();
+<<<<<<< HEAD
             if ($countFokus > 2) {
                 return redirect->route('pengumuman.index')->with('error', 'Jumlah Pengumuman yang dapat di set fokus melebihi batas, silahkan nonaktifkan salah satu data.');
+=======
+            if ($countFokus > 5) {
+                return redirect()->route('pengumuman.index')->with('error', 'Jumlah Pengumuman yang dapat di set fokus melebihi batas, silahkan nonaktifkan salah satu data.');
+>>>>>>> db916358dc81162cbcde230b79a718c2a81ecfca
             }
 
 

@@ -189,7 +189,7 @@ class ArtikelController extends Controller
         if ($request->has('id')) {
             $countFokus = posts::where('is_focus', true)->count();
             if ($countFokus > 5) {
-                return redirect->route('artikel.index')->with('error', 'Jumlah Artikel yang dapat di set fokus melebihi batas, silahkan nonaktifkan salah satu data.');
+                return redirect()->route('artikel.index')->with('error', 'Jumlah Artikel yang dapat di set fokus melebihi batas, silahkan nonaktifkan salah satu data.');
             }
 
 

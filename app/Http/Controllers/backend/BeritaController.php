@@ -194,7 +194,7 @@ class BeritaController extends Controller
         if ($request->has('id')) {
             $countFokus = posts::where('is_focus', true)->count();
             if ($countFokus > 5) {
-                return redirect->route('berita.index')->with('error', 'Jumlah berita yang dapat di set fokus melebihi batas, silahkan nonaktifkan salah satu data.');
+                return redirect()->route('berita.index')->with('error', 'Jumlah berita yang dapat di set fokus melebihi batas, silahkan nonaktifkan salah satu data.');
             }
 
 

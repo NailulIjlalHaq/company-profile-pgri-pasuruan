@@ -133,7 +133,7 @@
                         </p>
                         <div class="card__desc--show">...Selengkapnya</div>
                     </div>
-                    <div class="card__btn" onclick="location.href='{{ route('feDetailSambutan') }}'">Learn More <ion-icon
+                    <div class="card__btn" onclick="location.href='{{ route('feDetailSambutan') }}'">Lebih Lanjut<ion-icon
                             name="chevron-forward-outline"></ion-icon>
                     </div>
                 </div>
@@ -143,10 +143,10 @@
 
         <div class="home__berita">
             <div class="home__berita--title">
-                <div class="home__berita--title-text">Berita dan Artikel</div>
+                <div class="home__berita--title-text">Artikel dan Berita</div>
                 <div class="home__berita--title__search">
                     <ion-icon name="search-outline"></ion-icon>
-                    <input type="search" placeholder="Search" />
+                    <input type="search" placeholder="Cari..." />
                 </div>
             </div>
             <div class="home__berita--wrapper">
@@ -269,7 +269,7 @@
                                                 </p>
                                                 <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. </p>
                                             </div>
-                                            <button> More Detail
+                                            <button> Selangkapnya
                                                 <ion-icon name="chevron-up-circle"></ion-icon>
                                             </button>
                                         </div>
@@ -299,7 +299,7 @@
                                                 </p>
                                                 <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. </p>
                                             </div>
-                                            <button> More Detail
+                                            <button> Selangkapnya
                                                 <ion-icon name="chevron-up-circle"></ion-icon>
                                             </button>
                                         </div>
@@ -329,7 +329,7 @@
                                                 </p>
                                                 <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. </p>
                                             </div>
-                                            <button> More Detail
+                                            <button> Selangkapnya
                                                 <ion-icon name="chevron-up-circle"></ion-icon>
                                             </button>
                                         </div>

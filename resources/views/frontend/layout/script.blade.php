@@ -142,14 +142,14 @@
                 }
             });
 
-            // $(window).on('click', function(e) {
-            //     if (!$(`.artikel-popup__wrapper`).get(0).contains(e.target) && !$(
-            //             `.btn-show-artikel-popup`).get(0)
-            //         .contains(e.target)) {
-            //         $(`.artikel-popup`).removeClass('show');
-            //         $(`.artikel-popup__wrapper`).removeClass('trans-0');
-            //     }
-            // })
+            $(window).on('click', function(e) {
+                if (!$(`.gallery-popup__wrapper`).get(0).contains(e.target) && !$(
+                        `.btn-show-gallery-popup`).get(0)
+                    .contains(e.target)) {
+                    $(`.gallery-popup`).removeClass('show');
+                    $(`.gallery-popup__wrapper`).removeClass('trans-0');
+                }
+            })
 
         });
         $(`.btn-close-${name}`).on('click', function() {
