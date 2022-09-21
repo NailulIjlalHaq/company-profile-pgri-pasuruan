@@ -56,62 +56,58 @@
             <div class="gallery-wrapper__content">
                 <div class="gallery-container">
                     @foreach ($photos as $p)
-                        <div class="gallery-container-box">
+                        <div class="gallery-container-box" onclick="passValue({{ $p->id_galleries }})">
                             <div class="gallery-container-box-img" style="background: url('{{ $p->file }}')"></div>
-                            <input class="gallery-container-box-input" type="hidden" value='{{ $p->description }}'>
-                            <h1 class="gallery-container-box-text"></h1>
                         </div>
-                    @endforeach
+                        <input type="hidden" class="idValue{{ $p->id_galleries }}" value="{{ $p->id_galleries }}">
+                        <input type="hidden" class="imgValue{{ $p->id_galleries }}" value="{{ $p->file }}">
+                        <input type="hidden" class="titleValue{{ $p->id_galleries }}" value="{{ $p->name }}">
+                        <input type="hidden" class="descValue{{ $p->id_galleries }}"
+                            value="{{ strip_tags($p->description) }}">
 
-                    {{-- popup --}}
-                    <div class="gallery-popup">
-                        <div class="gallery-popup__wrapper">
-                            <div class="gallery-popup__wrapper--header">
-                                <div class="gallery-popup__wrapper--header--title">
-                                    <p>Detail Foto</p>
-                                    <p>
-                                        <ion-icon class="btn-close-gallery-popup" name="close"></ion-icon>
-                                    </p>
+                        {{-- popup --}}
+                        <div class="gallery-popup">
+                            <div class="gallery-popup__wrapper">
+                                <div class="gallery-popup__wrapper--header">
+                                    <div class="gallery-popup__wrapper--header--title">
+                                        <p>Detail Foto</p>
+                                        <p>
+                                            <ion-icon class="btn-close-gallery-popup" name="close"></ion-icon>
+                                        </p>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="gallery-popup__wrapper--content">
-                                <div class="gallery-popup__wrapper--content__img"
-                                    style="background: url({{ asset('./frontend/assets/img/juara.jpg') }})"></div>
-                                <div class="gallery-popup__wrapper--content__info">
+                                <div class="gallery-popup__wrapper--content">
+                                    <div class="gallery-popup__wrapper--content__img"></div>
+                                    <div class="gallery-popup__wrapper--content__info">
 
-                                    <p>Judul Foto</p>
-                                    <p>
-                                        Melbourne based Illustrator & Designer Ken Taylor works primarily within the music
-                                        industry and
-                                        is predominantly well known for his striking rock posters. Ken started in Perth
-                                        Western
-                                        Australia doing posters and album
-                                        artwork for local bands.
-                                    </p>
-                                </div>
-                                <div class="gallery-popup__wrapper--content__btn">
-                                    <div class="share-btn">
-                                        <div class="share-btn-wrapper">
+                                        <p class="gallery-popup__wrapper--content__info-title"></p>
+                                        <p class="gallery-popup__wrapper--content__info-desc">
+                                        </p>
+                                    </div>
+                                    <div class="gallery-popup__wrapper--content__btn">
+                                        <div class="share-btn">
+                                            <div class="share-btn-wrapper">
 
-                                            <div class="share-btn-wrapper-btn">
-                                                <ion-icon name="logo-facebook"></ion-icon>Facebook
+                                                <div class="share-btn-wrapper-btn">
+                                                    <ion-icon name="logo-facebook"></ion-icon>Facebook
+                                                </div>
+                                                <div class="share-btn-wrapper-btn">
+                                                    <ion-icon name="logo-whatsapp"></ion-icon>whatsapp
+                                                </div>
+                                                <div class="share-btn-wrapper-btn">
+                                                    <ion-icon name="logo-twitter"></ion-icon>twitter
+                                                </div>
                                             </div>
-                                            <div class="share-btn-wrapper-btn">
-                                                <ion-icon name="logo-whatsapp"></ion-icon>whatsapp
+                                            <div class="share-btn-share">
+                                                <ion-icon name="share-social"></ion-icon>
                                             </div>
-                                            <div class="share-btn-wrapper-btn">
-                                                <ion-icon name="logo-twitter"></ion-icon>twitter
-                                            </div>
-                                        </div>
-                                        <div class="share-btn-share">
-                                            <ion-icon name="share-social"></ion-icon>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
 
+                            </div>
                         </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>
@@ -119,18 +115,14 @@
 
 @section('js')
     <script>
-        for (let i = 0; i < 8; i++) {
-            $('.gallery-container').append(
-                ``
-            )
-        }
         $('.gallery-container-box-img').addClass('btn-show-gallery-popup')
-
-
-        // $('.gallery-container-box-input').val().html()
-
-        let input = $('.gallery-container-box-input').val()
-        $('.gallery-container-box-text').html(input)
+        function passValue(id) {
+            $('.gallery-popup__wrapper--content__img').css('background', `url('${$(`.imgValue${id}`).val()}')`)
+            $('.gallery-popup__wrapper--content__info-title').text($(`.titleValue${id}`).val())
+            $('.gallery-popup__wrapper--content__info-desc').text($(`.descValue${id}`).val())
+        }
     </script>
 @endsection
 @endsection
+
+
