@@ -3,7 +3,7 @@
         <div class="footer__wrapper">
             <div class="footer__wrapper--left">
                 <div class="footer-logo-container">
-                    <div onclick="window.location.href('{{ route('home') }}')" class="footer__wrapper--left__logo">
+                    <div onclick="window.location.href('{{ route('feHome') }}')" class="footer__wrapper--left__logo">
                         <img src={{ asset('./frontend/assets/img/logo.png') }} alt="" />
                         <p>
                             PGRI <br />
@@ -42,7 +42,7 @@
                         <ion-icon onclick="window.open('https://www.youtube.com/')" name="logo-youtube"></ion-icon>
                     </div>
                     <div class="footer__wrapper--right__medsos--box">
-                        <ion-icon onclick="window.open('https://www.twitter.com/')"name="logo-twitter"></ion-icon>
+                        <ion-icon onclick="window.open('https://www.twitter.com/')" name="logo-twitter"></ion-icon>
                     </div>
                 </div>
 
