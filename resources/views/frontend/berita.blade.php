@@ -121,16 +121,12 @@
                                 <div class="artikel-container-box__top--info">
                                     <div class="artikel-container-box__top--info-box">
                                         <div>
-                                            <p class="artikel-container-box__top--info-box-text-1">
-                                            <p>
-                                                {{ $item->title }}
-                                            </p>
-                                            </p>
-                                            <p class="artikel-container-box__top--info-box-text-2">
-                                            <p>
-                                                {{ strip_tags($item->content) }}
-                                            </p>
-                                            </p>
+                                            <div class="artikel-container-box__top--info-box-text-1">
+                                                <p>{{ $item->title }}</p>
+                                            </div>
+                                            <div class="artikel-container-box__top--info-box-text-2">
+                                                <p>{{ strip_tags($item->content) }}</p>
+                                            </div>
                                         </div>
                                         <button> Selengkapnya
                                             <ion-icon name="chevron-up-circle"></ion-icon>
