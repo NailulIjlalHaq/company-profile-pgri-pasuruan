@@ -116,13 +116,13 @@
 @section('js')
     <script>
         $('.gallery-container-box-img').addClass('btn-show-gallery-popup')
+
         function passValue(id) {
-            $('.gallery-popup__wrapper--content__img').css('background', `url('${$(`.imgValue${id}`).val()}')`)
-            $('.gallery-popup__wrapper--content__info-title').text($(`.titleValue${id}`).val())
-            $('.gallery-popup__wrapper--content__info-desc').text($(`.descValue${id}`).val())
+            let gp = 'gallery-popup__wrapper--content'
+            $(`.${gp}__img`).css('background', `url('${$(`.imgValue${id}`).val()}')`)
+            $(`.${gp}__info-title`).text($(`.titleValue${id}`).val())
+            $(`.${gp}__info-desc`).text($(`.descValue${id}`).val())
         }
     </script>
 @endsection
 @endsection
-
-
