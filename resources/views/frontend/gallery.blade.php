@@ -58,7 +58,8 @@
                     @foreach ($photos as $p)
                         <div class="gallery-container-box">
                             <div class="gallery-container-box-img" style="background: url('{{ $p->file }}')"></div>
-                            <h1>{{ $p->description }}</h1>
+                            <input class="gallery-container-box-input" type="hidden" value='{{ $p->description }}'>
+                            <h1 class="gallery-container-box-text"></h1>
                         </div>
                     @endforeach
 
@@ -123,10 +124,13 @@
                 ``
             )
         }
-
-
-
         $('.gallery-container-box-img').addClass('btn-show-gallery-popup')
+
+
+        // $('.gallery-container-box-input').val().html()
+
+        let input = $('.gallery-container-box-input').val()
+        $('.gallery-container-box-text').html(input)
     </script>
 @endsection
 @endsection
