@@ -24,9 +24,11 @@ class StorePengumumanRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required',
-            'description' => 'required',
-            'file' => 'required|file|image|max:2000',
+            'judul' => 'required',
+            'konten' => 'required',
+            'cover_img' => 'file|image|max:2000',
+            'tag' => 'required',
+            'kategori' => 'required',
         ];
     }
 

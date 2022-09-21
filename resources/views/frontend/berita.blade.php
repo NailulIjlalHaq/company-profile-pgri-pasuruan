@@ -110,20 +110,22 @@
                 </div>
             </div>
             <div class="artikel__wrapper--content">
+@foreach ($berita as $item)
+    
                 <div class="artikel-container">
                     <div class="artikel-container-box">
                         <div class="artikel-container-box__top">
                             <div class="artikel-container-box__top--img"
-                                style="background: url('{{ asset('./frontend/assets/img/berita1.jpg') }}') "></div>
+                                style="background: url('{{ $item -> cover_img }}') "></div>
                             <div class="artikel-container-box__top--info">
                                 <div class="artikel-container-box__top--info-box">
                                     <div>
                                         <p>
-                                            Lorem Ipsum Dolor
+                                            {{$item -> title}}
                                         </p>
-                                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. </p>
+                                        <p>{{$item -> content}}</p>
                                     </div>
-                                    <button> More Detail
+                                    <button> Selengkapnya
                                         <ion-icon name="chevron-up-circle"></ion-icon>
                                     </button>
                                 </div>
@@ -140,157 +142,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="artikel-container">
-                    <div class="artikel-container-box">
-                        <div class="artikel-container-box__top ">
-                            <div class="artikel-container-box__top--img "
-                                style="background: url('{{ asset('./frontend/assets/img/juara.jpg') }}') "></div>
-                            <div class="artikel-container-box__top--info ">
-                                <div class="artikel-container-box__top--info-box">
-                                    <div>
-                                        <p>
-                                            Lorem Ipsum Dolor
-                                        </p>
-                                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. </p>
-                                    </div>
-                                    <button> More Detail
-                                        <ion-icon name="chevron-up-circle"></ion-icon>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="artikel-container-box__bot">
-                            <p>
-                                <ion-icon name="eye"></ion-icon> 250
-                            </p>
-                            <p>
-                                <ion-icon name="share-social"></ion-icon> 300
-                            </p>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="artikel-container">
-                    <div class="artikel-container-box">
-                        <div class="artikel-container-box__top">
-                            <div class="artikel-container-box__top--img"
-                                style="background: url('{{ asset('./frontend/assets/img/juara2.jpg') }}') "></div>
-                            <div class="artikel-container-box__top--info">
-                                <div class="artikel-container-box__top--info-box">
-                                    <div>
-                                        <p>
-                                            Lorem Ipsum Dolor
-                                        </p>
-                                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. </p>
-                                    </div>
-                                    <button> More Detail
-                                        <ion-icon name="chevron-up-circle"></ion-icon>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="artikel-container-box__bot">
-                            <p>
-                                <ion-icon name="eye"></ion-icon> 250
-                            </p>
-                            <p>
-                                <ion-icon name="share-social"></ion-icon> 300
-                            </p>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="artikel-container">
-                    <div class="artikel-container-box">
-                        <div class="artikel-container-box__top">
-                            <div class="artikel-container-box__top--img"
-                                style="background: url('{{ asset('./frontend/assets/img/juara3.jpg') }}') "></div>
-                            <div class="artikel-container-box__top--info">
-                                <div class="artikel-container-box__top--info-box">
-                                    <div>
-                                        <p>
-                                            Lorem Ipsum Dolor
-                                        </p>
-                                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. </p>
-                                    </div>
-                                    <button> More Detail
-                                        <ion-icon name="chevron-up-circle"></ion-icon>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="artikel-container-box__bot">
-                            <p>
-                                <ion-icon name="eye"></ion-icon> 250
-                            </p>
-                            <p>
-                                <ion-icon name="share-social"></ion-icon> 300
-                            </p>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="artikel-container">
-                    <div class="artikel-container-box">
-                        <div class="artikel-container-box__top">
-                            <div class="artikel-container-box__top--img"
-                                style="background: url('{{ asset('./frontend/assets/img/berita1.jpg') }}') "></div>
-                            <div class="artikel-container-box__top--info">
-                                <div class="artikel-container-box__top--info-box">
-                                    <div>
-                                        <p>
-                                            Lorem Ipsum Dolor
-                                        </p>
-                                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. </p>
-                                    </div>
-                                    <button> More Detail
-                                        <ion-icon name="chevron-up-circle"></ion-icon>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="artikel-container-box__bot">
-                            <a href="#">
-                                <ion-icon name="eye"></ion-icon> 250
-                            </a>
-                            <a href="#">
-                                <ion-icon name="share-social"></ion-icon> 300
-                            </a>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="artikel-container">
-                    <div class="artikel-container-box">
-                        <div class="artikel-container-box__top">
-                            <div class="artikel-container-box__top--img"
-                                style="background: url('{{ asset('./frontend/assets/img/berita2.jpg') }}') "></div>
-                            <div class="artikel-container-box__top--info">
-                                <div class="artikel-container-box__top--info-box">
-                                    <div>
-                                        <p>
-                                            Lorem Ipsum Dolor
-                                        </p>
-                                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. </p>
-                                    </div>
-                                    <button>
-                                        More Detail
-                                        <ion-icon name="chevron-up-circle"></ion-icon>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="artikel-container-box__bot">
-                            <p>
-                                <ion-icon name="eye"></ion-icon> 250
-                            </p>
-                            <p>
-                                <ion-icon name="share-social"></ion-icon> 300
-                            </p>
-
-                        </div>
-                    </div>
-                </div>
+              
+@endforeach
 
             </div>
         </div>
