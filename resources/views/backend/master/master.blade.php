@@ -196,6 +196,9 @@
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
                                 <a href="{{ route('profil.index', 2) }}" class="nav-link {{(request()->segment(3) == '2') ? 'active' : ''}}">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Visi Misi</p>
+                                </a>
                             </li>
                             <li class="nav-item">
                                 <a href="{{ route('profil.index', 1) }}" class="nav-link {{(request()->segment(3) == '1') ? 'active' : ''}}">
