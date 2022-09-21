@@ -191,7 +191,7 @@ class PengumumanController extends Controller
         if ($request->has('id')) {
             $countFokus = posts::where('is_focus', true)->count();
             if ($countFokus > 5) {
-                return redirect->route('pengumuman.index')->with('error', 'Jumlah Pengumuman yang dapat di set fokus melebihi batas, silahkan nonaktifkan salah satu data.');
+                return redirect()->route('pengumuman.index')->with('error', 'Jumlah Pengumuman yang dapat di set fokus melebihi batas, silahkan nonaktifkan salah satu data.');
             }
 
 
