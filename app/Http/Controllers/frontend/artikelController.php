@@ -3,14 +3,15 @@
 namespace App\Http\Controllers\frontend;
 
 use App\Http\Controllers\Controller;
-
+use App\Models\posts;
 use Illuminate\Http\Request;
 
 class artikelController extends Controller
 {
     public function index()
     {
-        return view('frontend.artikel');
+        $artikel = posts::get();
+        return view('frontend.artikel', ['artikel'=>$artikel]);
     }
 
     public function detail()
