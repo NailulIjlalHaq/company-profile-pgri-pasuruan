@@ -66,7 +66,7 @@
                     </div>
                 </div>
                 <div class="detail-artikel-wrapper__content--sec">
-                    <h1 class="detail-artikel-wrapper__content--sec-title">Lastes News</h1>
+                    <h1 class="detail-artikel-wrapper__content--sec-title">Artikel Lainya</h1>
                     <hr class="detail-artikel-wrapper__content--sec-line">
                     <div class="berita-box">
                         <div class="berita-box__left"
