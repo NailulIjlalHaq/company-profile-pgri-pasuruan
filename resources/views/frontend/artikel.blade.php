@@ -26,15 +26,12 @@
                                 <div class="artikel-container-box__top--info">
                                     <div class="artikel-container-box__top--info-box">
                                         <div>
-                                            <p class="artikel-container-box__top--info-box-text-1">
-                                            </p>
-                                            <p class="artikel-container-box__top--info-box-text-2">
-
-                                            </p>
-                                            <input class="artikel-input-hide-title" type="hidden"
-                                                value="{{ $item->title }}">
-                                            <input class="artikel-input-hide-content" type="hidden"
-                                                value="{{ $item->content }}">
+                                            <div class="artikel-container-box__top--info-box-text-1">
+                                                <p>{{ $item->title }}</p>
+                                            </div>
+                                            <div class="artikel-container-box__top--info-box-text-2">
+                                                <p>{{ strip_tags($item->content) }}</p>
+                                            </div>
                                         </div>
                                         <button> Selengkapnya
                                             <ion-icon name="chevron-up-circle"></ion-icon>
@@ -64,13 +61,6 @@
         $('.artikel-container-box__top--info').on('click', function() {
             location.href = 'detail-artikel'
         })
-
-        function passData(input, el) {
-            let pas = $(`.${input}`).val()
-            $(`.${el}`).html(pas)
-        }
-        passData('artikel-input-hide-title', 'artikel-container-box__top--info-box-text-1');
-        passData('artikel-input-hide-content', 'artikel-container-box__top--info-box-text-2');
     </script>
 @endsection
 @endsection

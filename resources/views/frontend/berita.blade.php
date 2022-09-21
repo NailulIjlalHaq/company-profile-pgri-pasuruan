@@ -122,14 +122,15 @@
                                     <div class="artikel-container-box__top--info-box">
                                         <div>
                                             <p class="artikel-container-box__top--info-box-text-1">
+                                            <p>
+                                                {{ $item->title }}
+                                            </p>
                                             </p>
                                             <p class="artikel-container-box__top--info-box-text-2">
-
+                                            <p>
+                                                {{ strip_tags($item->content) }}
                                             </p>
-                                            <input class="berita-input-hide-title" type="hidden"
-                                                value="{{ $item->title }}">
-                                            <input class="berita-input-hide-content" type="hidden"
-                                                value="{{ $item->content }}">
+                                            </p>
                                         </div>
                                         <button> Selengkapnya
                                             <ion-icon name="chevron-up-circle"></ion-icon>
@@ -158,13 +159,6 @@
         $('.artikel-container-box__top--info').on('click', function() {
             location.href = 'detail-berita'
         })
-
-        function passData(input, el) {
-            let pas = $(`.${input}`).val()
-            $(`.${el}`).html(pas)
-        }
-        passData('berita-input-hide-title', 'artikel-container-box__top--info-box-text-1');
-        passData('berita-input-hide-content', 'artikel-container-box__top--info-box-text-2');
     </script>
 @endsection
 @endsection
