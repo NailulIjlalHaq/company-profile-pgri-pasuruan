@@ -76,4 +76,7 @@ Route::prefix('backends')->group(function () {
     // Rute untuk user
     Route::resource('user', UserController::class)->except(['destroy']);
     Route::get('user/{user}/hapus', [UserController::class, 'destroy'])->name('user.destroy');
+
+    // Rute untuk fitur visimisi
+    Route::resource('visimisi', VisiMisiController::class);
 });

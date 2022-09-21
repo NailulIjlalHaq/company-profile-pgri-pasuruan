@@ -143,7 +143,7 @@
 
         <div class="home__berita">
             <div class="home__berita--title">
-                <div class="home__berita--title-text">Berita dan Artikel</div>
+                <div class="home__berita--title-text">Artikel dan Berita</div>
                 <div class="home__berita--title__search">
                     <ion-icon name="search-outline"></ion-icon>
                     <input type="search" placeholder="Cari..." />
