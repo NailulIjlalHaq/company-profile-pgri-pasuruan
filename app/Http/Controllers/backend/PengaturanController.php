@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\backend;
+
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ConfigRequest;
 use App\Models\configs;
@@ -16,53 +17,9 @@ class PengaturanController extends Controller
     public function index()
     {
         $configs = configs::latest()->get();
-        return view('pengaturan.index',compact('configs'));
+        return view('backend.pengaturan.form', compact('configs'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        return view('pengaturan.create');
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(ConfigRequest $request)
-    {
-        $input = $request->all();
-        $config = configs::create($input);
-        return back()->with('success', 'Data Pengaturan Berhasil Ditambahkan.');
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
 
     /**
      * Update the specified resource in storage.
@@ -71,19 +28,14 @@ class PengaturanController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function store(Request $request)
     {
-        //
-    }
+        foreach ($request->id as $id) {
+            $config = configs::find($id);
+            $config->data = $request->value[$id];
+            $config->save();
+        }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
+        return redirect()->route('pengaturan.index')->with('success', 'Pengaturan berhasil disimpan');
     }
 }

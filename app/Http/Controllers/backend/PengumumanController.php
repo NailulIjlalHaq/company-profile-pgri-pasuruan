@@ -22,21 +22,20 @@ class PengumumanController extends Controller
     {
         if ($request->ajax()) {
             $data = posts::with('categories');
-            return DataTables::of($data)
+            $data->where('type', 'pengumuman');
+            return  DataTables()->of($data)
                 ->editColumn('title', function ($row) {
-                    // Memberikan dan mengecek status fokus pengumuman
+                    // Memberikan dan mengecek status fokus berita
                     $is_focus = $row->is_focus ? 'Nonaktifkan' : 'Fokuskan';
+                    // $kategori = is_null($row->id_categories) ? 'Belum di set' : $row->categories->name;
 
-                    // Menampilkan judul pengumuman beserta tombol aksi
+                    // Menampilkan judul berita beserta tombol aksi
                     return '
                     <h2 class="lead mb-0"><b>' . $row->title . '</b></h2>
-                    <p class="text-muted">
-                        <small><b>Kategori - </b>' . $row->categories->name . '</small>
-                    </p>
                     <div class="mt-3">
                         <a href="' . route('pengumuman.destroy', $row->id_posts) . '" class="btn bg-teal btn-sm" onclick="return confirm(\'Apakah anda yakin ingin menghapus data ini ?\')">Hapus</a>
                         <a href="' . route('pengumuman.edit', $row->id_posts) . '" class="btn btn-primary btn-sm">Edit</a>
-                        <a href="' . route('berita.setFocus', ['id' => $row->id_posts, 'is_active' => $row->is_focus ? false : true]) . '" class="btn btn-primary btn-sm" onclick="return confirm(\'Apakah anda ingin memfokuskan berita di beranda ?\')">' . $is_focus . '</a>
+                        <a href="' . route('pengumuman.setFocus', ['id' => $row->id_posts, 'is_active' => $row->is_focus ? false : true]) . '" class="btn btn-primary btn-sm" onclick="return confirm(\'Apakah anda ingin memfokuskan berita di beranda ?\')">' . $is_focus . '</a>
                     </div>
                     ';
                 })
@@ -190,7 +189,7 @@ class PengumumanController extends Controller
         // Fungsi untuk mengupload cover image pada server dan di simpan pada folder public
         if ($request->has('id')) {
             $countFokus = posts::where('is_focus', true)->count();
-            if ($countFokus > 5) {
+            if ($countFokus > 2) {
                 return redirect->route('pengumuman.index')->with('error', 'Jumlah Pengumuman yang dapat di set fokus melebihi batas, silahkan nonaktifkan salah satu data.');
             }
 

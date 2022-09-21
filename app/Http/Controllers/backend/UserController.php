@@ -154,4 +154,12 @@ class UserController extends Controller
             return redirect()->route('user.index')->with('error', 'Terjadi kesalahan pada sistem.');
         }
     }
+
+    public function userProfil($id)
+    {
+
+        $user = User::find($id);
+
+        return view('backend.user.user_form', compact('user'));
+    }
 }
