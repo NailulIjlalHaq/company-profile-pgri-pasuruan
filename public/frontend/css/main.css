@@ -427,7 +427,8 @@ body {
         font-size: 1.6rem;
         color: #132133;
         animation: moveTicker 10s linear infinite;
-        overflow: hidden; }
+        overflow: hidden;
+        white-space: nowrap; }
 
 @keyframes moveTicker {
   from {

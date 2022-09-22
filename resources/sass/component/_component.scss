@@ -155,6 +155,7 @@
                 color: $color-secondary;
                 animation: moveTicker 10s linear infinite;
                 overflow: hidden;
+                white-space: nowrap;
 
                 @keyframes moveTicker {
                     from {
