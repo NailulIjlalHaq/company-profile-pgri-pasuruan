@@ -2,14 +2,74 @@
 
 namespace App\Http\Controllers\backend;
 
-use App\Http\Controllers\Controller;
+use App\Models\pages;
 
+use App\Models\posts;
+use App\Models\galleries;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use App\Http\Requests\UpdateProfilRequest;
 
 class PageController extends Controller
 {
-    public function index()
+    public function index($id)
     {
-        return view('backend.dashboard');
+        $page = pages::find($id);
+
+        return view('backend.page.form', compact('page'));
+    }
+
+    public function update(UpdateProfilRequest $request, $id)
+    {
+        // Memanggil fungsi untuk meload semua konten yang ada di summernote dan mengupload gambar
+        // dan mengembalikan dalam bentuk html
+        $konten = $this->loadContent($request->deskripsi);
+
+        // Fungsi untuk mengambil data berita sesuai dengan id
+        $page = pages::find($id);
+
+        // fungsi untuk mengupdate data berita sesuai dengan id
+        $page->content = $konten;
+        $page->save();
+
+        return redirect()->route('profil.index', $id)->with('success', $page->title . ' berhasil di simpan.');
+    }
+
+    public function dashboard()
+    {
+        $post = posts::query();
+
+        $berita_count = $post->where('type', 'berita')->count();
+        $artikel_count = $post->where('type', 'artikel')->count();
+        $pengumuman_count = $post->where('type', 'pengumuman')->count();
+
+        $galeri_count = galleries::count();
+
+        return view('backend.dashboard', compact('berita_count', 'artikel_count', 'pengumuman_count', 'galeri_count'));
+    }
+
+    public function loadContent($content)
+    {
+        // Fungsi untuk meload konten summernote dan mengupload gambar pada konten
+        $dom = new \DomDocument();
+        $dom->loadHtml($content, LIBXML_NOWARNING | LIBXML_NOERROR);
+        $images = $dom->getElementsByTagName('img');
+        foreach ($images as $k => $img) {
+            $data = $img->getAttribute('src');
+            if (strpos($data, 'data:image') !== false) {
+                list($type, $data) = explode(';', $data);
+                list(, $data)      = explode(',', $data);
+
+                $data = base64_decode($data);
+
+                $image_name = "/content_img/" . time() . $k . '.png';
+                $path = public_path() . $image_name;
+                file_put_contents($path, $data);
+
+                $img->removeAttribute('src');
+                $img->setAttribute('src', $image_name);
+            }
+        }
+        return $dom->saveHTML();
     }
 }

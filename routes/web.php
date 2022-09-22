@@ -47,9 +47,10 @@ Route::get('/contact', [contactController::class, 'index'])->name('feContact');
 // Bagian route untuk backend
 Route::prefix('backends')->group(function () {
     // Rute untuk fitur page
-    Route::get('/', [PageController::class, 'index'])->name('home');
+    Route::get('/dashboard', [PageController::class, 'dashboard'])->name('dashboard');
 
     // Rute untuk fitur pengumuman
+    Route::get('pengumuman/fokus', [PengumumanController::class, 'setFocus'])->name('pengumuman.setFocus');
     Route::resource('pengumuman', PengumumanController::class)->except(['destroy']);
     Route::get('pengumuman/{pengumuman}/hapus', [PengumumanController::class, 'destroy'])->name('pengumuman.destroy');
 
@@ -77,6 +78,15 @@ Route::prefix('backends')->group(function () {
     Route::resource('user', UserController::class)->except(['destroy']);
     Route::get('user/{user}/hapus', [UserController::class, 'destroy'])->name('user.destroy');
 
-    // Rute untuk fitur visimisi
-    Route::resource('visimisi', VisiMisiController::class);
+    // Rute untuk ubah profil
+    Route::get('user-profil/{user}', [UserController::class, 'userProfil'])->name('userProfil.index');
+    Route::post('user-profil/{user}', [UserController::class, 'updateProfil'])->name('userProfil.update');
+
+    // Rute untuk mengedit halaman profil
+    Route::get('profil/{page}', [PageController::class, 'index'])->name('profil.index');
+    Route::post('profil/{page}', [PageController::class, 'update'])->name('profil.update');
+
+    // Rute untuk mengedit halaman pengaturan
+    Route::get('pengaturan', [PengaturanController::class, 'index'])->name('pengaturan.index');
+    Route::post('pengaturan', [PengaturanController::class, 'store'])->name('pengaturan.store');
 });

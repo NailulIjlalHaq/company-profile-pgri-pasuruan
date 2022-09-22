@@ -93,7 +93,7 @@
                         <span class="sr-only">Toggle Dropdown</span>
                     </button>
                     <div class="dropdown-menu">
-                        <a class="dropdown-item" href="#">Ubah Profil</a>
+                        <a class="dropdown-item" href="#">Ubah Profil User</a>
                     </div>
                 </div>
             </li>
@@ -138,7 +138,7 @@
             <nav class="mt-2">
                 <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                     <li class="nav-item">
-                        <a href="{{ route('home') }}" class="nav-link {{(request()->segment(2) == 'dashboard') ? 'active' : ''}}">
+                        <a href="{{ route('dashboard') }}" class="nav-link {{(request()->segment(2) == 'dashboard') ? 'active' : ''}}">
                             <i class="nav-icon fas fa-tachometer-alt"></i>
                             <p>
                                 Dashboard
@@ -185,8 +185,8 @@
                             </p>
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link">
+                    <li class="nav-item {{(request()->segment(2) == 'profil') ? 'menu-is-opening menu-open' : ''}}">
+                        <a href="#" class="nav-link {{(request()->segment(2) == 'profil') ? 'active' : ''}}">
                             <i class="nav-icon fas fa-file"></i>
                             <p>
                                 Profil
@@ -195,19 +195,19 @@
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="{{route ('visimisi.index')}}" class="nav-link">
+                                <a href="{{ route('profil.index', 2) }}" class="nav-link {{(request()->segment(3) == '2') ? 'active' : ''}}">
                                     <i class="far fa-circle nav-icon"></i>
-                                    <p>Visi Dan Misi</p>
+                                    <p>Visi Misi</p>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="./index2.html" class="nav-link">
+                                <a href="{{ route('profil.index', 1) }}" class="nav-link {{(request()->segment(3) == '1') ? 'active' : ''}}">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Sambutan Kepala PGRI</p>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="./index3.html" class="nav-link">
+                                <a href="{{ route('profil.index', 3) }}" class="nav-link {{(request()->segment(3) == '3') ? 'active' : ''}}">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Struktur</p>
                                 </a>
@@ -223,7 +223,7 @@
                         </a>
                     </li>
                     <li class="nav-item mb-3">
-                        <a href="{{ route('user.index') }}" class="nav-link {{(request()->segment(2) == 'pengaturan') ? 'active' : ''}}">
+                        <a href="{{ route('pengaturan.index') }}" class="nav-link {{(request()->segment(2) == 'pengaturan') ? 'active' : ''}}">
                             <i class="nav-icon fas fa-cog"></i>
                             <p>
                                 Pengaturan
