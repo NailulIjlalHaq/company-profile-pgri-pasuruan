@@ -2,24 +2,12 @@
 @section('content')
     <div class="artikel">
         <div class="artikel__wrapper">
-            <div class="artikel__wrapper--bg"></div>
-            <div class="artikel__wrapper--header">
-                <div class="artikel__wrapper--header__search">
-                    <div class="artikel-search">
-                        <ion-icon name="search-outline"></ion-icon>
-                        <input type="search" name="" id="" placeholder="Cari...">
-                    </div>
-                </div>
-                <div class="artikel__wrapper--header__title">
-                    <p>Berita</p>
-                    <p>10,000+ outstanding news articels</p>
-                </div>
-            </div>
-            <div class="home__news">
+
+            <div class="home__news mt-top bg-grey py-50">
                 <div class="home__news--wrapper">
                     @foreach ($beritaAtas as $atas)
                         <div class="news-img-box">
-                            <div class="news-img" style="background: url('{{ $atas -> cover_img }}')">
+                            <div class="news-img" style="background: url('{{ $atas->cover_img }}')">
                             </div>
                             <div class="news-img-text">
                                 <div class="news-img-text-tag">
@@ -38,7 +26,19 @@
                     @endforeach
                 </div>
             </div>
-
+            <div class="artikel__wrapper--bg" style="margin: 0"></div>
+            <div class="artikel__wrapper--header">
+                <div class="artikel__wrapper--header__search">
+                    <div class="artikel-search">
+                        <ion-icon name="search-outline"></ion-icon>
+                        <input type="search" name="" id="" placeholder="Cari...">
+                    </div>
+                </div>
+                <div class="artikel__wrapper--header__title">
+                    <p>Berita</p>
+                    <p>10,000+ outstanding news articels</p>
+                </div>
+            </div>
 
             <div class="artikel__wrapper--content">
                 @foreach ($berita as $item)
@@ -50,7 +50,7 @@
                                         style="background: url('{{ $item->cover_img }}') "></div>
                                     <div class="artikel-container-box__top--info">
                                         <div class="artikel-container-box__top--info-box">
-                                            <div>
+                                            <div class="artikel-container-box__top--info-box-text">
                                                 <div class="artikel-container-box__top--info-box-text-1">
                                                     <p>{{ $item->title }}</p>
                                                 </div>
@@ -58,9 +58,7 @@
                                                     <p>{{ strip_tags($item->content) }}</p>
                                                 </div>
                                             </div>
-                                            <button> Selengkapnya
-                                                <ion-icon name="chevron-up-circle"></ion-icon>
-                                            </button>
+
                                         </div>
                                     </div>
                                 </div>
@@ -82,10 +80,6 @@
         </div>
     </div>
 @section('js')
-    <script>
-        $('.artikel-container-box__top--info').on('click', function() {
-            location.href = 'detail-berita'
-        })
-    </script>
+    <script></script>
 @endsection
 @endsection

@@ -18,52 +18,44 @@
             <div class="artikel__wrapper--content">
 
                 @foreach ($artikel as $item)
-                    <div class="artikel-container">
-                        <div class="artikel-container-box">
-                            <div class="artikel-container-box__top">
-                                <div class="artikel-container-box__top--img"
-                                    style="background: url('{{ $item->cover_img }}') "></div>
-                                <div class="artikel-container-box__top--info">
-                                    <div class="artikel-container-box__top--info-box">
-                                        <div>
-                                            <div class="artikel-container-box__top--info-box-text-1">
-                                                <p>{{ $item->title }}</p>
-                                            </div>
-                                            <div class="artikel-container-box__top--info-box-text-2">
-                                                <p>{{ strip_tags($item->content) }}</p>
+                    <a
+                        href="{{ route('feDetailArtikel', ['id' => $item->id_posts, 'slug' => Str::of($item->title)->slug('-')]) }}">
+                        <div class="artikel-container">
+                            <div class="artikel-container-box">
+                                <div class="artikel-container-box__top">
+                                    <div class="artikel-container-box__top--img"
+                                        style="background: url('{{ $item->cover_img }}') "></div>
+                                    <div class="artikel-container-box__top--info">
+                                        <div class="artikel-container-box__top--info-box">
+                                            <div class="artikel-container-box__top--info-box-text">
+                                                <div class="artikel-container-box__top--info-box-text-1">
+                                                    <p>{{ $item->title }}</p>
+                                                </div>
+                                                <div class="artikel-container-box__top--info-box-text-2">
+                                                    <p>{{ strip_tags($item->content) }}</p>
+                                                </div>
                                             </div>
                                         </div>
-                                        <a
-                                            href="{{ route('feDetailArtikel', ['id' => $item->id_posts, 'slug' => Str::of($item->title)->slug('-')]) }}">
-                                            <button> Selengkapnya
-                                                <ion-icon name="chevron-up-circle"></ion-icon>
-                                            </button>
-                                        </a>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="artikel-container-box__bot">
-                                <p>
-                                    <ion-icon name="eye"></ion-icon> 250
-                                </p>
-                                <p>
-                                    <ion-icon name="share-social"></ion-icon> 300
-                                </p>
+                                <div class="artikel-container-box__bot">
+                                    <p>
+                                        <ion-icon name="eye"></ion-icon> 250
+                                    </p>
+                                    <p>
+                                        <ion-icon name="share-social"></ion-icon> 300
+                                    </p>
 
+                                </div>
                             </div>
                         </div>
-                    </div>
                 @endforeach
 
             </div>
         </div>
-    </div>
+    </div> </a>
 
 @section('js')
-    <script>
-        $('.artikel-container-box__top--info').on('click', function() {
-            location.href = 'detail-artikel'
-        })
-    </script>
+    <script></script>
 @endsection
 @endsection

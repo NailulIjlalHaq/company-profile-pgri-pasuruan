@@ -22,6 +22,7 @@ class homeController extends Controller
     }
     public function detailSambutan()
     {
-        return view('frontend.detailSambutan');
+        $sambutan = pages::find(1);
+        return view('frontend.detailSambutan', compact('sambutan'));
     }
 }

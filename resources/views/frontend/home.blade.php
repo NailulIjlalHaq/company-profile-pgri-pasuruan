@@ -17,7 +17,7 @@
         </div>
     </div>
     <div class="home">
-        <div class="home__news">
+        <div class="home__news mt-top py-50">
             <div class="home__news--wrapper">
                 @foreach ($beritaAtas as $atas)
                     <div class="news-img-box">
@@ -40,96 +40,97 @@
                 @endforeach
             </div>
         </div>
-    </div>
 
 
 
-    <div class="home__sambutan">
-        <div class="home__sambutan--left">
-            <div class="home__sambutan--left-img" style="background: url({{ asset('./frontend/assets/img/pgri.jpg') }})">
-            </div>
-        </div>
-        <div class="home__sambutan--right">
-            <div class="card">
-                <div class="card__title">
-                    {{ $sambutan->title }}
+        <div class="w-100 d-flex flex-center bg-grey-blue">
+            <div class="home__sambutan">
+                <div class="home__sambutan--left">
+                    <div class="home__sambutan--left-img"
+                        style="background: url({{ asset('./frontend/assets/img/pgri.jpg') }})">
+                    </div>
                 </div>
-                <div class="card__desc">
-                    <p class="card__desc--text">
-                        {{ strip_tags($sambutan->content) }}
-                    </p>
-                    <div class="card__desc--show">...Selengkapnya</div>
-                </div>
-                <div class="card__btn" onclick="location.href='{{ route('feDetailSambutan') }}'">Lebih Lanjut<ion-icon
-                        name="chevron-forward-outline"></ion-icon>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-    <div class="home__berita">
-        <div class="home__berita--title">
-            <div class="home__berita--title-text">Artikel dan Berita</div>
-            <div class="home__berita--title__search">
-                <ion-icon name="search-outline"></ion-icon>
-                <input type="search" placeholder="Cari..." />
-            </div>
-        </div>
-        <div class="home__berita--wrapper">
-            <div class="home__berita--wrapper__left">
-                <div class="home__berita--wrapper__left--scroll">
-                    @foreach ($artikel as $botArtikel)
-                        <div class="berita-box">
-                            <div class="berita-box__left" style="background: url({{ $botArtikel->cover_img }})"></div>
-                            <div class="berita-box__right">
-                                <div class="berita-box__right--title">{{ $botArtikel->title }}</div>
-                                <div class="berita-box__right--desc">{{ strip_tags($botArtikel->content) }}</div>
-                                <div class="berita-box__right--bottom">
-                                    <p>20 Juni</p>
-                                    <p>
-                                        <ion-icon name="arrow-forward-circle-outline"></ion-icon>
-                                    </p>
-                                </div>
-                            </div>
+                <div class="home__sambutan--right">
+                    <div class="card">
+                        <div class="card__title">
+                            {{ $sambutan->title }}
                         </div>
-                    @endforeach
+                        <div class="card__desc">
+                            <p class="card__desc--text">
+                                {{ strip_tags($sambutan->content) }}
+                            </p>
+
+                        </div>
+                        <div class="card__btn" onclick="location.href='{{ route('feDetailSambutan') }}'">Lebih Lanjut
+                            <ion-icon name="chevron-forward-outline"></ion-icon>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="home__berita--wrapper__right">
-                <div class="berita__simple">
-                    @foreach ($botBerita as $bb)
-                        <div class="artikel-container">
-                            <div class="artikel-container-box">
-                                <div class="artikel-container-box__top">
-                                    <div class="artikel-container-box__top--img"
-                                        style="background: url({{ $bb->cover_img }}) "></div>
-                                    <div class="artikel-container-box__top--info">
-                                        <div class="artikel-container-box__top--info-box">
-                                            <div>
-                                                <p>
-                                                    {{ $bb->title }}
-                                                </p>
-                                                <p>{{ strip_tags($bb->content) }} </p>
-                                            </div>
-                                            <button> Selangkapnya
-                                                <ion-icon name="chevron-up-circle"></ion-icon>
-                                            </button>
-                                        </div>
+        </div>
+
+        <div class="home__berita">
+            <div class="home__berita--title">
+                <div class="home__berita--title-text">Artikel dan Berita</div>
+                <div class="home__berita--title__search">
+                    <ion-icon name="search-outline"></ion-icon>
+                    <input type="search" placeholder="Cari..." />
+                </div>
+            </div>
+            <div class="home__berita--wrapper">
+                <div class="home__berita--wrapper__left">
+                    <div class="home__berita--wrapper__left--scroll">
+                        @foreach ($artikel as $botArtikel)
+                            <div class="berita-box">
+                                <div class="berita-box__left" style="background: url({{ $botArtikel->cover_img }})"></div>
+                                <div class="berita-box__right">
+                                    <div class="berita-box__right--title">{{ $botArtikel->title }}</div>
+                                    <div class="berita-box__right--desc">{{ strip_tags($botArtikel->content) }}</div>
+                                    <div class="berita-box__right--bottom">
+                                        <p>20 Juni</p>
+                                        <p>
+                                            <ion-icon name="arrow-forward-circle-outline"></ion-icon>
+                                        </p>
                                     </div>
                                 </div>
-                                <div class="artikel-container-box__bot">
-                                    <p>
-                                        <ion-icon name="eye"></ion-icon> 250
-                                    </p>
-                                    <p>
-                                        <ion-icon name="share-social"></ion-icon> 300
-                                    </p>
+                            </div>
+                        @endforeach
+                    </div>
+                </div>
+                <div class="home__berita--wrapper__right">
+                    <div class="berita__simple">
+                        @foreach ($botBerita as $bb)
+                            <div class="artikel-container">
+                                <div class="artikel-container-box">
+                                    <div class="artikel-container-box__top">
+                                        <div class="artikel-container-box__top--img"
+                                            style="background: url({{ $bb->cover_img }}) "></div>
+                                        <div class="artikel-container-box__top--info">
+                                            <div class="artikel-container-box__top--info-box">
+                                                <div class="artikel-container-box__top--info-box-text">
+                                                    <div class="artikel-container-box__top--info-box-text-1">
+                                                        <p>{{ $bb->title }}</p>
+                                                    </div>
+                                                    <div class="artikel-container-box__top--info-box-text-2">
+                                                        <p>{{ strip_tags($bb->content) }}</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="artikel-container-box__bot">
+                                        <p>
+                                            <ion-icon name="eye"></ion-icon> 250
+                                        </p>
+                                        <p>
+                                            <ion-icon name="share-social"></ion-icon> 300
+                                        </p>
 
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    @endforeach
+                        @endforeach
+                    </div>
                 </div>
             </div>
         </div>

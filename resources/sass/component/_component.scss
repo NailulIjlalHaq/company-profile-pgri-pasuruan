@@ -39,22 +39,6 @@
                 -webkit-box-orient: vertical;
             }
         }
-        &--show {
-            cursor: pointer;
-            padding-left: 4rem;
-            position: absolute;
-            bottom: 0;
-            right: 0;
-            background: linear-gradient(
-                90deg,
-                transparent,
-                rgba(#f6f7f9, 0.6) 0 25%,
-                #f6f7f9 25% 100%
-            );
-            font-size: 1.4rem;
-            font-weight: 600;
-            color: $color-secondary;
-        }
     }
     .card-down {
         padding: 0;

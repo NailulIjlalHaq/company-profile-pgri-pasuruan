@@ -13,27 +13,8 @@
             <div class="about__sejarah-wrapper-img">
             </div>
             <div class="about__sejarah-wrapper-info">
-                <p><span>s</span>ejarah singkat pgri orem ipsum, dolor sit amet consectetur adipisicing elit. Hic
-                    mollitia quisquam
-                    sequi ut
-                    consectetur omnis nulla eveniet rerum itaque? Quos nihil quidem iure sed expedita?
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. In nesciunt possimus perspiciatis a neque
-                    cupiditate soluta error dolorem sit, provident iusto nisi quidem velit molestias.
-                    consectetur omnis nulla eveniet rerum itaque? Quos nihil quidem iure sed expedita?
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. In nesciunt possimus perspiciatis a neque
-                    cupiditate soluta error dolorem sit, provident iusto nisi quidem velit molestias.
-                </p>
                 <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores similique, quibusdam modi
-                    voluptates inventore rerum officiis aliquam amet quia laudantium ipsa atque nemo, dolor nam?
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae veniam sed eos ea qui vero
-                    repellat dicta, mollitia nisi voluptatem? Doloribus commodi totam repellat fuga.
-                </p>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores similique, quibusdam modi
-                    voluptates inventore rerum officiis aliquam amet quia laudantium ipsa atque nemo, dolor nam?
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae veniam sed eos ea qui vero
-                    repellat dicta, mollitia nisi voluptatem? Doloribus commodi totam repellat fuga.
+                    {{ strip_tags($sambutan->content) }}
                 </p>
             </div>
             <div class="about__sejarah-wrapper-btn">
