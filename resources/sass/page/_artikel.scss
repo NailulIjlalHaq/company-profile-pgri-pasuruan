@@ -405,6 +405,14 @@
                             font-weight: 400;
                             color: $color-m-dark;
                             margin-bottom: 1.6rem;
+                            @supports (-webkit-line-clamp: 2) {
+                                overflow: hidden;
+                                text-overflow: ellipsis;
+                                white-space: initial;
+                                display: -webkit-box;
+                                -webkit-line-clamp: 2;
+                                -webkit-box-orient: vertical;
+                            }
                         }
                         &--bottom {
                             display: flex;

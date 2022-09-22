@@ -3,17 +3,25 @@
 namespace App\Http\Controllers\frontend;
 
 use App\Http\Controllers\Controller;
-
-
+use App\Models\posts;
+use App\Models\pages;
 use Illuminate\Http\Request;
 
 class homeController extends Controller
 {
     public function index()
     {
-        return view('frontend.home');
+        $beritaAtas = posts::where('type', 'berita')->where('is_focus', 1)->limit(4)->get();
+
+        $sambutan = pages::find(1);
+        $artikel = posts::where('type', 'artikel')->limit(5)->get();
+        $botBerita = posts::where('type', 'berita')->where('is_focus', 0)->limit(4)->get();
+
+
+        return view('frontend.home', compact('beritaAtas', 'sambutan', 'artikel', 'botBerita'));
     }
-    public function detailSambutan(){
+    public function detailSambutan()
+    {
         return view('frontend.detailSambutan');
     }
 }
