@@ -154,8 +154,9 @@
                 font-size: 1.6rem;
                 color: $color-secondary;
                 animation: moveTicker 10s linear infinite;
-                overflow: hidden;
+                overflow: visible;
                 white-space: nowrap;
+                width: -webkit-fill-available;
 
                 @keyframes moveTicker {
                     from {
