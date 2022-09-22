@@ -7,8 +7,7 @@
             </div>
             <div class="alert-news-wrapper-info">
                 <p class="alert-news-wrapper-info-text">
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Id,
-                    deleniti consectetur nisi quidem doloribus perferendis!
+                    {{ $pengumuman->title }}
                 </p>
             </div>
             <div class="alert-news-wrapper-close ">
