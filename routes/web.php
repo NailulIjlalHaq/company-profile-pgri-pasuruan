@@ -30,11 +30,11 @@ Route::get('/profile-visi-misi', [aboutController::class, 'visiMisi'])->name('pr
 
 //artikel route
 Route::get('/artikel', [artikelController::class, 'index'])->name('feArtikel');
-Route::get('/detail-artikel', [artikelController::class, 'detail'])->name('feDetailArtikel');
+Route::get('/detail-artikel{id}', [artikelController::class, 'detail'])->name('feDetailArtikel');
 
 //berita route
 Route::get('/berita', [beritaController::class, 'index'])->name('feBerita');
-Route::get('/detail-berita', [beritaController::class, 'detail'])->name('feDetailBerita');
+Route::get('/detail-berita{id}', [beritaController::class, 'detail'])->name('feDetailBerita');
 
 //gallery route
 Route::get('/gallery', [galleryController::class, 'index'])->name('feGallery');

@@ -10,12 +10,14 @@ class artikelController extends Controller
 {
     public function index()
     {
-        $artikel = posts::get();
-        return view('frontend.artikel', ['artikel'=>$artikel]);
+        $artikel = posts::where('type', "artikel")->get();
+        return view('frontend.artikel', ['artikel' => $artikel]);
     }
 
-    public function detail()
+    public function detail($id)
     {
-        return view('frontend.detailArtikel');
+        $artikel = posts::where('type', "artikel")->get();
+        $item = posts::find($id);
+        return view('frontend.detailArtikel', ['item'=> $item, 'artikel'=>$artikel]);
     }
 }

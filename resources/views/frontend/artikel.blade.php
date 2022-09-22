@@ -33,9 +33,11 @@
                                                 <p>{{ strip_tags($item->content) }}</p>
                                             </div>
                                         </div>
-                                        <button> Selengkapnya
-                                            <ion-icon name="chevron-up-circle"></ion-icon>
-                                        </button>
+                                        <a href="{{ route('feDetailArtikel', $item->id_posts) }}">
+                                            <button> Selengkapnya
+                                                <ion-icon name="chevron-up-circle"></ion-icon>
+                                            </button>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
