@@ -109,7 +109,7 @@
                             <div class="artikel-container-box">
                                 <div class="artikel-container-box__top">
                                     <div class="artikel-container-box__top--img"
-                                        style="background: url('{{ $bb->cover_img }}') "></div>
+                                        style="background: url({{ $bb->cover_img }}) "></div>
                                     <div class="artikel-container-box__top--info">
                                         <div class="artikel-container-box__top--info-box">
                                             <div>
