@@ -12,12 +12,12 @@ class beritaController extends Controller
     {
         $beritaAtas = posts::where('type', 'berita')->where('is_focus', 1)->limit(4)->get();
         $berita = posts::where('type', 'berita')->paginate(6);
-        return view('frontend.berita', compact('beritaAtas','berita'));
+        return view('frontend.berita', compact('beritaAtas', 'berita'));
     }
     public function detail($id)
     {
         $berita = posts::where('type', 'berita')->limit(2)->get();
         $item = posts::find($id);
-        return view('frontend.detailBerita',['item'=>$item, 'berita'=>$berita]);
+        return view('frontend.detailBerita', ['item' => $item, 'berita' => $berita]);
     }
 }

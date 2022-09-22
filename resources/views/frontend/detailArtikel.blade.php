@@ -54,7 +54,8 @@
                     <h1 class="detail-artikel-wrapper__content--sec-title">Artikel Lainya</h1>
                     <hr class="detail-artikel-wrapper__content--sec-line">
                     @foreach ($artikel as $item)
-                        <a href="{{ route('feDetailArtikel', $item->id_posts) }}">
+                        <a
+                            href="{{ route('feDetailArtikel', ['id' => $item->id_posts, 'slug' => Str::of($item->title)->slug('-')]) }}">
                             <div class="berita-box">
                                 <div class="berita-box__left" style="background: url({{ $item->cover_img }})"></div>
                                 <div class="berita-box__right">

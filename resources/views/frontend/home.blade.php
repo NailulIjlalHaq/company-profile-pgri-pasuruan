@@ -21,7 +21,7 @@
             <div class="home__news--wrapper">
                 @foreach ($beritaAtas as $atas)
                     <div class="news-img-box">
-                        <div class="news-img" style="background: url('{{ asset('./frontend/assets/img/berita1.jpg') }}')">
+                        <div class="news-img" style="background: url('{{ $atas->cover_img }}')">
                         </div>
                         <div class="news-img-text">
                             <div class="news-img-text-tag">
@@ -43,6 +43,7 @@
     </div>
 
 
+
     <div class="home__sambutan">
         <div class="home__sambutan--left">
             <div class="home__sambutan--left-img" style="background: url({{ asset('./frontend/assets/img/pgri.jpg') }})">
@@ -51,18 +52,11 @@
         <div class="home__sambutan--right">
             <div class="card">
                 <div class="card__title">
-                    Sambutan Kepala Pgri<br />
-                    Kabupaten Pasuruan
+                    {{ $sambutan->title }}
                 </div>
                 <div class="card__desc">
                     <p class="card__desc--text">
-                        Selamat datang di website SMKN 1 Purwosari. Yang merupakan lembaga pusat pendidikan dan juga
-                        sebagai salah satu Pusat Pelatihan dan Pendidikan Keterampilan Terpadu (PPPKT) di Propinsi Jawa
-                        Timur. SMKN 1 Purwosari merupakan
-                        Sekolah Adiwiyata yang berada di Purwosari dimana tempatnya yang sangat strategis dan mudah
-                        dijangkau, Mempunyai motto “Kepuasan anda, Prestasi kami” segenap keluarga besar SMKN 1
-                        Purwosari senantiasa akan memberikan layanan
-                        yang prima bagi masyarakat. Selamat bergabung.
+                        {{ strip_tags($sambutan->content) }}
                     </p>
                     <div class="card__desc--show">...Selengkapnya</div>
                 </div>

@@ -30,7 +30,7 @@ Route::get('/profile-visi-misi', [aboutController::class, 'visiMisi'])->name('pr
 
 //artikel route
 Route::get('/artikel', [artikelController::class, 'index'])->name('feArtikel');
-Route::get('/detail-artikel{id}', [artikelController::class, 'detail'])->name('feDetailArtikel');
+Route::get('/detail-artikel/{id}/{slug}', [artikelController::class, 'detail'])->name('feDetailArtikel');
 
 //berita route
 Route::get('/berita', [beritaController::class, 'index'])->name('feBerita');

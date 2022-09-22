@@ -33,7 +33,8 @@
                                                 <p>{{ strip_tags($item->content) }}</p>
                                             </div>
                                         </div>
-                                        <a href="{{ route('feDetailArtikel', $item->id_posts) }}">
+                                        <a
+                                            href="{{ route('feDetailArtikel', ['id' => $item->id_posts, 'slug' => Str::of($item->title)->slug('-')]) }}">
                                             <button> Selengkapnya
                                                 <ion-icon name="chevron-up-circle"></ion-icon>
                                             </button>
