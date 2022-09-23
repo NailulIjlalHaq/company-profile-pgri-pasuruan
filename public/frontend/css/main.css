@@ -506,6 +506,86 @@ body {
       color: #132133;
       font-size: 2rem; }
 
+.not-found,
+.error {
+  padding: 10rem 0;
+  width: 100%;
+  display: flex;
+  justify-content: center; }
+  @media only screen and (max-width: 48em) {
+    .not-found,
+    .error {
+      padding: 10rem 5rem; } }
+  @media only screen and (max-width: 31.25em) {
+    .not-found,
+    .error {
+      padding: 10rem 2rem; } }
+  .not-found__wrapper,
+  .error__wrapper {
+    max-width: 144rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    gap: 3.2rem; }
+    @media only screen and (max-width: 35.625em) {
+      .not-found__wrapper,
+      .error__wrapper {
+        gap: 0; } }
+    .not-found__wrapper--img,
+    .error__wrapper--img {
+      width: 100%;
+      display: flex;
+      justify-content: center; }
+      @media only screen and (max-width: 25em) {
+        .not-found__wrapper--img img,
+        .error__wrapper--img img {
+          width: 100%; } }
+    .not-found__wrapper--text,
+    .error__wrapper--text {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center; }
+      @media only screen and (max-width: 35.625em) {
+        .not-found__wrapper--text,
+        .error__wrapper--text {
+          margin-bottom: 3.2rem; } }
+      .not-found__wrapper--text p:nth-child(1),
+      .error__wrapper--text p:nth-child(1) {
+        font-weight: 600;
+        font-size: 4.8rem; }
+        @media only screen and (max-width: 48em) {
+          .not-found__wrapper--text p:nth-child(1),
+          .error__wrapper--text p:nth-child(1) {
+            font-size: 4.2rem; } }
+        @media only screen and (max-width: 25em) {
+          .not-found__wrapper--text p:nth-child(1),
+          .error__wrapper--text p:nth-child(1) {
+            font-size: 3.8rem; } }
+      .not-found__wrapper--text p:nth-child(2),
+      .error__wrapper--text p:nth-child(2) {
+        width: 70%;
+        font-weight: 400;
+        font-size: 2.4rem; }
+        @media only screen and (max-width: 48em) {
+          .not-found__wrapper--text p:nth-child(2),
+          .error__wrapper--text p:nth-child(2) {
+            font-size: 2.2rem;
+            width: 100%; } }
+        @media only screen and (max-width: 25em) {
+          .not-found__wrapper--text p:nth-child(2),
+          .error__wrapper--text p:nth-child(2) {
+            font-size: 2rem; } }
+    .not-found__wrapper--btn button,
+    .error__wrapper--btn button {
+      border: none;
+      padding: 1rem 3rem;
+      background: #3d6ead;
+      border-radius: 5px;
+      color: #fff; }
+
 .footer {
   padding: 5rem 10rem;
   background: #132133;

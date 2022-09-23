@@ -25,4 +25,12 @@ class homeController extends Controller
         $sambutan = pages::find(1);
         return view('frontend.detailSambutan', compact('sambutan'));
     }
+    public function notFound()
+    {
+        return view('frontend.404');
+    }
+    public function error()
+    {
+        return view('frontend.500');
+    }
 }
