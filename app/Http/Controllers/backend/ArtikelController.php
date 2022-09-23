@@ -33,8 +33,9 @@ class ArtikelController extends Controller
                     // Menampilkan judul berita beserta tombol aksi
                     return '
                     <h2 class="lead mb-0"><b>' . $row->title . '</b></h2>
+
                     <p class="text-muted">
-                        <small><b>Kategori - </b>' . $kategori . '</small>
+                        <small><b>Diposting oleh:</b> ' . $row->users->name . '</small>
                     </p>
                     <div class="mt-3">
                         <a href="' . route('artikel.destroy', $row->id_posts) . '" class="btn bg-teal btn-sm" onclick="return confirm(\'Apakah anda yakin ingin menghapus data ini ?\')">Hapus</a>
@@ -89,6 +90,7 @@ class ArtikelController extends Controller
             $post->type = 'artikel';
             $post->cover_img = $imagePath;
             $post->is_focus = 0;
+            $post->id_user = auth()->user()->id;
             $post->save();
 
             // Fungsi untuk menuju halaman index dan memberikan pesan sukses

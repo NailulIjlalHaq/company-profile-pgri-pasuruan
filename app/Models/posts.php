@@ -24,4 +24,9 @@ class posts extends Model
     {
         return $this->belongsTo(categories::class, 'id_categories', 'id_categories');
     }
+
+    public function users()
+    {
+        return $this->belongsTo(User::class, 'id_user', 'id');
+    }
 }

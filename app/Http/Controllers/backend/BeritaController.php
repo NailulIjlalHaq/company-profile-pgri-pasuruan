@@ -34,9 +34,10 @@ class BeritaController extends Controller
                     return '
                     <h2 class="lead mb-0"><b>' . $row->title . '</b></h2>
                     <p class="text-muted">
-                        <small><b>Kategori - </b>' . $kategori . '</small>
+                        <small class="mr-3"><b>Kategori - </b>' . $kategori . '</small>
+                        <small><b>Diposting oleh:</b> ' . $row->users->name . '</small>
                     </p>
-                    <div class="mt-3">
+                    <div class="mt-3 align-bottom">
                         <a href="' . route('berita.destroy', $row->id_posts) . '" class="btn bg-teal btn-sm" onclick="return confirm(\'Apakah anda yakin ingin menghapus data ini ?\')">Hapus</a>
                         <a href="' . route('berita.edit', $row->id_posts) . '" class="btn btn-primary btn-sm">Edit</a>
                         <a href="' . route('berita.setFocus', ['id' => $row->id_posts, 'is_active' => $row->is_focus ? false : true]) . '" class="btn btn-primary btn-sm" onclick="return confirm(\'Apakah anda ingin memfokuskan berita di beranda ?\')">' . $is_focus . '</a>
@@ -90,6 +91,7 @@ class BeritaController extends Controller
             $post->type = 'berita';
             $post->cover_img = $imagePath;
             $post->is_focus = 0;
+            $post->id_user = auth()->user()->id;
             $post->save();
 
             // Fungsi untuk menuju halaman index dan memberikan pesan sukses

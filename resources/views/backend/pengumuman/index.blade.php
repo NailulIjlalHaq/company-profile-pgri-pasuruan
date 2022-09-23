@@ -76,6 +76,11 @@
             processing: true,
             serverSide: true,
             ajax: "{{ route('pengumuman.index') }}",
+            language: {
+                search: 'Cari',
+                searchPlaceholder: 'kata kunci...',
+                emptyTable: 'Data yang dicari tidak ditemukan...'
+            },
             columns: [{
                     data: 'title',
                     name: 'title'

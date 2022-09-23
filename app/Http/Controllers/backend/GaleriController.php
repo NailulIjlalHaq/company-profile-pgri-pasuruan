@@ -27,6 +27,9 @@ class GaleriController extends Controller
                     // Menampilkan judul galeri beserta tombol aksi
                     return '
                     <h2 class="lead mb-0"><b>' . $row->name . '</b></h2>
+                    <p class="text-muted">
+                        <small><b>Diposting oleh:</b> ' . $row->users->name . '</small>
+                    </p>
                     <div class="mt-3">
                         <a href="' . route('galeri.destroy', $row->id_galleries) . '" class="btn bg-teal btn-sm" onclick="return confirm(\'Apakah anda yakin ingin menghapus data ini ?\')">Hapus</a>
                         <a href="' . route('galeri.edit', $row->id_galleries) . '" class="btn btn-primary btn-sm">Edit</a>
@@ -50,7 +53,7 @@ class GaleriController extends Controller
 
         //memberikan status edit form false untuk digunakan untuk menampilkan form tambah
         $isEdit = false;
-        return view('backend.galeri.form',compact('isEdit'));
+        return view('backend.galeri.form', compact('isEdit'));
     }
 
     /**
@@ -74,6 +77,7 @@ class GaleriController extends Controller
             $post->name = $request->name;
             $post->description = $konten;
             $post->file = $imagePath;
+            $post->id_user = auth()->user()->id;
             $post->save();
 
             // Fungsi untuk menuju halaman index dan memberikan pesan sukses

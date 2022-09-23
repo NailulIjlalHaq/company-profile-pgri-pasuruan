@@ -66,7 +66,7 @@
                 <!-- ./col -->
                 <div class="col-lg-3 col-6">
                     <!-- small box -->
-                    <div class="small-box bg-danger">
+                    <div class="small-box bg-teal">
                         <div class="inner">
                             <h3>{{$galeri_count}} Gambar</h3>
 
