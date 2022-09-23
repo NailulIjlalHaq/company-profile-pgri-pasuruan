@@ -16,13 +16,21 @@ class homeController extends Controller
         $sambutan = pages::find(1);
         $artikel = posts::where('type', 'artikel')->limit(5)->get();
         $botBerita = posts::where('type', 'berita')->where('is_focus', 0)->limit(4)->get();
-        $pengumuman = posts::find(44);
+        // $pengumuman = posts::find(44);
 
-        return view('frontend.home', compact('beritaAtas', 'sambutan', 'artikel', 'botBerita', 'pengumuman'));
+        return view('frontend.home', compact('beritaAtas', 'sambutan', 'artikel', 'botBerita'));
     }
     public function detailSambutan()
     {
         $sambutan = pages::find(1);
         return view('frontend.detailSambutan', compact('sambutan'));
+    }
+    public function notFound()
+    {
+        return view('frontend.404');
+    }
+    public function error()
+    {
+        return view('frontend.500');
     }
 }

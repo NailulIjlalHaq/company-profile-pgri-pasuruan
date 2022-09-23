@@ -18,6 +18,8 @@ use App\Http\Controllers\backend\BeritaController as BackendBeritaController;
 use App\Http\Controllers\backend\ArtikelController as BackendArtikelController;
 
 
+Route::get('/not-found',[homeController::class, 'notFound']);
+Route::get('/error',[homeController::class, 'error']);
 //index route
 Route::get('/', [homeController::class, 'index'])->name('feHome');
 Route::get('/detail-sambutan', [homeController::class, 'detailSambutan'])->name('feDetailSambutan');

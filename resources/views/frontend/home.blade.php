@@ -7,7 +7,14 @@
             </div>
             <div class="alert-news-wrapper-info">
                 <p class="alert-news-wrapper-info-text">
-                    {{ $pengumuman->title }}
+                    {{-- {{ $pengumuman->title }} --}}
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam cumque voluptates maxime nisi, quisquam
+                    molestias similique veniam nobis saepe minus in nihil odit adipisci dolorem aliquam ad earum! Aspernatur
+                    deserunt vero beatae placeat, explicabo quo itaque modi atque ducimus doloribus nesciunt fugiat debitis,
+                    laboriosam, eius incidunt! Culpa, praesentium nisi! Vel praesentium, aspernatur ipsa quidem,
+                    perspiciatis facilis consectetur, earum in dolore reprehenderit debitis nostrum pariatur architecto
+                    iusto sint cumque asperiores? Saepe, ex sunt rem ea perspiciatis ratione ducimus iure, eligendi
+                    doloribus possimus excepturi dicta adipisci inventore. Excepturi velit porro accusantium placeat?
                 </p>
             </div>
             <div class="alert-news-wrapper-close ">
