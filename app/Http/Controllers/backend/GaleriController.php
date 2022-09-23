@@ -65,9 +65,6 @@ class GaleriController extends Controller
     public function store(StoreGaleriRequest $request)
     {
         try {
-            // Memanggil fungsi untuk meload semua konten yang ada di summernote dan mengupload gambar
-            // dan mengembalikan dalam bentuk html
-            $konten = $this->loadContent($request->description);
 
             // Memanggil fungsi untuk mengupload gambar cover
             $imagePath = $this->uploadCover($request->file);
@@ -75,7 +72,7 @@ class GaleriController extends Controller
             // Fungsi untuk menyimpan semua data
             $post = new galleries;
             $post->name = $request->name;
-            $post->description = $konten;
+            $post->description = $request->description;
             $post->file = $imagePath;
             $post->id_user = auth()->user()->id;
             $post->save();
@@ -124,9 +121,6 @@ class GaleriController extends Controller
      */
     public function update(UpdateGaleriRequest $request, $id)
     {
-        // Memanggil fungsi untuk meload semua konten yang ada di summernote dan mengupload gambar
-        // dan mengembalikan dalam bentuk html
-        $konten = $this->loadContent($request->description);
 
         // Fungsi untuk mengambil data galeri sesuai dengan id
         $post = galleries::find($id);
@@ -141,7 +135,7 @@ class GaleriController extends Controller
 
         // fungsi untuk mengupdate data galeri sesuai dengan id
         $post->name = $request->name;
-        $post->description = $konten;
+        $post->description = $request->description;
         $post->save();
 
         return redirect()->route('galeri.index')->with('success', 'Galeri berhasil diubah dan di publish.');
@@ -169,31 +163,6 @@ class GaleriController extends Controller
         galleries::destroy($id);
 
         return redirect()->route('galeri.index')->with('success', 'Galeri berhasil dihapus dari sistem.');
-    }
-
-    public function loadContent($content)
-    {
-        // Fungsi untuk meload konten summernote dan mengupload gambar pada konten
-        $dom = new \DomDocument();
-        $dom->loadHtml($content, LIBXML_NOWARNING | LIBXML_NOERROR);
-        $images = $dom->getElementsByTagName('img');
-        foreach ($images as $k => $img) {
-            $data = $img->getAttribute('src');
-            if (strpos($data, 'data:image') !== false) {
-                list($type, $data) = explode(';', $data);
-                list(, $data)      = explode(',', $data);
-
-                $data = base64_decode($data);
-
-                $image_name = "/content_img/" . time() . $k . '.png';
-                $path = public_path() . $image_name;
-                file_put_contents($path, $data);
-
-                $img->removeAttribute('src');
-                $img->setAttribute('src', $image_name);
-            }
-        }
-        return $dom->saveHTML();
     }
 
     public function uploadCover($imageFile)

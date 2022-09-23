@@ -69,11 +69,7 @@
                                         </div>
                                         <div class="form-group">
                                             <label>Deskripsi Foto</label>
-                                            <textarea type="text" class="form-control {{$errors->has('description')?'is-invalid':''}}" name="description" id="konten" row="500">
-                                                @if(isset($post))
-                                                {{$post->description}}
-                                                @endif
-                                            </textarea>
+                                            <textarea type="text" class="form-control text-left {{$errors->has('description')?'is-invalid':''}}" name="description" id="description" style="white-space:normal" row="500">@if(isset($post)){{$post->description}}@endif</textarea>
                                             @if($errors->has('description'))
                                             <div class="invalid-feedback">
                                                 {{$errors->first('description')}}
@@ -112,7 +108,6 @@
 
 @section('javascript')
 <script type="text/javascript">
-
     function readURL(input) {
         if (input.files && input.files[0]) {
             var reader = new FileReader();
