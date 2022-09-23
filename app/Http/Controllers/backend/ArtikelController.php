@@ -28,10 +28,14 @@ class ArtikelController extends Controller
                     // Memberikan dan mengecek status fokus berita
                     // $is_focus = $row->is_focus ? 'Nonaktifkan' : 'Fokuskan';
                     // $kategori = is_null($row->id_categories) ? 'Belum di set' : $row->categories->name;
+                    $kategori = is_null($row->id_categories) ? 'Belum di set' : $row->categories->name;
 
                     // Menampilkan judul berita beserta tombol aksi
                     return '
                     <h2 class="lead mb-0"><b>' . $row->title . '</b></h2>
+                    <p class="text-muted">
+                        <small><b>Kategori - </b>' . $kategori . '</small>
+                    </p>
                     <div class="mt-3">
                         <a href="' . route('artikel.destroy', $row->id_posts) . '" class="btn bg-teal btn-sm" onclick="return confirm(\'Apakah anda yakin ingin menghapus data ini ?\')">Hapus</a>
                         <a href="' . route('artikel.edit', $row->id_posts) . '" class="btn btn-primary btn-sm">Edit</a>

@@ -65,7 +65,15 @@ $color-blue: #60c1f8;
 .bg-primary {
     background: $color-primary;
 }
-
+.bg-grey {
+    background-color: #f3f3f4;
+}
+.bg-grey-blue {
+    background-color: #f6f7f9;
+}
+.w-100 {
+    width: 100%;
+}
 .p {
     &x {
         &-500 {
@@ -128,7 +136,11 @@ $color-blue: #60c1f8;
     &-grow {
         flex: 1;
     }
+    &-center {
+        justify-content: center;
+    }
 }
+
 .m {
     &t {
         &-top {
