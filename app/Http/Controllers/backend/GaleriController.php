@@ -20,7 +20,7 @@ class GaleriController extends Controller
     public function index(Request $request)
     {
         if ($request->ajax()) {
-            $data = galleries::select('id_galleries', 'name', 'file');
+            $data = galleries::with('users')->select('id_galleries', 'name', 'file', 'id_user');
             return DataTables::of($data)
                 ->editColumn('name', function ($row) {
 

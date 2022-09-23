@@ -12,6 +12,12 @@ class galleries extends Model
         'name',
         'description',
         'file',
+        'id_user'
     ];
     protected $primaryKey = 'id_galleries';
+
+    public function users()
+    {
+        return $this->belongsTo(User::class, 'id_user', 'id');
+    }
 }
