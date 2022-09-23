@@ -20,6 +20,17 @@ class WebSeeder extends Seeder
     public function run()
     {
         print("Proses input data awal, silahkan di tunggu... \n");
+
+        print("Proses pembuatan user administrator \n");
+        User::create([
+            'name' => 'Administrator Web',
+            'email' => 'administrator@admin.com',
+            'username' => 'administrator',
+            'password' => bcrypt('administrator'),
+            'is_admin' => true,
+        ]);
+        print("User berhasil dibuat");
+
         print("Proses input data kategori \n");
 
         $kategori = categories::create([
@@ -93,16 +104,6 @@ class WebSeeder extends Seeder
             '
         ]);
         print("Data halaman standart berhasil dibuat");
-
-        print("Proses pembuatan user administrator \n");
-        User::create([
-            'name' => 'Administrator Web',
-            'email' => 'administrator@admin.com',
-            'username' => 'administrator',
-            'password' => Hash::make('administrator'),
-            'is_admin' => true,
-        ]);
-        print("User berhasil dibuat");
 
         print("Proses pembuatan data pengaturan  web \n");
         configs::create([

@@ -6,11 +6,23 @@ use DataTables;
 use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Requests\UserRequest;
+use App\Http\Requests\LoginRequest;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
 class UserController extends Controller
 {
+
+    use AuthenticatesUsers;
+
+
+    public function username()
+    {
+        return 'username';
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -76,7 +88,7 @@ class UserController extends Controller
             $user->name = $request->nama;
             $user->username = $request->username;
             $user->email = $request->email;
-            $user->password = Hash::make($request->password);
+            $user->password = bcrypt($request->password);
             $user->is_admin = $request->tipe;
             $user->save();
 
@@ -126,7 +138,7 @@ class UserController extends Controller
             $user->email = $request->email;
 
             if (!empty($request->password)) {
-                $user->password = Hash::make($request->password);
+                $user->password = bcrypt($request->password);
             }
 
             $user->is_admin = $request->tipe;
@@ -161,5 +173,32 @@ class UserController extends Controller
         $user = User::find($id);
 
         return view('backend.user.user_form', compact('user'));
+    }
+
+    public function login()
+    {
+        return view('backend.login');
+    }
+
+    public function doLogin(LoginRequest $request)
+    {
+        $authentication = array('username' => $request->username, 'password' => $request->password);
+
+        if (auth()->attempt($authentication)) {
+            return redirect()->route('dashboard');
+        } else {
+            return redirect()->route('login.index')->with('error', 'Username dan password tidak terdaftar.');
+        }
+    }
+
+    public function doLogout(Request $request)
+    {
+        Auth::logout();
+
+        $request->session()->invalidate();
+
+        $request->session()->regenerateToken();
+
+        return redirect()->route('login.index')->with('success', 'Anda berhasil keluar dari sistem');
     }
 }

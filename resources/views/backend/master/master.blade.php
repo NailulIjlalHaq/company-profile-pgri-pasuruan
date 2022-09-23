@@ -88,12 +88,12 @@
             </li> -->
             <li class="nav-item">
                 <div class="btn-group">
-                    <button type="button" class="btn btn-secondary bg-gradient">Log Out</button>
+                    <a href="{{route('logout')}}" class="btn btn-secondary bg-gradient">Log Out</a>
                     <button type="button" class="btn btn-secondary bg-gradient dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-expanded="false" data-reference="parent">
                         <span class="sr-only">Toggle Dropdown</span>
                     </button>
                     <div class="dropdown-menu">
-                        <a class="dropdown-item" href="#">Ubah Profil User</a>
+                        <a class="dropdown-item" href="{{route('userProfil.index',auth()->user()->id)}}">Ubah Profil User</a>
                     </div>
                 </div>
             </li>
@@ -117,8 +117,8 @@
                 </div>
                 <div class="info">
                     <p class="text-light d-block m-0">
-                        Raditya Wahyu Sasono
-                        <small class="mt-0 text-teal d-block">Administrator</small>
+                        {{auth()->user()->name}}
+                        <small class="mt-0 text-teal d-block">{{auth()->user()->is_admin ? 'Administrator':'Penulis'}}</small>
                     </p>
                 </div>
             </div>
@@ -185,6 +185,7 @@
                             </p>
                         </a>
                     </li>
+                    @if(auth()->user()->is_admin)
                     <li class="nav-item {{(request()->segment(2) == 'profil') ? 'menu-is-opening menu-open' : ''}}">
                         <a href="#" class="nav-link {{(request()->segment(2) == 'profil') ? 'active' : ''}}">
                             <i class="nav-icon fas fa-file"></i>
@@ -230,6 +231,7 @@
                             </p>
                         </a>
                     </li>
+                    @endif
                 </ul>
             </nav>
             <!-- /.sidebar-menu -->
