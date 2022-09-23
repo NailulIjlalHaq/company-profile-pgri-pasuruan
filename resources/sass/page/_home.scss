@@ -55,15 +55,7 @@
         width: 100%;
         display: flex;
         justify-content: center;
-        @include respond(bp-768) {
-            padding: 5rem;
-        }
-        @include respond(phone) {
-            padding: 5rem 2rem;
-        }
-        @include respond(bp-500) {
-            padding: 5rem 0;
-        }
+
         &--wrapper {
             max-width: 144rem;
             display: flex;
@@ -79,7 +71,8 @@
                 height: 70rem;
             }
             @include respond(bp-500) {
-                height: 60rem;
+                height: 100%;
+                grid-template-rows: repeat(12, 10rem);
             }
             .news-img {
                 height: 100%;
@@ -95,35 +88,81 @@
                 &:nth-child(1) {
                     grid-column: 1 /7;
                     grid-row: 1 / -1;
+
+                    @include respond(tab-port) {
+                        grid-column: 1/ -1;
+                        grid-row: 1/ 7;
+                    }
+                    @include respond(bp-500) {
+                        grid-column: 1/ -1;
+                        grid-row: 1 / 4;
+                    }
                 }
                 &:nth-child(2) {
                     grid-column: 7 / -1;
                     grid-row: 1 / 8;
+                    @include respond(tab-port) {
+                        grid-row: 7/-1;
+                        grid-column: 1 / 7;
+                    }
+                    @include respond(bp-500) {
+                        grid-column: 1/ -1;
+                        grid-row: 4/7;
+                    }
                 }
                 &:nth-child(3) {
                     grid-column: 7 / 10;
                     grid-row: 8 / -1;
+                    @include respond(tab-port) {
+                        grid-column: 7 / -1;
+                        grid-row: 7/10;
+                    }
+
+                    @include respond(bp-500) {
+                        grid-column: 1 / -1;
+                        grid-row: 7 / 10;
+                    }
 
                     .news-img-text {
                         gap: 0.5rem;
                         &-top {
                             font-size: 1.4rem;
+                            @include respond(bp-500) {
+                                font-size: 2rem;
+                            }
                         }
                         &-bottom {
                             font-size: 1rem;
+                            @include respond(bp-500) {
+                                font-size: 1.4rem;
+                            }
                         }
                     }
                 }
                 &:nth-child(4) {
                     grid-column: 10 / -1;
                     grid-row: 8 / -1;
+                    @include respond(tab-port) {
+                        grid-column: 7 / -1;
+                        grid-row: 10/-1;
+                    }
+                    @include respond(bp-500) {
+                        grid-column: 1 / -1;
+                        grid-row: 10 / 13;
+                    }
                     .news-img-text {
                         gap: 0.5rem;
                         &-top {
                             font-size: 1.4rem;
+                            @include respond(bp-500) {
+                                font-size: 2rem;
+                            }
                         }
                         &-bottom {
                             font-size: 1rem;
+                            @include respond(bp-500) {
+                                font-size: 1.4rem;
+                            }
                         }
                     }
                 }
@@ -156,9 +195,6 @@
                     color: #fff;
                     font-size: 2rem;
                     font-weight: bold;
-                    @include respond(bp-500) {
-                        font-size: 1.8rem;
-                    }
                     @include respond(bp-400) {
                         font-size: 1.6rem;
                     }
@@ -167,9 +203,7 @@
                     font-size: 1.4rem;
                     display: flex;
                     gap: 0.5rem;
-                    @include respond(bp-500) {
-                        font-size: 1rem;
-                    }
+
                     p {
                         color: #fff;
                         &:nth-child(1) {

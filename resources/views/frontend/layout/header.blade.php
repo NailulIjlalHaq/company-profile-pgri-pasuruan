@@ -65,20 +65,9 @@
 
         <div class="header-phone-list">
             <a href={{ route('feHome') }} class="header-phone-list-item home-link">Beranda</a>
-            <a class="header-phone-list-item about-link">Profile
-                <div class="header__list-box-dropdown">
-                    <div class="header-dropdown">
-                        <div class="header-dropdown-wrapper">
-                            <div class="header-dropdown-wrapper__list"
-                                onclick="location.href='{{ route('profile-sejarah') }}'">Sejarah</div>
-                            <div class="header-dropdown-wrapper__list"
-                                onclick="location.href='{{ route('profile-makna') }}'">Makna Logo</div>
-                            <div class="header-dropdown-wrapper__list"
-                                onclick="location.href='{{ route('profile-visi-misi') }}'"> Visi & misi</div>
-                        </div>
-                    </div>
-                </div>
-            </a>
+            <a href={{ route('profile-sejarah') }} class="header-phone-list-item sejarah-link">Sejarah</a>
+            <a href={{ route('profile-makna') }} class="header-phone-list-item makna-link">Makna Logo</a>
+            <a href={{ route('profile-visi-misi') }} class="header-phone-list-item vm-link">Visi Misi</a>
             <a href={{ route('feArtikel') }} class="header-phone-list-item artikel-link">Artikel</a>
             <a href={{ route('feBerita') }} class="header-phone-list-item berita-link">Berita</a>
             <a href={{ route('feGallery') }} class="header-phone-list-item gallery-link">Galeri</a>

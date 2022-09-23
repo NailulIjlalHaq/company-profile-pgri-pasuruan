@@ -44,6 +44,9 @@
         activeLink('profile-sejarah', 'about');
         activeLink('profile-makna', 'about');
         activeLink('profile-visi-misi', 'about');
+        activeLink('profile-visi-misi', 'vm');
+        activeLink('profile-makna', 'makna');
+        activeLink('profile-sejarah', 'sejarah');
 
         modalToggle('header-phone', 'navbar', '-phone');
 
@@ -54,6 +57,7 @@
                 'active-link')) {
             $('.home-link').addClass('active-link')
         }
+
 
         setTimeout(() => {
             // $('.loader').addClass('trans-100')

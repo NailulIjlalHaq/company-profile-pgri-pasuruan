@@ -39,7 +39,7 @@
                                 <p>
                                     &bull;
                                 </p>
-                                <p>{{ $atas->created_at }}</p>
+                                <p> {{ substr($atas->created_at, 0, 10) }}</p>
                             </div>
                         </div>
                     </div>

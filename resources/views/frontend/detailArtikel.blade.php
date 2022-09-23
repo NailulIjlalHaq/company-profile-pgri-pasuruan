@@ -14,7 +14,7 @@
                 <div class="detail-artikel-wrapper__content--pri">
                     <div class="detail-artikel-info">
                         <div class="detail-artikel-info--title">
-                            <p>{{ $item->created_at }}</p>
+                            <p>{{ substr($item->created_at, 0, 10) }}</p>
                             <p>
                                 {{ $item->title }}
                             </p>
@@ -62,7 +62,7 @@
                                     <div class="berita-box__right--title">{{ $item->title }}</div>
                                     <div class="berita-box__right--desc">{{ strip_tags($item->content) }}</div>
                                     <div class="berita-box__right--bottom">
-                                        <p>20 Juni</p>
+                                        <p>{{ substr($item->created_at, 0, 10) }}</p>
                                         <p>
                                             <ion-icon name="arrow-forward-circle-outline"></ion-icon>
                                         </p>

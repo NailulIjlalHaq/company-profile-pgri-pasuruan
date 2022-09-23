@@ -167,7 +167,7 @@ body {
     opacity: 0;
     visibility: hidden;
     display: none; }
-    @media only screen and (max-width: 60.625em) {
+    @media only screen and (max-width: 56.25em) {
       .header-phone {
         display: flex; } }
     @media only screen and (max-width: 48em) {
@@ -769,15 +769,6 @@ body {
     width: 100%;
     display: flex;
     justify-content: center; }
-    @media only screen and (max-width: 48em) {
-      .home__news {
-        padding: 5rem; } }
-    @media only screen and (max-width: 37.5em) {
-      .home__news {
-        padding: 5rem 2rem; } }
-    @media only screen and (max-width: 31.25em) {
-      .home__news {
-        padding: 5rem 0; } }
     .home__news--wrapper {
       max-width: 144rem;
       display: flex;
@@ -793,7 +784,8 @@ body {
           height: 70rem; } }
       @media only screen and (max-width: 31.25em) {
         .home__news--wrapper {
-          height: 60rem; } }
+          height: 100%;
+          grid-template-rows: repeat(12, 10rem); } }
       .home__news--wrapper .news-img {
         height: 100%;
         background-position: 50% !important;
@@ -806,27 +798,71 @@ body {
         .home__news--wrapper .news-img-box:nth-child(1) {
           grid-column: 1 /7;
           grid-row: 1 / -1; }
+          @media only screen and (max-width: 56.25em) {
+            .home__news--wrapper .news-img-box:nth-child(1) {
+              grid-column: 1/ -1;
+              grid-row: 1/ 7; } }
+          @media only screen and (max-width: 31.25em) {
+            .home__news--wrapper .news-img-box:nth-child(1) {
+              grid-column: 1/ -1;
+              grid-row: 1 / 4; } }
         .home__news--wrapper .news-img-box:nth-child(2) {
           grid-column: 7 / -1;
           grid-row: 1 / 8; }
+          @media only screen and (max-width: 56.25em) {
+            .home__news--wrapper .news-img-box:nth-child(2) {
+              grid-row: 7/-1;
+              grid-column: 1 / 7; } }
+          @media only screen and (max-width: 31.25em) {
+            .home__news--wrapper .news-img-box:nth-child(2) {
+              grid-column: 1/ -1;
+              grid-row: 4/7; } }
         .home__news--wrapper .news-img-box:nth-child(3) {
           grid-column: 7 / 10;
           grid-row: 8 / -1; }
+          @media only screen and (max-width: 56.25em) {
+            .home__news--wrapper .news-img-box:nth-child(3) {
+              grid-column: 7 / -1;
+              grid-row: 7/10; } }
+          @media only screen and (max-width: 31.25em) {
+            .home__news--wrapper .news-img-box:nth-child(3) {
+              grid-column: 1 / -1;
+              grid-row: 7 / 10; } }
           .home__news--wrapper .news-img-box:nth-child(3) .news-img-text {
             gap: 0.5rem; }
             .home__news--wrapper .news-img-box:nth-child(3) .news-img-text-top {
               font-size: 1.4rem; }
+              @media only screen and (max-width: 31.25em) {
+                .home__news--wrapper .news-img-box:nth-child(3) .news-img-text-top {
+                  font-size: 2rem; } }
             .home__news--wrapper .news-img-box:nth-child(3) .news-img-text-bottom {
               font-size: 1rem; }
+              @media only screen and (max-width: 31.25em) {
+                .home__news--wrapper .news-img-box:nth-child(3) .news-img-text-bottom {
+                  font-size: 1.4rem; } }
         .home__news--wrapper .news-img-box:nth-child(4) {
           grid-column: 10 / -1;
           grid-row: 8 / -1; }
+          @media only screen and (max-width: 56.25em) {
+            .home__news--wrapper .news-img-box:nth-child(4) {
+              grid-column: 7 / -1;
+              grid-row: 10/-1; } }
+          @media only screen and (max-width: 31.25em) {
+            .home__news--wrapper .news-img-box:nth-child(4) {
+              grid-column: 1 / -1;
+              grid-row: 10 / 13; } }
           .home__news--wrapper .news-img-box:nth-child(4) .news-img-text {
             gap: 0.5rem; }
             .home__news--wrapper .news-img-box:nth-child(4) .news-img-text-top {
               font-size: 1.4rem; }
+              @media only screen and (max-width: 31.25em) {
+                .home__news--wrapper .news-img-box:nth-child(4) .news-img-text-top {
+                  font-size: 2rem; } }
             .home__news--wrapper .news-img-box:nth-child(4) .news-img-text-bottom {
               font-size: 1rem; }
+              @media only screen and (max-width: 31.25em) {
+                .home__news--wrapper .news-img-box:nth-child(4) .news-img-text-bottom {
+                  font-size: 1.4rem; } }
       .home__news--wrapper .news-img-text {
         position: absolute;
         width: 100%;
@@ -849,9 +885,6 @@ body {
           color: #fff;
           font-size: 2rem;
           font-weight: bold; }
-          @media only screen and (max-width: 31.25em) {
-            .home__news--wrapper .news-img-text-top {
-              font-size: 1.8rem; } }
           @media only screen and (max-width: 25em) {
             .home__news--wrapper .news-img-text-top {
               font-size: 1.6rem; } }
@@ -859,9 +892,6 @@ body {
           font-size: 1.4rem;
           display: flex;
           gap: 0.5rem; }
-          @media only screen and (max-width: 31.25em) {
-            .home__news--wrapper .news-img-text-bottom {
-              font-size: 1rem; } }
           .home__news--wrapper .news-img-text-bottom p {
             color: #fff; }
             .home__news--wrapper .news-img-text-bottom p:nth-child(1) {
@@ -1467,21 +1497,21 @@ body {
     display: flex;
     justify-content: center;
     background: #f6f7f9; }
-    @media only screen and (max-width: 48em) {
-      .about__makna {
-        padding: 5rem; } }
-    @media only screen and (max-width: 31.25em) {
-      .about__makna {
-        padding: 5rem 2rem; } }
     .about__makna--wrapper {
-      padding: 5rem 10rem;
       max-width: 144rem;
       width: 100%;
       height: fit-content;
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 7rem; }
+      gap: 7rem;
+      padding: 5rem 10rem; }
+      @media only screen and (max-width: 48em) {
+        .about__makna--wrapper {
+          padding: 5rem; } }
+      @media only screen and (max-width: 31.25em) {
+        .about__makna--wrapper {
+          padding: 5rem 2rem; } }
       @media only screen and (max-width: 56.25em) {
         .about__makna--wrapper {
           flex-direction: column;
