@@ -82,7 +82,7 @@ class ArtikelController extends Controller
             $post->content = $konten;
             $post->id_categories = $request->kategori;
             $post->tag = $request->tag;
-            $post->type = 'berita';
+            $post->type = 'artikel';
             $post->cover_img = $imagePath;
             $post->is_focus = 0;
             $post->save();
