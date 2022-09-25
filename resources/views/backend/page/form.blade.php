@@ -62,11 +62,7 @@
                                                 </code>
                                                 @endif
                                             </label>
-                                            <textarea type="text" class="form-control {{$errors->has('deskripsi')?'is-invalid':''}}" name="deskripsi" id="deskripsi" row="500">
-                                                @if(isset($page))
-                                                {{$page->content}}
-                                                @endif
-                                            </textarea>
+                                            <textarea type="text" class="form-control {{$errors->has('deskripsi')?'is-invalid':''}}" name="deskripsi" id="deskripsi" row="500">@if(isset($page)){{$page->content}}@endif</textarea>
                                         </div>
                                     </div>
 
@@ -92,7 +88,29 @@
         }, 6000);
 
         $('#deskripsi').summernote({
-            height: 400
+            height: 400,
+            callbacks: {
+                onMediaDelete: (target) => {
+                    console.log(target[0].src);
+                    $.ajax({
+                        headers: {
+                            'X-CSRF-TOKEN': '<?= csrf_token() ?>'
+                        },
+                        method: 'POST',
+                        url: '<?= route("summernote.delete") ?>',
+                        cache: false,
+                        data: {
+                            src: target[0].src,
+                        },
+                        success: function(response) {
+                            if (resonse.success) {
+                                alert("Gambar berhasil dihapus");
+                            }
+                        }
+
+                    });
+                }
+            }
         });
     });
 </script>

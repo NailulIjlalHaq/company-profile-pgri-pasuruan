@@ -178,9 +178,20 @@ class ArtikelController extends Controller
         // Mengeset ke dalam folder image cover diupload
         $imagePath = public_path($post->cover_img);
 
+        // mengecek dan menghapus gambar yang terdapat pada content
+        $dom = new \DOMDocument();
+        $dom->loadHtml($post->content, LIBXML_NOWARNING | LIBXML_NOERROR);
+        $images = $dom->getElementsByTagName('img');
+        foreach ($images as $k => $img) {
+            $image = $img->getAttribute('src');
+            $imageContent = public_path($image);
+            if ($imageContent) {
+                unlink($imageContent);
+            }
+        }
         // Mengecek dan menghapus file cover image pada server
         if ($imagePath) {
-            unlink($post->cover_img);
+            unlink($imagePath);
         }
 
         // Fungsi untuk menghapus data post pada database

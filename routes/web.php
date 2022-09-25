@@ -14,6 +14,7 @@ use App\Http\Controllers\frontend\contactController;
 use App\Http\Controllers\frontend\galleryController;
 use App\Http\Controllers\backend\PengaturanController;
 use App\Http\Controllers\backend\PengumumanController;
+use App\Http\Controllers\backend\SummernoteController;
 use App\Http\Controllers\backend\BeritaController as BackendBeritaController;
 use App\Http\Controllers\backend\ArtikelController as BackendArtikelController;
 
@@ -92,7 +93,10 @@ Route::prefix('backends')->group(function () {
 
         // Rute untuk mengedit halaman pengaturan
         Route::get('pengaturan', [PengaturanController::class, 'index'])->name('pengaturan.index')->middleware('is_admin');
-        Route::post('pengaturan', [PengaturanController::class, 'store'])->name('pengaturan.store')->middleware('is_admin');;
+        Route::post('pengaturan', [PengaturanController::class, 'store'])->name('pengaturan.store')->middleware('is_admin');
+
+        // Rute untuk penghapusan gambar summernote
+        Route::post('summernote/delete', [SummernoteController::class, 'deleteImage'])->name('summernote.delete');
 
         Route::get('unauthorized', function () {
             return view('backend.extra.401');
