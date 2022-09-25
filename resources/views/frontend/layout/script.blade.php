@@ -63,8 +63,26 @@
             // $('.loader').addClass('trans-100')
             $('.loader').addClass('hide')
         }, 3000);
+
+
+
+    });
+    $('.cp-link-text').text(window.location.href)
+    $('.share-btn-wrapper-btn.share-wa').on('click', function() {
+        let link = window.location.href
+        let url = `https://wa.me/?text=${link}`;
+        window.open(url)
     });
 
+    $('.cp-link').on('click', function() {
+        $('.cp-link').select();
+        navigator.clipboard.writeText($('.cp-link-text').text());
+        $('.alert-cp-link').addClass('show')
+
+        setTimeout(() => {
+            $('.alert-cp-link').removeClass('show')
+        }, 1000);
+    })
 
     function activeLink(name, link) {
         if (window.location.href.indexOf(name) > -1) {

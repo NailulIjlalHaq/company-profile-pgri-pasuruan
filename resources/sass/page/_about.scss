@@ -153,9 +153,6 @@
             max-width: 144rem;
             gap: 3rem;
 
-            @include respond(bp-1000) {
-                flex-direction: column;
-            }
             &__box {
                 background: #f9fbfd;
                 display: flex;
@@ -163,6 +160,10 @@
                 justify-content: center;
                 flex-direction: column;
                 border-radius: 1rem;
+                width: 80%;
+                @include respond(tab-port) {
+                    width: 100%;
+                }
                 &--title {
                     background: $color-primary;
                     font-size: 2.4rem;

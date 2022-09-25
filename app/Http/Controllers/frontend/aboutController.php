@@ -3,8 +3,7 @@
 namespace App\Http\Controllers\frontend;
 
 use App\Http\Controllers\Controller;
-
-
+use App\Models\pages;
 use Illuminate\Http\Request;
 
 class aboutController extends Controller
@@ -19,6 +18,7 @@ class aboutController extends Controller
     }
     public function visiMisi()
     {
-        return view('frontend.profile-visi-misi');
+        $vm = pages::find(2);
+        return view('frontend.profile-visi-misi', compact('vm'));
     }
 }

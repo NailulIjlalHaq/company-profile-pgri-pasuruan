@@ -14,12 +14,10 @@
     <div class="about__vm">
         <div class="about__vm--wrapper">
             <div class="about__vm--wrapper__box">
-                <div class="about__vm--wrapper__box--title">Visi</div>
-                <div class="about__vm--wrapper__box--text">“Terwujudnya Tamatan yang Beriman dan Bertaqwa kepada
-                    Tuhan Yang Maha Esa, berbudi pekerti luhur, berdaya saing tinggi, peduli dan berbudaya
-                    lingkungan”</div>
+                <div class="about__vm--wrapper__box--title">Visi & Misi</div>
+                <div class="about__vm--wrapper__box--text">{{ strip_tags($vm->content) }}</div>
             </div>
-            <div class="about__vm--wrapper__box">
+            {{-- <div class="about__vm--wrapper__box">
                 <div class="about__vm--wrapper__box--title">Misi</div>
                 <ol class="about__vm--wrapper__box--text">
                     <li>Menerapkan nilai-nilai Agama, Pancasila dan Undang-undang Dasar 1945</li>
@@ -34,7 +32,7 @@
                     <li>Mampu memanfaatkan potensi wilayah untuk pengembangan sekolah sebagai pusat budaya,
                         pelatihan, produksi dan jasa berbasis teaching factory dan pendidikan lingkungan hidup</li>
                 </ol>
-            </div>
+            </div> --}}
         </div>
     </div>
 @endsection
