@@ -19,7 +19,9 @@
 
                 <div class="footer__wrapper--left__box">
                     <a href={{ route('feHome') }} class="footer__wrapper--left__box--item">Beranda</a>
-                    <a class="footer__wrapper--left__box--item">Profile</a>
+                    <a href={{ route('feHome') }} class="footer__wrapper--left__box--item">Struktur</a>
+                    <a href={{ route('profile-makna') }} class="footer__wrapper--left__box--item">Makna Logo</a>
+                    <a href={{ route('profile-visi-misi') }} class="footer__wrapper--left__box--item">Visi & Misi</a>
                     <a href={{ route('feArtikel') }} class="footer__wrapper--left__box--item">Artikel</a>
                     <a href={{ route('feBerita') }} class="footer__wrapper--left__box--item">Berita</a>
                     <a href={{ route('feGallery') }} class="footer__wrapper--left__box--item">Galeri</a>
@@ -30,19 +32,15 @@
             <div class="footer__wrapper--right">
                 <div class="footer__wrapper--right__medsos">
                     <div class="footer__wrapper--right__medsos--box">
-                        <ion-icon onclick="window.open('https://www.instagram.com/')" name="logo-instagram"></ion-icon>
+                        <ion-icon onclick="window.open('')" name="logo-instagram"></ion-icon>
                     </div>
+
                     <div class="footer__wrapper--right__medsos--box">
-                        <ion-icon onclick="window.open('https://www.linkedin.com/')" name="logo-linkedin"></ion-icon>
+                        <ion-icon onclick="window.open('')" name="logo-facebook"></ion-icon>
                     </div>
+
                     <div class="footer__wrapper--right__medsos--box">
-                        <ion-icon onclick="window.open('https://www.facebook.com/')" name="logo-facebook"></ion-icon>
-                    </div>
-                    <div class="footer__wrapper--right__medsos--box">
-                        <ion-icon onclick="window.open('https://www.youtube.com/')" name="logo-youtube"></ion-icon>
-                    </div>
-                    <div class="footer__wrapper--right__medsos--box">
-                        <ion-icon onclick="window.open('https://www.twitter.com/')" name="logo-twitter"></ion-icon>
+                        <ion-icon onclick="window.open('')" name="logo-whatsapp"></ion-icon>
                     </div>
                 </div>
 

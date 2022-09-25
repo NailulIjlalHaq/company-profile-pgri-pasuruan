@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\frontend;
 
 use App\Http\Controllers\Controller;
+use App\Models\configs;
 use App\Models\posts;
 use App\Models\pages;
 use Illuminate\Http\Request;
@@ -23,7 +24,7 @@ class homeController extends Controller
         $sambutan = pages::find(1);
         return view('frontend.detailSambutan', compact('sambutan'));
     }
- 
+
     public function notFound()
     {
         return view('frontend.404');
@@ -31,5 +32,10 @@ class homeController extends Controller
     public function error()
     {
         return view('frontend.500');
+    }
+
+    public function footer()
+    {
+  
     }
 }
