@@ -37,13 +37,13 @@ class PageController extends Controller
 
     public function dashboard()
     {
-        $post = posts::query();
 
-        $berita_count = $post->where('type', 'berita')->count();
-        $artikel_count = $post->where('type', 'artikel')->count();
-        $pengumuman_count = $post->where('type', 'pengumuman')->count();
+        $berita_count = posts::where('type', 'berita')->count();
+        $artikel_count = posts::where('type', 'artikel')->count();
+        $pengumuman_count = posts::where('type', 'pengumuman')->count();
 
         $galeri_count = galleries::count();
+
 
         return view('backend.dashboard', compact('berita_count', 'artikel_count', 'pengumuman_count', 'galeri_count'));
     }

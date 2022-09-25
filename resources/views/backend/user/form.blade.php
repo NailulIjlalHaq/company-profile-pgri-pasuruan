@@ -40,7 +40,7 @@
                             <div class="card-body">
                                 <div class="form-group">
                                     <label>Nama Lengkap</label>
-                                    <input type="text" class="form-control {{$errors->has('nama')?'is-invalid':''}}" name="nama" id="nama" value="{{isset($user)?$user->name:''}}">
+                                    <input type="text" class="form-control {{$errors->has('nama')?'is-invalid':''}}" name="nama" id="nama" value="{{isset($user)?$user->name:@old('nama')}}">
                                     @if($errors->has('nama'))
                                     <div class="invalid-feedback ">
                                         {{$errors->first('nama')}}
@@ -50,7 +50,7 @@
                                 <div class="row mb-3">
                                     <div class="col">
                                         <label>Email</label>
-                                        <input type="text" class="form-control {{$errors->has('email')?'is-invalid':''}}" name="email" id="email" value="{{isset($user)?$user->email:''}}">
+                                        <input type="text" class="form-control {{$errors->has('email')?'is-invalid':''}}" name="email" id="email" value="{{isset($user)?$user->email:@old('email')}}">
                                         @if($errors->has('email'))
                                         <div class="invalid-feedback">
                                             {{$errors->first('email')}}
@@ -74,7 +74,7 @@
                                 <div class="row">
                                     <div class="col">
                                         <label>Username</label>
-                                        <input type="text" class="form-control {{$errors->has('username')?'is-invalid':''}}" name="username" id="username" value="{{isset($user)?$user->username:''}}">
+                                        <input type="text" class="form-control {{$errors->has('username')?'is-invalid':''}}" name="username" id="username" value="{{isset($user)?$user->username:@old('username')}}">
                                         @if($errors->has('username'))
                                         <div class="invalid-feedback">
                                             {{$errors->first('username')}}
@@ -83,7 +83,7 @@
                                     </div>
                                     <div class="col">
                                         <label>Password</label>
-                                        <input type="password" class="form-control {{$errors->has('password')?'is-invalid':''}}" name="password" id="password">
+                                        <input type="password" class="form-control {{$errors->has('password')?'is-invalid':''}}" name="password" id="password" value="{{@old('password')}}">
                                         @if($errors->has('password'))
                                         <div class="invalid-feedback">
                                             {{$errors->first('password')}}

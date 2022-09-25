@@ -31,7 +31,7 @@
                             <div class="card-body">
                                 <div class="form-group row">
                                     <label>Kategori</label>
-                                    <input type="text" class="form-control {{$errors->has('kategori')?'is-invalid':''}}" name="kategori" id="kategori" value="{{isset($kategori)?$kategori->name:''}}">
+                                    <input type="text" class="form-control {{$errors->has('kategori')?'is-invalid':''}}" name="kategori" id="kategori" value="{{isset($kategori)?$kategori->name:@old('kategori')}}">
                                     @if($errors->has('kategori'))
                                     <div class="invalid-feedback">
                                         {{$errors->first('kategori')}}
