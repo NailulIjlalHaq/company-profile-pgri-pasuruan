@@ -53,10 +53,11 @@
                     <hr class="detail-berita-wrapper__content--sec-line">
 
                     @foreach ($berita as $item)
-                        <a href="{{ route('feDetailBerita', $item->id_posts) }}">
+                        <a
+                            href="{{ route('feDetailBerita', ['id' => $item->id_posts, 'slug' => Str::of($item->title)->slug('-')]) }}">
                             <div class="berita-box">
 
-                                <div class="berita-box__left" style="background: url(/{{ $item->over_img }})">
+                                <div class="berita-box__left" style="background: url(/{{ $item->cover_img }})">
                                 </div>
                                 <div class="berita-box__right">
                                     <div class="berita-box__right--title">{{ $item->title }}</div>

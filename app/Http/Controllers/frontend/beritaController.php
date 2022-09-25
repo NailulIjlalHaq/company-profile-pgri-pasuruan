@@ -17,10 +17,7 @@ class beritaController extends Controller
     }
     public function detail($id, $slug)
     {
-        // $berita = posts::where('type', 'berita')->limit(2)->get();
-        // $item = posts::find($id);
-        // return view('frontend.detailBerita', ['item' => $item, 'berita' => $berita]);
-        $berita = posts::where('type', "berita")->get();
+        $berita = posts::where('type', "berita")->limit(4)->get();
         $title = Str::of($slug)->slug(" ");
         $item = posts::where('id_posts', $id)->where('title', $title)->first();
         return view('frontend.detailBerita', ['item' => $item, 'berita' => $berita]);
