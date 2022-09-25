@@ -26,7 +26,9 @@
         <div class="home__news mt-top py-50">
             <div class="home__news--wrapper">
                 @foreach ($beritaAtas as $atas)
-                    <div class="news-img-box">
+                    <a class="news-img-box"
+                        href="{{ route('feDetailBerita', ['id' => $atas->id_posts, 'slug' => Str::of($atas->title)->slug('-')]) }}">
+
                         <div class="news-img" style="background: url('{{ $atas->cover_img }}')">
                         </div>
                         <div class="news-img-text">
@@ -42,13 +44,11 @@
                                 <p> {{ substr($atas->created_at, 0, 10) }}</p>
                             </div>
                         </div>
-                    </div>
+
+                    </a>
                 @endforeach
             </div>
         </div>
-
-
-
         <div class="w-100 d-flex flex-center bg-grey-blue">
             <div class="home__sambutan">
                 <div class="home__sambutan--left">
@@ -87,7 +87,8 @@
                 <div class="home__berita--wrapper__left">
                     <div class="home__berita--wrapper__left--scroll">
                         @foreach ($artikel as $botArtikel)
-                            <div class="berita-box">
+                            <a class="berita-box"
+                                href="{{ route('feDetailArtikel', ['id' => $botArtikel->id_posts, 'slug' => Str::of($botArtikel->title)->slug('-')]) }}">
                                 <div class="berita-box__left" style="background: url({{ $botArtikel->cover_img }})"></div>
                                 <div class="berita-box__right">
                                     <div class="berita-box__right--title">{{ $botArtikel->title }}</div>
@@ -99,14 +100,15 @@
                                         </p>
                                     </div>
                                 </div>
-                            </div>
+                            </a>
                         @endforeach
                     </div>
                 </div>
                 <div class="home__berita--wrapper__right">
                     <div class="berita__simple">
                         @foreach ($botBerita as $bb)
-                            <div class="artikel-container">
+                            <a class="artikel-container"
+                                href="{{ route('feDetailBerita', ['id' => $bb->id_posts, 'slug' => Str::of($bb->title)->slug('-')]) }}">
                                 <div class="artikel-container-box">
                                     <div class="artikel-container-box__top">
                                         <div class="artikel-container-box__top--img"
@@ -134,7 +136,7 @@
 
                                     </div>
                                 </div>
-                            </div>
+                            </a>
                         @endforeach
                     </div>
                 </div>

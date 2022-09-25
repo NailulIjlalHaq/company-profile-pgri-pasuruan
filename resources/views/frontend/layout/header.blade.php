@@ -1,7 +1,7 @@
 <header class="header header-dark">
     <div class="header-container">
         <div class="header__logo" onclick="location.href='{{ route('feHome') }}'">
-            <img src="../frontend/assets/img/logo.png" alt="Logo" />
+            <img src={{ asset('./frontend/assets/img/logo.png') }} alt="Logo" />
             <p>
                 PGRI <br />
                 KAB PASURUAN
@@ -51,7 +51,7 @@
     <div class="header-phone-container">
         <div class="header-phone-top">
             <div class="header-phone-top__logo" onclick="location.href='{{ route('feHome') }}'">
-                <img src="../frontend/assets/img/logo.png" alt="Logo" />
+                <img src={{ asset('./frontend/assets/img/logo.png') }} alt="Logo" />
                 <p>
                     PGRI <br />
                     KAB PASURUAN

@@ -166,16 +166,16 @@
 
 
 
-    // $('.artikel-container-box__top--img ').hover(function() {
-    //     $(this).siblings(' .artikel-container-box__top--info').hover(function() {
-    //         $(this).addClass('show')
-    //     }, function() {
-    //         $(this).removeClass('show')
-    //     })
-    //     $(this).siblings('.artikel-container-box__top--info').addClass('show')
-    // }, function() {
-    //     $(this).siblings('.artikel-container-box__top--info').removeClass('show')
-    // })
+    $('.artikel-container-box__top--info').hover(function() {
+        // $(this).siblings(' .artikel-container-box__top--info').hover(function() {
+        //     $(this).addClass('show')
+        // }, function() {
+        //     $(this).removeClass('show')
+        // })
+        $(this).siblings('.artikel-container-box__top--img').css('transform', 'scale(1.1)')
+    }, function() {
+        $(this).siblings('.artikel-container-box__top--img').css('transform', 'scale(1)')
+    })
 
     $('.btn-close-alert-news').on('click', function() {
         $('.alert-news').addClass('hide')

@@ -6,7 +6,8 @@
             <div class="home__news mt-top bg-grey py-50">
                 <div class="home__news--wrapper">
                     @foreach ($beritaAtas as $atas)
-                        <div class="news-img-box">
+                        <a class="news-img-box"
+                            href="{{ route('feDetailBerita', ['id' => $atas->id_posts, 'slug' => Str::of($atas->title)->slug('-')]) }}">
                             <div class="news-img" style="background: url('{{ $atas->cover_img }}')">
                             </div>
                             <div class="news-img-text">
@@ -19,10 +20,10 @@
                                     <p>
                                         &bull;
                                     </p>
-                                    <p>{{ substr($atas->created_at, 0, 10) }}</p>
+                                    <p> {{ substr($atas->created_at, 0, 10) }}</p>
                                 </div>
                             </div>
-                        </div>
+                        </a>
                     @endforeach
                 </div>
             </div>
@@ -42,7 +43,8 @@
 
             <div class="artikel__wrapper--content">
                 @foreach ($berita as $item)
-                    <a href="{{ route('feDetailBerita', $item->id_posts) }}">
+                    <a
+                        href="{{ route('feDetailBerita', ['id' => $item->id_posts, 'slug' => Str::of($item->title)->slug('-')]) }}">">
                         <div class="artikel-container">
                             <div class="artikel-container-box">
                                 <div class="artikel-container-box__top">

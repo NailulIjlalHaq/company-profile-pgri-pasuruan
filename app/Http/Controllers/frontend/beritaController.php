@@ -5,6 +5,7 @@ namespace App\Http\Controllers\frontend;
 use App\Http\Controllers\Controller;
 use App\Models\posts;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class beritaController extends Controller
 {
@@ -14,10 +15,14 @@ class beritaController extends Controller
         $berita = posts::where('type', 'berita')->paginate(6);
         return view('frontend.berita', compact('beritaAtas', 'berita'));
     }
-    public function detail($id)
+    public function detail($id, $slug)
     {
-        $berita = posts::where('type', 'berita')->limit(2)->get();
-        $item = posts::find($id);
+        // $berita = posts::where('type', 'berita')->limit(2)->get();
+        // $item = posts::find($id);
+        // return view('frontend.detailBerita', ['item' => $item, 'berita' => $berita]);
+        $berita = posts::where('type', "berita")->get();
+        $title = Str::of($slug)->slug(" ");
+        $item = posts::where('id_posts', $id)->where('title', $title)->first();
         return view('frontend.detailBerita', ['item' => $item, 'berita' => $berita]);
     }
 }

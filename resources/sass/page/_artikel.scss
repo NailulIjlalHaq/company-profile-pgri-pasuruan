@@ -119,6 +119,7 @@
                         height: 30rem;
                         width: 30rem;
                         position: relative;
+                        overflow: hidden;
                         @include respond(bp-400) {
                             width: 100%;
                         }
@@ -130,6 +131,7 @@
                             background-position: 50% !important;
                             background-repeat: no-repeat !important;
                             background-size: cover !important;
+                            transition: all 0.2s;
                         }
                         &--info {
                             cursor: pointer;

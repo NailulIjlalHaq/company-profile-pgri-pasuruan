@@ -14,18 +14,17 @@
                 <div class="detail-berita-wrapper__content--pri">
                     <div class="detail-berita-info">
                         <div class="detail-berita-info--title">
-                            <p>{{$item -> created_at}}</p>
+                            <p>{{ substr($item->created_at, 0, 10) }}</p>
                             <p>
-                                {{$item -> title}}
+                                {{ $item->title }}
                             </p>
                         </div>
                         <div class="detail-berita-info--img">
-                            <div class="detail-berita-info--img-img"
-                                style="background: url({{ $item -> cover_img }})"></div>
+                            <div class="detail-berita-info--img-img" style="background: url(/{{ $item->cover_img }})"></div>
                         </div>
                         <div class="detail-berita-info--info">
                             <p>
-                                {{strip_tags($item -> content)}}
+                                {{ strip_tags($item->content) }}
                             </p>
                         </div>
                         <div class="detail-berita-info--btn">
@@ -52,26 +51,25 @@
                 <div class="detail-berita-wrapper__content--sec">
                     <h1 class="detail-berita-wrapper__content--sec-title">Berita Lainya</h1>
                     <hr class="detail-berita-wrapper__content--sec-line">
-                    
+
                     @foreach ($berita as $item)
-                    <a href="{{route('feDetailBerita', $item -> id_posts)}}">
-                    <div class="berita-box">
-                            
-                        <div class="berita-box__left"
-                            style="background: url({{ $item -> cover_img }})">
-                        </div>
-                        <div class="berita-box__right">
-                            <div class="berita-box__right--title">{{$item -> title}}</div>
-                            <div class="berita-box__right--desc">{{strip_tags($item -> content)}}</div>
-                            <div class="berita-box__right--bottom">
-                                <p>{{$item -> created_at}}</p>
-                                <p>
-                                    <ion-icon name="arrow-forward-circle-outline"></ion-icon>
-                                </p>
+                        <a href="{{ route('feDetailBerita', $item->id_posts) }}">
+                            <div class="berita-box">
+
+                                <div class="berita-box__left" style="background: url(/{{ $item->over_img }})">
+                                </div>
+                                <div class="berita-box__right">
+                                    <div class="berita-box__right--title">{{ $item->title }}</div>
+                                    <div class="berita-box__right--desc">{{ strip_tags($item->content) }}</div>
+                                    <div class="berita-box__right--bottom">
+                                        <p>{{ $item->created_at }}</p>
+                                        <p>
+                                            <ion-icon name="arrow-forward-circle-outline"></ion-icon>
+                                        </p>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                    </a>
+                        </a>
                     @endforeach
                     <hr class="detail-berita-wrapper__content--sec-line">
                 </div>
