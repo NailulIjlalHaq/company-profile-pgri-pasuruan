@@ -28,6 +28,7 @@
                                     <div class="artikel-container-box__top--info">
                                         <div class="artikel-container-box__top--info-box">
                                             <div class="artikel-container-box__top--info-box-text">
+                                            
                                                 <div class="artikel-container-box__top--info-box-text-1">
                                                     <p>{{ $item->title }}</p>
                                                 </div>
@@ -61,9 +62,10 @@
             <div class="pagination py-50">
                 <div class="pagination-wrapper">
                     <div class="pagination-wrapper--prev">
-                        <ion-icon name="arrow-back-circle-outline"></ion-icon>Prev
+                        <ion-icon name="arrow-back-circle-outline"></ion-icon>Sebelumnya
                     </div>
-                    <div class="pagination-wrapper--next">Next<ion-icon name="arrow-forward-circle-outline"></ion-icon>
+                    <div class="pagination-wrapper--next">Selanjutnya<ion-icon name="arrow-forward-circle-outline">
+                        </ion-icon>
                     </div>
                 </div>
             </div>

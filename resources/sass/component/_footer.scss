@@ -97,7 +97,7 @@
                 flex-direction: column;
                 align-items: flex-start;
             }
-            &__medsos {
+            .footer-medsos {
                 display: flex;
                 align-items: center;
                 gap: 1rem;
@@ -116,7 +116,7 @@
                 }
             }
 
-            &__cr {
+            .footer-cr {
                 text-align: end;
                 font-size: 1.4rem;
                 color: rgba($color: #fff, $alpha: 0.7);
@@ -126,7 +126,7 @@
     }
 
     &__bottom {
-        &--left {
+        .footer-address {
             display: flex;
             align-items: flex-start;
             justify-content: space-evenly;
