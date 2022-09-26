@@ -274,8 +274,11 @@ body {
       .header__list-box-dropdown {
         position: absolute;
         top: 3rem;
+        left: -9rem;
         z-index: 10;
-        transition: all 0.3s ease; }
+        transition: all 0.3s ease;
+        opacity: 0;
+        visibility: hidden; }
         .header__list-box-dropdown .header-dropdown {
           border-radius: 0.5rem; }
           .header__list-box-dropdown .header-dropdown-wrapper {
@@ -638,6 +641,7 @@ body {
       transition: all 0.2s;
       cursor: pointer; }
       .pagination-wrapper--prev ion-icon, .pagination-wrapper--next ion-icon {
+        color: #132133;
         font-size: 2rem; }
       .pagination-wrapper--prev:hover, .pagination-wrapper--next:hover {
         background-color: #132133;

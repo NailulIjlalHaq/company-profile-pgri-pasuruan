@@ -391,6 +391,7 @@
             cursor: pointer;
 
             ion-icon {
+                color: $color-secondary;
                 font-size: 2rem;
             }
             &:hover {

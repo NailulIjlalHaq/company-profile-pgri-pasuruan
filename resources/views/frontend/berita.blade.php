@@ -67,9 +67,9 @@
             <div class="pagination py-50">
                 <div class="pagination-wrapper">
                     <div class="pagination-wrapper--prev">
-                        <ion-icon name="arrow-back-circle-outline"></ion-icon>Sebelumnya
+                        <ion-icon name="arrow-back-circle"></ion-icon>Sebelumnya
                     </div>
-                    <div class="pagination-wrapper--next">Selanjutnya<ion-icon name="arrow-forward-circle-outline">
+                    <div class="pagination-wrapper--next">Selanjutnya<ion-icon name="arrow-forward-circle">
                         </ion-icon>
                     </div>
                 </div>
