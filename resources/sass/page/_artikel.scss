@@ -331,6 +331,7 @@
                 gap: 2rem;
                 width: 35%;
                 @include respond(bp-1100) {
+                    width: 100%;
                     padding-left: 0;
                     border-left: 0;
                 }
@@ -352,6 +353,12 @@
                     border-radius: 5px;
                     padding: 2rem;
                     gap: 1rem;
+                    border: solid 2px #f6f7f9;
+                    @include respond(bp-1100) {
+                        flex-direction: row;
+                        gap: 2rem;
+                        align-items: flex-end;
+                    }
 
                     @include respond(bp-768) {
                         flex-direction: column;
@@ -360,7 +367,6 @@
                     }
                     &:hover {
                         background-color: #f6f7f9;
-
                         .berita-box__right--bottom p:nth-child(2) {
                             transform: scale(1.3);
                         }
