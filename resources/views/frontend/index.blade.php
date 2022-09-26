@@ -77,7 +77,7 @@
     <div class="global-container">
         @yield('content')
     </div>
-    @include('frontend.layout/footer')
+    <x-frontend.footer></x-frontend.footer>
     <script src="{{ asset('./frontend/js/jquery.js') }}"></script>
     @include('frontend.layout/script')
     @yield('js')
