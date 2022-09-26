@@ -368,3 +368,43 @@
         }
     }
 }
+.pagination {
+    width: 100%;
+    &-wrapper {
+        width: 100%;
+        max-width: 144rem;
+        display: flex;
+        gap: 5rem;
+        align-items: center;
+        justify-content: center;
+        &--prev,
+        &--next {
+            padding: 0.5rem 2rem;
+            border-radius: 0.5rem;
+            border: solid 1px $color-secondary;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.6rem;
+            font-weight: 600;
+            transition: all 0.2s;
+
+            ion-icon {
+                font-size: 2rem;
+            }
+            &:hover {
+                background-color: $color-secondary;
+                color: white;
+                ion-icon {
+                    color: white;
+                    transition: all 0.2s;
+                    transform: scale(1.1);
+                }
+            }
+        }
+        &--prev {
+        }
+        &--next {
+        }
+    }
+}

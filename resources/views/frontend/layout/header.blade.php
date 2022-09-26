@@ -21,11 +21,41 @@
                     <div class="header-dropdown">
                         <div class="header-dropdown-wrapper">
                             <div class="header-dropdown-wrapper__list"
-                                onclick="location.href='{{ route('profile-sejarah') }}'">Sejarah</div>
+                                onclick="location.href='{{ route('profile-sejarah') }}'">
+                                <div class="header-dropdown-wrapper__list--top">
+                                    <ion-icon name="earth-outline"></ion-icon>
+                                    <p>
+                                        Sambutan Ketua PGRI
+                                    </p>
+                                </div>
+                                <div class="header-dropdown-wrapper__list--bot">
+                                    Lorem ipsum dolor sit amet...
+                                </div>
+                            </div>
                             <div class="header-dropdown-wrapper__list"
-                                onclick="location.href='{{ route('profile-makna') }}'">Makna Logo</div>
+                                onclick="location.href='{{ route('profile-makna') }}'">
+                                <div class="header-dropdown-wrapper__list--top">
+                                    <ion-icon name="earth-outline"></ion-icon>
+                                    <p>
+                                        Makna Logo
+                                    </p>
+                                </div>
+                                <div class="header-dropdown-wrapper__list--bot">
+                                    Lorem ipsum dolor sit amet, consectetur rem?...
+                                </div>
+                            </div>
                             <div class="header-dropdown-wrapper__list"
-                                onclick="location.href='{{ route('profile-visi-misi') }}'"> Visi & misi</div>
+                                onclick="location.href='{{ route('profile-visi-misi') }}'">
+                                <div class="header-dropdown-wrapper__list--top">
+                                    <ion-icon name="earth-outline"></ion-icon>
+                                    <p>
+                                        Visi & Misi
+                                    </p>
+                                </div>
+                                <div class="header-dropdown-wrapper__list--bot">
+                                    Lorem ipsum dolor sit amet, consectetur rem?...
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

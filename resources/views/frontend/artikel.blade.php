@@ -55,11 +55,20 @@
                                 </div>
                             </div>
                         </div>
+                    </a>
                 @endforeach
-
+            </div>
+            <div class="pagination py-50">
+                <div class="pagination-wrapper">
+                    <div class="pagination-wrapper--prev">
+                        <ion-icon name="arrow-back-circle-outline"></ion-icon>Prev
+                    </div>
+                    <div class="pagination-wrapper--next">Next<ion-icon name="arrow-forward-circle-outline"></ion-icon>
+                    </div>
+                </div>
             </div>
         </div>
-    </div> </a>
+    </div>
 
 @section('js')
     <script></script>
