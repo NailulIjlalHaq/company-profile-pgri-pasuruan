@@ -20,7 +20,7 @@
                             </p>
                         </div>
                         <div class="detail-artikel-info--img">
-                            <div class="detail-artikel-info--img-img" style="background: url(/{{ $item->cover_img }})">
+                            <div class="detail-artikel-info--img-img" style="background: url('/{{ $item->cover_img }}')">
                             </div>
                         </div>
                         <div class="detail-artikel-info--info">
