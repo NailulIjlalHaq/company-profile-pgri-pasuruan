@@ -52,7 +52,7 @@ class PageController extends Controller
     {
         // Fungsi untuk meload konten summernote dan mengupload gambar pada konten
         $dom = new \DomDocument();
-        $dom->loadHtml($content, LIBXML_NOWARNING | LIBXML_NOERROR);
+        $dom->loadHtml($content, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
         $images = $dom->getElementsByTagName('img');
         foreach ($images as $k => $img) {
             $data = $img->getAttribute('src');

@@ -23,7 +23,7 @@ class BeritaController extends Controller
     {
         if ($request->ajax()) {
             $data = posts::with('categories');
-            $data->where('type', 'berita');
+            $data->where('type', 'berita')->latest();
             return  DataTables()->of($data)
                 ->editColumn('title', function ($row) {
                     // Memberikan dan mengecek status fokus berita
@@ -221,7 +221,8 @@ class BeritaController extends Controller
     {
         // Fungsi untuk meload konten summernote dan mengupload gambar pada konten
         $dom = new \DomDocument();
-        $dom->loadHtml($content, LIBXML_NOWARNING | LIBXML_NOERROR);
+        //$dom->loadHtml($content, LIBXML_NOWARNING | LIBXML_NOERROR);
+        $dom->loadHtml($content, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
         $images = $dom->getElementsByTagName('img');
         foreach ($images as $k => $img) {
             $data = $img->getAttribute('src');
