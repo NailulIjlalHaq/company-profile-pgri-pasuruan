@@ -32,19 +32,25 @@
                                                     <p>{{ $item->title }}</p>
                                                 </div>
                                                 <div class="artikel-container-box__top--info-box-text-2">
-                                                    <p>{{ strip_tags($item->content) }}</p>
+                                                    <p>{{ $item->created_at->format('d F y') }}</p>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="artikel-container-box__bot">
-                                    <p>
-                                        <ion-icon name="eye"></ion-icon> 250
-                                    </p>
-                                    <p>
-                                        <ion-icon name="share-social"></ion-icon> 300
-                                    </p>
+                                    <div class="artikel-container-box__bot--name">
+                                        Muhammad rifaldi muhamad rifaldi
+                                    </div>
+                                    <div class="artikel-container-box__bot--info">
+
+                                        {{-- <p>
+                                            <ion-icon name="eye"></ion-icon> 250
+                                        </p> --}}
+                                        <p>
+                                            <ion-icon name="share-social"></ion-icon> 300
+                                        </p>
+                                    </div>
 
                                 </div>
                             </div>

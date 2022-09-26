@@ -14,7 +14,7 @@
                 <div class="detail-berita-wrapper__content--pri">
                     <div class="detail-berita-info">
                         <div class="detail-berita-info--title">
-                            <p>{{ substr($item->created_at, 0, 10) }}</p>
+                            <p>{{ $item->created_at->format('d F Y') }}</p>
                             <p>
                                 {{ $item->title }}
                             </p>
@@ -62,7 +62,7 @@
                                     <div class="berita-box__right--title">{{ $item->title }}</div>
                                     <div class="berita-box__right--desc">{{ strip_tags($item->content) }}</div>
                                     <div class="berita-box__right--bottom">
-                                        <p>{{ $item->created_at }}</p>
+                                        <p>{{ $item->created_at->format('d F Y') }}</p>
                                         <p>
                                             <ion-icon name="arrow-forward-circle-outline"></ion-icon>
                                         </p>
