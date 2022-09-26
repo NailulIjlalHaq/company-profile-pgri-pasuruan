@@ -6,13 +6,14 @@ use App\Http\Controllers\Controller;
 use App\Models\configs;
 use App\Models\posts;
 use App\Models\pages;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class homeController extends Controller
 {
     public function index()
     {
-        $beritaAtas = posts::where('type', 'berita')->where('is_focus', 1)->limit(4)->get();
+        $beritaAtas = posts::with('users')->where('type', 'berita')->where('is_focus', 1)->limit(4)->get();
         $sambutan = pages::find(1);
         $artikel = posts::where('type', 'artikel')->limit(5)->get();
         $botBerita = posts::where('type', 'berita')->where('is_focus', 0)->limit(4)->get();

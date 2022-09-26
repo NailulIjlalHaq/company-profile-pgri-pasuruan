@@ -36,11 +36,11 @@
                     </div>
                     <div class="news-img-text-top">{{ $atas->title }}</div>
                     <div class="news-img-text-bottom">
-                        <p>Armin Yars</p>
+                        <p>{{$atas->users->name}}</p>
                         <p>
                             &bull;
                         </p>
-                        <p> {{ substr($atas->created_at, 0, 10) }}</p>
+                        <p> {{$atas->created_at->format("d F Y")}}</p>
                     </div>
                 </div>
 

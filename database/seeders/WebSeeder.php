@@ -127,7 +127,7 @@ class WebSeeder extends Seeder
         ]);
         configs::create([
             'title' => 'kontak',
-            'data' => '(+62)81122223333'
+            'data' => '+62 811-2222-3333'
         ]);
         configs::create([
             'title' => 'email',
