@@ -17,7 +17,7 @@
                     </div>
                 </div>
 
-                <div class="footer__wrapper--left__box">
+                {{-- <div class="footer__wrapper--left__box">
                     <a href={{ route('feHome') }} class="footer__wrapper--left__box--item">Beranda</a>
                     <a href={{ route('feHome') }} class="footer__wrapper--left__box--item">Struktur</a>
                     <a href={{ route('profile-makna') }} class="footer__wrapper--left__box--item">Makna Logo</a>
@@ -26,42 +26,41 @@
                     <a href={{ route('feBerita') }} class="footer__wrapper--left__box--item">Berita</a>
                     <a href={{ route('feGallery') }} class="footer__wrapper--left__box--item">Galeri</a>
                     <a href={{ route('feContact') }} class="footer__wrapper--left__box--item">Kontak</a>
-                </div>
+                </div> --}}
 
             </div>
             <div class="footer__wrapper--right">
-                <div class="footer__wrapper--right__medsos">
-                    <div class="footer__wrapper--right__medsos--box">
+                <div class="footer-medsos">
+                    <div class="footer-medsos--box">
                         <ion-icon onclick="window.open('')" name="logo-instagram"></ion-icon>
                     </div>
 
-                    <div class="footer__wrapper--right__medsos--box">
+                    <div class="footer-medsos--box">
                         <ion-icon onclick="window.open('')" name="logo-facebook"></ion-icon>
                     </div>
 
-                    <div class="footer__wrapper--right__medsos--box">
+                    <div class="footer-medsos--box">
                         <ion-icon onclick="window.open('')" name="logo-whatsapp"></ion-icon>
                     </div>
                 </div>
 
-                <div class="footer__wrapper--right__cr">Copyright SMKN 1 Purwosari 2022 © All rights reserved.</div>
+                <div class="footer-cr">Copyright SMKN 1 Purwosari 2022 © All rights reserved.</div>
             </div>
         </div>
 
         <hr />
         <div class="footer__bottom">
-            <div class="footer__bottom--left">
-                <div class="footer__bottom--left__phone">
+            <div class="footer-address">
+                <div class="footer-address__phone">
                     <p>
                         <ion-icon name="call"></ion-icon>
                     </p>
                     <p>
                         <?php
                         print_r($configs[4]['data']);
-                        ?>
-                    </p>
+                        ?></p>
                 </div>
-                <div class="footer__bottom--left__alamat">
+                <div class="footer-address__alamat">
                     <p>
                         <ion-icon name="location"></ion-icon>
                     </p>
@@ -71,15 +70,13 @@
                         ?>
                     </p>
                 </div>
-                <div class="footer__bottom--left__email">
+                <div class="footer-address__email">
                     <p>
                         <ion-icon name="mail"></ion-icon>
                     </p>
-                    <p>
-                        <?php
-                        print_r($configs[5]['data']);
-                        ?>
-                    </p>
+                    <p> <?php
+                    print_r($configs[5]['data']);
+                    ?></p>
                 </div>
             </div>
         </div>

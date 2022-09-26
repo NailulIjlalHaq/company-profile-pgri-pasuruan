@@ -163,6 +163,18 @@
                                 align-items: flex-start;
                                 width: 100%;
                                 &-text {
+                                    &-tag {
+                                        text-transform: uppercase;
+                                        align-self: flex-start;
+                                        padding: 0.5rem 1rem;
+                                        text-align: center;
+                                        width: fit-content;
+                                        font-size: 1rem;
+                                        color: #fff;
+                                        background-color: $color-secondary;
+                                        margin-bottom: 1rem;
+                                    }
+
                                     &-1 {
                                         p {
                                             @supports (-webkit-line-clamp: 2) {
@@ -304,7 +316,7 @@
                                 margin-bottom: 2.4rem;
                             }
                             &:nth-child(2) {
-                                font-size: 3.6rem;
+                                font-size: 3.2rem;
                                 font-weight: 600;
 
                                 @include respond(bp-400) {

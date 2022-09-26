@@ -21,39 +21,59 @@
                     <div class="header-dropdown">
                         <div class="header-dropdown-wrapper">
                             <div class="header-dropdown-wrapper__list"
-                                onclick="location.href='{{ route('profile-sejarah') }}'">
-                                <div class="header-dropdown-wrapper__list--top">
+                                onclick="location.href='{{ route('feDetailSambutan') }}'">
+                                <div class="header-dropdown-wrapper__list--left">
                                     <ion-icon name="earth-outline"></ion-icon>
+                                </div>
+                                <div class="header-dropdown-wrapper__list--right">
                                     <p>
                                         Sambutan Ketua PGRI
                                     </p>
-                                </div>
-                                <div class="header-dropdown-wrapper__list--bot">
-                                    Lorem ipsum dolor sit amet...
+                                    <p>
+                                        Lorem ipsum dolor sit amet...
+                                    </p>
                                 </div>
                             </div>
                             <div class="header-dropdown-wrapper__list"
                                 onclick="location.href='{{ route('profile-makna') }}'">
-                                <div class="header-dropdown-wrapper__list--top">
+                                <div class="header-dropdown-wrapper__list--left">
                                     <ion-icon name="earth-outline"></ion-icon>
+                                </div>
+                                <div class="header-dropdown-wrapper__list--right">
                                     <p>
                                         Makna Logo
                                     </p>
-                                </div>
-                                <div class="header-dropdown-wrapper__list--bot">
-                                    Lorem ipsum dolor sit amet, consectetur rem?...
+                                    <p>
+                                        Lorem ipsum dolor sit amet...
+                                    </p>
                                 </div>
                             </div>
                             <div class="header-dropdown-wrapper__list"
                                 onclick="location.href='{{ route('profile-visi-misi') }}'">
-                                <div class="header-dropdown-wrapper__list--top">
+                                <div class="header-dropdown-wrapper__list--left">
                                     <ion-icon name="earth-outline"></ion-icon>
+                                </div>
+                                <div class="header-dropdown-wrapper__list--right">
                                     <p>
                                         Visi & Misi
                                     </p>
+                                    <p>
+                                        Lorem ipsum dolor sit amet...
+                                    </p>
                                 </div>
-                                <div class="header-dropdown-wrapper__list--bot">
-                                    Lorem ipsum dolor sit amet, consectetur rem?...
+                            </div>
+                            <div class="header-dropdown-wrapper__list"
+                                onclick="location.href='{{ route('profile-visi-misi') }}'">
+                                <div class="header-dropdown-wrapper__list--left">
+                                    <ion-icon name="earth-outline"></ion-icon>
+                                </div>
+                                <div class="header-dropdown-wrapper__list--right">
+                                    <p>
+                                        Visi 
+                                    </p>
+                                    <p>
+                                        Lorem ipsum dolor sit amet...
+                                    </p>
                                 </div>
                             </div>
                         </div>
