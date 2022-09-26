@@ -152,9 +152,8 @@
     // popup profile sectionar
     function toggleElement(name, box) {
         $(`.btn-show-${name}`).on('click', function() {
-            $(this).parents(`.${box}`).siblings(`.${name}`).addClass('show');
-            $(this).parents(`.${box}`).siblings(`.${name}`).children(`.${name}__wrapper`).addClass(
-                'trans-0');
+            $(this).siblings(`.${name}`).addClass('show');
+            $(this).siblings(`.${name}`).children(`.${name}__wrapper`).addClass('trans-0');
             $(document).on('keyup', function(evt) {
                 if ($(`.${name}`).hasClass('show')) {
                     if (evt.keyCode == 27) {
@@ -164,14 +163,14 @@
                 }
             });
 
-            $(window).on('click', function(e) {
-                if (!$(`.gallery-popup__wrapper`).get(0).contains(e.target) && !$(
-                        `.btn-show-gallery-popup`).get(0)
-                    .contains(e.target)) {
-                    $(`.gallery-popup`).removeClass('show');
-                    $(`.gallery-popup__wrapper`).removeClass('trans-0');
-                }
-            })
+            // $(window).on('click', function(e) {
+            //     if (!$(this).siblings(`.${name}`).children(`.${name}__wrapper`).get(0).contains(e.target) && !$(this).get(0)
+            //         .contains(e.target)) {
+            //         $(this).siblings(`.${name}`).addClass('show');
+            //         $(this).siblings(`.${name}`).children(`.${name}__wrapper`).addClass('trans-0');
+
+            //     }
+            // })
 
         });
         $(`.btn-close-${name}`).on('click', function() {

@@ -58,6 +58,47 @@
                     @foreach ($photos as $p)
                         <div class="gallery-container-box" onclick="passValue({{ $p->id_galleries }})">
                             <div class="gallery-container-box-img" style="background: url('{{ $p->file }}')"></div>
+                            <div class="gallery-popup">
+                                <div class="gallery-popup__wrapper">
+                                    <div class="gallery-popup__wrapper--header">
+                                        <div class="gallery-popup__wrapper--header--title">
+                                            <p>Detail Foto</p>
+                                            <p>
+                                                <ion-icon class="btn-close-gallery-popup" name="close"></ion-icon>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="gallery-popup__wrapper--content">
+                                        <div class="gallery-popup__wrapper--content__img"></div>
+                                        <div class="gallery-popup__wrapper--content__info">
+
+                                            <p class="gallery-popup__wrapper--content__info-title"></p>
+                                            <p class="gallery-popup__wrapper--content__info-desc">
+                                            </p>
+                                        </div>
+                                        <div class="gallery-popup__wrapper--content__btn">
+                                            <div class="share-btn">
+                                                <div class="share-btn-wrapper">
+
+                                                    <div class="share-btn-wrapper-btn">
+                                                        <ion-icon name="logo-facebook"></ion-icon>Facebook
+                                                    </div>
+                                                    <div class="share-btn-wrapper-btn">
+                                                        <ion-icon name="logo-whatsapp"></ion-icon>whatsapp
+                                                    </div>
+                                                    <div class="share-btn-wrapper-btn">
+                                                        <ion-icon name="logo-twitter"></ion-icon>twitter
+                                                    </div>
+                                                </div>
+                                                <div class="share-btn-share">
+                                                    <ion-icon name="share-social"></ion-icon>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
                         </div>
                         <input type="hidden" class="idValue{{ $p->id_galleries }}" value="{{ $p->id_galleries }}">
                         <input type="hidden" class="imgValue{{ $p->id_galleries }}" value="{{ $p->file }}">
@@ -66,47 +107,6 @@
                             value="{{ strip_tags($p->description) }}">
 
                         {{-- popup --}}
-                        <div class="gallery-popup">
-                            <div class="gallery-popup__wrapper">
-                                <div class="gallery-popup__wrapper--header">
-                                    <div class="gallery-popup__wrapper--header--title">
-                                        <p>Detail Foto</p>
-                                        <p>
-                                            <ion-icon class="btn-close-gallery-popup" name="close"></ion-icon>
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="gallery-popup__wrapper--content">
-                                    <div class="gallery-popup__wrapper--content__img"></div>
-                                    <div class="gallery-popup__wrapper--content__info">
-
-                                        <p class="gallery-popup__wrapper--content__info-title"></p>
-                                        <p class="gallery-popup__wrapper--content__info-desc">
-                                        </p>
-                                    </div>
-                                    <div class="gallery-popup__wrapper--content__btn">
-                                        <div class="share-btn">
-                                            <div class="share-btn-wrapper">
-
-                                                <div class="share-btn-wrapper-btn">
-                                                    <ion-icon name="logo-facebook"></ion-icon>Facebook
-                                                </div>
-                                                <div class="share-btn-wrapper-btn">
-                                                    <ion-icon name="logo-whatsapp"></ion-icon>whatsapp
-                                                </div>
-                                                <div class="share-btn-wrapper-btn">
-                                                    <ion-icon name="logo-twitter"></ion-icon>twitter
-                                                </div>
-                                            </div>
-                                            <div class="share-btn-share">
-                                                <ion-icon name="share-social"></ion-icon>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
                     @endforeach
                 </div>
             </div>
