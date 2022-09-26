@@ -127,7 +127,11 @@ class WebSeeder extends Seeder
         ]);
         configs::create([
             'title' => 'kontak',
-            'data' => 'asdfasdf'
+            'data' => '(+62)81122223333'
+        ]);
+        configs::create([
+            'title' => 'email',
+            'data' => 'example@email.com'
         ]);
         print("Data pengaturan berhasil dibuat");
     }

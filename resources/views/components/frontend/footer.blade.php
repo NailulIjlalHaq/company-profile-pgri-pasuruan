@@ -55,7 +55,11 @@
                     <p>
                         <ion-icon name="call"></ion-icon>
                     </p>
-                    <p>(0343) 613747</p>
+                    <p>
+                        <?php
+                        print_r($configs[4]['data']);
+                        ?>
+                    </p>
                 </div>
                 <div class="footer__bottom--left__alamat">
                     <p>
@@ -71,7 +75,11 @@
                     <p>
                         <ion-icon name="mail"></ion-icon>
                     </p>
-                    <p>purwosarismkn1@yahoo.co.id</p>
+                    <p>
+                        <?php
+                        print_r($configs[5]['data']);
+                        ?>
+                    </p>
                 </div>
             </div>
         </div>
