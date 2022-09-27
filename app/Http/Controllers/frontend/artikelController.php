@@ -11,7 +11,7 @@ class artikelController extends Controller
 {
     public function index()
     {
-        $artikel = posts::where('type', "artikel")->get();
+        $artikel = posts::with('users')->where('type', "artikel")->get();
         return view('frontend.artikel', ['artikel' => $artikel]);
     }
 

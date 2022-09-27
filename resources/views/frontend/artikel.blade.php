@@ -28,7 +28,7 @@
                                     <div class="artikel-container-box__top--info">
                                         <div class="artikel-container-box__top--info-box">
                                             <div class="artikel-container-box__top--info-box-text">
-                                            
+
                                                 <div class="artikel-container-box__top--info-box-text-1">
                                                     <p>{{ $item->title }}</p>
                                                 </div>
@@ -41,7 +41,7 @@
                                 </div>
                                 <div class="artikel-container-box__bot">
                                     <div class="artikel-container-box__bot--name">
-                                        Muhammad rifaldi muhamad rifaldi
+                                        {{ $item->users->name }}
                                     </div>
                                     <div class="artikel-container-box__bot--info">
 

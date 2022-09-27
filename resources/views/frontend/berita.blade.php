@@ -45,7 +45,7 @@
                                 </div>
                                 <div class="artikel-container-box__bot">
                                     <div class="artikel-container-box__bot--name">
-                                        Muhammad rifaldi muhamad rifaldi
+                                        {{ $item->users->name }}
                                     </div>
                                     <div class="artikel-container-box__bot--info">
 
