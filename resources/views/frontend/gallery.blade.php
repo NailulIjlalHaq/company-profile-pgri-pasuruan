@@ -7,42 +7,18 @@
                 <div class="swiper__container">
                     <div class="swiper mySwiper">
                         <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                                <div class="swiper__box">
-                                    <div alt="" class="swiper__box--img">
-                                        <div class="swiper__box--img--content"
-                                            style="background-image: url(../frontend/assets/img/kantin.jpg)"></div>
-                                    </div>
+                            @foreach ($photos as $p)
+                                <div class="swiper-slide">
+                                    <div class="swiper__box">
+                                        <div alt="" class="swiper__box--img">
+                                            <div class="swiper__box--img--content"
+                                                style="background-image: url('{{ $p->file }}')"></div>
+                                        </div>
 
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="swiper__box">
-                                    <div alt="" class="swiper__box--img">
-                                        <div class="swiper__box--img--content"
-                                            style="background-image: url(../frontend/assets/img/sawah.jpg)"></div>
                                     </div>
-
                                 </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="swiper__box">
-                                    <div alt="" class="swiper__box--img">
-                                        <div class="swiper__box--img--content"
-                                            style="background-image: url(../frontend/assets/img/gedung.jpg)"></div>
-                                    </div>
+                            @endforeach
 
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="swiper__box">
-                                    <div alt="" class="swiper__box--img">
-                                        <div class="swiper__box--img--content"
-                                            style="background-image: url(../frontend/assets/img/aula.jpg)"></div>
-                                    </div>
-
-                                </div>
-                            </div>
                         </div>
                         <div class="swiper-button-next"></div>
                         <div class="swiper-button-prev"></div>
