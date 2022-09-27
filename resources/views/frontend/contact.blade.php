@@ -48,7 +48,6 @@
 
 
             </div>
-<<<<<<< HEAD
         </div>
         <div class="contact__map">
             <div class="contact__map--info">
@@ -62,22 +61,6 @@
                 <p>
                     <ion-icon name="location-outline"></ion-icon><a href="">Lihat Di Google map</a>
                 </p>
-=======
-            <div class="contact__map">
-                <div class="contact__map--info">
-                    <p>PGRI Kab Pasuruan</p>
-                    <p>
-                        <ion-icon name="locate-outline"></ion-icon>
-                    </p>
-                    <p>
-                        <ion-icon name="mail-outline"></ion-icon>Pasuruan@gmail.com
-                    </p>
-                    <p>
-                        <ion-icon name="location-outline"></ion-icon><a href="">Lihat Di Google map</a>
-                    </p>
-                </div>
-                <div id="map"></div>
->>>>>>> e63b14308b96d25c1a31bc30ec6cc6b136b93f06
             </div>
             <div id="map"></div>
         </div>
