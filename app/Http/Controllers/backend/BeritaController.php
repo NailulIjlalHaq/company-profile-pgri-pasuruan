@@ -82,6 +82,7 @@ class BeritaController extends Controller
             // Memanggil fungsi untuk mengupload gambar cover
             $imagePath = $this->uploadCover($request->cover_img);
 
+            // $string = preg_replace('/[^\p{L}\p{N}\s]/u', '', $string);
             // Fungsi untuk menyimpan semua data
             $post = new posts;
             $post->title = $request->judul;
