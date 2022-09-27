@@ -25,7 +25,7 @@
                         </div>
                         <div class="detail-artikel-info--info">
                             <p>
-                                {{ strip_tags($item->content) }}
+                                {!! $item->content !!}
                             </p>
 
                         </div>

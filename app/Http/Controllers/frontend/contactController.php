@@ -10,9 +10,7 @@ class contactController extends Controller
 {
     public function index()
     {
-        $fb = configs::find(1);
-        $ig = configs::find(2);
-        $wa = configs::find(3);
-        return view('frontend.layout.footer' , compact('fb', 'ig', 'wa', 'address', 'phone'));
+        $configs = configs::get();
+        return view('frontend.contact', compact('configs'));
     }
 }

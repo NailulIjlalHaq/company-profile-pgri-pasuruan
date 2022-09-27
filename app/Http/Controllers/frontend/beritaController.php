@@ -12,7 +12,7 @@ class beritaController extends Controller
     public function index()
     {
         $beritaAtas = posts::where('type', 'berita')->where('is_focus', 1)->limit(4)->get();
-        $berita = posts::where('type', 'berita')->paginate(6);
+        $berita = posts::where('type', 'berita')->latest()->paginate(6);
         return view('frontend.berita', compact('beritaAtas', 'berita'));
     }
     public function detail($id, $slug)
@@ -20,6 +20,9 @@ class beritaController extends Controller
         $berita = posts::where('type', "berita")->limit(4)->get();
         $title = Str::of($slug)->slug(" ");
         $item = posts::where('id_posts', $id)->where('title', $title)->first();
+
+        // return $item;
+        // exit;
         return view('frontend.detailBerita', ['item' => $item, 'berita' => $berita]);
     }
 }

@@ -937,7 +937,7 @@ body {
         top: 0;
         display: flex;
         flex-direction: column;
-        justify-content: end;
+        justify-content: flex-end;
         gap: 1rem;
         padding: 2rem;
         background: linear-gradient(to bottom, transparent, transparent, rgba(0, 0, 0, 0.8)); }
@@ -2283,20 +2283,20 @@ body {
         .contact__address--box .address-box p {
           font-weight: 400;
           font-size: 1.4rem; }
-        .contact__address--box .address-box-medsos {
-          display: flex;
-          gap: 1rem; }
-          .contact__address--box .address-box-medsos--item {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 5rem;
-            width: 5rem;
-            border-radius: 100%;
-            background-color: #132133; }
-            .contact__address--box .address-box-medsos--item ion-icon {
-              color: #fff;
-              font-size: 2.6rem; }
+    .contact__address .address-box-medsos {
+      display: flex;
+      gap: 1rem; }
+      .contact__address .address-box-medsos--item {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 4.2rem;
+        width: 4.2rem;
+        border-radius: 100%;
+        background-color: #132133; }
+        .contact__address .address-box-medsos--item ion-icon {
+          color: #fff;
+          font-size: 2.6rem; }
   .contact__map {
     position: relative;
     z-index: 0;
