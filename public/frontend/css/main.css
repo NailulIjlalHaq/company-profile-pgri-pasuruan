@@ -2508,7 +2508,7 @@ body {
     transition: all 0.3s ease-out;
     transition-delay: 0.2s;
     background-color: white;
-    width: 70%;
+    width: 85%;
     max-width: 144rem;
     border-radius: 0.5rem; }
     @media only screen and (max-width: 48em) {
@@ -2517,7 +2517,7 @@ body {
     @media only screen and (max-width: 31.25em) {
       .gallery-popup__wrapper {
         width: 100%;
-        border-radius: 0.5rem 0.5rem 0 0; } }
+        height: 100%; } }
     .gallery-popup__wrapper--header--title {
       display: flex;
       align-items: center;
