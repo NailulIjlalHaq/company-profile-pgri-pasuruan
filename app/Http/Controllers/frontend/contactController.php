@@ -13,6 +13,6 @@ class contactController extends Controller
         $fb = configs::find(1);
         $ig = configs::find(2);
         $wa = configs::find(3);
-        return view('frontend.layout.footer' , compact('fb', 'ig', 'wa', 'address', 'phone'));
+        return view('frontend.contact' , compact('fb', 'ig', 'wa'));
     }
 }

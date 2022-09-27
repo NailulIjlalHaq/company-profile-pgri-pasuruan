@@ -19,13 +19,13 @@
                         <div class="address-box-title">
                             <ion-icon name="call-outline"></ion-icon>Telepon
                         </div>
-                        <p>{{ $phone->data }}</p>
+                        <p></p>
                     </div>
                     <div class="address-box">
                         <div class="address-box-title">
                             <ion-icon name="location-outline"></ion-icon>Alamat
                         </div>
-                        <p>{{ $address->data }}</p>
+                        <p></p>
                     </div>
 
                     <div class="address-box-medsos">
@@ -51,7 +51,7 @@
                 <div class="contact__map--info">
                     <p>PGRI Kab Pasuruan</p>
                     <p>
-                        <ion-icon name="locate-outline"></ion-icon>{{ $address->data }}
+                        <ion-icon name="locate-outline"></ion-icon>
                     </p>
                     <p>
                         <ion-icon name="mail-outline"></ion-icon>Pasuruan@gmail.com

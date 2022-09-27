@@ -12,7 +12,7 @@ class beritaController extends Controller
     public function index()
     {
         $beritaAtas = posts::where('type', 'berita')->where('is_focus', 1)->limit(4)->get();
-        $berita = posts::where('type', 'berita')->paginate(6);
+        $berita = posts::with('users')->where('type', 'berita')->paginate(6);
         return view('frontend.berita', compact('beritaAtas', 'berita'));
     }
     public function detail($id, $slug)
