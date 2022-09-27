@@ -82,10 +82,10 @@ class BeritaController extends Controller
             // Memanggil fungsi untuk mengupload gambar cover
             $imagePath = $this->uploadCover($request->cover_img);
 
-            // $string = preg_replace('/[^\p{L}\p{N}\s]/u', '', $string);
+            // $string = preg_replace('/[' . ']/', '', $string);
             // Fungsi untuk menyimpan semua data
             $post = new posts;
-            $post->title = $request->judul;
+            $post->title = str_replace(".", '', $request->judul);
             $post->content = $konten;
             $post->id_categories = $request->kategori;
             $post->tag = $request->tag;
@@ -158,7 +158,7 @@ class BeritaController extends Controller
         }
 
         // fungsi untuk mengupdate data berita sesuai dengan id
-        $post->title = $request->judul;
+        $post->title = str_replace(".", '', $request->judul);
         $post->content = $konten;
         $post->id_categories = $request->kategori;
         $post->tag = $request->tag;

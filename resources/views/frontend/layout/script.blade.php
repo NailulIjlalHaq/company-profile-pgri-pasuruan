@@ -67,6 +67,12 @@
 
 
     });
+
+    $('.header__list-box--item').hover(function() {
+        $(this).addClass('active-link')
+    }, function() {
+        $(this).removeClass('active-link')
+    })
     $('.cp-link-text').text(window.location.href)
     $('.share-btn-wrapper-btn.share-wa').on('click', function() {
         let link = window.location.href

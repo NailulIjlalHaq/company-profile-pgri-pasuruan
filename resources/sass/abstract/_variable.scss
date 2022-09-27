@@ -28,6 +28,7 @@ $color-blue: #60c1f8;
     position: relative;
     display: flex;
     align-items: center;
+    font-weight: 600 !important;
     &::after {
         content: "";
         font-size: 1rem;

@@ -83,7 +83,7 @@ class ArtikelController extends Controller
 
             // Fungsi untuk menyimpan semua data
             $post = new posts;
-            $post->title = $request->judul;
+            $post->title = str_replace(".", '', $request->judul);
             $post->content = $konten;
             $post->id_categories = $request->kategori;
             $post->tag = $request->tag;
@@ -156,7 +156,7 @@ class ArtikelController extends Controller
         }
 
         // fungsi untuk mengupdate data artikel sesuai dengan id
-        $post->title = $request->judul;
+        $post->title = str_replace(".", '', $request->judul);
         $post->content = $konten;
         $post->id_categories = $request->kategori;
         $post->tag = $request->tag;
