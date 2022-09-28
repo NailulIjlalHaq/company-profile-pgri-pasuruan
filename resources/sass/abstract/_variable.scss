@@ -42,6 +42,26 @@ $color-blue: #60c1f8;
         border-radius: 1px;
     }
 }
+
+.active-link-hover {
+    color: #fff !important;
+    position: relative;
+    display: flex;
+    align-items: center;
+    font-weight: 600 !important;
+    &::after {
+        content: "";
+        font-size: 1rem;
+        position: absolute;
+        left: 50%;
+        bottom: -20%;
+        transform: translate(-50%, 0);
+        height: 3px;
+        width: 50%;
+        background-color: #fff;
+        border-radius: 1px;
+    }
+}
 .overflow-visible {
     overflow: visible !important;
 }
