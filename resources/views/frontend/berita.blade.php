@@ -8,7 +8,7 @@
                 <form action="{{route('feBerita')}}" method="get" style="width:85%;margin-left:30%;">
                     <div class=" artikel-search">
                         <ion-icon name="search-outline"></ion-icon>
-                        <input type="search" name="search" id="search" placeholder="Cari...">
+                        <input type="search" name="search" id="search" placeholder="Cari..." value="@old('search')">
                     </div>
                 </form>
             </div>

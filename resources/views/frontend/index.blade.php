@@ -3,6 +3,8 @@
 <meta name="keywords" content="@yield('meta-keyword','website PGRI Kab Pasuruan')">
 <meta name="description" content="@yield('meta-descriptions','website yang dipergunakan sebagai profil PGRI Kab. Pasuruan Jawa Timur')">
 <title>PGRI KAB Pasuruan</title>
+
+@yield('social-media')
 <style>
     .loader {
         position: fixed;

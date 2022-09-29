@@ -1,6 +1,21 @@
 @extends('frontend.index')
 @section('meta-keyword', $item->tag)
 @section('meta-description', strip_tags($item->content))
+@section('social-media')
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="{{route('feDetailBerita',['id' => $item->id_posts, 'slug' => Str::of($item->title)->slug('-')])}}">
+<meta property="og:title" content="{{$item->title}}">
+<meta property="og:description" content="{{strip_tags($item->content)}}">
+<meta property="og:image" content="{{url($item->cover_img)}}">
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="{{route('feDetailBerita',['id' => $item->id_posts, 'slug' => Str::of($item->title)->slug('-')])}}">
+<meta property="twitter:title" content="{{$item->title}}">
+<meta property="twitter:description" content="{{strip_tags($item->content)}}">
+<meta property="twitter:image" content="{{url($item->cover_img)}}">
+@endsection
 @section('content')
 <div class="detail-berita">
     <div class="detail-berita-wrapper">
@@ -34,8 +49,14 @@
                         <div class="share-btn">
                             <div class="share-btn-wrapper">
                                 <div class="share-btn-wrapper-btn share-wa">
-                                    <ion-icon name="logo-whatsapp"></ion-icon>whatsapp
+                                    <ion-icon name="logo-whatsapp"></ion-icon>
                                 </div>
+                                <a class="share-btn-wrapper-btn" href="https://www.facebook.com/sharer/sharer.php?u={{route('feDetailBerita',['id' => $item->id_posts, 'slug' => Str::of($item->title)->slug('-')])}}">
+                                    <ion-icon name="logo-facebook"></ion-icon>
+                                </a>
+                                <a class="share-btn-wrapper-btn" href="https://twitter.com/intent/tweet/?text={{$item->title}}&url={{route('feDetailBerita',['id' => $item->id_posts, 'slug' => Str::of($item->title)->slug('-')])}}">
+                                    <ion-icon name="logo-twitter"></ion-icon>
+                                </a>
                                 <div class="share-btn-wrapper-btn cp-link">
                                     <ion-icon name="link-outline"></ion-icon>
                                     <p class="cp-link-text"></p>
