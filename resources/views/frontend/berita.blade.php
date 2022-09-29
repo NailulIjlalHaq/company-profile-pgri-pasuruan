@@ -8,7 +8,7 @@
                 <form action="{{route('feBerita')}}" method="get" style="width:85%;margin-left:30%;">
                     <div class=" artikel-search">
                         <ion-icon name="search-outline"></ion-icon>
-                        <input type="search" name="search" id="search" placeholder="Cari..." value="@old('search')">
+                        <input type="search" name="search" id="search" placeholder="Cari...">
                     </div>
                 </form>
             </div>
@@ -34,7 +34,7 @@
                                             <p>{{ $item->title }}</p>
                                         </div>
                                         <div class="artikel-container-box__top--info-box-text-2">
-                                            <p>{{ $item->created_at->format('d F y') }}</p>
+                                            <p>{{ $item->created_at->format('d F Y') }}</p>
                                         </div>
                                     </div>
                                 </div>
@@ -49,7 +49,7 @@
                                             <ion-icon name="eye"></ion-icon> 250
                                         </p> --}}
                                 <p>
-                                    <ion-icon name="share-social"></ion-icon> 300
+                                    <ion-icon name="open-outline"></ion-icon>
                                 </p>
                             </div>
                         </div>

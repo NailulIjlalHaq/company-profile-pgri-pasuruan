@@ -33,7 +33,7 @@
                                             <p>{{ $item->title }}</p>
                                         </div>
                                         <div class="artikel-container-box__top--info-box-text-2">
-                                            <p>{{ $item->created_at->format('d F y') }}</p>
+                                            <p>{{ $item->created_at->format('d F Y') }}</p>
                                         </div>
                                     </div>
                                 </div>
@@ -49,7 +49,7 @@
                                             <ion-icon name="eye"></ion-icon> 250
                                         </p> --}}
                                 <p>
-                                    <ion-icon name="share-social"></ion-icon> 300
+                                    <ion-icon name="open-outline"></ion-icon>
                                 </p>
                             </div>
 
