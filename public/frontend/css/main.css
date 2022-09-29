@@ -1564,27 +1564,20 @@ body {
       display: flex;
       flex-direction: column;
       gap: 3rem;
-      max-width: 144rem; }
+      max-width: 144rem;
+      text-align: left; }
+      .about__sejarah-wrapper-info * {
+        font-size: 1.6rem !important; }
       @media only screen and (max-width: 48em) {
         .about__sejarah-wrapper-info {
           padding: 5rem; } }
       @media only screen and (max-width: 31.25em) {
         .about__sejarah-wrapper-info {
           padding: 2rem; } }
-      .about__sejarah-wrapper-info span {
-        font-size: 3.2rem;
-        font-weight: 900;
-        text-transform: uppercase; }
-      .about__sejarah-wrapper-info p {
-        font-size: 1.4rem;
-        line-height: 1.7; }
     .about__sejarah-wrapper-btn {
       padding: 5rem 10rem;
       width: 100%;
       max-width: 144rem; }
-      @media only screen and (max-width: 48em) {
-        .about__sejarah-wrapper-btn {
-          padding: 0 5rem; } }
   .about__makna {
     width: 100%;
     display: flex;
