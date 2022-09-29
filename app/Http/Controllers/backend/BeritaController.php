@@ -74,32 +74,32 @@ class BeritaController extends Controller
      */
     public function store(StoreBeritaRequest $request)
     {
-        try {
-            // Memanggil fungsi untuk meload semua konten yang ada di summernote dan mengupload gambar
-            // dan mengembalikan dalam bentuk html
-            $konten = $this->loadContent($request->konten);
+        //try {
+        // Memanggil fungsi untuk meload semua konten yang ada di summernote dan mengupload gambar
+        // dan mengembalikan dalam bentuk html
+        $konten = $this->loadContent($request->konten);
 
-            // Memanggil fungsi untuk mengupload gambar cover
-            $imagePath = $this->uploadCover($request->cover_img);
+        // Memanggil fungsi untuk mengupload gambar cover
+        $imagePath = $this->uploadCover($request->cover_img);
 
-            // $string = preg_replace('/[' . ']/', '', $string);
-            // Fungsi untuk menyimpan semua data
-            $post = new posts;
-            $post->title = str_replace(".", '', $request->judul);
-            $post->content = $konten;
-            $post->id_categories = $request->kategori;
-            $post->tag = $request->tag;
-            $post->type = 'berita';
-            $post->cover_img = $imagePath;
-            $post->is_focus = 0;
-            $post->id_user = auth()->user()->id;
-            $post->save();
+        // $string = preg_replace('/[' . ']/', '', $string);
+        // Fungsi untuk menyimpan semua data
+        $post = new posts;
+        $post->title = str_replace(".", '', $request->judul);
+        $post->content = $konten;
+        $post->id_categories = $request->kategori;
+        $post->tag = $request->tag;
+        $post->type = 'berita';
+        $post->cover_img = $imagePath;
+        $post->is_focus = 0;
+        $post->id_user = auth()->user()->id;
+        $post->save();
 
-            // Fungsi untuk menuju halaman index dan memberikan pesan sukses
-            return redirect()->route('berita.index')->with('success', 'Berita berhasil disimpan dan di publish.');
-        } catch (\Exception $e) {
-            print_r($e);
-        }
+        // Fungsi untuk menuju halaman index dan memberikan pesan sukses
+        return redirect()->route('berita.index')->with('success', 'Berita berhasil disimpan dan di publish.');
+        // } catch (\Exception $e) {
+        //     print_r($e);
+        // }
     }
 
     /**
@@ -207,7 +207,8 @@ class BeritaController extends Controller
         // Fungsi untuk mengupload cover image pada server dan di simpan pada folder public
         if ($request->has('id')) {
             $countFokus = posts::where('type', 'berita')->where('is_focus', true)->count();
-            if ($countFokus > 5) {
+
+            if ($countFokus > 5 && $request->is_active) {
                 return redirect()->route('berita.index')->with('error', 'Jumlah berita yang dapat di set fokus melebihi batas, silahkan nonaktifkan salah satu data.');
             }
 

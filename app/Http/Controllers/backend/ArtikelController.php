@@ -73,31 +73,31 @@ class ArtikelController extends Controller
      */
     public function store(StoreArtikelRequest $request)
     {
-        try {
-            // Memanggil fungsi untuk meload semua konten yang ada di summernote dan mengupload gambar
-            // dan mengembalikan dalam bentuk html
-            $konten = $this->loadContent($request->konten);
+        //try {
+        // Memanggil fungsi untuk meload semua konten yang ada di summernote dan mengupload gambar
+        // dan mengembalikan dalam bentuk html
+        $konten = $this->loadContent($request->konten);
 
-            // Memanggil fungsi untuk mengupload gambar cover
-            $imagePath = $this->uploadCover($request->cover_img);
+        // Memanggil fungsi untuk mengupload gambar cover
+        $imagePath = $this->uploadCover($request->cover_img);
 
-            // Fungsi untuk menyimpan semua data
-            $post = new posts;
-            $post->title = str_replace(".", '', $request->judul);
-            $post->content = $konten;
-            $post->id_categories = $request->kategori;
-            $post->tag = $request->tag;
-            $post->type = 'artikel';
-            $post->cover_img = $imagePath;
-            $post->is_focus = 0;
-            $post->id_user = auth()->user()->id;
-            $post->save();
+        // Fungsi untuk menyimpan semua data
+        $post = new posts;
+        $post->title = str_replace(".", '', $request->judul);
+        $post->content = $konten;
+        $post->id_categories = $request->kategori;
+        $post->tag = $request->tag;
+        $post->type = 'artikel';
+        $post->cover_img = $imagePath;
+        $post->is_focus = 0;
+        $post->id_user = auth()->user()->id;
+        $post->save();
 
-            // Fungsi untuk menuju halaman index dan memberikan pesan sukses
-            return redirect()->route('artikel.index')->with('success', 'Artikel berhasil disimpan dan di publish.');
-        } catch (\Exception $e) {
-            print_r($e);
-        }
+        // Fungsi untuk menuju halaman index dan memberikan pesan sukses
+        return redirect()->route('artikel.index')->with('success', 'Artikel berhasil disimpan dan di publish.');
+        //} catch (\Exception $e) {
+        //print_r($e);
+        //}
     }
 
     /**
