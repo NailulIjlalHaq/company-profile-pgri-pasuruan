@@ -25,6 +25,7 @@ class UpdateProfilRequest extends FormRequest
     {
         return [
             'deskripsi' => 'required',
+            'cover_img' => 'file|image|max:2000',
         ];
     }
 

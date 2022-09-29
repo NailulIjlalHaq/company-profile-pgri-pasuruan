@@ -10,8 +10,6 @@
 
     hr {
         width: 100%;
-
-        margin: 5rem 0;
         border: 0;
         border-top: solid 1px #fff;
     }
@@ -33,60 +31,115 @@
         flex-direction: column;
         gap: 5rem;
 
-        &--left {
+        &--top {
             align-self: stretch;
             display: flex;
             justify-content: space-between;
+            align-items: center;
             @include respond(bp-1100) {
                 flex-direction: column;
+                align-items: flex-start;
                 gap: 5rem;
             }
             .footer-logo-container {
-            }
-            &__logo {
-                display: flex;
-                align-items: center;
-                gap: 1rem;
-                img {
-                    height: 5rem;
+                &__logo {
+                    display: flex;
+                    align-items: center;
+                    gap: 1rem;
+                    img {
+                        height: 5rem;
+                    }
+                    p {
+                        font-size: 1.6rem;
+                        font-weight: 700;
+                        text-transform: uppercase;
+                    }
                 }
-                p {
-                    font-size: 1.6rem;
-                    font-weight: 700;
-                    text-transform: uppercase;
-                }
-            }
 
-            &__box {
-                display: grid;
-                grid-template-columns: repeat(3, 1fr);
+                &__box {
+                    display: grid;
+                    grid-template-columns: repeat(3, 1fr);
 
-                gap: 1.2rem 5rem;
+                    gap: 1.2rem 5rem;
 
-                @include respond(bp-1100) {
-                    justify-content: space-between;
-                    gap: 1.2rem 0;
+                    @include respond(bp-1100) {
+                        justify-content: space-between;
+                        gap: 1.2rem 0;
+                    }
+                    @include respond(bp-400) {
+                        grid-template-columns: repeat(2, 1fr);
+                    }
+                    &--item {
+                        text-align: start;
+                        color: #fff;
+                        font-weight: 400;
+                        font-size: 1.4rem;
+                    }
                 }
-                @include respond(bp-400) {
-                    grid-template-columns: repeat(2, 1fr);
-                }
-                &--item {
-                    text-align: start;
-                    color: #fff;
-                    font-weight: 400;
+
+                &__desc {
                     font-size: 1.4rem;
+                    font-weight: 400;
+                    color: #fff;
+                    margin-top: 1rem;
                 }
             }
+            .footer-address {
+                display: flex;
+                align-items: flex-start;
+                justify-content: space-evenly;
+                gap: 7rem;
 
-            &__desc {
-                font-size: 1.4rem;
-                font-weight: 400;
-                color: #fff;
-                margin-top: 1rem;
+                @include respond(tab-port) {
+                    gap: 3rem;
+                    flex-direction: column;
+                }
+                &__alamat {
+                    display: flex;
+                    gap: 1rem;
+                    p {
+                        text-align: center;
+                        &:nth-child(1) {
+                            font-size: 2rem;
+                        }
+                        &:nth-child(2) {
+                            font-size: 1.4rem;
+                            font-weight: 400;
+
+                            @include respond(bp-400) {
+                                text-align: start;
+                            }
+                        }
+
+                        ion-icon {
+                            color: $color-primary;
+                        }
+                    }
+                }
+                &__phone,
+                &__email {
+                    display: flex;
+                    gap: 1rem;
+                    p {
+                        text-align: center;
+                        &:nth-child(1) {
+                            font-size: 2rem;
+                        }
+                        &:nth-child(2) {
+                            font-size: 1.4rem;
+                            font-weight: 400;
+                        }
+                    }
+                    ion-icon {
+                        color: $color-primary;
+                    }
+                }
+                &__email {
+                }
             }
         }
 
-        &--right {
+        &--bot {
             display: flex;
             justify-content: space-between;
             align-self: stretch;
@@ -97,7 +150,7 @@
                 flex-direction: column;
                 align-items: flex-start;
             }
-            &__medsos {
+            .footer-medsos {
                 display: flex;
                 align-items: center;
                 gap: 1rem;
@@ -116,67 +169,11 @@
                 }
             }
 
-            &__cr {
+            .footer-cr {
                 text-align: end;
                 font-size: 1.4rem;
                 color: rgba($color: #fff, $alpha: 0.7);
                 font-weight: 300;
-            }
-        }
-    }
-
-    &__bottom {
-        &--left {
-            display: flex;
-            align-items: flex-start;
-            justify-content: space-evenly;
-            gap: 7rem;
-
-            @include respond(tab-port) {
-                gap: 3rem;
-                flex-direction: column;
-            }
-            &__alamat {
-                display: flex;
-                gap: 1rem;
-                p {
-                    text-align: center;
-                    &:nth-child(1) {
-                        font-size: 2rem;
-                    }
-                    &:nth-child(2) {
-                        font-size: 1.4rem;
-                        font-weight: 400;
-
-                        @include respond(bp-400) {
-                            text-align: start;
-                        }
-                    }
-
-                    ion-icon {
-                        color: $color-primary;
-                    }
-                }
-            }
-            &__phone,
-            &__email {
-                display: flex;
-                gap: 1rem;
-                p {
-                    text-align: center;
-                    &:nth-child(1) {
-                        font-size: 2rem;
-                    }
-                    &:nth-child(2) {
-                        font-size: 1.4rem;
-                        font-weight: 400;
-                    }
-                }
-                ion-icon {
-                    color: $color-primary;
-                }
-            }
-            &__email {
             }
         }
     }

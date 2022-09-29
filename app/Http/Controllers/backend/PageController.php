@@ -28,6 +28,14 @@ class PageController extends Controller
         // Fungsi untuk mengambil data berita sesuai dengan id
         $page = pages::find($id);
 
+        // Fungsi untuk mengeck apabila cover img tidak kosong
+        // dan mengganti cover img lama dengan yang baru
+        if (!empty($request->cover_img)) {
+            unlink($page->cover_img);
+            $imagePath = $this->uploadCover($request->cover_img);
+            $page->cover_img = $imagePath;
+        }
+
         // fungsi untuk mengupdate data berita sesuai dengan id
         $page->content = $konten;
         $page->save();
@@ -71,5 +79,14 @@ class PageController extends Controller
             }
         }
         return $dom->saveHTML();
+    }
+
+    public function uploadCover($imageFile)
+    {
+        $extFile = $imageFile->getClientOriginalName();
+        $path = $imageFile->move('post_cover', 'cover_page_' . time() . '.' . $extFile);
+        $path = str_replace('\\', '/', $path);
+
+        return $path;
     }
 }

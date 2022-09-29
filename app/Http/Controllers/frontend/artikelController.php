@@ -9,10 +9,17 @@ use Illuminate\Support\Str;
 
 class artikelController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $artikel = posts::where('type', "artikel")->get();
-        return view('frontend.artikel', ['artikel' => $artikel]);
+        $artikel = posts::with('users')->where('type', 'artikel');
+
+        if ($request->has('search')) {
+            $berita = $artikel->where('title', 'LIKE', '%' . $request->search . '%');
+        }
+
+        $artikel = $artikel->latest()->paginate(6);
+
+        return view('frontend.artikel', compact('artikel'));
     }
 
     public function detail($id, $slug)

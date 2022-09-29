@@ -11,7 +11,7 @@ class galleryController extends Controller
 {
     public function index()
     {
-        $photos =  galleries::get();
+        $photos =  galleries::latest()->simplePaginate(6);
         return view('frontend.gallery', ['photos' => $photos]);
     }
 }

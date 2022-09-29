@@ -7,14 +7,13 @@
         </div>
         <div class="alert-news-wrapper-info">
             <p class="alert-news-wrapper-info-text">
-                {{-- {{ $pengumuman->title }} --}}
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam cumque voluptates maxime nisi, quisquam
-                molestias similique veniam nobis saepe minus in nihil odit adipisci dolorem aliquam ad earum! Aspernatur
-                deserunt vero beatae placeat, explicabo quo itaque modi atque ducimus doloribus nesciunt fugiat debitis,
-                laboriosam, eius incidunt! Culpa, praesentium nisi! Vel praesentium, aspernatur ipsa quidem,
-                perspiciatis facilis consectetur, earum in dolore reprehenderit debitis nostrum pariatur architecto
-                iusto sint cumque asperiores? Saepe, ex sunt rem ea perspiciatis ratione ducimus iure, eligendi
-                doloribus possimus excepturi dicta adipisci inventore. Excepturi velit porro accusantium placeat?
+                @if(count($pengumuman) > 0)
+                @foreach ($pengumuman as $item )
+                {{$item->title}} -
+                @endforeach
+                @else
+                Belum terdapat <strong>PENGUMUMAN</strong> yang ingin ditampilkan pada web
+                @endif
             </p>
         </div>
         <div class="alert-news-wrapper-close ">
@@ -36,11 +35,11 @@
                     </div>
                     <div class="news-img-text-top">{{ $atas->title }}</div>
                     <div class="news-img-text-bottom">
-                        <p>Armin Yars</p>
+                        <p>{{$atas->users->name}}</p>
                         <p>
                             &bull;
                         </p>
-                        <p> {{ substr($atas->created_at, 0, 10) }}</p>
+                        <p> {{$atas->created_at->format("d F Y")}}</p>
                     </div>
                 </div>
 
@@ -51,7 +50,7 @@
     <div class="w-100 d-flex flex-center bg-grey-blue">
         <div class="home__sambutan">
             <div class="home__sambutan--left">
-                <div class="home__sambutan--left-img" style="background: url({{ asset('./frontend/assets/img/pgri.jpg') }})">
+                <div class="home__sambutan--left-img" style="background: url('{{ asset($sambutan->cover_img) }}')">
                 </div>
             </div>
             <div class="home__sambutan--right">
@@ -65,9 +64,9 @@
                         </p>
 
                     </div>
-                    <div class="card__btn" onclick="location.href='{{ route('feDetailSambutan') }}'">Lebih Lanjut
+                    <a class="card__btn" href="{{ route('feProfil',1) }}">Lebih Lanjut
                         <ion-icon name="chevron-forward-outline"></ion-icon>
-                    </div>
+                    </a>
                 </div>
             </div>
         </div>
@@ -86,7 +85,7 @@
                 <div class="home__berita--wrapper__left--scroll">
                     @foreach ($artikel as $botArtikel)
                     <a class="berita-box" href="{{ route('feDetailArtikel', ['id' => $botArtikel->id_posts, 'slug' => Str::of($botArtikel->title)->slug('-')]) }}">
-                        <div class="berita-box__left" style="background: url({{ $botArtikel->cover_img }})"></div>
+                        <div class="berita-box__left" style="background: url('{{ $botArtikel->cover_img }}')"></div>
                         <div class="berita-box__right">
                             <div class="berita-box__right--title">{{ $botArtikel->title }}</div>
                             <div class="berita-box__right--desc">{{ strip_tags($botArtikel->content) }}</div>
@@ -107,7 +106,7 @@
                     <a class="artikel-container" href="{{ route('feDetailBerita', ['id' => $bb->id_posts, 'slug' => Str::of($bb->title)->slug('-')]) }}">
                         <div class="artikel-container-box">
                             <div class="artikel-container-box__top">
-                                <div class="artikel-container-box__top--img" style="background: url({{ $bb->cover_img }}) "></div>
+                                <div class="artikel-container-box__top--img" style="background: url('{{ $bb->cover_img }}') "></div>
                                 <div class="artikel-container-box__top--info">
                                     <div class="artikel-container-box__top--info-box">
                                         <div class="artikel-container-box__top--info-box-text">

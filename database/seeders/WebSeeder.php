@@ -7,6 +7,7 @@ use App\Models\pages;
 use App\Models\posts;
 use App\Models\configs;
 use App\Models\categories;
+use App\Models\galleries;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
 
@@ -87,24 +88,47 @@ class WebSeeder extends Seeder
         }
         print("Data pengumuman berhasil dibuat \n");
 
+        print("Proses input 5 data galleries \n");
+        for ($i = 0; $i < 22; $i++) {
+            $galleri = galleries::create([
+                'name' => 'Galeri ke ' . $i,
+                'description' => '<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+                <html><body><div id="bannerR" style="margin: 0px -160px 0px 0px; padding: 0px; position: sticky; top: 20px; width: 160px; height: 10px; float: right; color: rgb(0, 0, 0); font-family: Open Sans, Arial, sans-serif; font-size: 14px;"><div id="div-gpt-ad-1474537762122-3" data-google-query-id="CMH7lpWnovoCFTiCrAIdzYwGBA" style="margin: 0px; padding: 0px;"><br class="Apple-interchange-newline"><div id="google_ads_iframe_/15188745,22440292294/Lipsum-Unit4_0__container__" style="margin: 0px; padding: 0px; border: 0pt none; width: 160px; height: 600px;"></div></div></div><div id="Panes" style="margin: 15px 0px 0px; padding: 0px; color: rgb(0, 0, 0); font-family: Open Sans, Arial, sans-serif; font-size: 14px; text-align: center;"><div style="margin: 0px 14.3906px 0px 28.7969px; padding: 0px; width: 436.797px; text-align: left; float: left;"><h2 style="margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; font-family: DauphinPlain; font-size: 24px; line-height: 24px;">What is Lorem Ipsum?</h2><p style="margin-right: 0px; margin-bottom: 15px; margin-left: 0px; padding: 0px; text-align: justify;"><strong style="margin: 0px; padding: 0px;">Lorem Ipsum</strong>&nbsp;is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p></div></div></body></html>
+                ',
+                'file' => "file_upload/gambar_galeri$i.jpeg",
+                'id_user' => 1
+            ]);
+        }
+        print("Data pengumuman berhasil dibuat \n");
+
         print("Proses input data halaman standart");
         pages::create([
             'title' => 'Sambutan Ketua PGRI Kabupaten Pasuruan',
             'content' => '<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
             <html><body><div id="bannerR" style="margin: 0px -160px 0px 0px; padding: 0px; position: sticky; top: 20px; width: 160px; height: 10px; float: right; color: rgb(0, 0, 0); font-family: Open Sans, Arial, sans-serif; font-size: 14px;"><div id="div-gpt-ad-1474537762122-3" data-google-query-id="CMH7lpWnovoCFTiCrAIdzYwGBA" style="margin: 0px; padding: 0px;"><br class="Apple-interchange-newline"><div id="google_ads_iframe_/15188745,22440292294/Lipsum-Unit4_0__container__" style="margin: 0px; padding: 0px; border: 0pt none; width: 160px; height: 600px;"></div></div></div><div id="Panes" style="margin: 15px 0px 0px; padding: 0px; color: rgb(0, 0, 0); font-family: Open Sans, Arial, sans-serif; font-size: 14px; text-align: center;"><div style="margin: 0px 14.3906px 0px 28.7969px; padding: 0px; width: 436.797px; text-align: left; float: left;"><h2 style="margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; font-family: DauphinPlain; font-size: 24px; line-height: 24px;">What is Lorem Ipsum?</h2><p style="margin-right: 0px; margin-bottom: 15px; margin-left: 0px; padding: 0px; text-align: justify;"><strong style="margin: 0px; padding: 0px;">Lorem Ipsum</strong>&nbsp;is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p></div></div></body></html>
-            '
+            ',
+            'cover_img' => 'post_cover/cover_page_1.png'
         ]);
         pages::create([
             'title' => 'Visi dan Misi PGRI',
             'content' => '<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
             <html><body><div id="bannerR" style="margin: 0px -160px 0px 0px; padding: 0px; position: sticky; top: 20px; width: 160px; height: 10px; float: right; color: rgb(0, 0, 0); font-family: Open Sans, Arial, sans-serif; font-size: 14px;"><div id="div-gpt-ad-1474537762122-3" data-google-query-id="CMH7lpWnovoCFTiCrAIdzYwGBA" style="margin: 0px; padding: 0px;"><br class="Apple-interchange-newline"><div id="google_ads_iframe_/15188745,22440292294/Lipsum-Unit4_0__container__" style="margin: 0px; padding: 0px; border: 0pt none; width: 160px; height: 600px;"></div></div></div><div id="Panes" style="margin: 15px 0px 0px; padding: 0px; color: rgb(0, 0, 0); font-family: Open Sans, Arial, sans-serif; font-size: 14px; text-align: center;"><div style="margin: 0px 14.3906px 0px 28.7969px; padding: 0px; width: 436.797px; text-align: left; float: left;"><h2 style="margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; font-family: DauphinPlain; font-size: 24px; line-height: 24px;">What is Lorem Ipsum?</h2><p style="margin-right: 0px; margin-bottom: 15px; margin-left: 0px; padding: 0px; text-align: justify;"><strong style="margin: 0px; padding: 0px;">Lorem Ipsum</strong>&nbsp;is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p></div></div></body></html>
-            '
+            ',
+            'cover_img' => 'post_cover/cover_page_2.png'
         ]);
         pages::create([
             'title' => 'Struktur Organisasi',
             'content' => '<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
             <html><body><div id="bannerR" style="margin: 0px -160px 0px 0px; padding: 0px; position: sticky; top: 20px; width: 160px; height: 10px; float: right; color: rgb(0, 0, 0); font-family: Open Sans, Arial, sans-serif; font-size: 14px;"><div id="div-gpt-ad-1474537762122-3" data-google-query-id="CMH7lpWnovoCFTiCrAIdzYwGBA" style="margin: 0px; padding: 0px;"><br class="Apple-interchange-newline"><div id="google_ads_iframe_/15188745,22440292294/Lipsum-Unit4_0__container__" style="margin: 0px; padding: 0px; border: 0pt none; width: 160px; height: 600px;"></div></div></div><div id="Panes" style="margin: 15px 0px 0px; padding: 0px; color: rgb(0, 0, 0); font-family: Open Sans, Arial, sans-serif; font-size: 14px; text-align: center;"><div style="margin: 0px 14.3906px 0px 28.7969px; padding: 0px; width: 436.797px; text-align: left; float: left;"><h2 style="margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; font-family: DauphinPlain; font-size: 24px; line-height: 24px;">What is Lorem Ipsum?</h2><p style="margin-right: 0px; margin-bottom: 15px; margin-left: 0px; padding: 0px; text-align: justify;"><strong style="margin: 0px; padding: 0px;">Lorem Ipsum</strong>&nbsp;is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p></div></div></body></html>
-            '
+            ',
+            'cover_img' => 'post_cover/cover_page_3.png'
+        ]);
+        pages::create([
+            'title' => 'Sejarah',
+            'content' => '<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+            <html><body><div id="bannerR" style="margin: 0px -160px 0px 0px; padding: 0px; position: sticky; top: 20px; width: 160px; height: 10px; float: right; color: rgb(0, 0, 0); font-family: Open Sans, Arial, sans-serif; font-size: 14px;"><div id="div-gpt-ad-1474537762122-3" data-google-query-id="CMH7lpWnovoCFTiCrAIdzYwGBA" style="margin: 0px; padding: 0px;"><br class="Apple-interchange-newline"><div id="google_ads_iframe_/15188745,22440292294/Lipsum-Unit4_0__container__" style="margin: 0px; padding: 0px; border: 0pt none; width: 160px; height: 600px;"></div></div></div><div id="Panes" style="margin: 15px 0px 0px; padding: 0px; color: rgb(0, 0, 0); font-family: Open Sans, Arial, sans-serif; font-size: 14px; text-align: center;"><div style="margin: 0px 14.3906px 0px 28.7969px; padding: 0px; width: 436.797px; text-align: left; float: left;"><h2 style="margin-right: 0px; margin-bottom: 10px; margin-left: 0px; padding: 0px; font-family: DauphinPlain; font-size: 24px; line-height: 24px;">What is Lorem Ipsum?</h2><p style="margin-right: 0px; margin-bottom: 15px; margin-left: 0px; padding: 0px; text-align: justify;"><strong style="margin: 0px; padding: 0px;">Lorem Ipsum</strong>&nbsp;is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p></div></div></body></html>
+            ',
+            'cover_img' => 'post_cover/cover_page_4.png'
         ]);
         print("Data halaman standart berhasil dibuat");
 
@@ -127,7 +151,11 @@ class WebSeeder extends Seeder
         ]);
         configs::create([
             'title' => 'kontak',
-            'data' => 'asdfasdf'
+            'data' => '+62 811-2222-3333'
+        ]);
+        configs::create([
+            'title' => 'email',
+            'data' => 'example@email.com'
         ]);
         print("Data pengaturan berhasil dibuat");
     }

@@ -9,17 +9,26 @@ use Illuminate\Support\Str;
 
 class beritaController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $beritaAtas = posts::where('type', 'berita')->where('is_focus', 1)->limit(4)->get();
-        $berita = posts::where('type', 'berita')->simplePaginate(3);
-        return view('frontend.berita', compact('beritaAtas', 'berita'));
+        $berita = posts::with('users')->where('type', 'berita');
+
+        if ($request->has('search')) {
+            $berita = $berita->where('title', 'LIKE', '%' . $request->search . '%');
+        }
+
+        $berita = $berita->latest()->paginate(6);
+
+        return view('frontend.berita', compact('berita'));
     }
     public function detail($id, $slug)
     {
         $berita = posts::where('type', "berita")->limit(4)->get();
         $title = Str::of($slug)->slug(" ");
         $item = posts::where('id_posts', $id)->where('title', $title)->first();
+
+        // return $item;
+        // exit;
         return view('frontend.detailBerita', ['item' => $item, 'berita' => $berita]);
     }
 }

@@ -82,7 +82,7 @@ class PengumumanController extends Controller
 
             // Fungsi untuk menyimpan semua data
             $post = new posts;
-            $post->title = $request->judul;
+            $post->title = str_replace(".", '', $request->judul);
             $post->content = $konten;
             $post->id_categories = $request->kategori;
             $post->tag = $request->tag;
@@ -155,7 +155,7 @@ class PengumumanController extends Controller
         }
 
         // fungsi untuk mengupdate data pengumuman sesuai dengan id
-        $post->title = $request->judul;
+        $post->title = str_replace(".", '', $request->judul);
         $post->content = $konten;
         $post->id_categories = $request->kategori;
         $post->tag = $request->tag;
@@ -203,9 +203,9 @@ class PengumumanController extends Controller
     {
         // Fungsi untuk mengupload cover image pada server dan di simpan pada folder public
         if ($request->has('id')) {
-            $countFokus = posts::where('is_focus', true)->count();
+            $countFokus = posts::where('type', 'pengumuman')->where('is_focus', true)->count();
 
-            if ($countFokus > 2) {
+            if ($countFokus > 2 && $request->is_active == true) {
                 return redirect()->route('pengumuman.index')->with('error', 'Jumlah Pengumuman yang dapat di set fokus melebihi batas, silahkan nonaktifkan salah satu data.');
             }
 

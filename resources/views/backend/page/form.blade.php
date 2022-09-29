@@ -2,7 +2,7 @@
 @section('page', $page->title)
 @section('content')
 <!-- Content Wrapper. Contains page content -->
-<form action="{{route('profil.update',$page->id_pages)}}" method="POST">
+<form action="{{route('profil.update',$page->id_pages)}}" method="POST" enctype="multipart/form-data">
     @csrf
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->
@@ -47,7 +47,7 @@
                         </div>
                         @endif
                         <div class="row">
-                            <div class="col-12">
+                            <div class="col-9">
                                 <div class="card card-primary ">
                                     <!-- /.card-header -->
                                     <!-- form start -->
@@ -66,6 +66,20 @@
                                         </div>
                                     </div>
 
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="row mx-2 mt-2">
+                                    <label>Cover Foto</label>
+                                    <input type="file" class="form-control {{$errors->has('cover_img')?'is-invalid':''}}" name="cover_img" id="cover_img" onchange="readURL(this)">
+                                    @if($errors->has('cover_img'))
+                                    <div class="invalid-feedback">
+                                        {{$errors->first('cover_img')}}
+                                    </div>
+                                    @endif
+                                </div>
+                                <div class="row mx-2 text-center mt-3">
+                                    <img src="{{isset($page)?asset($page->cover_img):asset('img/insert_image.jpg')}}" class="img-thumbnail" id="preview" style="height:150px;width:100%;object-fit:cover;" />
                                 </div>
                             </div>
                         </div>
@@ -113,5 +127,16 @@
             }
         });
     });
+
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function(e) {
+                $('#preview').attr('src', e.target.result);
+            };
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
 </script>
 @endsection

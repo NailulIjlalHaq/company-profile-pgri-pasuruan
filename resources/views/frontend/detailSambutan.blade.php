@@ -20,15 +20,13 @@
             <div class="about__sejarah-wrapper-btn">
                 <div class="share-btn">
                     <div class="share-btn-wrapper">
-
-                        <div class="share-btn-wrapper-btn">
-                            <ion-icon name="logo-facebook"></ion-icon>Facebook
-                        </div>
-                        <div class="share-btn-wrapper-btn">
+                        <div class="share-btn-wrapper-btn share-wa">
                             <ion-icon name="logo-whatsapp"></ion-icon>whatsapp
                         </div>
-                        <div class="share-btn-wrapper-btn">
-                            <ion-icon name="logo-twitter"></ion-icon>twitter
+                        <div class="share-btn-wrapper-btn cp-link">
+                            <ion-icon name="link-outline"></ion-icon>
+                            <p class="cp-link-text"></p>
+                            <div class="alert-cp-link">Link Di Copy</div>
                         </div>
                     </div>
                     <div class="share-btn-share">

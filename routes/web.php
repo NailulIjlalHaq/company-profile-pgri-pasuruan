@@ -17,19 +17,19 @@ use App\Http\Controllers\backend\PengumumanController;
 use App\Http\Controllers\backend\SummernoteController;
 use App\Http\Controllers\backend\BeritaController as BackendBeritaController;
 use App\Http\Controllers\backend\ArtikelController as BackendArtikelController;
-
+use App\Http\Controllers\frontend\SitemapController;
 
 Route::get('/not-found', [homeController::class, 'notFound']);
 Route::get('/error', [homeController::class, 'error']);
 //index route
 Route::get('/', [homeController::class, 'index'])->name('feHome');
-Route::get('/detail-sambutan', [homeController::class, 'detailSambutan'])->name('feDetailSambutan');
 
 //about route
 Route::get('/about', [aboutController::class, 'index'])->name('feAbout');
-Route::get('/profile-sejarah', [aboutController::class, 'sejarah'])->name('profile-sejarah');
-Route::get('/profile-makna', [aboutController::class, 'makna'])->name('profile-makna');
-Route::get('/profile-visi-misi', [aboutController::class, 'visiMisi'])->name('profile-visi-misi');
+Route::get('/profil/{profil}', [aboutController::class, 'page'])->name('feProfil');
+// Route::get('/profile-sejarah', [aboutController::class, 'sejarah'])->name('profile-sejarah');
+// Route::get('/profile-makna', [aboutController::class, 'makna'])->name('profile-makna');
+// Route::get('/profile-visi-misi', [aboutController::class, 'visiMisi'])->name('profile-visi-misi');
 
 //artikel route
 Route::get('/artikel', [artikelController::class, 'index'])->name('feArtikel');
@@ -45,6 +45,8 @@ Route::get('/gallery', [galleryController::class, 'index'])->name('feGallery');
 //contact route
 Route::get('/contact', [contactController::class, 'index'])->name('feContact');
 
+//Generate Sitemap
+Route::get('sitemap.xml', [SitemapController::class, 'index'])->name('feSitemap');
 
 //
 // Bagian route untuk backend
