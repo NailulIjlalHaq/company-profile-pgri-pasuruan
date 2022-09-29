@@ -11,8 +11,6 @@ class aboutController extends Controller
     public function page($profil)
     {
         $page = pages::find($profil);
-
-
         return view('frontend.profile-page', compact('page'));
     }
 }

@@ -8,9 +8,9 @@
 }
 html {
     font-size: 10px;
-    @include respond(big-desktop) {
-        font-size: 14spx;
-    }
+    // @include respond(big-desktop) {
+    //     font-size: 14px;
+    // }
 }
 body {
     display: flex;
