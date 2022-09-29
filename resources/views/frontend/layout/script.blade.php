@@ -69,9 +69,11 @@
     });
 
     $('.header__list-box--item').hover(function() {
-        $(this).addClass('active-link')
+        $(this).addClass('active-link-hover')
     }, function() {
-        $(this).removeClass('active-link')
+        if (!$(this).hasClass('active-link')) {
+            $(this).removeClass('active-link-hover')
+        }
     })
     $('.cp-link-text').text(window.location.href)
     $('.share-btn-wrapper-btn.share-wa').on('click', function() {
