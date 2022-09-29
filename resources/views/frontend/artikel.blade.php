@@ -5,7 +5,7 @@
         <div class="artikel__wrapper--bg"></div>
         <div class="artikel__wrapper--header">
             <div class="artikel__wrapper--header__search">
-                <form action="{{route('feArtikel')}}" method="get" style="width:85%;margin-left:30%;">
+                <form action="{{route('feArtikel')}}" method="get" style="width: 100%; display: flex;justify-content: center;">
                     <div class=" artikel-search">
                         <ion-icon name="search-outline"></ion-icon>
                         <input type="search" name="search" id="search" placeholder="Cari...">

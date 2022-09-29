@@ -274,7 +274,6 @@ body {
     .header__list-box {
       position: relative; }
       .header__list-box--item {
-        transition: all 0.2s ease;
         color: #cecdcd;
         font-size: 1.4rem;
         font-weight: 400;
@@ -352,9 +351,8 @@ body {
     flex-direction: column;
     gap: 0.5rem; }
     .card__desc p {
-      color: #919fae;
       font-size: 1.4rem;
-      font-weight: 400; }
+      font-weight: 300; }
       @supports (-webkit-line-clamp: 2) {
         .card__desc p {
           overflow: hidden;
@@ -638,6 +636,8 @@ body {
       color: #fff; }
 
 .pagination {
+  display: flex;
+  justify-content: center;
   width: 100%; }
   .pagination-wrapper {
     width: 100%;
@@ -1109,8 +1109,7 @@ body {
                 margin-bottom: 8px; }
               .home__berita--wrapper__left--scroll .berita-box__right--desc {
                 font-size: 1.2rem;
-                font-weight: 400;
-                color: #919fae;
+                font-weight: 300;
                 margin-bottom: 1.6rem; }
                 @supports (-webkit-line-clamp: 2) {
                   .home__berita--wrapper__left--scroll .berita-box__right--desc {
@@ -2502,7 +2501,6 @@ body {
             height: 25rem; } }
 
 .gallery-popup {
-  overflow: auto;
   position: fixed;
   top: 0;
   left: 0;
@@ -2512,7 +2510,6 @@ body {
   background-color: rgba(0, 0, 0, 0.5);
   opacity: 0;
   visibility: hidden;
-  min-height: 65rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2521,11 +2518,13 @@ body {
     .gallery-popup {
       align-items: flex-end; } }
   .gallery-popup__wrapper {
+    overflow: hidden;
     transform: translate(0, 100%);
     transition: all 0.3s ease-out;
     transition-delay: 0.2s;
     background-color: white;
     width: 85%;
+    height: 90vh;
     max-width: 144rem;
     border-radius: 0.5rem; }
     @media only screen and (max-width: 48em) {

@@ -156,7 +156,6 @@
 }
 
 .gallery-popup {
-    overflow: auto;
     position: fixed;
     top: 0;
     left: 0;
@@ -166,7 +165,6 @@
     background-color: rgba($color: #000000, $alpha: 0.5);
     opacity: 0;
     visibility: hidden;
-    min-height: 65rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -175,11 +173,13 @@
         align-items: flex-end;
     }
     &__wrapper {
+        overflow: hidden;
         transform: translate(0, 100%);
         transition: all 0.3s ease-out;
         transition-delay: 0.2s;
         background-color: white;
         width: 85%;
+        height: 90vh;
         max-width: 144rem;
         border-radius: 0.5rem;
 

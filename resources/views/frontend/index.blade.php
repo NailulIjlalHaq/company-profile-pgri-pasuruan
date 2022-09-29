@@ -6,6 +6,12 @@
 
 @yield('social-media')
 <style>
+    html,
+    body {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
     .loader {
         position: fixed;
         top: 0;

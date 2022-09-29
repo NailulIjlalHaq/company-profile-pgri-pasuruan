@@ -48,21 +48,22 @@
 
 
             </div>
-        </div>
-        <div class="contact__map">
-            <div class="contact__map--info">
-                <p>PGRI Kab Pasuruan</p>
-                <p>
-                    <ion-icon name="locate-outline"></ion-icon><?php print_r($configs[3]['data']); ?>
-                </p>
-                <p>
-                    <ion-icon name="mail-outline"></ion-icon><?php print_r($configs[5]['data']); ?>
-                </p>
-                <p>
-                    <ion-icon name="location-outline"></ion-icon><a href="">Lihat Di Google map</a>
-                </p>
+
+            <div class="contact__map">
+                <div class="contact__map--info">
+                    <p>PGRI Kab Pasuruan</p>
+                    <p>
+                        <ion-icon name="locate-outline"></ion-icon><?php print_r($configs[3]['data']); ?>
+                    </p>
+                    <p>
+                        <ion-icon name="mail-outline"></ion-icon><?php print_r($configs[5]['data']); ?>
+                    </p>
+                    <p>
+                        <ion-icon name="location-outline"></ion-icon><a href="">Lihat Di Google map</a>
+                    </p>
+                </div>
+                <div id="map"></div>
             </div>
-            <div id="map"></div>
         </div>
     </div>
     </div>

@@ -24,25 +24,27 @@
                     </div>
                 </div>
             </div>
-            <div class="gallery-wrapper__header">
-                <p>Galeri</p>
-                <p>Terdapat <strong>{{ $photos->total() }} Gambar</strong> yang telah dimasukkan ke dalam website.</p>
-            </div>
-            <div class="gallery-wrapper__content">
-                <div class="gallery-container">
-                    @foreach ($photos as $p)
-                        <div class="gallery-container-box" onclick="passValue('{{ $p->id_galleries }}')">
-                            <div class="gallery-container-box-img" style="background: url('{{ $p->file }}')"></div>
-                            <div class="gallery-popup">
-                                <div class="gallery-popup__wrapper">
-                                    <div class="gallery-popup__wrapper--header">
-                                        <div class="gallery-popup__wrapper--header--title">
-                                            <p>Detail Foto</p>
-                                            <p>
-                                                <ion-icon class="btn-close-gallery-popup" name="close"></ion-icon>
-                                            </p>
-                                        </div>
+        </div>
+        <div class="gallery-wrapper__header">
+            <p>Galeri</p>
+            <p>Terdapat <strong>{{ $photos->count() }} Gambar</strong> yang telah dimasukkan ke dalam website.</p>
+        </div>
+        <div class="gallery-wrapper__content">
+            <div class="gallery-container">
+                @foreach ($photos as $p)
+                    <div class="gallery-container-box" onclick="passValue('{{ $p->id_galleries }}')">
+                        <div class="gallery-container-box-img" style="background: url('{{ $p->file }}')"></div>
+                        <div class="gallery-popup">
+                            <div class="gallery-popup__wrapper">
+                                <div class="gallery-popup__wrapper--header">
+                                    <div class="gallery-popup__wrapper--header--title">
+                                        <p>Detail Foto</p>
+                                        <p>
+                                            <ion-icon class="btn-close-gallery-popup" name="close"></ion-icon>
+                                        </p>
                                     </div>
+                                </div>
+                                <div style="overflow: auto; height: 100%;">
                                     <div class="gallery-popup__wrapper--content">
                                         <div class="gallery-popup__wrapper--content__img"></div>
                                         <div class="gallery-popup__wrapper--content__info">
@@ -69,22 +71,22 @@
                                             </div>
                                         </div>
                                     </div>
-
                                 </div>
                             </div>
                         </div>
-                        <input type="hidden" class="idValue{{ $p->id_galleries }}" value="{{ $p->id_galleries }}">
-                        <input type="hidden" class="imgValue{{ $p->id_galleries }}" value="{{ $p->file }}">
-                        <input type="hidden" class="titleValue{{ $p->id_galleries }}" value="{{ $p->name }}">
-                        <input type="hidden" class="descValue{{ $p->id_galleries }}"
-                            value="{{ strip_tags($p->description) }}">
+                    </div>
+                    <input type="hidden" class="idValue{{ $p->id_galleries }}" value="{{ $p->id_galleries }}">
+                    <input type="hidden" class="imgValue{{ $p->id_galleries }}" value="{{ $p->file }}">
+                    <input type="hidden" class="titleValue{{ $p->id_galleries }}" value="{{ $p->name }}">
+                    <input type="hidden" class="descValue{{ $p->id_galleries }}"
+                        value="{{ strip_tags($p->description) }}">
 
-                        {{-- popup --}}
-                    @endforeach
-                </div>
-                {{ $photos->links('../vendor/pagination/simple-pgri') }}
+                    {{-- popup --}}
+                @endforeach
             </div>
+            {{ $photos->links('../vendor/pagination/simple-pgri') }}
         </div>
+    </div>
     </div>
 
 @section('js')

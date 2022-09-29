@@ -373,8 +373,7 @@
                             }
                             &--desc {
                                 font-size: 1.2rem;
-                                font-weight: 400;
-                                color: $color-m-dark;
+                                font-weight: 300;
                                 margin-bottom: 1.6rem;
                                 @supports (-webkit-line-clamp: 2) {
                                     overflow: hidden;
