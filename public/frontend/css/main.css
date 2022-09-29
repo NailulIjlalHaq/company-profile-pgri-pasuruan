@@ -278,8 +278,8 @@ body {
       position: relative; }
       .header__list-box--item {
         transition: all 0.2s ease;
-        color: #cecdcd;
-        font-size: 1.4rem;
+        color: #f6f7f9;
+        font-size: 1.6rem;
         font-weight: 400;
         cursor: pointer; }
         .header__list-box--item.btn-join {

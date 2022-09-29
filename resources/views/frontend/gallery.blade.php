@@ -25,7 +25,7 @@
         </div>
         <div class="gallery-wrapper__header">
             <p>Galeri</p>
-            <p>Terdapat <strong>{{$photos->total()}} Gambar</strong> yang telah dimasukkan ke dalam website.</p>
+            <p>Terdapat <strong>{{$photos->count()}} Gambar</strong> yang telah dimasukkan ke dalam website.</p>
         </div>
         <div class="gallery-wrapper__content">
             <div class="gallery-container">
