@@ -21,9 +21,17 @@
                 gap: 3rem;
                 max-width: 144rem;
                 text-align: left;
+                width: 100%;
 
                 & * {
                     font-size: 1.6rem !important;
+                }
+                iframe {
+                    & * {
+                        margin: 0 !important;
+                        width: 100% !important;
+                        max-width: unset !important;
+                    }
                 }
 
                 @include respond(bp-768) {
