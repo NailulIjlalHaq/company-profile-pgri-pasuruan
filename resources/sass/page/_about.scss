@@ -20,6 +20,19 @@
                 flex-direction: column;
                 gap: 3rem;
                 max-width: 144rem;
+                text-align: left;
+                width: 100%;
+
+                & * {
+                    font-size: 1.6rem !important;
+                }
+                iframe {
+                    & * {
+                        margin: 0 !important;
+                        width: 100% !important;
+                        max-width: unset !important;
+                    }
+                }
 
                 @include respond(bp-768) {
                     padding: 5rem;
@@ -27,27 +40,11 @@
                 @include respond(bp-500) {
                     padding: 2rem;
                 }
-                span {
-                    font-size: 3.2rem;
-                    font-weight: 900;
-                    text-transform: uppercase;
-                }
-                p {
-                    font-size: 1.4rem;
-                    line-height: 1.7;
-                    &:nth-child(1) {
-                    }
-                    &:nth-child(2) {
-                    }
-                }
             }
             &-btn {
                 padding: 5rem 10rem;
                 width: 100%;
                 max-width: 144rem;
-                @include respond(bp-768) {
-                    padding: 0 5rem;
-                }
             }
         }
     }

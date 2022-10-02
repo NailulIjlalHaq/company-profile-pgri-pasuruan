@@ -44,6 +44,7 @@
         activeLink('profile-sejarah', 'about');
         activeLink('profile-makna', 'about');
         activeLink('profile-visi-misi', 'about');
+        activeLink('profil', 'about');
         activeLink('profile-visi-misi', 'vm');
         activeLink('profile-makna', 'makna');
         activeLink('profile-sejarah', 'sejarah');
@@ -115,6 +116,7 @@
     darkScroll('profile-sejarah')
     darkScroll('about')
     darkScroll('gallery')
+    darkScroll('profil')
 
 
     function dropdownProfile(drop, hov) {
