@@ -1,6 +1,5 @@
-@extends('backend.master.master')
-@section('page','Galeri')
-@section('content')
+<?php $__env->startSection('page','Artikel'); ?>
+<?php $__env->startSection('content'); ?>
 <div class="content-wrapper row justify-content-center">
     <div class="col-9 ">
         <!-- Content Header (Page header) -->
@@ -8,10 +7,10 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-9">
-                        <h1>Galeri</h1>
+                        <h1>Artikel</h1>
                     </div>
                     <div class="col-sm-3 text-right">
-                        <a href="{{route('galeri.create')}}" type="button" class="btn btn-primary">Tambah Galeri</a>
+                        <a href="<?php echo e(route('artikel.create')); ?>" type="button" class="btn btn-primary">Tambah Artikel</a>
                     </div>
                 </div>
             </div><!-- /.container-fluid -->
@@ -22,29 +21,29 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-12">
-                        @if(session('success'))
+                        <?php if(session('success')): ?>
                         <div class="alert alert-success alert-dismissible fade show" role="alert" id="alert">
-                            <strong>Informasi : {{session('success')}}</strong>
+                            <strong>Informasi : <?php echo e(session('success')); ?></strong>
                             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
-                        @endif
-                        @if(session('error'))
+                        <?php endif; ?>
+                        <?php if(session('error')): ?>
                         <div class="alert alert-warning alert-dismissible fade show" role="alert" id="alert">
-                            <strong>Peringatan : {{session('error')}}</strong>
+                            <strong>Peringatan : <?php echo e(session('error')); ?></strong>
                             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
-                        @endif
+                        <?php endif; ?>
                         <div class="card">
                             <!-- /.card-header -->
                             <div class="card-body">
                                 <table id="example2 " class="table table-striped data-table">
                                     <thead>
                                         <tr>
-                                            <th>Nama Galeri</th>
+                                            <th>Judul Artikel</th>
                                             <th></th>
                                         </tr>
                                     </thead>
@@ -64,8 +63,8 @@
         <!-- /.content -->
     </div>
 </div>
-@endsection
-@section('javascript')
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('javascript'); ?>
 <script type="text/javascript">
     $(function() {
         setTimeout(() => {
@@ -75,19 +74,19 @@
         var table = $('.data-table').DataTable({
             processing: true,
             serverSide: true,
-            ajax: "{{ route('galeri.index') }}",
+            ajax: "<?php echo e(route('artikel.index')); ?>",
             language: {
                 search: 'Cari',
                 searchPlaceholder: 'kata kunci...',
                 emptyTable: 'Data yang dicari tidak ditemukan...'
             },
             columns: [{
-                    data: 'name',
-                    name: 'name'
+                    data: 'title',
+                    name: 'title'
                 },
                 {
-                    data: 'file',
-                    name: 'file',
+                    data: 'cover_img',
+                    name: 'cover_img',
                     className: 'text-center',
                     orderable: false,
                     searchable: false,
@@ -102,4 +101,5 @@
 
     });
 </script>
-@endsection
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('backend.master.master', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /home/pgripa27/domains/pgripasuruankab.or.id/public_html/profil/resources/views/backend/artikel/index.blade.php ENDPATH**/ ?>

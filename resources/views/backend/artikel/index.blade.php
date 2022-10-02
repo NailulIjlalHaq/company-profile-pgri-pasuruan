@@ -93,7 +93,7 @@
                     searchable: false,
                     width: '25%',
                     render: function(data, type, full, meta) {
-                        return "<img src=\"/" + data + "\" class=\"img-thumbnail rounded\" style=\"height: 90px;width:120px;object-fit:cover\">";
+                        return '<img src="' + data +'" class="img-thumbnail rounded" style="height: 90px;width:120px;object-fit:cover">';
                     }
                 },
 

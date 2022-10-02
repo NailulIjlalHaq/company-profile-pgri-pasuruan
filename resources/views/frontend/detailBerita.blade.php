@@ -37,7 +37,8 @@
                         </p>
                     </div>
                     <div class="detail-berita-info--img">
-                        <div class="detail-berita-info--img-img" style="background: url('/{{ $item->cover_img }}')">
+                        <div class="detail-berita-info--img-img" style="background-image: url('{{asset($item->cover_img)}}')">
+                  
                         </div>
                     </div>
                     <div class="detail-berita-info--info">
@@ -78,7 +79,8 @@
                 <a href="{{ route('feDetailBerita', ['id' => $item->id_posts, 'slug' => Str::of($item->title)->slug('-')]) }}">
                     <div class="berita-box">
 
-                        <div class="berita-box__left" style="background: url(/{{ $item->cover_img }})">
+                        <div class="berita-box__left" style="background-image: url('{{asset($item->cover_img)}}')">
+                      
                         </div>
                         <div class="berita-box__right">
                             <div class="berita-box__right--title">{{ $item->title }}</div>

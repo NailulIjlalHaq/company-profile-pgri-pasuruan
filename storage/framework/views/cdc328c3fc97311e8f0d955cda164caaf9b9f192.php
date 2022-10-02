@@ -3,8 +3,8 @@
         <div class="footer__wrapper">
             <div class="footer__wrapper--top">
                 <div class="footer-logo-container">
-                    <div onclick="window.location.href('{{ route('feHome') }}')" class="footer-logo-container__logo">
-                        <img src={{ asset('./frontend/assets/img/logo.png') }} alt="" />
+                    <div onclick="window.location.href('<?php echo e(route('feHome')); ?>')" class="footer-logo-container__logo">
+                        <img src=<?php echo e(asset('./frontend/assets/img/logo.png')); ?> alt="" />
                         <p>
                             PGRI <br />
                             KAB PASURUAN
@@ -47,16 +47,7 @@
                             ?></p>
                     </div>
                 </div>
-                {{-- <div class="footer__wrapper--left__box">
-                    <a href={{ route('feHome') }} class="footer__wrapper--left__box--item">Beranda</a>
-                <a href={{ route('feHome') }} class="footer__wrapper--left__box--item">Struktur</a>
-                <a href={{ route('profile-makna') }} class="footer__wrapper--left__box--item">Makna Logo</a>
-                <a href={{ route('profile-visi-misi') }} class="footer__wrapper--left__box--item">Visi & Misi</a>
-                <a href={{ route('feArtikel') }} class="footer__wrapper--left__box--item">Artikel</a>
-                <a href={{ route('feBerita') }} class="footer__wrapper--left__box--item">Berita</a>
-                <a href={{ route('feGallery') }} class="footer__wrapper--left__box--item">Galeri</a>
-                <a href={{ route('feContact') }} class="footer__wrapper--left__box--item">Kontak</a>
-            </div> --}}
+                
 
         </div>
         <hr />
@@ -80,4 +71,4 @@
     </div>
 
     </div>
-</footer>
+</footer><?php /**PATH /home/pgripa27/domains/pgripasuruankab.or.id/public_html/profil/resources/views/components/frontend/footer.blade.php ENDPATH**/ ?>

@@ -27,6 +27,7 @@ class artikelController extends Controller
         $artikel = posts::where('type', "artikel")->get();
         $title = Str::of($slug)->slug(" ");
         $item = posts::where('id_posts', $id)->where('title', $title)->first();
+      
         return view('frontend.detailArtikel', ['item' => $item, 'artikel' => $artikel]);
     }
 }

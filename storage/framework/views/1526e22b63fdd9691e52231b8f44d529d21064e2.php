@@ -1,6 +1,5 @@
-@extends('backend.master.master')
-@section('page','Galeri')
-@section('content')
+<?php $__env->startSection('page','Galeri'); ?>
+<?php $__env->startSection('content'); ?>
 <div class="content-wrapper row justify-content-center">
     <div class="col-9 ">
         <!-- Content Header (Page header) -->
@@ -11,7 +10,7 @@
                         <h1>Galeri</h1>
                     </div>
                     <div class="col-sm-3 text-right">
-                        <a href="{{route('galeri.create')}}" type="button" class="btn btn-primary">Tambah Galeri</a>
+                        <a href="<?php echo e(route('galeri.create')); ?>" type="button" class="btn btn-primary">Tambah Galeri</a>
                     </div>
                 </div>
             </div><!-- /.container-fluid -->
@@ -22,22 +21,22 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-12">
-                        @if(session('success'))
+                        <?php if(session('success')): ?>
                         <div class="alert alert-success alert-dismissible fade show" role="alert" id="alert">
-                            <strong>Informasi : {{session('success')}}</strong>
+                            <strong>Informasi : <?php echo e(session('success')); ?></strong>
                             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
-                        @endif
-                        @if(session('error'))
+                        <?php endif; ?>
+                        <?php if(session('error')): ?>
                         <div class="alert alert-warning alert-dismissible fade show" role="alert" id="alert">
-                            <strong>Peringatan : {{session('error')}}</strong>
+                            <strong>Peringatan : <?php echo e(session('error')); ?></strong>
                             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
-                        @endif
+                        <?php endif; ?>
                         <div class="card">
                             <!-- /.card-header -->
                             <div class="card-body">
@@ -64,8 +63,8 @@
         <!-- /.content -->
     </div>
 </div>
-@endsection
-@section('javascript')
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('javascript'); ?>
 <script type="text/javascript">
     $(function() {
         setTimeout(() => {
@@ -75,7 +74,7 @@
         var table = $('.data-table').DataTable({
             processing: true,
             serverSide: true,
-            ajax: "{{ route('galeri.index') }}",
+            ajax: "<?php echo e(route('galeri.index')); ?>",
             language: {
                 search: 'Cari',
                 searchPlaceholder: 'kata kunci...',
@@ -102,4 +101,5 @@
 
     });
 </script>
-@endsection
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('backend.master.master', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /home/pgripa27/domains/pgripasuruankab.or.id/public_html/profil/resources/views/backend/galeri/index.blade.php ENDPATH**/ ?>

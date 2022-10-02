@@ -5,7 +5,7 @@ namespace App\View\Components\frontend;
 use App\Models\configs;
 use Illuminate\View\Component;
 
-class footer extends Component
+class Footer extends Component
 {
     /**
      * Create a new component instance.
@@ -14,7 +14,7 @@ class footer extends Component
      */
     public function __construct()
     {
-        //
+        //$this->configs = $configs;
     }
 
     /**
@@ -25,6 +25,9 @@ class footer extends Component
     public function render()
     {
         $configs = configs::get();
-        return view('components.frontend.footer', compact('configs'));
+      	//$configs[1]='percobaan'; 
+        return view('components.frontend.footer',compact('configs'));
     }
+  
+ 
 }

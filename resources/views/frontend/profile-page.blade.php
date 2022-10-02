@@ -22,7 +22,7 @@
         <div class="about__sejarah-wrapper-img" style="background-image: url('{{asset($page->cover_img)}}')">
         </div>
         <h1 style="margin-bottom: 0px;margin-top: 80px;font-size: 30px;font-weight: bold;">{{$page->title}}</h1>
-        <div class="about__sejarah-wrapper-info" style="padding: 1rem 10rem;text-align:left">
+        <div class="about__sejarah-wrapper-info" style="padding: 1rem 10rem;text-align:left;">
             {!! $page->content !!}
         </div>
         <div class="about__sejarah-wrapper-btn">

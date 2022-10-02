@@ -22,6 +22,9 @@ class GaleriController extends Controller
         if ($request->ajax()) {
             $data = galleries::with('users')->select('id_galleries', 'name', 'file', 'id_user');
             return DataTables::of($data)
+              ->editColumn('file', function($row){
+                	return asset($row->file);
+                })
                 ->editColumn('name', function ($row) {
 
                     // Menampilkan judul galeri beserta tombol aksi

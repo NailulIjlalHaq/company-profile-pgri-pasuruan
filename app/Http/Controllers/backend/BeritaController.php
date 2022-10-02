@@ -25,6 +25,9 @@ class BeritaController extends Controller
             $data = posts::with('categories');
             $data->where('type', 'berita')->latest();
             return  DataTables()->of($data)
+              	->editColumn('cover_img', function($row){
+                	return asset($row->cover_img);
+                })
                 ->editColumn('title', function ($row) {
                     // Memberikan dan mengecek status fokus berita
                     $is_focus = $row->is_focus ? 'Nonaktifkan' : 'Fokuskan';
