@@ -699,12 +699,12 @@ body {
       align-self: stretch;
       display: flex;
       justify-content: space-between;
-      align-items: center; }
+      align-items: center;
+      gap: 5rem; }
       @media only screen and (max-width: 68.75em) {
         .footer__wrapper--top {
           flex-direction: column;
-          align-items: flex-start;
-          gap: 5rem; } }
+          align-items: flex-start; } }
       .footer__wrapper--top .footer-logo-container__logo {
         display: flex;
         align-items: center;
@@ -714,7 +714,8 @@ body {
         .footer__wrapper--top .footer-logo-container__logo p {
           font-size: 1.6rem;
           font-weight: 700;
-          text-transform: uppercase; }
+          text-transform: uppercase;
+          white-space: nowrap; }
       .footer__wrapper--top .footer-logo-container__box {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
@@ -1568,12 +1569,27 @@ body {
       background-repeat: no-repeat !important;
       background-size: cover !important;
       background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../assets/img/pgri.jpg"); }
+    .about__sejarah-wrapper h1 {
+      margin-bottom: 0px;
+      margin-top: 8rem;
+      font-size: 3rem;
+      font-weight: bold;
+      padding: 0 10rem;
+      text-align: center; }
+      @media only screen and (max-width: 48em) {
+        .about__sejarah-wrapper h1 {
+          padding: 0 5rem; } }
+      @media only screen and (max-width: 31.25em) {
+        .about__sejarah-wrapper h1 {
+          padding: 0 2rem; } }
     .about__sejarah-wrapper-info {
       padding: 5rem 10rem;
       display: flex;
       flex-direction: column;
       gap: 3rem;
-      max-width: 144rem; }
+      max-width: 144rem;
+      text-align: left;
+      width: 100%; }
       @media only screen and (max-width: 48em) {
         .about__sejarah-wrapper-info {
           padding: 5rem; } }

@@ -21,8 +21,8 @@
         <div class="about__sejarah-wrapper">
             <div class="about__sejarah-wrapper-img" style="background-image: url('<?php echo e(asset($page->cover_img)); ?>')">
             </div>
-            <h1 style="margin-bottom: 0px;margin-top: 80px;font-size: 30px;font-weight: bold;"><?php echo e($page->title); ?></h1>
-            <div class="about__sejarah-wrapper-info" style="padding: 1rem 10rem;text-align:left;width:100%;">
+            <h1 ><?php echo e($page->title); ?></h1>
+            <div class="about__sejarah-wrapper-info">
                 <?php echo $page->content; ?>
 
             </div>

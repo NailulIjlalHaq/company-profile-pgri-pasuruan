@@ -14,12 +14,28 @@
                 background: linear-gradient(rgba(#000, 0.6), rgba(#000, 0.6)),
                     url("../assets/img/pgri.jpg");
             }
+            & h1 {
+                margin-bottom: 0px;
+                margin-top: 8rem;
+                font-size: 3rem;
+                font-weight: bold;
+                padding: 0 10rem;
+                text-align: center;
+                @include respond(bp-768) {
+                    padding: 0 5rem;
+                }
+                @include respond(bp-500) {
+                    padding: 0 2rem;
+                }
+            }
             &-info {
                 padding: 5rem 10rem;
                 display: flex;
                 flex-direction: column;
                 gap: 3rem;
                 max-width: 144rem;
+                text-align: left;
+                width: 100%;
 
                 @include respond(bp-768) {
                     padding: 5rem;

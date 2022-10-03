@@ -31,14 +31,14 @@
                             <ion-icon name="location"></ion-icon>
                         </p>
                         <p>
-                            {{setting[3]['data']}}
+                            {{$setting[3]['data']}}
                         </p>
                     </div>
                     <div class="footer-address__email">
                         <p>
                             <ion-icon name="mail"></ion-icon>
                         </p>
-                        <p> {{setting[5]['data']}}</p>
+                        <p> {{$setting[5]['data']}}</p>
                     </div>
                 </div>
                 {{-- <div class="footer__wrapper--left__box">

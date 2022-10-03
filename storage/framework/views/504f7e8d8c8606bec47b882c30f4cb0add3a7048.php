@@ -3,8 +3,8 @@
         <div class="footer__wrapper">
             <div class="footer__wrapper--top">
                 <div class="footer-logo-container">
-                    <div onclick="window.location.href('<?php echo e(route('feHome')); ?>')" class="footer-logo-container__logo">
-                        <img src=<?php echo e(asset('./frontend/assets/img/logo.png')); ?> alt="" />
+                    <div href="<?php echo e(route('feHome')); ?>" class="footer-logo-container__logo">
+                        <img src="<?php echo e(asset('./frontend/assets/img/logo.png')); ?>" alt="" />
                         <p>
                             PGRI <br />
                             KAB PASURUAN
@@ -16,35 +16,30 @@
                         payment fees.
                     </div> -->
                 </div>
-
+                <?php
+                $setting = settings();
+                ?>
                 <div class="footer-address">
                     <div class="footer-address__phone">
                         <p>
                             <ion-icon name="call"></ion-icon>
                         </p>
-                        <p>
-                            <?php
-                            //print_r($configs);
-                            ?></p>
+                        <p><?php echo e($setting[1]['data']); ?></p>
                     </div>
                     <div class="footer-address__alamat">
                         <p>
                             <ion-icon name="location"></ion-icon>
                         </p>
                         <p>
-                            <?php
-                            //print_r($configs[3]['data']);
-                            ?>
+                            <?php echo e($setting[3]['data']); ?>
+
                         </p>
                     </div>
                     <div class="footer-address__email">
                         <p>
                             <ion-icon name="mail"></ion-icon>
                         </p>
-                        <p> <?php
-                          	
-                            //print_r($configs[5]['data']);
-                            ?></p>
+                        <p> <?php echo e($setting[5]['data']); ?></p>
                     </div>
                 </div>
                 
