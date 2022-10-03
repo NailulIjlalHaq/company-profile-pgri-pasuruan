@@ -337,7 +337,7 @@
                         &-img {
                             height: 50rem;
                             width: 100%;
-                            background-position: 50% !important;
+                            background-position: top !important;
                             background-repeat: no-repeat !important;
                             background-size: cover !important;
                             @include respond(bp-400) {
