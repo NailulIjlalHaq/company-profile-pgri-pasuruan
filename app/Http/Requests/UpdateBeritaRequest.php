@@ -24,7 +24,7 @@ class UpdateBeritaRequest extends FormRequest
     public function rules()
     {
         return [
-            'judul' => 'required|not_regex:/,-.@$#%^&*!()',
+            'judul' => 'required|regex:/^[a-zA-ZÑñ\s]+$/',
             'konten' => 'required',
             'cover_img' => 'file|image|max:2000',
             'tag' => 'required',

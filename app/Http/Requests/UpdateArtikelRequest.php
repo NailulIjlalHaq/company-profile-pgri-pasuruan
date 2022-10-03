@@ -24,12 +24,12 @@ class UpdateArtikelRequest extends FormRequest
     public function rules()
     {
         return [
-            'judul' => 'required|not_regex:/,-.@$#%^&*!()',
+            'judul' => 'required|regex:/^[a-zA-ZÑñ\s]+$/',
             'konten' => 'required',
             'cover_img' => 'file|image|max:2000',
             'tag' => 'required',
             'kategori' => 'required',
-            'no_regex' => 'Data :attribute tidak boleh mengandung karakter symbol'
+
         ];
     }
 
@@ -39,7 +39,8 @@ class UpdateArtikelRequest extends FormRequest
             'required' => 'Data :attribute harus diisi.',
             'file' => 'Data :attribute harus dimasukkan file gambar',
             'image' => 'Data :attribute harus dimasukkan file gambar',
-            'max' => 'Ukuran :attribute melibihi ketentuan'
+            'max' => 'Ukuran :attribute melibihi ketentuan',
+            'regex' => 'Data :attribute tidak boleh mengandung karakter symbol'
         ];
     }
 }
