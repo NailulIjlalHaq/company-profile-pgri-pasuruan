@@ -1,5 +1,5 @@
-@extends('frontend.index')
-@section('content')
+
+<?php $__env->startSection('content'); ?>
 <div class="alert-news">
     <div class="alert-news-wrapper">
         <div class="alert-news-wrapper-bell">
@@ -7,13 +7,13 @@
         </div>
         <div class="alert-news-wrapper-info">
             <p class="alert-news-wrapper-info-text">
-                @if(count($pengumuman) > 0)
-                @foreach ($pengumuman as $item )
-                {{$item->title}} -
-                @endforeach
-                @else
+                <?php if(count($pengumuman) > 0): ?>
+                <?php $__currentLoopData = $pengumuman; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                <?php echo e($item->title); ?> -
+                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                <?php else: ?>
                 Belum terdapat <strong>PENGUMUMAN</strong> yang ingin ditampilkan pada web
-                @endif
+                <?php endif; ?>
             </p>
         </div>
         <div class="alert-news-wrapper-close ">
@@ -24,47 +24,50 @@
 <div class="home">
     <div class="home__news mt-top py-50">
         <div class="home__news--wrapper">
-            @foreach ($beritaAtas as $atas)
-            <a class="news-img-box" href="{{ route('feDetailBerita', ['id' => $atas->id_posts, 'slug' => Str::of($atas->title)->slug('-')]) }}">
+            <?php $__currentLoopData = $beritaAtas; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $atas): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+            <a class="news-img-box" href="<?php echo e(route('feDetailBerita', ['id' => $atas->id_posts, 'slug' => Str::of($atas->title)->slug('-')])); ?>">
 
-                <div class="news-img" style="background: url('{{ $atas->cover_img }}')">
+                <div class="news-img" style="background: url('<?php echo e($atas->cover_img); ?>')">
                 </div>
                 <div class="news-img-text">
                     <div class="news-img-text-tag">
-                        {{ $atas->categories->name }}
+                        <?php echo e($atas->categories->name); ?>
+
                     </div>
-                    <div class="news-img-text-top">{{ $atas->title }}</div>
+                    <div class="news-img-text-top"><?php echo e($atas->title); ?></div>
                     <div class="news-img-text-bottom">
-                        <p>{{$atas->users->name}}</p>
+                        <p><?php echo e($atas->users->name); ?></p>
                         <p>
                             &bull;
                         </p>
-                        <p> {{$atas->created_at->format("d F Y")}}</p>
+                        <p> <?php echo e($atas->created_at->format("d F Y")); ?></p>
                     </div>
                 </div>
 
             </a>
-            @endforeach
+            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
         </div>
     </div>
     <div class="w-100 d-flex flex-center bg-grey-blue">
         <div class="home__sambutan">
             <div class="home__sambutan--left">
-                <div class="home__sambutan--left-img" style="background: url('{{ asset($sambutan->cover_img) }}')">
+                <div class="home__sambutan--left-img" style="background: url('<?php echo e(asset($sambutan->cover_img)); ?>')">
                 </div>
             </div>
             <div class="home__sambutan--right">
                 <div class="card">
                     <div class="card__title">
-                        {{ $sambutan->title }}
+                        <?php echo e($sambutan->title); ?>
+
                     </div>
                     <div class="card__desc">
                         <p class="card__desc--text">
-                            {{ strip_tags($sambutan->content) }}
+                            <?php echo e(strip_tags($sambutan->content)); ?>
+
                         </p>
 
                     </div>
-                    <a class="card__btn" href="{{ route('feProfil',1) }}">Lebih Lanjut
+                    <a class="card__btn" href="<?php echo e(route('feProfil',1)); ?>">Lebih Lanjut
                         <ion-icon name="chevron-forward-outline"></ion-icon>
                     </a>
                 </div>
@@ -83,38 +86,38 @@
         <div class="home__berita--wrapper">
             <div class="home__berita--wrapper__left">
                 <div class="home__berita--wrapper__left--scroll">
-                    @foreach ($artikel as $botArtikel)
-                    <a class="berita-box" href="{{ route('feDetailArtikel', ['id' => $botArtikel->id_posts, 'slug' => Str::of($botArtikel->title)->slug('-')]) }}">
-                        <div class="berita-box__left" style="background: url('{{ $botArtikel->cover_img }}')"></div>
+                    <?php $__currentLoopData = $artikel; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $botArtikel): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                    <a class="berita-box" href="<?php echo e(route('feDetailArtikel', ['id' => $botArtikel->id_posts, 'slug' => Str::of($botArtikel->title)->slug('-')])); ?>">
+                        <div class="berita-box__left" style="background: url('<?php echo e($botArtikel->cover_img); ?>')"></div>
                         <div class="berita-box__right">
-                            <div class="berita-box__right--title">{{ $botArtikel->title }}</div>
-                            <div class="berita-box__right--desc">{{ strip_tags($botArtikel->content) }}</div>
+                            <div class="berita-box__right--title"><?php echo e($botArtikel->title); ?></div>
+                            <div class="berita-box__right--desc"><?php echo e(strip_tags($botArtikel->content)); ?></div>
                             <div class="berita-box__right--bottom">
-                                <p>{{$botArtikel->created_at->format("d F Y")}}</p>
+                                <p><?php echo e($botArtikel->created_at->format("d F Y")); ?></p>
                                 <p>
                                     <ion-icon name="arrow-forward-circle-outline"></ion-icon>
                                 </p>
                             </div>
                         </div>
                     </a>
-                    @endforeach
+                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                 </div>
             </div>
             <div class="home__berita--wrapper__right">
                 <div class="berita__simple">
-                    @foreach ($botBerita as $bb)
-                    <a class="artikel-container" href="{{ route('feDetailBerita', ['id' => $bb->id_posts, 'slug' => Str::of($bb->title)->slug('-')]) }}">
+                    <?php $__currentLoopData = $botBerita; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $bb): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                    <a class="artikel-container" href="<?php echo e(route('feDetailBerita', ['id' => $bb->id_posts, 'slug' => Str::of($bb->title)->slug('-')])); ?>">
                         <div class="artikel-container-box">
                             <div class="artikel-container-box__top">
-                                <div class="artikel-container-box__top--img" style="background: url('{{ $bb->cover_img }}') "></div>
+                                <div class="artikel-container-box__top--img" style="background: url('<?php echo e($bb->cover_img); ?>') "></div>
                                 <div class="artikel-container-box__top--info">
                                     <div class="artikel-container-box__top--info-box">
                                         <div class="artikel-container-box__top--info-box-text">
                                             <div class="artikel-container-box__top--info-box-text-1">
-                                                <p>{{ $bb->title }}</p>
+                                                <p><?php echo e($bb->title); ?></p>
                                             </div>
                                             <div class="artikel-container-box__top--info-box-text-2">
-                                                <p>{{ strip_tags($bb->content) }}</p>
+                                                <p><?php echo e(strip_tags($bb->content)); ?></p>
                                             </div>
                                         </div>
                                     </div>
@@ -129,11 +132,12 @@
                             </div>
                         </div>
                     </a>
-                    @endforeach
+                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                 </div>
             </div>
         </div>
     </div>
 </div>
 </div>
-@endsection
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('frontend.index', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Users\rifaldi\MAGANG\company-profile-pgri-pasuruan\resources\views/frontend/home.blade.php ENDPATH**/ ?>

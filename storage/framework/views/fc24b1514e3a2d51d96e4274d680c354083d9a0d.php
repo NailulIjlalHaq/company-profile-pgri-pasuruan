@@ -1,9 +1,9 @@
-<script src={{ asset('./frontend/assets/leaflet/leaflet.js') }}></script>
+<script src=<?php echo e(asset('./frontend/assets/leaflet/leaflet.js')); ?>></script>
 <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-<script src={{ asset('./frontend/assets/swiper/swiper.js') }}></script>
+<script src=<?php echo e(asset('./frontend/assets/swiper/swiper.js')); ?>></script>
 
-{{-- component script --}}
+
 <script>
     // leaflet maps
     if (window.location.href.indexOf('contact') > -1) {
@@ -210,3 +210,4 @@
         });
     }
 </script>
+<?php /**PATH C:\Users\rifaldi\MAGANG\company-profile-pgri-pasuruan\resources\views/frontend/layout/script.blade.php ENDPATH**/ ?>

@@ -32,7 +32,7 @@
                         top: 0;
                         height: 100%;
                         width: 100%;
-                        background-position: 50%;
+                        background-position: top;
                         background-size: cover;
                     }
                 }
@@ -141,7 +141,7 @@
                         cursor: pointer;
                         width: 30rem;
                         height: 30rem;
-                        background-position: 50% !important;
+                        background-position: top !important;
                         background-repeat: no-repeat !important;
                         background-size: cover !important;
                         @include respond(bp-400) {

@@ -8,7 +8,7 @@
             &-img {
                 align-self: stretch;
                 height: 52.8rem;
-                background-position: 50% !important;
+                background-position: top !important;
                 background-repeat: no-repeat !important;
                 background-size: cover !important;
                 background: linear-gradient(rgba(#000, 0.6), rgba(#000, 0.6)),
@@ -31,6 +31,10 @@
                     font-size: 3.2rem;
                     font-weight: 900;
                     text-transform: uppercase;
+                }
+                iframe {
+                    height: 100rem;
+                    width: 100%;
                 }
                 p {
                     font-size: 1.4rem;

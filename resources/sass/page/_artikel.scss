@@ -92,6 +92,11 @@
             justify-content: center;
             gap: 1.6rem;
 
+            & a {
+                @include respond(bp-400) {
+                    width: 100%;
+                }
+            }
             @include respond(bp-768) {
                 padding: 5rem;
                 padding-top: 0;
@@ -128,7 +133,7 @@
 
                             height: 100%;
                             width: 100%;
-                            background-position: 50% !important;
+                            background-position: top !important;
                             background-repeat: no-repeat !important;
                             background-size: cover !important;
                             transition: all 0.2s;
@@ -379,7 +384,7 @@
                 }
                 .berita-box {
                     display: flex;
-                    justify-content: center;
+                    justify-content: stretch;
                     flex-direction: column;
                     cursor: pointer;
                     transition: all 0.2s;
@@ -390,7 +395,7 @@
                     @include respond(bp-1100) {
                         flex-direction: row;
                         gap: 2rem;
-                        align-items: flex-end;
+                        align-items: center;
                     }
 
                     @include respond(bp-768) {
@@ -409,12 +414,13 @@
                         height: 15rem;
                         width: 20rem;
                         min-width: 20rem;
-                        background-position: 50% !important;
+                        background-position: top !important;
                         background-size: cover !important;
                         border-radius: 0.5rem;
                         background-repeat: no-repeat !important;
                     }
                     &__right {
+                        width: 100%;
                         @include respond(bp-768) {
                             padding: 0;
                         }

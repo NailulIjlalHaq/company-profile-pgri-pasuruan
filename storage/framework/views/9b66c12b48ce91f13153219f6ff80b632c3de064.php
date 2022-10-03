@@ -1,0 +1,1 @@
+<?php /**PATH C:\Users\rifaldi\MAGANG\company-profile-pgri-pasuruan\resources\views/frontend/about.blade.php ENDPATH**/ ?>

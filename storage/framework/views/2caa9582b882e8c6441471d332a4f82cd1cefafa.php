@@ -1,22 +1,22 @@
-@extends('frontend.index')
-@section('content')
+
+<?php $__env->startSection('content'); ?>
     <div class="gallery mt-top">
         <div class="gallery-wrapper">
             <div class="gallery__hero">
                 <div class="swiper__container">
                     <div class="swiper mySwiper">
                         <div class="swiper-wrapper">
-                            @foreach ($photos as $p)
+                            <?php $__currentLoopData = $photos; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $p): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                 <div class="swiper-slide">
                                     <div class="swiper__box">
                                         <div alt="" class="swiper__box--img">
                                             <div class="swiper__box--img--content"
-                                                style="background-image: url('{{ $p->file }}')"></div>
+                                                style="background-image: url('<?php echo e($p->file); ?>')"></div>
                                         </div>
 
                                     </div>
                                 </div>
-                            @endforeach
+                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 
                         </div>
                         <div class="swiper-button-next"></div>
@@ -27,13 +27,13 @@
         </div>
         <div class="gallery-wrapper__header">
             <p>Galeri</p>
-            <p>Terdapat <strong>{{ $photos->count() }} Gambar</strong> yang telah dimasukkan ke dalam website.</p>
+            <p>Terdapat <strong><?php echo e($photos->count()); ?> Gambar</strong> yang telah dimasukkan ke dalam website.</p>
         </div>
         <div class="gallery-wrapper__content">
             <div class="gallery-container">
-                @foreach ($photos as $p)
-                    <div class="gallery-container-box" onclick="passValue('{{ $p->id_galleries }}')">
-                        <div class="gallery-container-box-img" style="background: url('{{ $p->file }}')"></div>
+                <?php $__currentLoopData = $photos; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $p): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                    <div class="gallery-container-box" onclick="passValue('<?php echo e($p->id_galleries); ?>')">
+                        <div class="gallery-container-box-img" style="background: url('<?php echo e($p->file); ?>')"></div>
                         <div class="gallery-popup">
                             <div class="gallery-popup__wrapper">
                                 <div class="gallery-popup__wrapper--header">
@@ -75,21 +75,22 @@
                             </div>
                         </div>
                     </div>
-                    <input type="hidden" class="idValue{{ $p->id_galleries }}" value="{{ $p->id_galleries }}">
-                    <input type="hidden" class="imgValue{{ $p->id_galleries }}" value="{{ $p->file }}">
-                    <input type="hidden" class="titleValue{{ $p->id_galleries }}" value="{{ $p->name }}">
-                    <input type="hidden" class="descValue{{ $p->id_galleries }}"
-                        value="{{ strip_tags($p->description) }}">
+                    <input type="hidden" class="idValue<?php echo e($p->id_galleries); ?>" value="<?php echo e($p->id_galleries); ?>">
+                    <input type="hidden" class="imgValue<?php echo e($p->id_galleries); ?>" value="<?php echo e($p->file); ?>">
+                    <input type="hidden" class="titleValue<?php echo e($p->id_galleries); ?>" value="<?php echo e($p->name); ?>">
+                    <input type="hidden" class="descValue<?php echo e($p->id_galleries); ?>"
+                        value="<?php echo e(strip_tags($p->description)); ?>">
 
-                    {{-- popup --}}
-                @endforeach
+                    
+                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
             </div>
-            {{ $photos->links('../vendor/pagination/simple-pgri') }}
+            <?php echo e($photos->links('../vendor/pagination/simple-pgri')); ?>
+
         </div>
     </div>
     </div>
 
-@section('js')
+<?php $__env->startSection('js'); ?>
     <script>
         $('.gallery-container-box-img').addClass('btn-show-gallery-popup')
 
@@ -100,5 +101,7 @@
             $(`.${gp}__info-desc`).text($(`.descValue${id}`).val())
         }
     </script>
-@endsection
-@endsection
+<?php $__env->stopSection(); ?>
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('frontend.index', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Users\rifaldi\MAGANG\company-profile-pgri-pasuruan\resources\views/frontend/gallery.blade.php ENDPATH**/ ?>

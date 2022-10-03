@@ -1,11 +1,11 @@
-@extends('frontend.index')
-@section('content')
+
+<?php $__env->startSection('content'); ?>
 <div class="artikel">
     <div class="artikel__wrapper">
         <div class="artikel__wrapper--bg"></div>
         <div class="artikel__wrapper--header">
             <div class="artikel__wrapper--header__search">
-                <form action="{{route('feArtikel')}}" method="get" style="width: 100%; display: flex;justify-content: center;">
+                <form action="<?php echo e(route('feArtikel')); ?>" method="get" style="width: 100%; display: flex;justify-content: center;">
                     <div class=" artikel-search">
                         <ion-icon name="search-outline"></ion-icon>
                         <input type="search" name="search" id="search" placeholder="Cari...">
@@ -14,26 +14,26 @@
             </div>
             <div class="artikel__wrapper--header__title">
                 <p>Artikel</p>
-                <p>Terdapat <strong>{{$artikel->total()}} artikel</strong> yang dimasukkan ke dalam website.</p>
+                <p>Terdapat <strong><?php echo e($artikel->total()); ?> artikel</strong> yang dimasukkan ke dalam website.</p>
             </div>
         </div>
         <div class="artikel__wrapper--content">
 
-            @foreach ($artikel as $item)
-            <a  href="{{ route('feDetailArtikel', ['id' => $item->id_posts, 'slug' => Str::of($item->title)->slug('-')]) }}">
+            <?php $__currentLoopData = $artikel; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+            <a  href="<?php echo e(route('feDetailArtikel', ['id' => $item->id_posts, 'slug' => Str::of($item->title)->slug('-')])); ?>">
                 <div class="artikel-container">
                     <div class="artikel-container-box">
                         <div class="artikel-container-box__top">
-                            <div class="artikel-container-box__top--img" style="background: url('{{ $item->cover_img }}') "></div>
+                            <div class="artikel-container-box__top--img" style="background: url('<?php echo e($item->cover_img); ?>') "></div>
                             <div class="artikel-container-box__top--info">
                                 <div class="artikel-container-box__top--info-box">
                                     <div class="artikel-container-box__top--info-box-text">
 
                                         <div class="artikel-container-box__top--info-box-text-1">
-                                            <p>{{ $item->title }}</p>
+                                            <p><?php echo e($item->title); ?></p>
                                         </div>
                                         <div class="artikel-container-box__top--info-box-text-2">
-                                            <p>{{ $item->created_at->format('d F Y') }}</p>
+                                            <p><?php echo e($item->created_at->format('d F Y')); ?></p>
                                         </div>
                                     </div>
                                 </div>
@@ -41,13 +41,12 @@
                         </div>
                         <div class="artikel-container-box__bot">
                             <div class="artikel-container-box__bot--name">
-                                {{ $item->users->name }}
+                                <?php echo e($item->users->name); ?>
+
                             </div>
                             <div class="artikel-container-box__bot--info">
 
-                                {{-- <p>
-                                            <ion-icon name="eye"></ion-icon> 250
-                                        </p> --}}
+                                
                                 <p>
                                     <ion-icon name="open-outline"></ion-icon>
                                 </p>
@@ -57,13 +56,15 @@
                     </div>
                 </div>
             </a>
-            @endforeach
+            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
         </div>
-        {{$artikel->links('../vendor/pagination/simple-pgri')}}
+        <?php echo e($artikel->links('../vendor/pagination/simple-pgri')); ?>
+
     </div>
 </div>
 
-@section('js')
+<?php $__env->startSection('js'); ?>
 <script></script>
-@endsection
-@endsection
+<?php $__env->stopSection(); ?>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('frontend.index', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Users\rifaldi\MAGANG\company-profile-pgri-pasuruan\resources\views/frontend/artikel.blade.php ENDPATH**/ ?>
