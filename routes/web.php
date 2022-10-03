@@ -21,6 +21,10 @@ use App\Http\Controllers\frontend\SitemapController;
 
 Route::get('/not-found', [homeController::class, 'notFound']);
 Route::get('/error', [homeController::class, 'error']);
+Route::get('/backend',function(){
+	return view('errors.404');
+});
+
 //index route
 Route::get('/', [homeController::class, 'index'])->name('feHome');
 

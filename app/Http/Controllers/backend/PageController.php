@@ -75,7 +75,7 @@ class PageController extends Controller
                 file_put_contents($path, $data);
 
                 $img->removeAttribute('src');
-                $img->setAttribute('src', $image_name);
+                $img->setAttribute('src', asset($image_name));
             }
         }
         return $dom->saveHTML();

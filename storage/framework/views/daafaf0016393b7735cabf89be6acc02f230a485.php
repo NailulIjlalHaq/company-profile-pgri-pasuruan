@@ -106,7 +106,7 @@
             height: 400,
             callbacks: {
                 onMediaDelete: (target) => {
-                    console.log(target[0].src);
+                    //console.log(target[0].src);
                     $.ajax({
                         headers: {
                             'X-CSRF-TOKEN': '<?= csrf_token() ?>'
