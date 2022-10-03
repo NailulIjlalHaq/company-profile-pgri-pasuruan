@@ -9,6 +9,6 @@ class SitemapController extends Controller
 {
     public function index(Request $request)
     {
-        return view('frontend.sitemap')->header('Content-Type', 'text/xml');
+        return response()->view('frontend.sitemap')->header('Content-Type', 'text/xml');
     }
 }
