@@ -24,11 +24,12 @@ class UpdateBeritaRequest extends FormRequest
     public function rules()
     {
         return [
-            'judul' => 'required',
+            'judul' => 'required|not_regex:/,-.@$#%^&*!()',
             'konten' => 'required',
             'cover_img' => 'file|image|max:2000',
             'tag' => 'required',
             'kategori' => 'required',
+            'no_regex' => 'Data :attribute tidak boleh mengandung karakter symbol'
         ];
     }
 
