@@ -24,7 +24,7 @@ class StoreArtikelRequest extends FormRequest
     public function rules()
     {
         return [
-            'judul' => 'required|regex:/^[a-zA-ZÑñ\s]+$/',
+            'judul' => 'required|regex:/^[a-zA-Z0-9\s]+$/',
             'konten' => 'required',
             'cover_img' => 'required|file|image|max:2000',
             'tag' => 'required',
