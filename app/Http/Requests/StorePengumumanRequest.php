@@ -24,7 +24,7 @@ class StorePengumumanRequest extends FormRequest
     public function rules()
     {
         return [
-            'judul' => 'required',
+            'judul' => 'required|regex:/^[a-zA-Z0-9\s]+$/',
             'konten' => 'required',
             'cover_img' => 'file|image|max:2000',
             'tag' => 'required',

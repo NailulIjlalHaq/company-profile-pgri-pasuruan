@@ -57,25 +57,7 @@
                                             </div>
                                             <?php endif; ?>
                                         </div>
-                                        <!-- <div class="form-group">
-                                            <label>Kategori</label>
-                                            <select class="form-control <?php echo e($errors->has('kategori')?'is-invalid':''); ?>" name="kategori" id="kategori">
-                                                <option value=""></option>
-                                                <?php $__currentLoopData = $kategori; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                                <?php if(isset($post)): ?>
-                                                <option value="<?php echo e($item->id_categories); ?>" <?php echo e(($item->id_categories == $post->id_categories)?'selected':''); ?>><?php echo e($item->name); ?></option>
-                                                <?php else: ?>
-                                                <option value="<?php echo e($item->id_categories); ?>"><?php echo e($item->name); ?></option>
-                                                <?php endif; ?>
-                                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                                            </select>
-                                            <?php if($errors->has('kategori')): ?>
-                                            <div class="invalid-feedback">
-                                                <?php echo e($errors->first('kategori')); ?>
 
-                                            </div>
-                                            <?php endif; ?>
-                                        </div> -->
                                         <div class="form-group">
                                             <label>Konten</label>
                                             <textarea type="text" class="form-control <?php echo e($errors->has('konten')?'is-invalid':''); ?>" name="konten" id="konten" row="500"><?php echo e(isset($post)?$post->content:@old('kontent')); ?></textarea>
