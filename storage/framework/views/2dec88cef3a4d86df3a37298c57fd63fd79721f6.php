@@ -5,15 +5,20 @@
             <ion-icon name="notifications"></ion-icon>
         </div>
         <div class="alert-news-wrapper-info">
-            <p class="alert-news-wrapper-info-text">
+            <div class="alert-news-wrapper-info-text">
                 <?php if(count($pengumuman) > 0): ?>
                 <?php $__currentLoopData = $pengumuman; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                <?php echo e($item->title); ?> -
+
+
+
+                <div class="alert-item"><strong> <?php echo e($item->title); ?></strong></div>
+
+
                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                 <?php else: ?>
-                Belum terdapat <strong>PENGUMUMAN</strong> yang ingin ditampilkan pada web
+                <div class="alert-item"><strong> Belum ada pengumuman yang di fokuskan di website.</strong></div>
                 <?php endif; ?>
-            </p>
+            </div>
         </div>
         <div class="alert-news-wrapper-close ">
             <ion-icon class="btn-close-alert-news" name="close"></ion-icon>
@@ -39,7 +44,7 @@
                         <p>
                             &bull;
                         </p>
-                        <p> <?php echo e($atas->created_at->format("d F Y")); ?></p>
+                        <p> <?php echo e($atas->created_at->format('d F Y')); ?></p>
                     </div>
                 </div>
 
@@ -66,7 +71,7 @@
                         </p>
 
                     </div>
-                    <a class="card__btn" href="<?php echo e(route('feProfil',1)); ?>">Lebih Lanjut
+                    <a class="card__btn" href="<?php echo e(route('feProfil', 1)); ?>">Lebih Lanjut
                         <ion-icon name="chevron-forward-outline"></ion-icon>
                     </a>
                 </div>
@@ -87,12 +92,13 @@
                 <div class="home__berita--wrapper__left--scroll">
                     <?php $__currentLoopData = $artikel; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $botArtikel): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                     <a class="berita-box" href="<?php echo e(route('feDetailArtikel', ['id' => $botArtikel->id_posts, 'slug' => Str::of($botArtikel->title)->slug('-')])); ?>">
-                        <div class="berita-box__left" style="background: url('<?php echo e($botArtikel->cover_img); ?>')"></div>
+                        <div class="berita-box__left" style="background: url('<?php echo e($botArtikel->cover_img); ?>')">
+                        </div>
                         <div class="berita-box__right">
                             <div class="berita-box__right--title"><?php echo e($botArtikel->title); ?></div>
                             <div class="berita-box__right--desc"><?php echo e(strip_tags($botArtikel->content)); ?></div>
                             <div class="berita-box__right--bottom">
-                                <p><?php echo e($botArtikel->created_at->format("d F Y")); ?></p>
+                                <p><?php echo e($botArtikel->created_at->format('d F Y')); ?></p>
                                 <p>
                                     <ion-icon name="arrow-forward-circle-outline"></ion-icon>
                                 </p>
@@ -123,7 +129,7 @@
                                 </div>
                             </div>
                             <div class="artikel-container-box__bot">
-                               
+
                                 <p>
                                     <ion-icon name="share-social"></ion-icon> 300
                                 </p>

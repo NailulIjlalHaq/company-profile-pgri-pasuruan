@@ -62,7 +62,7 @@
                                                 </code>
                                                 @endif
                                             </label>
-                                            <textarea type="text" class="form-control {{$errors->has('deskripsi')?'is-invalid':''}}" name="deskripsi" id="deskripsi" row="500">@if(isset($page)){{$page->content}}@endif</textarea>
+                                            <textarea type="text" class="form-control {{$errors->has('deskripsi')?'is-invalid':''}}" name="deskripsi" id="deskripsi" row="500"></textarea>
                                         </div>
                                     </div>
 
@@ -100,8 +100,16 @@
         setTimeout(() => {
             $('#alert').alert('close');
         }, 6000);
-
-        $('#deskripsi').summernote({
+        const content = $('#deskripsi');
+        <?php
+        if (isset($page)) {
+        ?>
+            const loadContent = `<?= $page->content ?>`;
+            content.summernote('code', loadContent);
+        <?php
+        }
+        ?>
+        content.summernote({
             height: 400,
             callbacks: {
                 onPaste: function(e) {

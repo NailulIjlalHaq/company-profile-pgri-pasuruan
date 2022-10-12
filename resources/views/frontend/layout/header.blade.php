@@ -1,7 +1,7 @@
 <header class="header header-dark">
     <div class="header-container">
         <a class="header__logo" href="{{ route('feHome') }}">
-            <img src={{ asset('./frontend/assets/img/logo.png') }} alt="Logo" />
+            <img src="{{ asset('./frontend/assets/img/logo.png') }}" alt="Logo" />
             <p>
                 PGRI <br />
                 KAB PASURUAN
@@ -12,7 +12,7 @@
         </div>
         <div class="header__list">
             <div class="header__list-box">
-                <a href={{ route('feHome') }} class="header__list-box--item home-link">Beranda</a>
+                <a href="{{ route('feHome') }}" class="header__list-box--item home-link">Beranda</a>
             </div>
 
             <div class="header__list-box ">
@@ -186,7 +186,7 @@
                 <span>Profil<ion-icon name="caret-down-outline"></ion-icon>
                 </span>
                 <div class="header-phone-list-dropdown-box">
-                    <a href="{{ route('feProfil', 4) }}"class="sejarah-link">Sejarah</a>
+                    <a href="{{ route('feProfil', 4) }}" class="sejarah-link">Sejarah</a>
                     <a href="{{ route('feProfil', 1) }}" class="sambutan-link">Sambutan Ketua</a>
                     <a href="{{ route('feProfil', 3) }}" class="struktur-link">Struktur Organisasi</a>
                     <a href="{{ route('feProfil', 2) }}" class="vm-link">Visi Misi</a>
