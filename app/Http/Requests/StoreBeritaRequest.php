@@ -24,7 +24,7 @@ class StoreBeritaRequest extends FormRequest
     public function rules()
     {
         return [
-            'judul' => 'required|regex:/^[a-zA-ZÑñ\s]+$/',
+            'judul' => 'required|regex:/^[a-zA-Z0-9\s]+$/',
             'konten' => 'required',
             'cover_img' => 'required|file|image|max:2000',
             'tag' => 'required',
@@ -39,7 +39,7 @@ class StoreBeritaRequest extends FormRequest
             'file' => 'Data :attribute harus dimasukkan file gambar',
             'image' => 'Data :attribute harus dimasukkan file gambar',
             'max' => 'Ukuran :attribute melibihi ketentuan',
-            'no_regex' => 'Data :attribute tidak boleh mengandung karakter symbol'
+            'regex' => 'Data :attribute tidak boleh mengandung karakter symbol'
         ];
     }
 }

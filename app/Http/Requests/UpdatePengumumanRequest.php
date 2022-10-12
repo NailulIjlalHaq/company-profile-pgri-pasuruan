@@ -24,7 +24,7 @@ class UpdatePengumumanRequest extends FormRequest
     public function rules()
     {
         return [
-            'judul' => 'required',
+            'judul' => 'required|regex:/^[a-zA-Z0-9\s]+$/',
             'konten' => 'required',
             'cover_img' => 'file|image|max:2000',
             'tag' => 'required',
@@ -38,7 +38,8 @@ class UpdatePengumumanRequest extends FormRequest
             'required' => 'Data :attribute harus diisi.',
             'file' => 'Data :attribute harus dimasukkan file gambar',
             'image' => 'Data :attribute harus dimasukkan file gambar',
-            'max' => 'Ukuran :attribute melibihi ketentuan'
+            'max' => 'Ukuran :attribute melibihi ketentuan',
+            'regex' => 'Data :attribute tidak boleh mengandung karakter symbol'
         ];
     }
 }
