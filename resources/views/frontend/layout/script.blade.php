@@ -10,17 +10,17 @@
         var map = L.map('map', {
 
             zoomControl: false,
-        }).setView([-7.76764, 112.74839], 13);
+        }).setView([-7.674797087422843, 112.94377816931632], 13);
         var tiles = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             minZoom: 12,
             maxZoom: 17,
             attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
         }).addTo(map);
 
-        var marker = L.marker([-7.76764, 112.74839]).addTo(map).bindPopup('<b>PGRI KABUPATEN PASURUAN/b>')
+        var marker = L.marker([-7.674797087422843, 112.94377816931632]).addTo(map).bindPopup('<b>PGRI KABUPATEN PASURUAN/b>')
             .openPopup();
 
-        var circle = L.circle([-7.76764, 112.74839], {
+        var circle = L.circle([-7.674797087422843, 112.94377816931632], {
                 color: 'red',
                 fillColor: '#f03',
                 fillOpacity: 0.5,
