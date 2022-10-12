@@ -10,17 +10,18 @@
         var map = L.map('map', {
 
             zoomControl: false,
-        }).setView([-7.76764, 112.74839], 13);
+        }).setView([-7.674797087422843, 112.94377816931632], 13);
         var tiles = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             minZoom: 12,
             maxZoom: 17,
             attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
         }).addTo(map);
 
-        var marker = L.marker([-7.76764, 112.74839]).addTo(map).bindPopup('<b>PGRI KABUPATEN PASURUAN/b>')
+        var marker = L.marker([-7.674797087422843, 112.94377816931632]).addTo(map).bindPopup(
+                '<b>PGRI KABUPATEN PASURUAN/b>')
             .openPopup();
 
-        var circle = L.circle([-7.76764, 112.74839], {
+        var circle = L.circle([-7.674797087422843, 112.94377816931632], {
                 color: 'red',
                 fillColor: '#f03',
                 fillOpacity: 0.5,
@@ -68,13 +69,28 @@
 
     });
 
-    $('.header__list-box--item').hover(function() {
+    $('.header__list-box--item , .header-phone-list-item ').hover(function() {
         $(this).addClass('active-link-hover')
     }, function() {
         if (!$(this).hasClass('active-link')) {
             $(this).removeClass('active-link-hover')
         }
     })
+
+    $('.header-phone-list-dropdown').on('click', function() {
+        $(this).children('.header-phone-list-dropdown-box').toggleClass('mh-15 ')
+        
+        // if (!$(this).children('.header-phone-list-dropdown-box').hasClass('mt-1')) {
+        //     setTimeout(() => {
+        //         $(this).children('.header-phone-list-dropdown-box').removeClass('mt-1')
+                
+        //     }, 1000);
+        // }
+
+    })
+
+
+
     $('.cp-link-text').text(window.location.href)
     $('.share-btn-wrapper-btn.share-wa').on('click', function() {
         let link = window.location.href

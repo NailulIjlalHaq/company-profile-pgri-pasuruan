@@ -4,8 +4,8 @@
         <div class="contact-wrapper">
             <div class="contact__address">
                 <div class="contact__address--title">
-                    <p>Alamat Kami</p>
-                    <p>Pgri Kabupaten Pasuruan</p>
+                    <p>Kantor Kami</p>
+                    <p>PGRI Kabupaten Pasuruan</p>
                 </div>
 
                 <div class="contact__address--box">
@@ -59,7 +59,7 @@
                         <ion-icon name="mail-outline"></ion-icon><?php print_r($configs[5]['data']); ?>
                     </p>
                     <p>
-                        <ion-icon name="location-outline"></ion-icon><a href="">Lihat Di Google map</a>
+                        <ion-icon name="location-outline"></ion-icon><a href="https://www.google.com/maps/place/Kantor+PGRI+Kab+Pasuruan/@-7.6751586,112.943864,15z/data=!4m5!3m4!1s0x0:0x1d82025fb737af3b!8m2!3d-7.6751586!4d112.943864">Lihat Di Google map</a>
                     </p>
                 </div>
                 <div id="map"></div>

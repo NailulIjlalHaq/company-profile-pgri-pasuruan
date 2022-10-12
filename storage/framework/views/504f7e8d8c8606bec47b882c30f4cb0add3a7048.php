@@ -24,7 +24,7 @@
                         <p>
                             <ion-icon name="call"></ion-icon>
                         </p>
-                        <p><?php echo e($setting[1]['data']); ?></p>
+                        <p><?php echo e($setting[4]['data']); ?></p>
                     </div>
                     <div class="footer-address__alamat">
                         <p>
@@ -61,7 +61,7 @@
                 </div>
             </div>
 
-            <div class="footer-cr">Copyright SMKN 1 Purwosari 2022 © All rights reserved.</div>
+            <div class="footer-cr">Copyright PGRI Kabupaten Pasuruan 2022 © All rights reserved.</div>
         </div>
     </div>
 

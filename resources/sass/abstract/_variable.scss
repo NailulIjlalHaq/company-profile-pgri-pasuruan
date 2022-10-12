@@ -1,5 +1,6 @@
 $color-primary: #ffc107;
 $color-secondary: #132133;
+$color-secondary-2: #25374f;
 $color-dark: #0c101a;
 $color-m-dark: #919fae;
 $color-grey: #cecdcd;
@@ -65,6 +66,10 @@ $color-blue: #60c1f8;
 .overflow-visible {
     overflow: visible !important;
 }
+.mh-15 {
+    max-height: 15rem !important;
+}
+
 .show {
     opacity: 1 !important;
     visibility: visible !important;
@@ -126,6 +131,14 @@ $color-blue: #60c1f8;
     }
 }
 
+.m {
+    &t {
+        &-1 {
+            margin-top: 1rem;
+        }
+    }
+}
+
 .unvalidated {
     color: #dc3545;
     font-size: 1.4rem;
@@ -167,5 +180,10 @@ $color-blue: #60c1f8;
         &-top {
             margin-top: 8.25rem !important;
         }
+    }
+}
+.gap {
+    &-1 {
+        gap: 1rem;
     }
 }

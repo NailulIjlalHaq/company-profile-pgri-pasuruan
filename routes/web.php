@@ -6,6 +6,8 @@ use App\Http\Controllers\backend\UserController;
 use App\Http\Controllers\frontend\homeController;
 use App\Http\Controllers\backend\GaleriController;
 use App\Http\Controllers\frontend\aboutController;
+use App\Http\Controllers\frontend\pkoController;
+
 // backend Controller
 use App\Http\Controllers\frontend\beritaController;
 use App\Http\Controllers\backend\KategoriController;
@@ -21,8 +23,8 @@ use App\Http\Controllers\frontend\SitemapController;
 
 Route::get('/not-found', [homeController::class, 'notFound']);
 Route::get('/error', [homeController::class, 'error']);
-Route::get('/backend',function(){
-	return view('errors.404');
+Route::get('/backend', function () {
+    return view('errors.404');
 });
 
 //index route
@@ -31,9 +33,9 @@ Route::get('/', [homeController::class, 'index'])->name('feHome');
 //about route
 Route::get('/about', [aboutController::class, 'index'])->name('feAbout');
 Route::get('/profil/{profil}', [aboutController::class, 'page'])->name('feProfil');
-// Route::get('/profile-sejarah', [aboutController::class, 'sejarah'])->name('profile-sejarah');
-// Route::get('/profile-makna', [aboutController::class, 'makna'])->name('profile-makna');
-// Route::get('/profile-visi-misi', [aboutController::class, 'visiMisi'])->name('profile-visi-misi');
+
+// PKO Route
+Route::get('/pko', [pkoController::class, 'pko'])->name('fePko');
 
 //artikel route
 Route::get('/artikel', [artikelController::class, 'index'])->name('feArtikel');

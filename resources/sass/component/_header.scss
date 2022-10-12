@@ -19,7 +19,7 @@
 
     &-phone {
         transform: translateY(-100%);
-        padding: 1.6rem 10rem;
+        padding: 1.6rem 10rem 3.2rem 10rem;
         position: fixed;
         top: 0;
         z-index: 11;
@@ -31,14 +31,14 @@
         visibility: hidden;
         display: none;
 
-        @include respond(tab-port) {
+        @include respond(tab-land) {
             display: flex;
         }
         @include respond(bp-768) {
-            padding: 1.6rem 5rem;
+            padding: 1.6rem 5rem 3.2rem 5rem;
         }
         @include respond(bp-500) {
-            padding: 1.6rem 2rem;
+            padding: 1.6rem 2rem 3.2rem 2rem;
         }
         &-container {
             max-width: 144rem;
@@ -82,8 +82,8 @@
             }
             .header-phone-list {
                 display: flex;
-                align-items: center;
-                flex-wrap: wrap;
+                // align-items: center;
+                flex-direction: column;
                 gap: 3.2rem;
 
                 &-item {
@@ -92,6 +92,60 @@
                     font-weight: 400;
                     position: relative;
                     cursor: pointer;
+                    width: fit-content;
+                }
+
+                &-dropdown {
+                    position: relative;
+                    cursor: pointer;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 1rem;
+
+                    &-box {
+                        width: fit-content;
+                        border-radius: 5px;
+                        overflow: hidden;
+                        display: flex;
+                        flex-direction: column;
+                        z-index: 1;
+
+                        -webkit-transition: max-height 1s;
+                        -moz-transition: max-height 1s;
+                        -ms-transition: max-height 1s;
+                        -o-transition: max-height 1s;
+                        transition: max-height 1s;
+
+                        overflow: hidden;
+                        max-height: 0;
+                    }
+                    span {
+                        color: $color-grey;
+                        font-size: 1.4rem;
+                        font-weight: 400;
+                        display: flex;
+                        align-items: center;
+                        gap: 0.5rem;
+                        ion-icon {
+                            font-size: 1.6rem;
+                            min-height: 1.6rem;
+                            min-height: 1.6rem;
+                            color: white;
+                        }
+                    }
+
+                    a {
+                        font-size: 1.4rem;
+                        padding: 1rem 2rem;
+                        background: $color-secondary-2;
+                        white-space: nowrap;
+                        color: white;
+                        transition: all 0.2s;
+
+                        &:hover {
+                            background-color: $color-secondary;
+                        }
+                    }
                 }
             }
         }
@@ -105,7 +159,7 @@
         &:hover {
             transform: scale(1.3);
         }
-        @include respond(tab-port) {
+        @include respond(tab-land) {
             display: flex;
         }
         ion-icon {
@@ -142,7 +196,7 @@
         align-items: center;
         gap: 3.2rem;
 
-        @include respond(tab-port) {
+        @include respond(tab-land) {
             display: none;
         }
         &-box {
