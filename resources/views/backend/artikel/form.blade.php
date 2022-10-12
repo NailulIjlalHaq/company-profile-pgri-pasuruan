@@ -56,24 +56,7 @@
                                             </div>
                                             @endif
                                         </div>
-                                        <div class="form-group">
-                                            <label>Kategori</label>
-                                            <select class="form-control {{$errors->has('kategori')?'is-invalid':''}}" name="kategori" id="kategori">
-                                                <option value=""></option>
-                                                @foreach($kategori as $item)
-                                                @if(isset($post))
-                                                <option value="{{$item->id_categories}}" {{($item->id_categories == $post->id_categories)?'selected':''}}>{{$item->name}}</option>
-                                                @else
-                                                <option value="{{$item->id_categories}}">{{$item->name}}</option>
-                                                @endif
-                                                @endforeach
-                                            </select>
-                                            @if($errors->has('kategori'))
-                                            <div class="invalid-feedback">
-                                                {{$errors->first('kategori')}}
-                                            </div>
-                                            @endif
-                                        </div>
+
                                         <div class="form-group">
                                             <label>Konten</label>
                                             <textarea type="text" class="form-control {{$errors->has('konten')?'is-invalid':''}}" name="konten" id="konten" row="500">{{isset($post)?$post->content:@old('kontent')}}</textarea>
@@ -128,6 +111,16 @@
         $('#konten').summernote({
             height: 400,
             callbacks: {
+                onPaste: function(e) {
+                    var bufferText = ((e.originalEvent || e).clipboardData || window.clipboardData).getData('Text');
+
+                    e.preventDefault();
+
+                    // Firefox fix
+                    setTimeout(function() {
+                        document.execCommand('insertText', false, bufferText);
+                    }, 10);
+                },
                 onMediaDelete: (target) => {
                     console.log(target[0].src);
                     $.ajax({

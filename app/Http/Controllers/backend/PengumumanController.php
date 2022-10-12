@@ -24,8 +24,8 @@ class PengumumanController extends Controller
             $data = posts::with('categories');
             $data->where('type', 'pengumuman')->latest();
             return  DataTables()->of($data)
-              ->editColumn('cover_img', function($row){
-                	return asset($row->cover_img);
+                ->editColumn('cover_img', function ($row) {
+                    return asset($row->cover_img);
                 })
                 ->editColumn('title', function ($row) {
                     // Memberikan dan mengecek status fokus berita
@@ -60,11 +60,11 @@ class PengumumanController extends Controller
     public function create()
     {
         // Fungsi untuk mengambil data kategori dan ditampilkan dalam form pengumuman
-        $kategori = categories::select('id_categories', 'name')->where('type', 'berita')->get();
+        // $kategori = categories::select('id_categories', 'name')->where('type', 'berita')->get();
 
         //memberikan status edit form false untuk digunakan untuk menampilkan form tambah
         $isEdit = false;
-        return view('backend.pengumuman.form', compact('kategori', 'isEdit'));
+        return view('backend.pengumuman.form', compact('isEdit'));
     }
 
     /**
@@ -75,6 +75,7 @@ class PengumumanController extends Controller
      */
     public function store(StorePengumumanRequest $request)
     {
+
         //try {
         // Memanggil fungsi untuk meload semua konten yang ada di summernote dan mengupload gambar
         // dan mengembalikan dalam bentuk html
@@ -87,7 +88,7 @@ class PengumumanController extends Controller
         $post = new posts;
         $post->title = str_replace(".", '', $request->judul);
         $post->content = $konten;
-        $post->id_categories = $request->kategori;
+        // $post->id_categories = $request->kategori;
         $post->tag = $request->tag;
         $post->type = 'pengumuman';
         $post->cover_img = $imagePath;
@@ -160,7 +161,7 @@ class PengumumanController extends Controller
         // fungsi untuk mengupdate data pengumuman sesuai dengan id
         $post->title = str_replace(".", '', $request->judul);
         $post->content = $konten;
-        $post->id_categories = $request->kategori;
+        // $post->id_categories = $request->kategori;
         $post->tag = $request->tag;
         $post->save();
 
@@ -237,7 +238,7 @@ class PengumumanController extends Controller
                 file_put_contents($path, $data);
 
                 $img->removeAttribute('src');
-               $img->setAttribute('src', asset($image_name));
+                $img->setAttribute('src', asset($image_name));
             }
         }
         return $dom->saveHTML();

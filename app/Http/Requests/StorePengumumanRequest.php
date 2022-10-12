@@ -28,7 +28,6 @@ class StorePengumumanRequest extends FormRequest
             'konten' => 'required',
             'cover_img' => 'file|image|max:2000',
             'tag' => 'required',
-            'kategori' => 'required',
 
         ];
     }

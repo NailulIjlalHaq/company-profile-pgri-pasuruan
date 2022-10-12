@@ -1,9 +1,8 @@
-@extends('backend.master.master')
-@section('page', $page->title)
-@section('content')
+<?php $__env->startSection('page', $page->title); ?>
+<?php $__env->startSection('content'); ?>
 <!-- Content Wrapper. Contains page content -->
-<form action="{{route('profil.update',$page->id_pages)}}" method="POST" enctype="multipart/form-data">
-    @csrf
+<form action="<?php echo e(route('profil.update',$page->id_pages)); ?>" method="POST" enctype="multipart/form-data">
+    <?php echo csrf_field(); ?>
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->
         <div class="content-header">
@@ -11,7 +10,7 @@
                 <div class="row mb-2">
                     <div class="col-sm-6 mt-2">
                         <h1 class="m-0 text-dark">
-                            <i class="fas fa-books nav-icon text-info"></i> @yield('page')
+                            <i class="fas fa-books nav-icon text-info"></i> <?php echo $__env->yieldContent('page'); ?>
                         </h1>
                     </div><!-- /.col -->
                     <div class="col-sm-6 mt-2 text-right">
@@ -30,39 +29,40 @@
                 <div class="row d-flex flex-column-reverse">
                     <!-- /.row -->
                     <div class="animated fadeInLeft w-100">
-                        @if(session('success'))
+                        <?php if(session('success')): ?>
                         <div class="alert alert-success alert-dismissible fade show" role="alert" id="alert">
-                            <strong>Informasi : {{session('success')}}</strong>
+                            <strong>Informasi : <?php echo e(session('success')); ?></strong>
                             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
-                        @endif
-                        @if(session('error'))
+                        <?php endif; ?>
+                        <?php if(session('error')): ?>
                         <div class="alert alert-warning alert-dismissible fade show" role="alert" id="alert">
-                            <strong>Peringatan : {{session('error')}}</strong>
+                            <strong>Peringatan : <?php echo e(session('error')); ?></strong>
                             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
-                        @endif
+                        <?php endif; ?>
                         <div class="row">
                             <div class="col-9">
                                 <div class="card card-primary ">
                                     <!-- /.card-header -->
                                     <!-- form start -->
                                     <div class="card-body">
-                                        <input type="hidden" name="title" id="title" value="{{isset($page)?$page->title:''}}">
+                                        <input type="hidden" name="title" id="title" value="<?php echo e(isset($page)?$page->title:''); ?>">
                                         <div class="form-group">
                                             <label>
                                                 Deskripsi
-                                                @if($errors->has('deskripsi'))
+                                                <?php if($errors->has('deskripsi')): ?>
                                                 <code>
-                                                    {{$errors->first('deskripsi')}}
+                                                    <?php echo e($errors->first('deskripsi')); ?>
+
                                                 </code>
-                                                @endif
+                                                <?php endif; ?>
                                             </label>
-                                            <textarea type="text" class="form-control {{$errors->has('deskripsi')?'is-invalid':''}}" name="deskripsi" id="deskripsi" row="500">@if(isset($page)){{$page->content}}@endif</textarea>
+                                            <textarea type="text" class="form-control <?php echo e($errors->has('deskripsi')?'is-invalid':''); ?>" name="deskripsi" id="deskripsi" row="500"><?php if(isset($page)): ?><?php echo e($page->content); ?><?php endif; ?></textarea>
                                         </div>
                                     </div>
 
@@ -71,15 +71,16 @@
                             <div class="col">
                                 <div class="row mx-2 mt-2">
                                     <label>Cover Foto</label>
-                                    <input type="file" class="form-control {{$errors->has('cover_img')?'is-invalid':''}}" name="cover_img" id="cover_img" onchange="readURL(this)">
-                                    @if($errors->has('cover_img'))
+                                    <input type="file" class="form-control <?php echo e($errors->has('cover_img')?'is-invalid':''); ?>" name="cover_img" id="cover_img" onchange="readURL(this)">
+                                    <?php if($errors->has('cover_img')): ?>
                                     <div class="invalid-feedback">
-                                        {{$errors->first('cover_img')}}
+                                        <?php echo e($errors->first('cover_img')); ?>
+
                                     </div>
-                                    @endif
+                                    <?php endif; ?>
                                 </div>
                                 <div class="row mx-2 text-center mt-3">
-                                    <img src="{{isset($page)?asset($page->cover_img):asset('img/insert_image.jpg')}}" class="img-thumbnail" id="preview" style="height:150px;width:100%;object-fit:cover;" />
+                                    <img src="<?php echo e(isset($page)?asset($page->cover_img):asset('img/insert_image.jpg')); ?>" class="img-thumbnail" id="preview" style="height:150px;width:100%;object-fit:cover;" />
                                 </div>
                             </div>
                         </div>
@@ -92,9 +93,9 @@
 
     </div>
 </form>
-@endsection
+<?php $__env->stopSection(); ?>
 
-@section('javascript')
+<?php $__env->startSection('javascript'); ?>
 <script type="text/javascript">
     $(function() {
         setTimeout(() => {
@@ -104,16 +105,6 @@
         $('#deskripsi').summernote({
             height: 400,
             callbacks: {
-                onPaste: function(e) {
-                    var bufferText = ((e.originalEvent || e).clipboardData || window.clipboardData).getData('Text');
-
-                    e.preventDefault();
-
-                    // Firefox fix
-                    setTimeout(function() {
-                        document.execCommand('insertText', false, bufferText);
-                    }, 10);
-                },
                 onMediaDelete: (target) => {
                     //console.log(target[0].src);
                     $.ajax({
@@ -149,4 +140,5 @@
         }
     }
 </script>
-@endsection
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('backend.master.master', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /Applications/MAMP/htdocs/company-profil/resources/views/backend/page/form.blade.php ENDPATH**/ ?>
