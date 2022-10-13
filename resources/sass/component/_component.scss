@@ -184,6 +184,12 @@
                 .alert-item {
                     height: 3rem;
                     line-height: 3rem;
+                    font-weight: 600;
+
+                    @include respond(bp-500){
+                        font-size: 1.2rem;
+                    }
+                
                 }
             }
         }

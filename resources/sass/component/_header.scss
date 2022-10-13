@@ -24,7 +24,7 @@
         top: 0;
         z-index: 11;
         width: 100%;
-        height: fit-content;
+        height: 100%;
         background-color: $color-secondary;
         transition: all 0.2s linear;
         opacity: 0;
@@ -47,6 +47,24 @@
             align-items: flex-start;
             flex-direction: column;
             gap: 3.2rem;
+
+            & > * {
+                &::-webkit-scrollbar {
+                    width: 1rem;
+
+                    &-track {
+                        background-color: rgba(
+                            $color: $color-primary,
+                            $alpha: 0.1
+                        );
+                        border-radius: 1rem;
+                    }
+                    &-thumb {
+                        background-color: $color-primary;
+                        border-radius: 1rem;
+                    }
+                }
+            }
 
             .header-phone-top {
                 align-self: stretch;
@@ -82,13 +100,14 @@
             }
             .header-phone-list {
                 display: flex;
-                // align-items: center;
+                width: 100%;
                 flex-direction: column;
+                align-items: center;
                 gap: 3.2rem;
-
+                height: 100%;
                 &-item {
                     color: $color-grey;
-                    font-size: 1.4rem;
+                    font-size: 2rem;
                     font-weight: 400;
                     position: relative;
                     cursor: pointer;
@@ -100,15 +119,17 @@
                     cursor: pointer;
                     display: flex;
                     flex-direction: column;
+                    align-items: center;
                     gap: 1rem;
-
+                    width: 100%;
                     &-box {
-                        width: fit-content;
+                        width: 100%;
                         border-radius: 5px;
                         overflow: hidden;
                         display: flex;
                         flex-direction: column;
                         z-index: 1;
+                        text-align: center;
 
                         -webkit-transition: max-height 1s;
                         -moz-transition: max-height 1s;
@@ -121,7 +142,7 @@
                     }
                     span {
                         color: $color-grey;
-                        font-size: 1.4rem;
+                        font-size: 2rem;
                         font-weight: 400;
                         display: flex;
                         align-items: center;
@@ -135,7 +156,7 @@
                     }
 
                     a {
-                        font-size: 1.4rem;
+                        font-size: 1.8rem;
                         padding: 1rem 2rem;
                         background: $color-secondary-2;
                         white-space: nowrap;

@@ -78,12 +78,12 @@
     })
 
     $('.header-phone-list-dropdown').on('click', function() {
-        $(this).children('.header-phone-list-dropdown-box').toggleClass('mh-15 ')
-        
+        $(this).children('.header-phone-list-dropdown-box').toggleClass('mh-100 ')
+
         // if (!$(this).children('.header-phone-list-dropdown-box').hasClass('mt-1')) {
         //     setTimeout(() => {
         //         $(this).children('.header-phone-list-dropdown-box').removeClass('mt-1')
-                
+
         //     }, 1000);
         // }
 

@@ -179,37 +179,41 @@
             </div>
         </div>
 
-        <div class="header-phone-list">
-            <a href="{{ route('feHome') }}" class="header-phone-list-item home-link">Beranda</a>
+        <div style="height: 100%; overflow: auto; width: 100%; display: flex; align-items: center">
+            <div class="header-phone-list">
+                <a href="{{ route('feHome') }}" class="header-phone-list-item home-link">Beranda</a>
 
-            <div class="header-phone-list-dropdown">
-                <span>Profil<ion-icon name="caret-down-outline"></ion-icon>
-                </span>
-                <div class="header-phone-list-dropdown-box">
-                    <a href="{{ route('feProfil', 4) }}"class="sejarah-link">Sejarah</a>
-                    <a href="{{ route('feProfil', 1) }}" class="sambutan-link">Sambutan Ketua</a>
-                    <a href="{{ route('feProfil', 3) }}" class="struktur-link">Struktur Organisasi</a>
-                    <a href="{{ route('feProfil', 2) }}" class="vm-link">Visi Misi</a>
+                <div class="header-phone-list-dropdown">
+                    <span>Profil<ion-icon name="caret-down-outline"></ion-icon>
+                    </span>
+                    <div class="header-phone-list-dropdown-box">
+                        <a href="{{ route('feProfil', 4) }}"class="sejarah-link">Sejarah</a>
+                        <a href="{{ route('feProfil', 1) }}" class="sambutan-link">Sambutan Ketua</a>
+                        <a href="{{ route('feProfil', 3) }}" class="struktur-link">Struktur Organisasi</a>
+                        <a href="{{ route('feProfil', 2) }}" class="vm-link">Visi Misi</a>
+                    </div>
                 </div>
-            </div>
 
 
-            <div class="header-phone-list-dropdown">
-                <span>PKO PGRI<ion-icon name="caret-down-outline"></ion-icon>
-                </span>
-                <div class="header-phone-list-dropdown-box">
-                    <a href="{{ route('fePko') }}" class="igtki-link">IGTKI PGRI</a>
-                    <a href="{{ route('fePko') }}" class="lkbh-link">LKBH - DKGI PGRI</a>
-                    <a href="{{ route('fePko') }}" class="yplp-link">YPLP Basmen PGRI</a>
-                    <a href="{{ route('fePko') }}" class="slcc-link">SLCC PGRI</a>
+                <div class="header-phone-list-dropdown">
+                    <span>PKO PGRI<ion-icon name="caret-down-outline"></ion-icon>
+                    </span>
+                    <div class="header-phone-list-dropdown-box">
+                        <a href="{{ route('fePko') }}" class="igtki-link">IGTKI PGRI</a>
+                        <a href="{{ route('fePko') }}" class="lkbh-link">LKBH - DKGI PGRI</a>
+                        <a href="{{ route('fePko') }}" class="yplp-link">YPLP Basmen PGRI</a>
+                        <a href="{{ route('fePko') }}" class="slcc-link">SLCC PGRI</a>
+                    </div>
                 </div>
-            </div>
 
-            <a href="{{ route('feArtikel') }}" class="header-phone-list-item artikel-link">Artikel</a>
-            <a href="{{ route('feBerita') }}" class="header-phone-list-item berita-link">Berita</a>
-            <a href="{{ route('feGallery') }}" class="header-phone-list-item gallery-link">Galeri</a>
-            <a href="https://newsik.pgri.or.id/" class="header-phone-list-item  gallery-link">Registrasi Anggota</a>
-            <a href="{{ route('feContact') }}" class="header-phone-list-item contact-link">Kontak</a>
+                <a href="{{ route('feArtikel') }}" class="header-phone-list-item artikel-link">Artikel</a>
+                <a href="{{ route('feBerita') }}" class="header-phone-list-item berita-link">Berita</a>
+                <a href="{{ route('feGallery') }}" class="header-phone-list-item gallery-link">Galeri</a>
+                <a href="https://newsik.pgri.or.id/" class="header-phone-list-item  gallery-link">Registrasi
+                    Anggota</a>
+                <a href="{{ route('feContact') }}" class="header-phone-list-item contact-link">Kontak</a>
+            </div>
         </div>
+
     </div>
 </header>

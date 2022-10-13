@@ -12,11 +12,11 @@
                             {{ $item->title }} - --}}
 
                             {{-- exapmle alert --}}
-                            <div class="alert-item">INI CONTOH PENGUMUMAN 1</div>
-                            <div class="alert-item">INI CONTOH PENGUMUMAN 2</div>
-                            <div class="alert-item">INI CONTOH PENGUMUMAN 3</div>
-                            <div class="alert-item">INI CONTOH PENGUMUMAN 4</div>
-                            
+                            <div class="alert-item">INI CONTOH PENGUMUMAN 1 INI CONTOH PENGUMUMAN 1</div>
+                            <div class="alert-item">INI CONTOH PENGUMUMAN 2 INI CONTOH PENGUMUMAN 2</div>
+                            <div class="alert-item">INI CONTOH PENGUMUMAN 3 INI CONTOH PENGUMUMAN 2</div>
+                            <div class="alert-item">INI CONTOH PENGUMUMAN 4 INI CONTOH PENGUMUMAN 2</div>
+
                         {{-- @endforeach
                     @else
                         Belum terdapat <strong>PENGUMUMAN</strong> yang ingin ditampilkan pada web
