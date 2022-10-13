@@ -160,18 +160,19 @@
                 <ion-icon class="btn-close-navbar-phone" name="close-outline"></ion-icon>
             </div>
         </div>
+        <div style="width: 100%;height: 100%; overflow: auto; display: flex;align-items: center">
+            <div class="header-phone-list">
+                <a href="{{ route('feHome') }}" class="header-phone-list-item home-link">Beranda</a>
 
-        <div class="header-phone-list">
-            <a href="{{ route('feHome') }}" class="header-phone-list-item home-link">Beranda</a>
-
-            <div class="header-phone-list-dropdown">
-                <span>Profil<ion-icon name="caret-down-outline"></ion-icon>
-                </span>
-                <div class="header-phone-list-dropdown-box">
-                    <a href="{{ route('feProfil', 4) }}" class="sejarah-link">Sejarah</a>
-                    <a href="{{ route('feProfil', 1) }}" class="sambutan-link">Sambutan Ketua</a>
-                    <a href="{{ route('feProfil', 3) }}" class="struktur-link">Struktur Organisasi</a>
-                    <a href="{{ route('feProfil', 2) }}" class="vm-link">Visi Misi</a>
+                <div class="header-phone-list-dropdown">
+                    <span>Profil<ion-icon name="caret-down-outline"></ion-icon>
+                    </span>
+                    <div class="header-phone-list-dropdown-box">
+                        <a href="{{ route('feProfil', 4) }}" class="sejarah-link">Sejarah</a>
+                        <a href="{{ route('feProfil', 1) }}" class="sambutan-link">Sambutan Ketua</a>
+                        <a href="{{ route('feProfil', 3) }}" class="struktur-link">Struktur Organisasi</a>
+                        <a href="{{ route('feProfil', 2) }}" class="vm-link">Visi Misi</a>
+                    </div>
                 </div>
 
 
@@ -194,6 +195,7 @@
                 <a href="{{ route('feContact') }}" class="header-phone-list-item contact-link">Kontak</a>
             </div>
         </div>
+    </div>
 
     </div>
 </header>

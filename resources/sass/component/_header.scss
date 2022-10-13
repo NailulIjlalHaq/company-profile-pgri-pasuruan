@@ -104,7 +104,7 @@
                 flex-direction: column;
                 align-items: center;
                 gap: 3.2rem;
-                height: 100%;
+                height: fit-content;
                 &-item {
                     color: $color-grey;
                     font-size: 2rem;
