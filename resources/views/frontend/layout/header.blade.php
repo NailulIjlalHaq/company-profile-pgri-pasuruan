@@ -1,7 +1,7 @@
 <header class="header header-dark">
     <div class="header-container">
         <a class="header__logo" href="{{ route('feHome') }}">
-            <img src={{ asset('./frontend/assets/img/logo.png') }} alt="Logo" />
+            <img src="{{ asset('./frontend/assets/img/logo.png') }}" alt="Logo" />
             <p>
                 PGRI <br />
                 KAB PASURUAN
@@ -12,7 +12,7 @@
         </div>
         <div class="header__list">
             <div class="header__list-box">
-                <a href={{ route('feHome') }} class="header__list-box--item home-link">Beranda</a>
+                <a href="{{ route('feHome') }}" class="header__list-box--item home-link">Beranda</a>
             </div>
 
             <div class="header__list-box ">
@@ -83,58 +83,40 @@
                     <div class="header-dropdown">
                         <div class="header-dropdown-wrapper">
                             <a class="header-dropdown-wrapper__list" href="{{ route('fePko') }}">
-                                <div class="header-dropdown-wrapper__list--left">
-                                    <ion-icon name="cafe-outline"></ion-icon>
-                                </div>
                                 <div class="header-dropdown-wrapper__list--right">
                                     <p>
                                         YPLP Basmen PGRI
                                     </p>
-                                    <p>
-                                        Berisikan sambutan dari Ketua PGRI
-                                    </p>
                                 </div>
                             </a>
                             <a class="header-dropdown-wrapper__list" href="{{ route('feProfil', 4) }}">
-                                <div class="header-dropdown-wrapper__list--left">
-                                    <ion-icon name="alarm-outline"></ion-icon>
-                                </div>
+
                                 <div class="header-dropdown-wrapper__list--right">
                                     <p>
                                         LKBH - DKGI PGRI
 
                                     </p>
-                                    <p>
-                                        Menerangkan sejarah PGRI
-                                    </p>
+
                                 </div>
                             </a>
                             <a class="header-dropdown-wrapper__list" href="{{ route('feProfil', 2) }}">
-                                <div class=" header-dropdown-wrapper__list--left">
-                                    <ion-icon name="megaphone-outline"></ion-icon>
-                                </div>
+
                                 <div class="header-dropdown-wrapper__list--right">
                                     <p>
                                         IGTKI PGRI
 
                                     </p>
-                                    <p>
-                                        Berisikan visi dan misi PGRI
-                                    </p>
+
                                 </div>
                             </a>
                             <a class="header-dropdown-wrapper__list" href="{{ route('feProfil', 3) }}">
-                                <div class="header-dropdown-wrapper__list--left">
-                                    <ion-icon name="git-merge-outline"></ion-icon>
-                                </div>
+
                                 <div class="header-dropdown-wrapper__list--right">
                                     <p>
 
                                         SLCC PGRI
                                     </p>
-                                    <p>
-                                        Berisikan struktur organisasi PGRI
-                                    </p>
+
                                 </div>
                             </a>
                         </div>
@@ -179,19 +161,17 @@
             </div>
         </div>
 
-        <div style="height: 100%; overflow: auto; width: 100%; display: flex; align-items: center">
-            <div class="header-phone-list">
-                <a href="{{ route('feHome') }}" class="header-phone-list-item home-link">Beranda</a>
+        <div class="header-phone-list">
+            <a href="{{ route('feHome') }}" class="header-phone-list-item home-link">Beranda</a>
 
-                <div class="header-phone-list-dropdown">
-                    <span>Profil<ion-icon name="caret-down-outline"></ion-icon>
-                    </span>
-                    <div class="header-phone-list-dropdown-box">
-                        <a href="{{ route('feProfil', 4) }}"class="sejarah-link">Sejarah</a>
-                        <a href="{{ route('feProfil', 1) }}" class="sambutan-link">Sambutan Ketua</a>
-                        <a href="{{ route('feProfil', 3) }}" class="struktur-link">Struktur Organisasi</a>
-                        <a href="{{ route('feProfil', 2) }}" class="vm-link">Visi Misi</a>
-                    </div>
+            <div class="header-phone-list-dropdown">
+                <span>Profil<ion-icon name="caret-down-outline"></ion-icon>
+                </span>
+                <div class="header-phone-list-dropdown-box">
+                    <a href="{{ route('feProfil', 4) }}" class="sejarah-link">Sejarah</a>
+                    <a href="{{ route('feProfil', 1) }}" class="sambutan-link">Sambutan Ketua</a>
+                    <a href="{{ route('feProfil', 3) }}" class="struktur-link">Struktur Organisasi</a>
+                    <a href="{{ route('feProfil', 2) }}" class="vm-link">Visi Misi</a>
                 </div>
 
 

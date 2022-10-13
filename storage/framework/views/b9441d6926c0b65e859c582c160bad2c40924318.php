@@ -7,7 +7,6 @@
 
 <?php echo $__env->yieldContent('social-media'); ?>
 <style>
-    
     .loader {
         position: fixed;
         top: 0;
@@ -76,7 +75,7 @@
 
 <body>
     <div class="loader">
-        <img src=<?php echo e(asset('./frontend/assets/img/logo.png')); ?> alt="">
+        <img src="<?php echo e(asset('./frontend/assets/img/logo.png')); ?>" alt="">
         <div class="loader-line"></div>
     </div>
 

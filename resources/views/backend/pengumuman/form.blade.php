@@ -59,7 +59,7 @@
 
                                         <div class="form-group">
                                             <label>Konten</label>
-                                            <textarea type="text" class="form-control {{$errors->has('konten')?'is-invalid':''}}" name="konten" id="konten" row="500">{{isset($post)?$post->content:@old('konten')}}</textarea>
+                                            <textarea type="text" class="form-control {{$errors->has('konten')?'is-invalid':''}}" name="konten" id="konten" row="500"></textarea>
                                             @if($errors->has('konten'))
                                             <div class="invalid-feedback">
                                                 {{$errors->first('konten')}}
@@ -108,7 +108,16 @@
 @section('javascript')
 <script type="text/javascript">
     $(function() {
-        $('#konten').summernote({
+        const content = $('#konten');
+        <?php
+        if (isset($post)) {
+        ?>
+            const loadContent = `<?= $post->content ?>`;
+            content.summernote('code', loadContent);
+        <?php
+        }
+        ?>
+        content.summernote({
             height: 400,
             enterHtml: '<br>',
             callbacks: {
@@ -144,6 +153,7 @@
                 }
             }
         });
+
 
         $('#kategori').select2({
             placeholder: '--Pilih Kategori--'
