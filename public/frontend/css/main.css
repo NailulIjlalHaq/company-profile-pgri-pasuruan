@@ -246,7 +246,7 @@ body {
         flex-direction: column;
         align-items: center;
         gap: 3.2rem;
-        height: fit-content; }
+        height: 100%; }
         .header-phone-container .header-phone-list-item {
           color: #cecdcd;
           font-size: 2rem;
@@ -339,7 +339,7 @@ body {
       position: relative; }
       .header__list-box--item {
         color: #cecdcd;
-        font-size: 1.4rem;
+        font-size: 1.6rem;
         font-weight: 400;
         cursor: pointer; }
         .header__list-box--item.btn-join {
