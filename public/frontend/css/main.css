@@ -284,6 +284,8 @@ body {
             display: flex;
             align-items: center;
             gap: 0.5rem; }
+            .header-phone-container .header-phone-list-dropdown span::before, .header-phone-container .header-phone-list-dropdown span::after {
+              width: 100%; }
             .header-phone-container .header-phone-list-dropdown span ion-icon {
               font-size: 1.6rem;
               min-height: 1.6rem;
@@ -2441,9 +2443,10 @@ body {
       .contact__map {
         width: 100%; } }
     .contact__map--info {
+      width: -webkit-fill-available;
+      width: -moz-fill-available;
       position: absolute;
-      top: 3rem;
-      left: 3rem;
+      margin: 3rem;
       padding: 2rem;
       display: flex;
       flex-direction: column;
@@ -2454,13 +2457,10 @@ body {
       background-color: #2c2c2c;
       border-radius: 5px;
       z-index: 1000; }
-      @media only screen and (max-width: 25em) {
+      @media only screen and (max-width: 31.25em) {
         .contact__map--info {
-          top: 0;
-          left: 0;
-          width: -webkit-fill-available;
-          width: -moz-fill-available;
-          margin: 2rem; } }
+          margin: 0;
+          border-radius: 0 0 5px 5px; } }
       .contact__map--info p,
       .contact__map--info a {
         display: flex;
@@ -2481,6 +2481,8 @@ body {
         .contact__map--info p ion-icon,
         .contact__map--info a ion-icon {
           font-size: 2rem;
+          min-width: 2rem;
+          min-height: 2rem;
           color: #fff;
           font-weight: 600; }
 

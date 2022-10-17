@@ -16,7 +16,7 @@
             </div>
 
             <div class="header__list-box ">
-                <a class="header__list-box--item about-link">Profil PGRI</a>
+                <a class="header__list-box--item profil-link">Profil PGRI</a>
                 <div class="header__list-box-dropdown">
                     <div class="header-dropdown">
                         <div class="header-dropdown-wrapper">
@@ -79,17 +79,19 @@
 
             <div class="header__list-box ">
                 <a class="header__list-box--item pko-link">PKO PGRI</a>
-                <div class="header__list-box-dropdown">
+                <div class="header__list-box-dropdown" style="left: -4rem">
                     <div class="header-dropdown">
                         <div class="header-dropdown-wrapper">
-                            <a class="header-dropdown-wrapper__list" href="<?php echo e(route('fePko')); ?>">
+                            <a class="header-dropdown-wrapper__list"
+                                href="<?php echo e(route('fePko', ['profil' => '5', 'kategori' => '2'])); ?>">
                                 <div class="header-dropdown-wrapper__list--right">
                                     <p>
-                                        YPLP Basmen PGRI
+                                        YPLP Dasmen PGRI
                                     </p>
                                 </div>
                             </a>
-                            <a class="header-dropdown-wrapper__list" href="<?php echo e(route('feProfil', 4)); ?>">
+                            <a class="header-dropdown-wrapper__list"
+                                href="<?php echo e(route('fePko', ['profil' => '6', 'kategori' => '3'])); ?>">
 
                                 <div class="header-dropdown-wrapper__list--right">
                                     <p>
@@ -99,7 +101,8 @@
 
                                 </div>
                             </a>
-                            <a class="header-dropdown-wrapper__list" href="<?php echo e(route('feProfil', 2)); ?>">
+                            <a class="header-dropdown-wrapper__list"
+                                href="<?php echo e(route('fePko', ['profil' => '7', 'kategori' => '4'])); ?>">
 
                                 <div class="header-dropdown-wrapper__list--right">
                                     <p>
@@ -109,7 +112,8 @@
 
                                 </div>
                             </a>
-                            <a class="header-dropdown-wrapper__list" href="<?php echo e(route('feProfil', 3)); ?>">
+                            <a class="header-dropdown-wrapper__list"
+                                href="<?php echo e(route('fePko', ['profil' => '8', 'kategori' => '5'])); ?>">
 
                                 <div class="header-dropdown-wrapper__list--right">
                                     <p>
@@ -135,7 +139,8 @@
                 <a href="<?php echo e(route('feGallery')); ?>" class="header__list-box--item gallery-link">Galeri</a>
             </div>
             <div class="header__list-box">
-                <a href="https://newsik.pgri.or.id/" class="header__list-box--item gallery-link">Registrasi Anggota</a>
+                <a href="https://newsik.pgri.or.id/" target="_blank" class="header__list-box--item ">Registrasi
+                    Anggota</a>
             </div>
             <div class="header__list-box">
                 <a href="<?php echo e(route('feContact')); ?>" class="header__list-box--item contact-link">Kontak</a>
@@ -165,7 +170,7 @@
                 <a href="<?php echo e(route('feHome')); ?>" class="header-phone-list-item home-link">Beranda</a>
 
                 <div class="header-phone-list-dropdown">
-                    <span>Profil<ion-icon name="caret-down-outline"></ion-icon>
+                    <span class="profil-link">Profil<ion-icon name="caret-down-outline"></ion-icon>
                     </span>
                     <div class="header-phone-list-dropdown-box">
                         <a href="<?php echo e(route('feProfil', 4)); ?>" class="sejarah-link">Sejarah</a>
@@ -177,13 +182,19 @@
 
 
                 <div class="header-phone-list-dropdown">
-                    <span>PKO PGRI<ion-icon name="caret-down-outline"></ion-icon>
+                    <span class="pko-link">PKO PGRI<ion-icon name="caret-down-outline"></ion-icon>
                     </span>
                     <div class="header-phone-list-dropdown-box">
-                        <a href="<?php echo e(route('fePko')); ?>" class="igtki-link">IGTKI PGRI</a>
-                        <a href="<?php echo e(route('fePko')); ?>" class="lkbh-link">LKBH - DKGI PGRI</a>
-                        <a href="<?php echo e(route('fePko')); ?>" class="yplp-link">YPLP Basmen PGRI</a>
-                        <a href="<?php echo e(route('fePko')); ?>" class="slcc-link">SLCC PGRI</a>
+                        <a href="<?php echo e(route('fePko', ['profil' => '5', 'kategori' => '2'])); ?>" class="igtki-link">IGTKI
+                            PGRI</a>
+                        <a href="<?php echo e(route('fePko', ['profil' => '6', 'kategori' => '3'])); ?>" class="lkbh-link">LKBH -
+                            DKGI
+                            PGRI</a>
+                        <a href="<?php echo e(route('fePko', ['profil' => '7', 'kategori' => '4'])); ?>" class="yplp-link">YPLP
+                            Basmen
+                            PGRI</a>
+                        <a href="<?php echo e(route('fePko', ['profil' => '8', 'kategori' => '5'])); ?>" class="slcc-link">SLCC
+                            PGRI</a>
                     </div>
                 </div>
 

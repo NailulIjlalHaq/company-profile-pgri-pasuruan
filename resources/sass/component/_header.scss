@@ -147,6 +147,10 @@
                         display: flex;
                         align-items: center;
                         gap: 0.5rem;
+                        &::before,
+                        &::after {
+                            width: 100%;
+                        }
                         ion-icon {
                             font-size: 1.6rem;
                             min-height: 1.6rem;

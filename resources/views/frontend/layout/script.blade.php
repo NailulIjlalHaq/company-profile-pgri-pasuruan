@@ -42,19 +42,16 @@
         activeLink('contact', 'contact');
         activeLink('berita', 'berita');
         activeLink('gallery', 'gallery');
-        activeLink('profile-sejarah', 'about');
-        activeLink('profile-makna', 'about');
-        activeLink('profile-visi-misi', 'about');
-        activeLink('profile-visi-misi', 'vm');
-        activeLink('profile-makna', 'makna');
-        activeLink('profile-sejarah', 'sejarah');
+        activeLink('profil', 'profil');
+        activeLink('anak-lembaga', 'pko');
+        
 
         modalToggle('header-phone', 'navbar', '-phone');
 
         toggleElement('gallery-popup', 'gallery-container-box');
 
 
-        if (!$('.about-link , .artikel-link , .contact-link , .gallery-link , .berita-link').hasClass(
+        if (!$('.profil-link , .pko-link , .artikel-link , .contact-link , .gallery-link , .berita-link').hasClass(
                 'active-link')) {
             $('.home-link').addClass('active-link')
         }

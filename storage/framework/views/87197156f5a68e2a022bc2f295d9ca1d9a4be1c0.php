@@ -116,6 +116,30 @@
                                 <p>Sejarah</p>
                             </a>
                         </li>
+                        <li class="nav-item">
+                            <a href="<?php echo e(route('profil.index', 5)); ?>" class="nav-link <?php echo e((request()->segment(3) == '4') ? 'active' : ''); ?>">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>YPLP</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="<?php echo e(route('profil.index', 6)); ?>" class="nav-link <?php echo e((request()->segment(3) == '4') ? 'active' : ''); ?>">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>LKBH</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="<?php echo e(route('profil.index', 7)); ?>" class="nav-link <?php echo e((request()->segment(3) == '4') ? 'active' : ''); ?>">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>IGTKI</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="<?php echo e(route('profil.index', 4)); ?>" class="nav-link <?php echo e((request()->segment(3) == '4') ? 'active' : ''); ?>">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>SLCC</p>
+                            </a>
+                        </li>
                     </ul>
                 </li>
                 <li class="nav-item ">
