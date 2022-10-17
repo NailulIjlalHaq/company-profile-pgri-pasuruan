@@ -134,7 +134,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ route('profil.index', 8) }}" class="nav-link {{(request()->segment(3) == '4') ? 'active' : ''}}">
+                            <a href="{{ route('profil.index', 4) }}" class="nav-link {{(request()->segment(3) == '4') ? 'active' : ''}}">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>SLCC</p>
                             </a>
