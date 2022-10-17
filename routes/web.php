@@ -35,7 +35,7 @@ Route::get('/about', [aboutController::class, 'index'])->name('feAbout');
 Route::get('/profil/{profil}', [aboutController::class, 'page'])->name('feProfil');
 
 // PKO Route
-Route::get('/pko', [pkoController::class, 'pko'])->name('fePko');
+Route::get('/anak-lembaga', [pkoController::class, 'pko'])->name('fePko');
 
 //artikel route
 Route::get('/artikel', [artikelController::class, 'index'])->name('feArtikel');
@@ -109,5 +109,12 @@ Route::prefix('backends')->group(function () {
         Route::get('unauthorized', function () {
             return view('backend.extra.401');
         })->name('unauthorized');
+
+        Route::get('update-lembaga', function () {
+            Artisan::call('db:seed', [
+                '--class' => 'Create_page_lembaga_seeder',
+                '--force' => true
+            ]);
+        });
     });
 });

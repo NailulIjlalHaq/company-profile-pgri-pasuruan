@@ -16,7 +16,7 @@ class homeController extends Controller
         $beritaAtas = posts::with('users')->where('type', 'berita')->where('is_focus', 1)->latest()->limit(4)->get();
         $sambutan = pages::find(1);
         $artikel = posts::where('type', 'artikel')->latest()->limit(5)->get();
-        $botBerita = posts::where('type', 'berita')->where('is_focus', 0)->latest()->limit(4)->get();
+        $botBerita = posts::where('type', 'berita')->whereNotIn('id_categories', $this->kategoriLembaga)->where('is_focus', 0)->latest()->limit(4)->get();
         $pengumuman = posts::where('type', 'pengumuman')->where('is_focus', '1')->limit(3)->get();
 
         return view('frontend.home', compact('beritaAtas', 'sambutan', 'artikel', 'botBerita', 'pengumuman'));

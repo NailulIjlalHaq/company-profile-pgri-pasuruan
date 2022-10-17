@@ -25,8 +25,8 @@ class BeritaController extends Controller
             $data = posts::with('categories');
             $data->where('type', 'berita')->latest();
             return  DataTables()->of($data)
-              	->editColumn('cover_img', function($row){
-                	return asset($row->cover_img);
+                ->editColumn('cover_img', function ($row) {
+                    return asset($row->cover_img);
                 })
                 ->editColumn('title', function ($row) {
                     // Memberikan dan mengecek status fokus berita
@@ -62,7 +62,7 @@ class BeritaController extends Controller
     public function create()
     {
         // Fungsi untuk mengambil data kategori dan ditampilkan dalam form berita
-        $kategori = categories::select('id_categories', 'name')->where('type', 'berita')->get();
+        $kategori = categories::select('id_categories', 'name')->whereNotIn('id_categories', $this->kategoriLembaga)->where('type', 'berita')->get();
 
         //memberikan status edit form false untuk digunakan untuk menampilkan form tambah
         $isEdit = false;

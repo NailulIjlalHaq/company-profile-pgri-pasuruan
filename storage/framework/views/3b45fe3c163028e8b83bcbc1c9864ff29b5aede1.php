@@ -82,14 +82,14 @@
                 <div class="header__list-box-dropdown">
                     <div class="header-dropdown">
                         <div class="header-dropdown-wrapper">
-                            <a class="header-dropdown-wrapper__list" href="<?php echo e(route('fePko')); ?>">
+                            <a class="header-dropdown-wrapper__list" href="<?php echo e(route('fePko',['profil'=> '5','kategori'=>'2'])); ?>">
                                 <div class="header-dropdown-wrapper__list--right">
                                     <p>
-                                        YPLP Basmen PGRI
+                                        YPLP Dasmen PGRI
                                     </p>
                                 </div>
                             </a>
-                            <a class="header-dropdown-wrapper__list" href="<?php echo e(route('feProfil', 4)); ?>">
+                            <a class="header-dropdown-wrapper__list" href="<?php echo e(route('fePko',['profil'=> '6','kategori'=>'3'])); ?>">
 
                                 <div class="header-dropdown-wrapper__list--right">
                                     <p>
@@ -99,7 +99,7 @@
 
                                 </div>
                             </a>
-                            <a class="header-dropdown-wrapper__list" href="<?php echo e(route('feProfil', 2)); ?>">
+                            <a class="header-dropdown-wrapper__list" href="<?php echo e(route('fePko',['profil'=> '7','kategori'=>'4'])); ?>">
 
                                 <div class="header-dropdown-wrapper__list--right">
                                     <p>
@@ -109,7 +109,7 @@
 
                                 </div>
                             </a>
-                            <a class="header-dropdown-wrapper__list" href="<?php echo e(route('feProfil', 3)); ?>">
+                            <a class="header-dropdown-wrapper__list" href="<?php echo e(route('fePko',['profil'=> '8','kategori'=>'5'])); ?>">
 
                                 <div class="header-dropdown-wrapper__list--right">
                                     <p>
@@ -160,38 +160,42 @@
                 <ion-icon class="btn-close-navbar-phone" name="close-outline"></ion-icon>
             </div>
         </div>
+        <div style="width: 100%;height: 100%; overflow: auto; display: flex;align-items: center">
+            <div class="header-phone-list">
+                <a href="<?php echo e(route('feHome')); ?>" class="header-phone-list-item home-link">Beranda</a>
 
-        <div class="header-phone-list">
-            <a href="<?php echo e(route('feHome')); ?>" class="header-phone-list-item home-link">Beranda</a>
-
-            <div class="header-phone-list-dropdown">
-                <span>Profil<ion-icon name="caret-down-outline"></ion-icon>
-                </span>
-                <div class="header-phone-list-dropdown-box">
-                    <a href="<?php echo e(route('feProfil', 4)); ?>" class="sejarah-link">Sejarah</a>
-                    <a href="<?php echo e(route('feProfil', 1)); ?>" class="sambutan-link">Sambutan Ketua</a>
-                    <a href="<?php echo e(route('feProfil', 3)); ?>" class="struktur-link">Struktur Organisasi</a>
-                    <a href="<?php echo e(route('feProfil', 2)); ?>" class="vm-link">Visi Misi</a>
+                <div class="header-phone-list-dropdown">
+                    <span>Profil<ion-icon name="caret-down-outline"></ion-icon>
+                    </span>
+                    <div class="header-phone-list-dropdown-box">
+                        <a href="<?php echo e(route('feProfil', 4)); ?>" class="sejarah-link">Sejarah</a>
+                        <a href="<?php echo e(route('feProfil', 1)); ?>" class="sambutan-link">Sambutan Ketua</a>
+                        <a href="<?php echo e(route('feProfil', 3)); ?>" class="struktur-link">Struktur Organisasi</a>
+                        <a href="<?php echo e(route('feProfil', 2)); ?>" class="vm-link">Visi Misi</a>
+                    </div>
                 </div>
-            </div>
 
 
-            <div class="header-phone-list-dropdown">
-                <span>PKO PGRI<ion-icon name="caret-down-outline"></ion-icon>
-                </span>
-                <div class="header-phone-list-dropdown-box">
-                    <a href="<?php echo e(route('fePko')); ?>" class="igtki-link">IGTKI PGRI</a>
-                    <a href="<?php echo e(route('fePko')); ?>" class="lkbh-link">LKBH - DKGI PGRI</a>
-                    <a href="<?php echo e(route('fePko')); ?>" class="yplp-link">YPLP Basmen PGRI</a>
-                    <a href="<?php echo e(route('fePko')); ?>" class="slcc-link">SLCC PGRI</a>
+                <div class="header-phone-list-dropdown">
+                    <span>PKO PGRI<ion-icon name="caret-down-outline"></ion-icon>
+                    </span>
+                    <div class="header-phone-list-dropdown-box">
+                        <a href="<?php echo e(route('fePko',['profil'=> '5','kategori'=>'2'])); ?>" class="igtki-link">IGTKI PGRI</a>
+                        <a href="<?php echo e(route('fePko',['profil'=> '6','kategori'=>'3'])); ?>" class="lkbh-link">LKBH - DKGI PGRI</a>
+                        <a href="<?php echo e(route('fePko',['profil'=> '7','kategori'=>'4'])); ?>" class="yplp-link">YPLP Basmen PGRI</a>
+                        <a href="<?php echo e(route('fePko',['profil'=> '8','kategori'=>'5'])); ?>" class="slcc-link">SLCC PGRI</a>
+                    </div>
                 </div>
-            </div>
 
-            <a href="<?php echo e(route('feArtikel')); ?>" class="header-phone-list-item artikel-link">Artikel</a>
-            <a href="<?php echo e(route('feBerita')); ?>" class="header-phone-list-item berita-link">Berita</a>
-            <a href="<?php echo e(route('feGallery')); ?>" class="header-phone-list-item gallery-link">Galeri</a>
-            <a href="https://newsik.pgri.or.id/" class="header-phone-list-item  gallery-link">Registrasi Anggota</a>
-            <a href="<?php echo e(route('feContact')); ?>" class="header-phone-list-item contact-link">Kontak</a>
+                <a href="<?php echo e(route('feArtikel')); ?>" class="header-phone-list-item artikel-link">Artikel</a>
+                <a href="<?php echo e(route('feBerita')); ?>" class="header-phone-list-item berita-link">Berita</a>
+                <a href="<?php echo e(route('feGallery')); ?>" class="header-phone-list-item gallery-link">Galeri</a>
+                <a href="https://newsik.pgri.or.id/" class="header-phone-list-item  gallery-link">Registrasi
+                    Anggota</a>
+                <a href="<?php echo e(route('feContact')); ?>" class="header-phone-list-item contact-link">Kontak</a>
+            </div>
         </div>
+    </div>
+
     </div>
 </header><?php /**PATH /Applications/MAMP/htdocs/company-profil/resources/views/frontend/layout/header.blade.php ENDPATH**/ ?>

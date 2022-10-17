@@ -11,7 +11,7 @@ class beritaController extends Controller
 {
     public function index(Request $request)
     {
-        $berita = posts::with('users')->where('type', 'berita');
+        $berita = posts::with('users')->where('type', 'berita')->whereNotIn('id_categories', $this->kategoriLembaga);
 
         if ($request->has('search')) {
             $berita = $berita->where('title', 'LIKE', '%' . $request->search . '%');

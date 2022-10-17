@@ -82,14 +82,14 @@
                 <div class="header__list-box-dropdown">
                     <div class="header-dropdown">
                         <div class="header-dropdown-wrapper">
-                            <a class="header-dropdown-wrapper__list" href="{{ route('fePko') }}">
+                            <a class="header-dropdown-wrapper__list" href="{{ route('fePko',['profil'=> '5','kategori'=>'2']) }}">
                                 <div class="header-dropdown-wrapper__list--right">
                                     <p>
-                                        YPLP Basmen PGRI
+                                        YPLP Dasmen PGRI
                                     </p>
                                 </div>
                             </a>
-                            <a class="header-dropdown-wrapper__list" href="{{ route('feProfil', 4) }}">
+                            <a class="header-dropdown-wrapper__list" href="{{ route('fePko',['profil'=> '6','kategori'=>'3']) }}">
 
                                 <div class="header-dropdown-wrapper__list--right">
                                     <p>
@@ -99,7 +99,7 @@
 
                                 </div>
                             </a>
-                            <a class="header-dropdown-wrapper__list" href="{{ route('feProfil', 2) }}">
+                            <a class="header-dropdown-wrapper__list" href="{{ route('fePko',['profil'=> '7','kategori'=>'4']) }}">
 
                                 <div class="header-dropdown-wrapper__list--right">
                                     <p>
@@ -109,7 +109,7 @@
 
                                 </div>
                             </a>
-                            <a class="header-dropdown-wrapper__list" href="{{ route('feProfil', 3) }}">
+                            <a class="header-dropdown-wrapper__list" href="{{ route('fePko',['profil'=> '8','kategori'=>'5']) }}">
 
                                 <div class="header-dropdown-wrapper__list--right">
                                     <p>
@@ -180,10 +180,10 @@
                     <span>PKO PGRI<ion-icon name="caret-down-outline"></ion-icon>
                     </span>
                     <div class="header-phone-list-dropdown-box">
-                        <a href="{{ route('fePko') }}" class="igtki-link">IGTKI PGRI</a>
-                        <a href="{{ route('fePko') }}" class="lkbh-link">LKBH - DKGI PGRI</a>
-                        <a href="{{ route('fePko') }}" class="yplp-link">YPLP Basmen PGRI</a>
-                        <a href="{{ route('fePko') }}" class="slcc-link">SLCC PGRI</a>
+                        <a href="{{ route('fePko',['profil'=> '5','kategori'=>'2']) }}" class="igtki-link">IGTKI PGRI</a>
+                        <a href="{{ route('fePko',['profil'=> '6','kategori'=>'3']) }}" class="lkbh-link">LKBH - DKGI PGRI</a>
+                        <a href="{{ route('fePko',['profil'=> '7','kategori'=>'4']) }}" class="yplp-link">YPLP Basmen PGRI</a>
+                        <a href="{{ route('fePko',['profil'=> '8','kategori'=>'5']) }}" class="slcc-link">SLCC PGRI</a>
                     </div>
                 </div>
 

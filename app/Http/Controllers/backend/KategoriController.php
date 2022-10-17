@@ -18,7 +18,7 @@ class KategoriController extends Controller
     public function index()
     {
         if (request()->ajax()) {
-            $data = categories::select('id_categories', 'name');
+            $data = categories::select('id_categories', 'name')->whereNotIn('id_categories', $this->kategoriLembaga);
             return DataTables()->of($data)
                 ->addColumn('action', function ($row) {
                     return '
