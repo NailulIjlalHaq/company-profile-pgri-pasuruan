@@ -19,7 +19,7 @@
                     </p>
 
                 </div>
-                <a class="card__btn" href="{{ route('fePko') }}">Lebih Lanjut
+                <a class="card__btn" href="{{ route('feProfil', $sambutan->id_pages) }}">Lebih Lanjut
                     <ion-icon name="chevron-forward-outline"></ion-icon>
                 </a>
             </div>
